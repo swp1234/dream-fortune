@@ -1,0 +1,663 @@
+/* 꿈해몽 & 운세 앱 - 2026 신비/몽환 테마 */
+/* Primary: #9b59b6 (보라색) - Co-Star 스타일 */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: #9b59b6;
+    --primary-light: #a66bbe;
+    --primary-dark: #8e44ad;
+    --secondary: #3498db;
+    --accent: #e74c3c;
+    --gold: #f1c40f;
+    --background: #0a0a1a;
+    --surface: rgba(20, 20, 40, 0.95);
+    --surface-glass: rgba(155, 89, 182, 0.15);
+    --text: #f5f5f5;
+    --text-dim: #a0a0b0;
+    --gradient: linear-gradient(135deg, #9b59b6 0%, #3498db 100%);
+}
+
+body {
+    font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans KR', sans-serif;
+    background: var(--background);
+    min-height: 100vh;
+    color: var(--text);
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* 별 배경 */
+.stars {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    background: 
+        radial-gradient(1px 1px at 20px 30px, white, transparent),
+        radial-gradient(1px 1px at 40px 70px, rgba(255,255,255,0.8), transparent),
+        radial-gradient(1px 1px at 50px 160px, rgba(255,255,255,0.6), transparent),
+        radial-gradient(1px 1px at 90px 40px, white, transparent),
+        radial-gradient(1px 1px at 130px 80px, rgba(255,255,255,0.7), transparent),
+        radial-gradient(2px 2px at 160px 120px, white, transparent),
+        radial-gradient(1px 1px at 200px 50px, rgba(255,255,255,0.9), transparent),
+        radial-gradient(1px 1px at 250px 180px, white, transparent),
+        radial-gradient(1px 1px at 280px 90px, rgba(255,255,255,0.6), transparent),
+        radial-gradient(2px 2px at 320px 140px, white, transparent);
+    background-size: 350px 200px;
+    animation: twinkle 4s ease-in-out infinite;
+}
+
+@keyframes twinkle {
+    0%, 100% { opacity: 0.8; }
+    50% { opacity: 1; }
+}
+
+/* 달 */
+.moon {
+    position: fixed;
+    top: 30px;
+    right: 30px;
+    width: 80px;
+    height: 80px;
+    background: radial-gradient(circle at 30% 30%, #fffde7, #ffd54f);
+    border-radius: 50%;
+    box-shadow: 0 0 40px rgba(255, 215, 0, 0.4), 0 0 80px rgba(255, 215, 0, 0.2);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.container {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 15px;
+    position: relative;
+    z-index: 1;
+}
+
+/* 광고 배너 */
+.ad-banner {
+    background: var(--surface-glass);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 12px;
+    text-align: center;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    border: 1px solid rgba(155, 89, 182, 0.2);
+}
+
+.ad-placeholder {
+    color: var(--text-dim);
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+
+/* 헤더 */
+.app-header {
+    text-align: center;
+    padding: 30px 20px;
+    margin-bottom: 20px;
+}
+
+.app-header h1 {
+    font-size: 2rem;
+    font-weight: 800;
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 10px;
+}
+
+.tagline {
+    color: var(--text-dim);
+    font-size: 0.95rem;
+}
+
+/* 탭 메뉴 */
+.tab-menu {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 20px;
+    padding: 5px;
+    background: var(--surface);
+    border-radius: 16px;
+}
+
+.tab-btn {
+    flex: 1;
+    padding: 14px 10px;
+    border: none;
+    background: transparent;
+    color: var(--text-dim);
+    font-size: 0.9rem;
+    font-weight: 600;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.tab-btn.active {
+    background: var(--gradient);
+    color: white;
+    box-shadow: 0 4px 15px rgba(155, 89, 182, 0.4);
+}
+
+.tab-btn:not(.active):hover {
+    background: rgba(155, 89, 182, 0.2);
+    color: var(--text);
+}
+
+/* 메인 콘텐츠 */
+.main-content {
+    min-height: 400px;
+}
+
+.tab-content {
+    display: none;
+    animation: fadeIn 0.3s ease;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* 입력 카드 */
+.input-card {
+    background: var(--surface);
+    border-radius: 20px;
+    padding: 30px 25px;
+    text-align: center;
+    border: 1px solid rgba(155, 89, 182, 0.2);
+}
+
+.input-card h2 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    color: var(--text);
+}
+
+.hint {
+    color: var(--text-dim);
+    font-size: 0.85rem;
+    margin-bottom: 20px;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 16px 20px;
+    font-size: 1rem;
+    border: 2px solid rgba(155, 89, 182, 0.3);
+    border-radius: 12px;
+    background: rgba(0, 0, 0, 0.3);
+    color: var(--text);
+    margin-bottom: 20px;
+    transition: border-color 0.3s;
+}
+
+input[type="text"]:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 20px rgba(155, 89, 182, 0.3);
+}
+
+input[type="text"]::placeholder {
+    color: var(--text-dim);
+}
+
+/* 버튼 */
+.primary-btn {
+    width: 100%;
+    padding: 18px;
+    border: none;
+    border-radius: 14px;
+    background: var(--gradient);
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+.primary-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s;
+}
+
+.primary-btn:hover::before {
+    left: 100%;
+}
+
+.primary-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(155, 89, 182, 0.5);
+}
+
+.secondary-btn {
+    padding: 12px 30px;
+    border: 2px solid var(--primary);
+    border-radius: 25px;
+    background: transparent;
+    color: var(--primary);
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-top: 15px;
+}
+
+.secondary-btn:hover {
+    background: var(--primary);
+    color: white;
+}
+
+/* 액션 버튼 그룹 */
+.action-buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 15px;
+}
+
+/* 프리미엄 버튼 (AI 심층 해석) */
+.premium-btn {
+    padding: 14px 25px;
+    border: none;
+    border-radius: 25px;
+    background: linear-gradient(135deg, #f39c12, #e74c3c);
+    color: white;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(243, 156, 18, 0.4);
+}
+
+.premium-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+    0% { left: -100%; }
+    100% { left: 100%; }
+}
+
+.premium-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(243, 156, 18, 0.5);
+}
+
+.premium-icon {
+    font-size: 1.1rem;
+}
+
+.ad-tag {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    font-weight: 700;
+}
+
+/* 프리미엄 결과 카드 */
+.premium-result {
+    border: 2px solid #f39c12;
+    background: linear-gradient(135deg, rgba(243, 156, 18, 0.1), rgba(231, 76, 60, 0.1));
+}
+
+.premium-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, #f39c12, #e74c3c);
+    color: white;
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+/* 결과 카드 */
+.result-card {
+    background: var(--surface);
+    border-radius: 20px;
+    padding: 30px 25px;
+    text-align: center;
+    margin-top: 20px;
+    border: 1px solid rgba(155, 89, 182, 0.3);
+    animation: slideUp 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.result-icon {
+    font-size: 4rem;
+    margin-bottom: 15px;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+.result-card h3 {
+    font-size: 1.4rem;
+    color: var(--primary-light);
+    margin-bottom: 15px;
+}
+
+.result-text {
+    color: var(--text);
+    line-height: 1.8;
+    font-size: 1rem;
+    margin-bottom: 15px;
+    white-space: pre-wrap;
+    text-align: left;
+    max-height: 400px;
+    overflow-y: auto;
+    padding: 15px;
+    background: rgba(155, 89, 182, 0.1);
+    border-radius: 12px;
+}
+
+.luck-badge {
+    display: inline-block;
+    padding: 8px 20px;
+    background: var(--gradient);
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+/* 별자리 선택 */
+.zodiac-selector {
+    background: var(--surface);
+    border-radius: 20px;
+    padding: 25px;
+    border: 1px solid rgba(155, 89, 182, 0.2);
+}
+
+.zodiac-selector h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+}
+
+.zodiac-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.zodiac-item {
+    padding: 15px 10px;
+    background: rgba(155, 89, 182, 0.1);
+    border: 2px solid transparent;
+    border-radius: 12px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.zodiac-item:hover {
+    background: rgba(155, 89, 182, 0.2);
+    border-color: var(--primary);
+}
+
+.zodiac-item.selected {
+    background: var(--gradient);
+    border-color: transparent;
+}
+
+.zodiac-icon {
+    font-size: 1.8rem;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.zodiac-name {
+    font-size: 0.75rem;
+    color: var(--text-dim);
+}
+
+.zodiac-item.selected .zodiac-name {
+    color: white;
+}
+
+/* 운세 카테고리 */
+.fortune-categories {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.fortune-item {
+    text-align: left;
+    padding: 15px;
+    background: rgba(155, 89, 182, 0.1);
+    border-radius: 12px;
+}
+
+.fortune-label {
+    font-size: 0.85rem;
+    color: var(--text-dim);
+    display: block;
+    margin-bottom: 8px;
+}
+
+.fortune-stars {
+    color: var(--gold);
+    font-size: 1rem;
+    letter-spacing: 2px;
+}
+
+.lucky-info {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
+    padding: 15px;
+    background: rgba(155, 89, 182, 0.1);
+    border-radius: 12px;
+}
+
+.lucky-item {
+    font-size: 0.95rem;
+}
+
+/* 타로 카드 */
+.tarot-deck {
+    background: var(--surface);
+    border-radius: 20px;
+    padding: 30px 25px;
+    text-align: center;
+    border: 1px solid rgba(155, 89, 182, 0.2);
+}
+
+.tarot-deck h2 {
+    margin-bottom: 10px;
+}
+
+.tarot-cards {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.tarot-card {
+    width: 80px;
+    height: 120px;
+    background: linear-gradient(135deg, #1a1a2e, #16213e);
+    border: 2px solid var(--primary);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.tarot-card:hover {
+    transform: translateY(-10px) rotateY(10deg);
+    box-shadow: 0 15px 30px rgba(155, 89, 182, 0.4);
+    border-color: var(--gold);
+}
+
+.tarot-card.flipped {
+    background: var(--gradient);
+    transform: rotateY(180deg);
+}
+
+.advice-text {
+    font-style: italic;
+    color: var(--text-dim);
+    margin-top: 10px;
+    font-size: 0.9rem;
+}
+
+/* 전면 광고 */
+.interstitial-ad {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.interstitial-content {
+    background: var(--surface);
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    max-width: 350px;
+    width: 90%;
+}
+
+.ad-placeholder-large {
+    padding: 80px 40px;
+    background: rgba(155, 89, 182, 0.1);
+    border: 2px dashed rgba(155, 89, 182, 0.3);
+    border-radius: 12px;
+    margin: 20px 0;
+    color: var(--text-dim);
+}
+
+.close-btn {
+    padding: 12px 30px;
+    background: var(--accent);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.close-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* 숨김 */
+.hidden {
+    display: none !important;
+}
+
+/* 반응형 */
+@media (max-width: 480px) {
+    .app-header h1 {
+        font-size: 1.7rem;
+    }
+    
+    .zodiac-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .tarot-card {
+        width: 70px;
+        height: 100px;
+    }
+    
+    .moon {
+        width: 50px;
+        height: 50px;
+        top: 15px;
+        right: 15px;
+    }
+}
+
+/* 스크롤바 */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary);
+    border-radius: 3px;
+}
+
+/* 선택 */
+::selection {
+    background: var(--primary);
+    color: white;
+}
