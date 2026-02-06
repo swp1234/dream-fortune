@@ -2,7 +2,7 @@
 
 class DreamFortuneApp {
     constructor() {
-        this.selectedZodiac = null;
+        this.selectedZodiac = this.loadFromStorage('selectedZodiac', null);
         this.init();
     }
 
@@ -12,6 +12,22 @@ class DreamFortuneApp {
         this.setupFortuneTab();
         this.setupTarotTab();
         this.registerServiceWorker();
+    }
+
+    // LocalStorage 관리
+    loadFromStorage(key, defaultValue) {
+        try {
+            const data = localStorage.getItem(`dreamfortune_${key}`);
+            return data ? JSON.parse(data) : defaultValue;
+        } catch (e) {
+            return defaultValue;
+        }
+    }
+
+    saveToStorage(key, value) {
+        try {
+            localStorage.setItem(`dreamfortune_${key}`, JSON.stringify(value));
+        } catch (e) {}
     }
 
     // 탭 전환
@@ -749,9 +765,17 @@ class DreamFortuneApp {
             item.addEventListener('click', () => {
                 document.querySelectorAll('.zodiac-item').forEach(i => i.classList.remove('selected'));
                 item.classList.add('selected');
+                this.selectedZodiac = zodiac.name;
+                this.saveToStorage('selectedZodiac', zodiac.name);
                 this.showFortune(zodiac);
             });
             grid.appendChild(item);
+
+            // 저장된 별자리 복원
+            if (this.selectedZodiac === zodiac.name) {
+                item.classList.add('selected');
+                this.showFortune(zodiac);
+            }
         });
 
         document.getElementById('share-fortune').addEventListener('click', () => {
@@ -846,11 +870,9 @@ class DreamFortuneApp {
                 const isReversed = Math.random() < 0.3; // 30% 확률로 역방향
                 
                 setTimeout(() => {
-                    card.textContent = tarot.upright.keyword.split(',')[0].includes('희망') ? '⭐' : 
-                                       (isReversed ? '🔮' : tarot.icon);
                     card.textContent = tarot.icon;
                     if (isReversed) {
-                        card.style.transform = 'rotateY(180deg) rotateZ(180deg)';
+                        card.style.transform = 'rotateY(180deg)';
                     }
                     this.showTarotResult(tarot, isReversed);
                 }, 300);
