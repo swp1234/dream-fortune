@@ -740,13 +740,15 @@ class DreamFortuneApp {
     shareDream() {
         const keyword = document.getElementById('dream-keyword').textContent;
         const meaning = document.getElementById('dream-meaning').textContent;
-        const text = `🌙 꿈해몽 결과\n\n${keyword}\n\n${meaning}\n\n꿈해몽 & 운세 앱에서 확인하세요!`;
+        const url = 'https://swp1234.github.io/dream-fortune/';
+        const text = `🌙 나의 꿈해몽 결과\n\n${keyword}\n${meaning}\n\n너도 어젯밤 꿈 해석해봐! 👇\n${url}`;
 
         if (navigator.share) {
-            navigator.share({ title: '꿈해몽 결과', text });
+            navigator.share({ title: '나의 꿈해몽 결과 🔮', text, url }).catch(() => {});
         } else {
-            navigator.clipboard.writeText(text);
-            alert('결과가 클립보드에 복사되었습니다!');
+            navigator.clipboard.writeText(text).then(() => {
+                alert('결과가 복사되었습니다! 친구에게 공유해보세요 🌙');
+            }).catch(() => {});
         }
     }
 
@@ -839,14 +841,16 @@ class DreamFortuneApp {
         const message = document.getElementById('fortune-message').textContent;
         const color = document.getElementById('lucky-color').textContent;
         const number = document.getElementById('lucky-number').textContent;
+        const url = 'https://swp1234.github.io/dream-fortune/';
 
-        const text = `⭐ ${zodiac}\n\n${message}\n\n🎨 행운 색상: ${color}\n🔢 행운 숫자: ${number}\n\n꿈해몽 & 운세 앱에서 확인하세요!`;
+        const text = `⭐ 오늘의 ${zodiac} 운세\n\n${message}\n\n🎨 행운 색상: ${color}\n🔢 행운 숫자: ${number}\n\n너의 오늘 운세도 확인해봐! 👇\n${url}`;
 
         if (navigator.share) {
-            navigator.share({ title: '오늘의 운세', text });
+            navigator.share({ title: `오늘의 ${zodiac} 운세 ⭐`, text, url }).catch(() => {});
         } else {
-            navigator.clipboard.writeText(text);
-            alert('결과가 클립보드에 복사되었습니다!');
+            navigator.clipboard.writeText(text).then(() => {
+                alert('결과가 복사되었습니다! 친구에게 공유해보세요 ⭐');
+            }).catch(() => {});
         }
     }
 
