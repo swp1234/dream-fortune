@@ -319,7 +319,7 @@ dream interpretation, horoscope, tarot, zodiac, daily fortune, astrology, dream 
 - 미신/점성술: 오락 목적 고지
 
 **개인정보 처리방침**:
-- URL: https://swp1234.github.io/dream-fortune/privacy-policy.html
+- URL: https://dopabrain.com/dream-fortune/privacy-policy.html
 - 수집 정보: 없음 (로컬 저장소만 사용)
 - 연락처: woodori1234@gmail.com
 
@@ -359,7 +359,7 @@ dream interpretation, horoscope, tarot, zodiac, daily fortune, astrology, dream 
    - 도메인 소유권 검증
 
 3. **manifest.xml 설정**
-   - TWA URL: https://swp1234.github.io/dream-fortune/
+   - TWA URL: https://dopabrain.com/dream-fortune/
    - Theme color: #9b59b6
    - App name (각 언어별 values 폴더)
      - `values/strings.xml`: AI 꿈해몽 & 운세
