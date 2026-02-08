@@ -740,7 +740,7 @@ class DreamFortuneApp {
     shareDream() {
         const keyword = document.getElementById('dream-keyword').textContent;
         const meaning = document.getElementById('dream-meaning').textContent;
-        const url = 'https://swp1234.github.io/dream-fortune/';
+        const url = 'https://dopabrain.com/dream-fortune/';
         const text = `🌙 나의 꿈해몽 결과\n\n${keyword}\n${meaning}\n\n너도 어젯밤 꿈 해석해봐! 👇\n${url}`;
 
         if (navigator.share) {
@@ -841,7 +841,7 @@ class DreamFortuneApp {
         const message = document.getElementById('fortune-message').textContent;
         const color = document.getElementById('lucky-color').textContent;
         const number = document.getElementById('lucky-number').textContent;
-        const url = 'https://swp1234.github.io/dream-fortune/';
+        const url = 'https://dopabrain.com/dream-fortune/';
 
         const text = `⭐ 오늘의 ${zodiac} 운세\n\n${message}\n\n🎨 행운 색상: ${color}\n🔢 행운 숫자: ${number}\n\n너의 오늘 운세도 확인해봐! 👇\n${url}`;
 
