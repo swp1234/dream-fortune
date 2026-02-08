@@ -1,0 +1,11 @@
+{
+  "app": { "title": "AI Dream·Horoscope·Tarot - Free Reading | DopaBrain", "description": "AI-powered dream interpretation, daily horoscope by zodiac, and one-card tarot reading." },
+  "header": { "title": "🌙 Dreams & Fortune", "tagline": "Interpreting your dreams and today's fortune" },
+  "tabs": { "dream": "🌌 Dreams", "fortune": "⭐ Horoscope", "tarot": "🃏 Tarot" },
+  "dream": { "question": "What did you dream about?", "hint": "Describe your dream freely (sentences OK!)", "placeholder": "e.g., I dreamed of a snake swimming in the ocean", "interpret": "Interpret Dream", "share": "Share", "aiDeep": "AI Deep Analysis", "luckIndex": "Luck Index" },
+  "fortune": { "question": "What's your zodiac sign?", "love": "💕 Love", "money": "💰 Money", "work": "💼 Career", "luck": "🍀 Luck", "luckyColor": "🎨", "luckyNumber": "🔢", "share": "Share" },
+  "tarot": { "title": "Draw today's message", "hint": "Tap a card to draw one", "retry": "Draw Again" },
+  "premium": { "badge": "✨ AI Deep Analysis", "title": "AI Deep Interpretation", "share": "Share" },
+  "ads": { "banner": "Advertisement", "interstitial": "Ad", "close": "Close" },
+  "rec": { "title": "Try these too" }
+}

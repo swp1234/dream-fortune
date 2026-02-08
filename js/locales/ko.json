@@ -1,0 +1,11 @@
+{
+  "app": { "title": "AI 꿈해몽·운세·타로 - 무료 해석 | DopaBrain", "description": "AI가 해석하는 꿈해몽, 별자리별 오늘의 운세, 타로 카드 3장 뽑기." },
+  "header": { "title": "🌙 꿈해몽 & 운세", "tagline": "당신의 꿈과 오늘을 해석해드립니다" },
+  "tabs": { "dream": "🌌 꿈해몽", "fortune": "⭐ 오늘의 운세", "tarot": "🃏 타로 한 장" },
+  "dream": { "question": "어떤 꿈을 꾸셨나요?", "hint": "꿈 내용을 자유롭게 입력하세요 (문장도 OK!)", "placeholder": "예: 바다에서 뱀이 헤엄치는 꿈을 꿨어", "interpret": "꿈 해석하기", "share": "공유하기", "aiDeep": "AI 심층 해석", "luckIndex": "행운지수" },
+  "fortune": { "question": "당신의 별자리는?", "love": "💕 연애운", "money": "💰 금전운", "work": "💼 직장운", "luck": "🍀 행운", "luckyColor": "🎨", "luckyNumber": "🔢", "share": "공유하기" },
+  "tarot": { "title": "오늘의 메시지를 뽑아보세요", "hint": "카드를 터치하면 한 장이 뽑힙니다", "retry": "다시 뽑기" },
+  "premium": { "badge": "✨ AI 심층 분석", "title": "AI 심층 해석", "share": "공유하기" },
+  "ads": { "banner": "광고 영역", "interstitial": "광고", "close": "닫기" },
+  "rec": { "title": "이것도 해보세요" }
+}
