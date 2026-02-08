@@ -1,0 +1,52 @@
+{
+  "app": {
+    "title": "AI 夢解き・占い・タロット - 無料リーディング | DopaBrain",
+    "description": "AI搭載の夢の解釈、日々の星座占い、ワンカードタロット。"
+  },
+  "header": {
+    "title": "🌙 夢と運勢",
+    "tagline": "あなたの夢と今日の運勢を解釈します"
+  },
+  "tabs": {
+    "dream": "🌌 夢",
+    "fortune": "⭐ 占い",
+    "tarot": "🃏 タロット"
+  },
+  "dream": {
+    "question": "どんな夢を見ましたか？",
+    "hint": "夢を自由に説明してください（文章OK！）",
+    "placeholder": "例：海を泳ってるヘビの夢を見ました",
+    "interpret": "夢を解釈",
+    "share": "共有する",
+    "aiDeep": "AI深い分析",
+    "luckIndex": "幸運指数"
+  },
+  "fortune": {
+    "question": "あなたの星座は？",
+    "love": "💕 恋愛",
+    "money": "💰 金銭",
+    "work": "💼 仕事",
+    "luck": "🍀 幸運",
+    "luckyColor": "🎨",
+    "luckyNumber": "🔢",
+    "share": "共有する"
+  },
+  "tarot": {
+    "title": "今日のメッセージを引く",
+    "hint": "カードをタップして1枚引いてください",
+    "retry": "もう一度引く"
+  },
+  "premium": {
+    "badge": "✨ AI深い分析",
+    "title": "AI深い解釈",
+    "share": "共有する"
+  },
+  "ads": {
+    "banner": "広告",
+    "interstitial": "広告",
+    "close": "閉じる"
+  },
+  "rec": {
+    "title": "こちらも試してみてください"
+  }
+}

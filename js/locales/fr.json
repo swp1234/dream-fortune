@@ -1,0 +1,11 @@
+{
+  "app": { "title": "Interprétation de Rêve·Horoscope·Tarot IA - Lecture Gratuite | DopaBrain", "description": "Interprétation de rêve alimentée par l'IA, horoscope quotidien par zodiaque et lecture de tarot à une carte." },
+  "header": { "title": "🌙 Rêves & Fortune", "tagline": "Interprétation de tes rêves et ta fortune d'aujourd'hui" },
+  "tabs": { "dream": "🌌 Rêves", "fortune": "⭐ Horoscope", "tarot": "🃏 Tarot" },
+  "dream": { "question": "Qu'as-tu rêvé?", "hint": "Décris ton rêve librement (les phrases vont!)", "placeholder": "Par exemple, J'ai rêvé d'un serpent nageant dans l'océan", "interpret": "Interpréter le Rêve", "share": "Partager", "aiDeep": "Analyse Profonde IA", "luckIndex": "Indice de Chance" },
+  "fortune": { "question": "Quel est ton signe du zodiaque?", "love": "💕 Amour", "money": "💰 Argent", "work": "💼 Carrière", "luck": "🍀 Chance", "luckyColor": "🎨", "luckyNumber": "🔢", "share": "Partager" },
+  "tarot": { "title": "Tire le message d'aujourd'hui", "hint": "Tape une carte pour en tirer une", "retry": "Tirer à Nouveau" },
+  "premium": { "badge": "✨ Analyse Profonde IA", "title": "Interprétation Profonde IA", "share": "Partager" },
+  "ads": { "banner": "Publicité", "interstitial": "Annonce", "close": "Fermer" },
+  "rec": { "title": "Essaie aussi" }
+}

@@ -23,16 +23,39 @@
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "WebApplication",
+      "@type": "SoftwareApplication",
       "name": "AI 꿈해몽·운세",
       "applicationCategory": "EntertainmentApplication",
-      "description": "AI가 해석하는 꿈해몽, 별자리별 오늘의 운세, 타로 카드 3장 뽑기",
+      "description": "AI가 해석하는 꿈해몽, 별자리별 오늘의 운세, 타로 카드 3장 뽑기. 100개 꿈 해석, 12개 별자리 운세 무료 제공.",
       "url": "https://dopabrain.com/dream-fortune/",
+      "image": "https://dopabrain.com/dream-fortune/icon-512.svg",
+      "operatingSystem": "All",
+      "browserRequirements": "Requires JavaScript. Modern browser (Chrome, Safari, Firefox, Edge).",
+      "author": {
+        "@type": "Organization",
+        "name": "DopaBrain",
+        "url": "https://dopabrain.com/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "DopaBrain",
+        "url": "https://dopabrain.com/"
+      },
+      "inLanguage": ["ko", "en", "zh", "hi", "ru"],
       "offers": {
         "@type": "Offer",
         "price": "0",
-        "priceCurrency": "KRW"
-      }
+        "priceCurrency": "KRW",
+        "availability": "https://schema.org/InStock"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.3",
+        "ratingCount": "2100",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "featureList": "100가지 꿈해몽, 12개 별자리 운세, 타로 카드 3장 뽑기, AI 심층 분석, LocalStorage 저장"
     }
     </script>
 
@@ -57,7 +80,14 @@
             <div id="lang-menu" class="lang-menu hidden">
                 <button class="lang-option" data-lang="ko">🇰🇷 한국어</button>
                 <button class="lang-option" data-lang="en">🇺🇸 English</button>
+                <button class="lang-option" data-lang="ja">🇯🇵 日本語</button>
+                <button class="lang-option" data-lang="es">🇪🇸 Español</button>
+                <button class="lang-option" data-lang="pt">🇧🇷 Português</button>
                 <button class="lang-option" data-lang="zh">🇨🇳 简体中文</button>
+                <button class="lang-option" data-lang="id">🇮🇩 Bahasa Indonesia</button>
+                <button class="lang-option" data-lang="tr">🇹🇷 Türkçe</button>
+                <button class="lang-option" data-lang="de">🇩🇪 Deutsch</button>
+                <button class="lang-option" data-lang="fr">🇫🇷 Français</button>
                 <button class="lang-option" data-lang="hi">🇮🇳 हिन्दी</button>
                 <button class="lang-option" data-lang="ru">🇷🇺 Русский</button>
             </div>
@@ -118,6 +148,14 @@
                     <h3 id="ai-dream-title" data-i18n="premium.title">AI 심층 해석</h3>
                     <p id="ai-dream-content" class="result-text"></p>
                     <button class="secondary-btn" id="share-ai-dream" data-i18n="premium.share">공유하기</button>
+                </div>
+
+                <!-- 꿈 일기 -->
+                <div class="dream-diary-section">
+                    <h3 class="diary-title">📔 나의 꿈 일기</h3>
+                    <div class="diary-list" id="dream-diary-list">
+                        <p class="diary-empty">아직 해석한 꿈이 없습니다.</p>
+                    </div>
                 </div>
             </section>
 

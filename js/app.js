@@ -7,11 +7,13 @@ class DreamFortuneApp {
     }
 
     init() {
+        this.dreamDiary = this.loadFromStorage('dreamDiary', []);
         this.setupI18n();
         this.setupTabs();
         this.setupDreamTab();
         this.setupFortuneTab();
         this.setupTarotTab();
+        this.renderDreamDiary();
         this.registerServiceWorker();
     }
 
@@ -402,6 +404,9 @@ class DreamFortuneApp {
         const resultCard = document.getElementById('dream-result');
         resultCard.classList.remove('hidden');
         resultCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+        // 꿈 일기에 자동 저장
+        this.saveToDiary(keyword, todayLuck);
     }
 
     // 오늘의 특별 메시지 생성
@@ -579,6 +584,10 @@ class DreamFortuneApp {
         const resultCard = document.getElementById('dream-result');
         resultCard.classList.remove('hidden');
         resultCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+        // 꿈 일기에 자동 저장
+        const keywords = results.map(r => r.keyword);
+        this.saveToDiary(keywords.join(', '), avgLuck);
     }
     
     // 복합 키워드 특별 메시지
@@ -969,6 +978,57 @@ class DreamFortuneApp {
         return Math.floor(rand * (max - min + 1)) + min;
     }
 
+    // 꿈 일기 저장
+    saveToDiary(keyword, luck) {
+        const entry = {
+            id: Date.now(),
+            keyword: keyword,
+            luck: luck,
+            date: new Date().toISOString()
+        };
+
+        this.dreamDiary.unshift(entry);
+        if (this.dreamDiary.length > 20) {
+            this.dreamDiary = this.dreamDiary.slice(0, 20);
+        }
+
+        this.saveToStorage('dreamDiary', this.dreamDiary);
+        this.renderDreamDiary();
+    }
+
+    // 꿈 일기 렌더링
+    renderDreamDiary() {
+        const container = document.getElementById('dream-diary-list');
+        if (!container) return;
+
+        if (this.dreamDiary.length === 0) {
+            container.innerHTML = '<p class="diary-empty">아직 해석한 꿈이 없습니다.</p>';
+            return;
+        }
+
+        container.innerHTML = this.dreamDiary.map(entry => {
+            const d = new Date(entry.date);
+            const dateStr = `${d.getMonth() + 1}/${d.getDate()}`;
+            return `
+                <div class="diary-item">
+                    <span class="diary-date">${dateStr}</span>
+                    <div class="diary-content">
+                        <div class="diary-keyword">${entry.keyword}</div>
+                        <div class="diary-luck">행운 ${entry.luck}%</div>
+                    </div>
+                    <button class="diary-delete" onclick="dreamApp.deleteDiary(${entry.id})">✕</button>
+                </div>
+            `;
+        }).join('');
+    }
+
+    // 꿈 일기 삭제
+    deleteDiary(id) {
+        this.dreamDiary = this.dreamDiary.filter(e => e.id !== id);
+        this.saveToStorage('dreamDiary', this.dreamDiary);
+        this.renderDreamDiary();
+    }
+
     // 서비스 워커 등록
     registerServiceWorker() {
         if ('serviceWorker' in navigator) {
@@ -980,6 +1040,7 @@ class DreamFortuneApp {
 }
 
 // 앱 시작
+let dreamApp;
 document.addEventListener('DOMContentLoaded', () => {
-    new DreamFortuneApp();
+    dreamApp = new DreamFortuneApp();
 });
