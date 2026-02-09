@@ -15,6 +15,20 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+}
+
+/* 터치 최적화 */
+button, a, input, [role="button"], [role="link"] {
+    touch-action: manipulation;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+input[type="text"], textarea {
+    -webkit-user-select: text;
+    user-select: text;
 }
 
 :root {
@@ -560,6 +574,7 @@ input[type="text"]::placeholder {
     text-align: left;
     max-height: 400px;
     overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
     padding: 15px;
     background: rgba(155, 89, 182, 0.1);
     border-radius: 12px;
