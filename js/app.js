@@ -332,29 +332,29 @@ class DreamFortuneApp {
 
     showSingleResult(keyword, result, seed) {
         document.getElementById('dream-keyword').textContent = `"${keyword}" 꿈 해석`;
-        
+
         // 동적 해석 생성
         let fullMeaning = '';
-        
+
         if (result.category) {
             fullMeaning += `📂 분류: ${result.category}\n\n`;
         }
-        
+
         // 핵심 의미 + 오늘의 특별 메시지
         if (result.mainMeaning) {
             fullMeaning += `🔮 핵심 의미: ${result.mainMeaning}\n`;
             fullMeaning += `✨ 오늘의 메시지: ${this.getTodayMessage(keyword, seed)}\n\n`;
         }
-        
+
         // 상세 해석 (변형 추가)
         fullMeaning += `📖 상세 해석\n${result.detailed || result.meaning}\n`;
         fullMeaning += `${this.getAdditionalInterpretation(keyword, seed)}\n\n`;
-        
+
         // 상황별 해석 (랜덤하게 2-3개 선택)
         if (result.situations) {
             const situations = Object.entries(result.situations);
             const selectedSituations = this.selectRandom(situations, seed, 2, 3);
-            
+
             fullMeaning += `━━━━━━━━━━━━━━━━━━━━\n`;
             fullMeaning += `🎭 오늘 주목할 상황 해석\n`;
             selectedSituations.forEach(([situation, meaning]) => {
@@ -362,7 +362,7 @@ class DreamFortuneApp {
             });
             fullMeaning += `\n`;
         }
-        
+
         // 오늘의 분야별 운세 (변형 추가)
         fullMeaning += `━━━━━━━━━━━━━━━━━━━━\n`;
         fullMeaning += `📊 오늘의 분야별 운세\n`;
@@ -371,12 +371,12 @@ class DreamFortuneApp {
         fullMeaning += `💪 건강: ${this.enhanceAdvice(result.health, 'health', seed)}\n`;
         fullMeaning += `💼 직장: ${this.enhanceAdvice(result.work, 'work', seed)}\n`;
         fullMeaning += `\n`;
-        
+
         // 시간대별 조언
         fullMeaning += `━━━━━━━━━━━━━━━━━━━━\n`;
         fullMeaning += `⏰ 시간대별 행동 지침\n`;
         fullMeaning += this.getTimeBasedAdvice(seed) + '\n\n';
-        
+
         // 행운 아이템 (동적)
         fullMeaning += `━━━━━━━━━━━━━━━━━━━━\n`;
         fullMeaning += `🍀 오늘의 행운\n`;
@@ -388,22 +388,25 @@ class DreamFortuneApp {
             fullMeaning += `🧭 행운 방향: ${result.luckyDirection}\n`;
         }
         fullMeaning += `🌟 행운의 시간: ${this.getLuckyTime(seed)}\n`;
-        
+
         // 연관 꿈
         if (result.relatedDreams && result.relatedDreams.length > 0) {
             fullMeaning += `\n🔗 함께 해석하면 좋은 키워드: ${result.relatedDreams.join(', ')}`;
         }
-        
+
         // 오늘의 행운 변동 (-5 ~ +10)
         const luckVariation = this.seededRandom(seed, -5, 10);
         const todayLuck = Math.min(100, Math.max(0, result.luck + luckVariation));
-        
+
         document.getElementById('dream-meaning').textContent = fullMeaning;
         document.getElementById('dream-luck').textContent = `🍀 오늘의 행운지수 ${todayLuck}%`;
 
         const resultCard = document.getElementById('dream-result');
         resultCard.classList.remove('hidden');
         resultCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+        // 결과 텍스트 표시 후 파티클 효과 추가
+        this.animateResultDisplay(keyword, seed);
 
         // 꿈 일기에 자동 저장
         this.saveToDiary(keyword, todayLuck);
@@ -1027,6 +1030,38 @@ class DreamFortuneApp {
         this.dreamDiary = this.dreamDiary.filter(e => e.id !== id);
         this.saveToStorage('dreamDiary', this.dreamDiary);
         this.renderDreamDiary();
+    }
+
+    // 결과 표시 애니메이션 및 파티클 효과
+    animateResultDisplay(keyword, seed) {
+        const resultCard = document.getElementById('dream-result');
+        if (!resultCard) return;
+
+        // 이모지 파티클 생성
+        const emojis = ['✨', '🌟', '💫', '🔮', '⭐'];
+        const rect = resultCard.getBoundingClientRect();
+
+        for (let i = 0; i < 8; i++) {
+            setTimeout(() => {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+
+                const startX = rect.left + rect.width / 2;
+                const startY = rect.top + rect.height / 2;
+                const angle = (Math.PI * 2 * i) / 8;
+                const distance = 100 + Math.random() * 100;
+
+                particle.style.left = startX + 'px';
+                particle.style.top = startY + 'px';
+                particle.style.setProperty('--tx', Math.cos(angle) * distance + 'px');
+                particle.style.setProperty('--ty', Math.sin(angle) * distance + 'px');
+
+                document.body.appendChild(particle);
+
+                setTimeout(() => particle.remove(), 1500);
+            }, i * 100);
+        }
     }
 
     // 서비스 워커 등록

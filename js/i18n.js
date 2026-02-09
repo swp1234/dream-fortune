@@ -27,7 +27,8 @@ class I18n {
         const keys = key.split('.');
         let value = this.translations[this.currentLang];
         for (const k of keys) {
-            if (value && value[k]) value = value[k]; else return key;
+            value = value?.[k];
+            if (!value) return key;
         }
         return value;
     }
