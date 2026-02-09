@@ -5,7 +5,7 @@
   "dream": { "question": "Wovon hast du geträumt?", "hint": "Beschreibe deinen Traum frei (Sätze sind ok!)", "placeholder": "z.B. Ich träumte von einer Schlange, die im Meer schwamm", "interpret": "Traum interpretieren", "share": "Teilen", "aiDeep": "Tiefe KI-Analyse", "luckIndex": "Glücksindex" },
   "fortune": { "question": "Was ist dein Sternzeichen?", "love": "💕 Liebe", "money": "💰 Geld", "work": "💼 Karriere", "luck": "🍀 Glück", "luckyColor": "🎨", "luckyNumber": "🔢", "share": "Teilen" },
   "tarot": { "title": "Ziehe heutige Botschaft", "hint": "Tippe auf eine Karte zum Ziehen", "retry": "Nochmal ziehen" },
-  "premium": { "badge": "✨ Tiefe KI-Analyse", "title": "Tiefe KI-Interpretation", "share": "Teilen" },
+  "premium": { "badge": "✨ Tiefe KI-Analyse", "title": "Tiefe KI-Interpretation", "deepAnalysis": "Tiefe Analyse ansehen", "share": "Ergebnisse teilen", "luckyNumber": "Glückszahlen", "luckyColor": "Glücksfarbe", "luckyDirection": "Glücksrichtung" },
   "ads": { "banner": "Werbung", "interstitial": "Anzeige", "close": "Schließen" },
   "rec": { "title": "Probiere auch diese" }
 }

@@ -5,7 +5,7 @@
   "dream": { "question": "¿Qué soñaste?", "hint": "Describe tu sueño libremente (¡puedes escribir oraciones!)", "placeholder": "p. ej., Soñé con una serpiente nadando en el océano", "interpret": "Interpretar Sueño", "share": "Compartir", "aiDeep": "Análisis Profundo de IA", "luckIndex": "Índice de Suerte" },
   "fortune": { "question": "¿Cuál es tu signo zodiacal?", "love": "💕 Amor", "money": "💰 Dinero", "work": "💼 Carrera", "luck": "🍀 Suerte", "luckyColor": "🎨", "luckyNumber": "🔢", "share": "Compartir" },
   "tarot": { "title": "Dibuja el mensaje de hoy", "hint": "Toca una carta para sacar una", "retry": "Sacar de Nuevo" },
-  "premium": { "badge": "✨ Análisis Profundo de IA", "title": "Interpretación Profunda de IA", "share": "Compartir" },
+  "premium": { "badge": "✨ Análisis Profundo de IA", "title": "Interpretación Profunda de IA", "deepAnalysis": "Ver Análisis Profundo", "share": "Compartir Resultados", "luckyNumber": "Números de Suerte", "luckyColor": "Color de Suerte", "luckyDirection": "Dirección de Suerte" },
   "ads": { "banner": "Publicidad", "interstitial": "Anuncio", "close": "Cerrar" },
   "rec": { "title": "Prueba estos también" }
 }

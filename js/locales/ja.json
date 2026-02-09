@@ -39,7 +39,11 @@
   "premium": {
     "badge": "✨ AI深い分析",
     "title": "AI深い解釈",
-    "share": "共有する"
+    "deepAnalysis": "AI深い解釈を見る",
+    "share": "結果を共有する",
+    "luckyNumber": "幸運な数字",
+    "luckyColor": "幸運な色",
+    "luckyDirection": "幸運な方向"
   },
   "ads": {
     "banner": "広告",

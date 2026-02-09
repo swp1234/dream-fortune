@@ -5,7 +5,7 @@
   "dream": { "question": "Com o que você sonhou?", "hint": "Descreva seu sonho livremente (frases OK!)", "placeholder": "Ex: Sonhei com uma cobra nadando no oceano", "interpret": "Interpretar Sonho", "share": "Compartilhar", "aiDeep": "Análise Profunda com IA", "luckIndex": "Índice de Sorte" },
   "fortune": { "question": "Qual é o seu signo do zodíaco?", "love": "💕 Amor", "money": "💰 Dinheiro", "work": "💼 Carreira", "luck": "🍀 Sorte", "luckyColor": "🎨", "luckyNumber": "🔢", "share": "Compartilhar" },
   "tarot": { "title": "Puxe a mensagem de hoje", "hint": "Toque em uma carta para puxar", "retry": "Puxar Novamente" },
-  "premium": { "badge": "✨ Análise Profunda com IA", "title": "Interpretação Profunda com IA", "share": "Compartilhar" },
+  "premium": { "badge": "✨ Análise Profunda com IA", "title": "Interpretação Profunda com IA", "deepAnalysis": "Ver Análise Profunda", "share": "Compartilhar Resultados", "luckyNumber": "Números Sorte", "luckyColor": "Cor de Sorte", "luckyDirection": "Direção de Sorte" },
   "ads": { "banner": "Publicidade", "interstitial": "Anúncio", "close": "Fechar" },
   "rec": { "title": "Experimente também" }
 }

@@ -5,7 +5,7 @@
   "dream": { "question": "Neyi hayal ettin?", "hint": "Rüyanı özgürce tanımla (cümle tamam!)", "placeholder": "Örn: Yılanın okyanusta yüzdüğünü hayal ettim", "interpret": "Rüyayı Yorumla", "share": "Paylaş", "aiDeep": "YZ Derinlemesine Analizi", "luckIndex": "Talih İndeksi" },
   "fortune": { "question": "Burç işareti nedir?", "love": "💕 Aşk", "money": "💰 Para", "work": "💼 Kariyer", "luck": "🍀 Talih", "luckyColor": "🎨", "luckyNumber": "🔢", "share": "Paylaş" },
   "tarot": { "title": "Bugünün mesajını çek", "hint": "Kart çekmek için bir karta dokunun", "retry": "Tekrar Çek" },
-  "premium": { "badge": "✨ YZ Derinlemesine Analizi", "title": "YZ Derinlemesine Yorumlama", "share": "Paylaş" },
+  "premium": { "badge": "✨ YZ Derinlemesine Analizi", "title": "YZ Derinlemesine Yorumlama", "deepAnalysis": "Derinlemesine Analizi Gör", "share": "Sonuçları Paylaş", "luckyNumber": "Şanslı Sayılar", "luckyColor": "Şanslı Renk", "luckyDirection": "Şanslı Yön" },
   "ads": { "banner": "Reklam", "interstitial": "Reklam", "close": "Kapat" },
   "rec": { "title": "Bunları da dene" }
 }

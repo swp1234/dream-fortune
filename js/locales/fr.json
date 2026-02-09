@@ -5,7 +5,7 @@
   "dream": { "question": "Qu'as-tu rêvé?", "hint": "Décris ton rêve librement (les phrases vont!)", "placeholder": "Par exemple, J'ai rêvé d'un serpent nageant dans l'océan", "interpret": "Interpréter le Rêve", "share": "Partager", "aiDeep": "Analyse Profonde IA", "luckIndex": "Indice de Chance" },
   "fortune": { "question": "Quel est ton signe du zodiaque?", "love": "💕 Amour", "money": "💰 Argent", "work": "💼 Carrière", "luck": "🍀 Chance", "luckyColor": "🎨", "luckyNumber": "🔢", "share": "Partager" },
   "tarot": { "title": "Tire le message d'aujourd'hui", "hint": "Tape une carte pour en tirer une", "retry": "Tirer à Nouveau" },
-  "premium": { "badge": "✨ Analyse Profonde IA", "title": "Interprétation Profonde IA", "share": "Partager" },
+  "premium": { "badge": "✨ Analyse Profonde IA", "title": "Interprétation Profonde IA", "deepAnalysis": "Voir l'Analyse Profonde", "share": "Partager les Résultats", "luckyNumber": "Nombres de Chance", "luckyColor": "Couleur de Chance", "luckyDirection": "Direction de Chance" },
   "ads": { "banner": "Publicité", "interstitial": "Annonce", "close": "Fermer" },
   "rec": { "title": "Essaie aussi" }
 }

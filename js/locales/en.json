@@ -5,7 +5,7 @@
   "dream": { "question": "What did you dream about?", "hint": "Describe your dream freely (sentences OK!)", "placeholder": "e.g., I dreamed of a snake swimming in the ocean", "interpret": "Interpret Dream", "share": "Share", "aiDeep": "AI Deep Analysis", "luckIndex": "Luck Index" },
   "fortune": { "question": "What's your zodiac sign?", "love": "💕 Love", "money": "💰 Money", "work": "💼 Career", "luck": "🍀 Luck", "luckyColor": "🎨", "luckyNumber": "🔢", "share": "Share" },
   "tarot": { "title": "Draw today's message", "hint": "Tap a card to draw one", "retry": "Draw Again" },
-  "premium": { "badge": "✨ AI Deep Analysis", "title": "AI Deep Interpretation", "share": "Share" },
+  "premium": { "badge": "✨ AI Deep Analysis", "title": "AI Deep Interpretation", "deepAnalysis": "View AI Deep Reading", "share": "Share Results", "luckyNumber": "Lucky Numbers", "luckyColor": "Lucky Color", "luckyDirection": "Lucky Direction" },
   "ads": { "banner": "Advertisement", "interstitial": "Ad", "close": "Close" },
   "rec": { "title": "Try these too" }
 }
