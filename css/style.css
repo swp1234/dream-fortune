@@ -302,23 +302,24 @@ input[type="text"]::placeholder {
 
 /* 프리미엄 버튼 (AI 심층 해석) */
 .premium-btn {
-    padding: 14px 25px;
+    padding: 16px 28px;
     border: none;
-    border-radius: 25px;
-    background: linear-gradient(135deg, #f39c12, #e74c3c);
-    color: white;
-    font-size: 0.95rem;
-    font-weight: 600;
+    border-radius: 28px;
+    background: linear-gradient(135deg, #FFD700, #FFA500);
+    color: #1a1a2e;
+    font-size: 0.98rem;
+    font-weight: 700;
     cursor: pointer;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     display: flex;
     align-items: center;
-    gap: 8px;
+    justify-content: center;
+    gap: 10px;
     position: relative;
     overflow: hidden;
-    box-shadow: 0 4px 15px rgba(243, 156, 18, 0.4);
-    min-height: 44px;
-    justify-content: center;
+    box-shadow: 0 6px 20px rgba(255, 215, 0, 0.5);
+    min-height: 56px;
+    letter-spacing: 0.5px;
 }
 
 .premium-btn::before {
@@ -328,7 +329,7 @@ input[type="text"]::placeholder {
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
     animation: shimmer 2s infinite;
 }
 
@@ -337,38 +338,178 @@ input[type="text"]::placeholder {
     100% { left: 100%; }
 }
 
+.premium-btn.pulse-glow {
+    animation: pulseGlow 2s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+    0%, 100% {
+        box-shadow: 0 6px 20px rgba(255, 215, 0, 0.5);
+        transform: scale(1);
+    }
+    50% {
+        box-shadow: 0 8px 30px rgba(255, 215, 0, 0.8);
+        transform: scale(1.02);
+    }
+}
+
 .premium-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(243, 156, 18, 0.5);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 35px rgba(255, 215, 0, 0.7);
+    animation: none;
 }
 
 .premium-icon {
-    font-size: 1.1rem;
-}
-
-.ad-tag {
-    background: rgba(0, 0, 0, 0.3);
-    padding: 2px 6px;
-    border-radius: 4px;
-    font-size: 0.7rem;
-    font-weight: 700;
+    font-size: 1.2rem;
 }
 
 /* 프리미엄 결과 카드 */
 .premium-result {
-    border: 2px solid #f39c12;
-    background: linear-gradient(135deg, rgba(243, 156, 18, 0.1), rgba(231, 76, 60, 0.1));
+    border: 2px solid #FFD700;
+    background: linear-gradient(135deg, rgba(255, 215, 0, 0.12), rgba(255, 165, 0, 0.08));
 }
 
 .premium-badge {
     display: inline-block;
-    background: linear-gradient(135deg, #f39c12, #e74c3c);
-    color: white;
-    padding: 8px 20px;
-    border-radius: 20px;
-    font-size: 0.9rem;
+    background: linear-gradient(135deg, #FFD700, #FFA500);
+    color: #1a1a2e;
+    padding: 10px 24px;
+    border-radius: 24px;
+    font-size: 0.95rem;
     font-weight: 700;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+}
+
+/* 프리미엄 섹션 */
+.premium-section {
+    margin-bottom: 20px;
+    padding: 18px;
+    background: rgba(255, 215, 0, 0.08);
+    border: 1px solid rgba(255, 215, 0, 0.2);
+    border-radius: 16px;
+    text-align: left;
+}
+
+.premium-section-title {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #FFD700;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.premium-content {
+    color: var(--text);
+    line-height: 1.7;
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+/* 행운 지수 바 */
+.luck-meter {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.luck-bar {
+    flex: 1;
+    height: 32px;
+    background: rgba(255, 215, 0, 0.15);
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 215, 0, 0.3);
+}
+
+.luck-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #FFD700, #FFA500);
+    width: 75%;
+    border-radius: 16px;
+    transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.luck-percentage {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #FFD700;
+    min-width: 50px;
+    text-align: right;
+}
+
+/* 추천 행동 목록 */
+.actions-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.action-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 12px;
+    background: rgba(155, 89, 182, 0.1);
+    border-radius: 12px;
+    border-left: 3px solid var(--primary);
+}
+
+.action-icon {
+    font-size: 1.3rem;
+    flex-shrink: 0;
+    line-height: 1.2;
+}
+
+.action-text {
+    color: var(--text);
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+/* 행운 아이템 카드 */
+.lucky-items-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 12px;
+}
+
+.lucky-card {
+    padding: 16px;
+    background: rgba(155, 89, 182, 0.15);
+    border: 1px solid rgba(255, 215, 0, 0.3);
+    border-radius: 14px;
+    text-align: center;
+    transition: all 0.3s;
+}
+
+.lucky-card:hover {
+    background: rgba(155, 89, 182, 0.25);
+    border-color: var(--primary);
+    transform: translateY(-4px);
+    box-shadow: 0 6px 20px rgba(155, 89, 182, 0.3);
+}
+
+.lucky-card-emoji {
+    font-size: 2rem;
+    margin-bottom: 8px;
+}
+
+.lucky-card-label {
+    font-size: 0.75rem;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 6px;
+}
+
+.lucky-card-value {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #FFD700;
 }
 
 /* 결과 카드 */

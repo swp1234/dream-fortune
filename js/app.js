@@ -116,11 +116,11 @@ class DreamFortuneApp {
     showAIDreamInterpretation() {
         const keyword = document.getElementById('dream-input').value.trim();
         if (!keyword) return;
-        
+
         // 광고 표시 (AdSense 연동 전 시뮬레이션)
         this.showInterstitialAd(() => {
             // 광고 완료 후 AI 해석 표시
-            this.generateAIDreamContent(keyword);
+            this.generatePremiumAnalysis(keyword);
         });
     }
     
@@ -154,11 +154,12 @@ class DreamFortuneApp {
         }, 1000);
     }
     
-    // AI 심층 해석 생성
-    generateAIDreamContent(keyword) {
-        // TODO: 실제 AI API 연동 시 여기에 구현
-        // 현재는 상세 시뮬레이션 데이터 제공
-        
+    // 프리미엄 분석 생성 (강화된 UI)
+    generatePremiumAnalysis(keyword) {
+        const today = new Date();
+        const seed = this.hashCode(today.toDateString() + keyword);
+
+        // 키워드 찾기
         const foundKeywords = [];
         for (const key in dreamData) {
             if (key === 'default') continue;
@@ -166,9 +167,8 @@ class DreamFortuneApp {
                 foundKeywords.push(key);
             }
         }
-        
+
         if (foundKeywords.length === 0) {
-            // 단어 분리 시도
             const words = keyword.split(/[\s,.:;!?]+/).filter(w => w.length > 1);
             for (const word of words) {
                 for (const key in dreamData) {
@@ -179,40 +179,101 @@ class DreamFortuneApp {
                 }
             }
         }
-        
-        let aiContent = `🤖 AI 심층 분석 결과\n\n`;
-        aiContent += `📝 입력: "${keyword}"\n\n`;
-        
+
+        // 제목
+        document.getElementById('ai-dream-title').textContent = `"${keyword}" AI 심층 해몽`;
+
+        // 심리학적 의미
+        const psychoMeaning = foundKeywords.length > 0
+            ? this.generatePsychoAnalysis(foundKeywords)
+            : '이 꿈은 당신의 개인적인 무의식의 메시지를 담고 있습니다. 꿈에서 느낀 감정이 핵심입니다. 그 감정이 현재 삶과 어떻게 연결되는지 생각해보세요.';
+        document.getElementById('ai-psychology-meaning').textContent = psychoMeaning;
+
+        // 행운 지수 계산
+        let luckIndex = 60;
         if (foundKeywords.length > 0) {
-            aiContent += `🔍 분석된 키워드: ${foundKeywords.join(', ')}\n\n`;
-            aiContent += `━━━━━━━━━━━━━━━━━━━━\n`;
-            aiContent += `🧠 심층 심리 분석\n\n`;
-            
-            // 심리 분석 생성
-            const psychoAnalysis = this.generatePsychoAnalysis(foundKeywords);
-            aiContent += psychoAnalysis + '\n\n';
-            
-            aiContent += `━━━━━━━━━━━━━━━━━━━━\n`;
-            aiContent += `🎯 구체적 행동 제안\n\n`;
-            aiContent += this.generateActionAdvice(foundKeywords) + '\n\n';
-            
-            aiContent += `━━━━━━━━━━━━━━━━━━━━\n`;
-            aiContent += `📅 시기별 조언\n\n`;
-            aiContent += `• 오늘: 중요한 결정을 내리기 전 충분히 생각하세요.\n`;
-            aiContent += `• 이번 주: ${this.getWeeklyAdvice(foundKeywords)}\n`;
-            aiContent += `• 이번 달: ${this.getMonthlyAdvice(foundKeywords)}\n`;
-        } else {
-            aiContent += `이 꿈은 매우 개인적인 상징을 담고 있습니다.\n\n`;
-            aiContent += `꿈에서 느꼈던 감정을 떠올려보세요. 그 감정이 현재 삶에서 어떤 상황과 연결되는지 생각해보면 의미를 찾을 수 있습니다.\n\n`;
-            aiContent += `무의식은 종종 우리가 의식적으로 외면하는 것들을 꿈을 통해 보여줍니다.`;
+            const avgLuck = foundKeywords.reduce((sum, k) => sum + (dreamData[k]?.luck || 60), 0) / foundKeywords.length;
+            luckIndex = Math.min(100, Math.max(20, avgLuck + this.seededRandom(seed, -10, 15)));
         }
-        
-        document.getElementById('ai-dream-title').textContent = `"${keyword}" AI 심층 분석`;
-        document.getElementById('ai-dream-content').textContent = aiContent;
-        
+
+        // 행운 바 업데이트
+        document.getElementById('luck-fill').style.width = luckIndex + '%';
+        document.getElementById('luck-percentage').textContent = luckIndex + '%';
+
+        // 추천 행동 3가지
+        const actions = this.generateRecommendedActions(foundKeywords, luckIndex, seed);
+        document.getElementById('action-1').textContent = actions[0];
+        document.getElementById('action-2').textContent = actions[1];
+        document.getElementById('action-3').textContent = actions[2];
+
+        // 행운 아이템
+        const luckyNumbers = this.getTodayLuckyNumbers(foundKeywords.length > 0 ? dreamData[foundKeywords[0]]?.luckyNumber : 7, seed);
+        const luckyColor = this.getTodayLuckyColorName(foundKeywords.length > 0 ? dreamData[foundKeywords[0]]?.luckyColor : '금색', seed);
+        const luckyDirection = this.getTodayLuckyDirection(seed);
+
+        document.getElementById('lucky-numbers').textContent = luckyNumbers.join(', ');
+        document.getElementById('lucky-color-name').textContent = luckyColor;
+        document.getElementById('lucky-direction').textContent = luckyDirection;
+
+        // 결과 표시
         const aiResult = document.getElementById('ai-dream-result');
         aiResult.classList.remove('hidden');
         aiResult.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+        // 애니메이션
+        aiResult.style.animation = 'none';
+        setTimeout(() => aiResult.style.animation = 'slideUp 0.5s cubic-bezier(0.4, 0, 0.2, 1)', 10);
+    }
+
+    // 추천 행동 생성
+    generateRecommendedActions(keywords, luck, seed) {
+        const actions = [];
+
+        const templates = [
+            [
+                "지금 시작한 일이 좋은 결과를 가져올 거예요. 자신감을 가지고 나아가세요.",
+                "주변 사람들과의 소통을 소중히 하세요. 중요한 대화가 좋은 기회를 만들 수 있습니다.",
+                "이 시기는 새로운 시도에 좋은 때입니다. 미루던 일을 시작해보세요."
+            ],
+            [
+                "신중함과 열정의 균형을 맞추세요. 서두르지 않아도 됩니다.",
+                "자신의 직관을 믿고 행동하되, 작은 결정부터 천천히 진행하세요.",
+                "현재 상황을 객관적으로 관찰하고 다음 스텝을 준비하세요."
+            ],
+            [
+                "내면의 목소리에 귀 기울이세요. 지금은 성찰의 시간입니다.",
+                "자신을 돌보는 것이 가장 중요합니다. 명상이나 충분한 수면을 취하세요.",
+                "이 시기는 준비의 시간입니다. 기초를 튼튼히 하세요."
+            ]
+        ];
+
+        let templateSet;
+        if (luck >= 75) {
+            templateSet = templates[0];
+        } else if (luck >= 50) {
+            templateSet = templates[1];
+        } else {
+            templateSet = templates[2];
+        }
+
+        // 랜덤하게 3개 선택 (다만 모두 다른 것)
+        const shuffled = templateSet.sort(() => 0.5 - Math.sin(seed++));
+        return shuffled.slice(0, 3);
+    }
+
+    // 행운의 색상 이름 반환
+    getTodayLuckyColorName(baseColor, seed) {
+        const colors = ["금색", "은색", "하늘색", "연두색", "코랄", "라벤더", "민트"];
+        if (baseColor) {
+            return baseColor + ' & ' + colors[Math.abs(seed) % colors.length];
+        }
+        return colors[Math.abs(seed) % colors.length];
+    }
+
+    // 행운의 방향 반환
+    getTodayLuckyDirection(seed) {
+        const directions = ["동쪽", "서쪽", "남쪽", "북쪽", "동북쪽", "남동쪽"];
+        return directions[Math.abs(seed) % directions.length];
     }
     
     generatePsychoAnalysis(keywords) {
@@ -270,14 +331,24 @@ class DreamFortuneApp {
     
     shareAIDream() {
         const title = document.getElementById('ai-dream-title').textContent;
-        const content = document.getElementById('ai-dream-content').textContent;
-        const text = `🤖 ${title}\n\n${content.substring(0, 200)}...\n\n꿈해몽 & 운세 앱에서 AI 심층 분석을 받아보세요!`;
+        const psychology = document.getElementById('ai-psychology-meaning').textContent.substring(0, 80);
+        const luckIndex = document.getElementById('luck-percentage').textContent;
+        const luckyNumber = document.getElementById('lucky-numbers').textContent;
+        const luckyColor = document.getElementById('lucky-color-name').textContent;
+
+        const text = `✨ ${title}\n\n🌟 행운 지수: ${luckIndex}\n🔢 행운의 숫자: ${luckyNumber}\n🎨 행운의 색상: ${luckyColor}\n\n🧠 ${psychology}...\n\n꿈해몽 & 운세 앱에서 AI 심층 분석을 받아보세요! 🔮`;
+        const url = 'https://dopabrain.com/dream-fortune/';
 
         if (navigator.share) {
-            navigator.share({ title: 'AI 심층 꿈해몽', text });
+            navigator.share({
+                title: '내 꿈해몽 결과 ✨',
+                text: text,
+                url: url
+            }).catch(() => {});
         } else {
-            navigator.clipboard.writeText(text);
-            alert('결과가 클립보드에 복사되었습니다!');
+            navigator.clipboard.writeText(text + '\n\n' + url).then(() => {
+                alert('결과가 클립보드에 복사되었습니다! 친구에게 공유해보세요 ✨');
+            }).catch(() => {});
         }
     }
 
