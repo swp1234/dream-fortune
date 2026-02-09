@@ -1,14 +1,27 @@
 // 꿈해몽 & 운세 - Service Worker
 const CACHE_NAME = 'dream-fortune-v1';
 const urlsToCache = [
-    '/',
-    '/index.html',
-    '/css/style.css',
-    '/js/app.js',
-    '/js/data.js',
-    '/manifest.json',
-    '/icon-192.svg',
-    '/icon-512.svg'
+    './',
+    './index.html',
+    './css/style.css',
+    './js/app.js',
+    './js/data.js',
+    './js/i18n.js',
+    './manifest.json',
+    './icon-192.svg',
+    './icon-512.svg',
+    './js/locales/ko.json',
+    './js/locales/en.json',
+    './js/locales/zh.json',
+    './js/locales/hi.json',
+    './js/locales/ru.json',
+    './js/locales/ja.json',
+    './js/locales/es.json',
+    './js/locales/pt.json',
+    './js/locales/id.json',
+    './js/locales/tr.json',
+    './js/locales/de.json',
+    './js/locales/fr.json'
 ];
 
 // 설치 시 캐시
@@ -17,13 +30,27 @@ self.addEventListener('install', (event) => {
         caches.open(CACHE_NAME)
             .then((cache) => cache.addAll(urlsToCache))
     );
+    self.skipWaiting();
 });
 
 // 요청 시 캐시 우선
 self.addEventListener('fetch', (event) => {
     event.respondWith(
         caches.match(event.request)
-            .then((response) => response || fetch(event.request))
+            .then((response) => {
+                if (response) {
+                    // Cache hit - return cached version, but also fetch update
+                    fetch(event.request).then(fetchResponse => {
+                        if (fetchResponse && fetchResponse.status === 200) {
+                            caches.open(CACHE_NAME).then(cache => {
+                                cache.put(event.request, fetchResponse);
+                            });
+                        }
+                    }).catch(() => {});
+                    return response;
+                }
+                return fetch(event.request);
+            })
     );
 });
 
@@ -38,6 +65,6 @@ self.addEventListener('activate', (event) => {
                     }
                 })
             );
-        })
+        }).then(() => self.clients.claim())
     );
 });
