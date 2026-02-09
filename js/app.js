@@ -17,47 +17,80 @@ class DreamFortuneApp {
         this.registerServiceWorker();
     }
 
-    // i18n initialization
+    // i18n initialization with error handling
     setupI18n() {
         (async () => {
-            await i18n.loadTranslations(i18n.getCurrentLanguage());
-            i18n.updateUI();
+            try {
+                await i18n.loadTranslations(i18n.getCurrentLanguage());
+                i18n.updateUI();
+            } catch (e) {
+                console.warn('i18n load failed:', e.message);
+            }
 
             const langToggle = document.getElementById('lang-toggle');
             const langMenu = document.getElementById('lang-menu');
             const langOptions = document.querySelectorAll('.lang-option');
 
-            document.querySelector(`[data-lang="${i18n.getCurrentLanguage()}"]`)?.classList.add('active');
+            const langOptionActive = document.querySelector(`[data-lang="${i18n.getCurrentLanguage()}"]`);
+            if (langOptionActive) langOptionActive.classList.add('active');
 
-            langToggle?.addEventListener('click', () => langMenu.classList.toggle('hidden'));
+            if (langToggle && langMenu) {
+                langToggle.addEventListener('click', () => langMenu.classList.toggle('hidden'));
+            }
+
             document.addEventListener('click', (e) => {
-                if (!e.target.closest('.language-selector')) langMenu?.classList.add('hidden');
+                if (langMenu && !e.target.closest('.language-selector')) langMenu.classList.add('hidden');
             });
+
             langOptions.forEach(opt => {
                 opt.addEventListener('click', async () => {
-                    await i18n.setLanguage(opt.getAttribute('data-lang'));
-                    langOptions.forEach(o => o.classList.remove('active'));
-                    opt.classList.add('active');
-                    langMenu.classList.add('hidden');
+                    const lang = opt.getAttribute('data-lang');
+                    if (lang) {
+                        try {
+                            await i18n.setLanguage(lang);
+                        } catch (e) {
+                            console.warn('Language change failed:', e.message);
+                        }
+                        langOptions.forEach(o => o.classList.remove('active'));
+                        opt.classList.add('active');
+                        if (langMenu) langMenu.classList.add('hidden');
+                    }
                 });
             });
         })();
     }
 
-    // LocalStorage 관리
+    // LocalStorage 관리 with enhanced error handling
     loadFromStorage(key, defaultValue) {
         try {
-            const data = localStorage.getItem(`dreamfortune_${key}`);
-            return data ? JSON.parse(data) : defaultValue;
+            if (typeof localStorage === 'undefined') return defaultValue;
+
+            const storageKey = `dreamfortune_${key}`;
+            const data = localStorage.getItem(storageKey);
+            if (!data) return defaultValue;
+
+            try {
+                return JSON.parse(data);
+            } catch (parseErr) {
+                console.warn(`Storage data corrupted for ${storageKey}, using default:`, parseErr.message);
+                localStorage.removeItem(storageKey);
+                return defaultValue;
+            }
         } catch (e) {
+            console.warn('Storage access error:', e.message);
             return defaultValue;
         }
     }
 
     saveToStorage(key, value) {
         try {
-            localStorage.setItem(`dreamfortune_${key}`, JSON.stringify(value));
-        } catch (e) {}
+            if (typeof localStorage === 'undefined') return;
+
+            const storageKey = `dreamfortune_${key}`;
+            localStorage.setItem(storageKey, JSON.stringify(value));
+        } catch (e) {
+            console.warn('Could not save to storage:', e.message);
+        }
     }
 
     // 탭 전환
