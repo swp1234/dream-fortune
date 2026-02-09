@@ -72,6 +72,14 @@ class DreamFortuneApp {
                             langOptions.forEach(o => o.classList.remove('active'));
                             opt.classList.add('active');
                             if (langMenu) langMenu.classList.add('hidden');
+
+                            // GA4: 언어 변경 추적
+                            if (typeof gtag === 'function') {
+                                gtag('event', 'language_change', {
+                                    language: lang,
+                                    app_name: 'dream-fortune'
+                                });
+                            }
                         }
                     });
                 });
