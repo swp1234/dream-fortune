@@ -2,94 +2,102 @@
 
 class DreamFortuneApp {
     constructor() {
+        // 저장소 관리자 초기화
+        this.storage = new StorageManager('dreamfortune');
         this.selectedZodiac = this.loadFromStorage('selectedZodiac', null);
         this.init();
     }
 
     init() {
-        this.dreamDiary = this.loadFromStorage('dreamDiary', []);
-        this.setupI18n();
-        this.setupTabs();
-        this.setupDreamTab();
-        this.setupFortuneTab();
-        this.setupTarotTab();
-        this.renderDreamDiary();
-        this.registerServiceWorker();
+        try {
+            this.dreamDiary = this.loadFromStorage('dreamDiary', []);
+            this.setupI18n();
+            this.setupTabs();
+            this.setupDreamTab();
+            this.setupFortuneTab();
+            this.setupTarotTab();
+            this.renderDreamDiary();
+            this.registerServiceWorker();
+        } catch (e) {
+            window.errorHandler?.handleError(e, 'App Initialization');
+        }
     }
 
-    // i18n initialization with error handling
+    // i18n initialization with enhanced error handling
     setupI18n() {
         (async () => {
             try {
-                await i18n.loadTranslations(i18n.getCurrentLanguage());
-                i18n.updateUI();
+                // 기존 i18n 사용 또는 폴백
+                if (window.i18n && typeof window.i18n.loadTranslations === 'function') {
+                    await window.i18n.loadTranslations(window.i18n.getCurrentLanguage());
+                    window.i18n.updateUI();
+                } else if (window.safeI18n) {
+                    await window.safeI18n.init();
+                }
             } catch (e) {
                 console.warn('i18n load failed:', e.message);
+                if (window.safeI18n) window.safeI18n.enableFallback();
             }
 
-            const langToggle = document.getElementById('lang-toggle');
-            const langMenu = document.getElementById('lang-menu');
-            const langOptions = document.querySelectorAll('.lang-option');
+            try {
+                const langToggle = document.getElementById('lang-toggle');
+                const langMenu = document.getElementById('lang-menu');
+                const langOptions = document.querySelectorAll('.lang-option');
 
-            const langOptionActive = document.querySelector(`[data-lang="${i18n.getCurrentLanguage()}"]`);
-            if (langOptionActive) langOptionActive.classList.add('active');
+                const currentLang = window.i18n?.getCurrentLanguage?.() || 'en';
+                const langOptionActive = document.querySelector(`[data-lang="${currentLang}"]`);
+                if (langOptionActive) langOptionActive.classList.add('active');
 
-            if (langToggle && langMenu) {
-                langToggle.addEventListener('click', () => langMenu.classList.toggle('hidden'));
-            }
+                if (langToggle && langMenu) {
+                    langToggle.addEventListener('click', () => langMenu.classList.toggle('hidden'));
+                }
 
-            document.addEventListener('click', (e) => {
-                if (langMenu && !e.target.closest('.language-selector')) langMenu.classList.add('hidden');
-            });
-
-            langOptions.forEach(opt => {
-                opt.addEventListener('click', async () => {
-                    const lang = opt.getAttribute('data-lang');
-                    if (lang) {
-                        try {
-                            await i18n.setLanguage(lang);
-                        } catch (e) {
-                            console.warn('Language change failed:', e.message);
-                        }
-                        langOptions.forEach(o => o.classList.remove('active'));
-                        opt.classList.add('active');
-                        if (langMenu) langMenu.classList.add('hidden');
-                    }
+                document.addEventListener('click', (e) => {
+                    if (langMenu && !e.target.closest?.('.language-selector')) langMenu.classList.add('hidden');
                 });
-            });
+
+                langOptions.forEach(opt => {
+                    opt.addEventListener('click', async () => {
+                        const lang = opt.getAttribute('data-lang');
+                        if (lang) {
+                            try {
+                                if (window.i18n?.setLanguage) {
+                                    await window.i18n.setLanguage(lang);
+                                } else if (window.safeI18n?.setLanguage) {
+                                    await window.safeI18n.setLanguage(lang);
+                                }
+                            } catch (e) {
+                                window.errorHandler?.handleError(e, 'Language Change');
+                            }
+                            langOptions.forEach(o => o.classList.remove('active'));
+                            opt.classList.add('active');
+                            if (langMenu) langMenu.classList.add('hidden');
+                        }
+                    });
+                });
+            } catch (e) {
+                console.warn('Language UI setup failed:', e.message);
+            }
         })();
     }
 
-    // LocalStorage 관리 with enhanced error handling
+    // LocalStorage 관리 - StorageManager 사용
     loadFromStorage(key, defaultValue) {
         try {
-            if (typeof localStorage === 'undefined') return defaultValue;
-
-            const storageKey = `dreamfortune_${key}`;
-            const data = localStorage.getItem(storageKey);
-            if (!data) return defaultValue;
-
-            try {
-                return JSON.parse(data);
-            } catch (parseErr) {
-                console.warn(`Storage data corrupted for ${storageKey}, using default:`, parseErr.message);
-                localStorage.removeItem(storageKey);
-                return defaultValue;
-            }
+            const value = this.storage.getItem(key);
+            return value !== null && value !== undefined ? value : defaultValue;
         } catch (e) {
-            console.warn('Storage access error:', e.message);
+            console.warn(`Failed to load ${key} from storage:`, e.message);
             return defaultValue;
         }
     }
 
     saveToStorage(key, value) {
         try {
-            if (typeof localStorage === 'undefined') return;
-
-            const storageKey = `dreamfortune_${key}`;
-            localStorage.setItem(storageKey, JSON.stringify(value));
+            this.storage.setItem(key, value);
         } catch (e) {
-            console.warn('Could not save to storage:', e.message);
+            console.warn(`Failed to save ${key} to storage:`, e.message);
+            // Storage 실패해도 메모리에는 저장되어 있음
         }
     }
 
