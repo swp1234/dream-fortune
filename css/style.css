@@ -64,7 +64,7 @@ body {
     height: 100%;
     pointer-events: none;
     z-index: 0;
-    background: 
+    background:
         radial-gradient(1px 1px at 20px 30px, white, transparent),
         radial-gradient(1px 1px at 40px 70px, rgba(255,255,255,0.8), transparent),
         radial-gradient(1px 1px at 50px 160px, rgba(255,255,255,0.6), transparent),
@@ -77,6 +77,8 @@ body {
         radial-gradient(2px 2px at 320px 140px, white, transparent);
     background-size: 350px 200px;
     animation: twinkle 4s ease-in-out infinite;
+    will-change: opacity;
+    contain: layout style paint;
 }
 
 @keyframes twinkle {
@@ -354,6 +356,7 @@ input[type="text"]::placeholder {
 
 .premium-btn.pulse-glow {
     animation: pulseGlow 2s ease-in-out infinite;
+    will-change: box-shadow, transform;
 }
 
 @keyframes pulseGlow {
