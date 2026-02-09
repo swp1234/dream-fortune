@@ -78,7 +78,48 @@ class DreamFortuneApp {
             } catch (e) {
                 console.warn('Language UI setup failed:', e.message);
             }
+
+            // Initialize Theme Toggle
+            this.initTheme();
         })();
+    }
+
+    // Theme Toggle Function
+    initTheme() {
+        const themeToggle = document.getElementById('theme-toggle');
+        const html = document.documentElement;
+
+        // Load theme preference from localStorage
+        const savedTheme = this.loadFromStorage('app-theme', 'dark');
+        html.setAttribute('data-theme', savedTheme);
+        this.updateThemeButton(savedTheme);
+
+        if (themeToggle) {
+            themeToggle.addEventListener('click', () => {
+                const currentTheme = html.getAttribute('data-theme') || 'dark';
+                const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+
+                html.setAttribute('data-theme', newTheme);
+                this.saveToStorage('app-theme', newTheme);
+                this.updateThemeButton(newTheme);
+
+                // GA4: 테마 변경 추적
+                if (typeof gtag === 'function') {
+                    gtag('event', 'theme_change', {
+                        theme: newTheme,
+                        app_name: 'dream-fortune'
+                    });
+                }
+            });
+        }
+    }
+
+    updateThemeButton(theme) {
+        const themeToggle = document.getElementById('theme-toggle');
+        if (themeToggle) {
+            themeToggle.textContent = theme === 'dark' ? '☀️' : '🌙';
+            themeToggle.title = theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode';
+        }
     }
 
     // LocalStorage 관리 - StorageManager 사용
@@ -132,6 +173,13 @@ class DreamFortuneApp {
                 input.style.borderColor = '#e74c3c';
                 setTimeout(() => input.style.borderColor = '', 1000);
                 return;
+            }
+            // GA4: 테스트 시작
+            if (typeof gtag === 'function') {
+                gtag('event', 'test_start', {
+                    app_name: 'dream-fortune',
+                    content_type: 'dream_interpretation'
+                });
             }
             this.interpretDream(keyword);
         });
@@ -444,6 +492,15 @@ class DreamFortuneApp {
 
     showSingleResult(keyword, result, seed) {
         document.getElementById('dream-keyword').textContent = `"${keyword}" 꿈 해석`;
+
+        // GA4: 테스트 완료
+        if (typeof gtag === 'function') {
+            gtag('event', 'test_complete', {
+                app_name: 'dream-fortune',
+                result_type: keyword,
+                luck_index: result.luck || 50
+            });
+        }
 
         // 동적 해석 생성
         let fullMeaning = '';
@@ -894,6 +951,15 @@ class DreamFortuneApp {
         const meaning = document.getElementById('dream-meaning').textContent;
         const url = 'https://dopabrain.com/dream-fortune/';
         const text = `🌙 나의 꿈해몽 결과\n\n${keyword}\n${meaning}\n\n너도 어젯밤 꿈 해석해봐! 👇\n${url}`;
+
+        // GA4: 결과 공유
+        if (typeof gtag === 'function') {
+            gtag('event', 'share', {
+                method: navigator.share ? 'native' : 'clipboard',
+                content_type: 'test_result',
+                app_name: 'dream-fortune'
+            });
+        }
 
         if (navigator.share) {
             navigator.share({ title: '나의 꿈해몽 결과 🔮', text, url }).catch(() => {});

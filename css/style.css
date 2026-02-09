@@ -11,6 +11,11 @@
 .lang-option:hover { background: rgba(155,89,182,0.2); }
 .lang-option.active { background: rgba(155,89,182,0.3); font-weight: 600; }
 
+/* Theme Toggle */
+.theme-toggle { position: fixed; top: 20px; right: 76px; width: 44px; height: 44px; border-radius: 50%; background: rgba(155,89,182,0.3); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border: 1px solid rgba(155,89,182,0.4); color: var(--text); font-size: 20px; cursor: pointer; display: flex; align-items: center; justify-content: center; z-index: 1000; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+.theme-toggle:hover { background: rgba(155,89,182,0.5); transform: scale(1.05); }
+.theme-toggle:active { transform: scale(0.95); }
+
 * {
     margin: 0;
     padding: 0;
@@ -44,6 +49,15 @@ input[type="text"], textarea {
     --text: #f5f5f5;
     --text-dim: #a0a0b0;
     --gradient: linear-gradient(135deg, #9b59b6 0%, #3498db 100%);
+}
+
+/* Light Mode */
+[data-theme="light"] {
+    --background: #f5f5fa;
+    --surface: rgba(245, 245, 250, 0.95);
+    --surface-glass: rgba(155, 89, 182, 0.08);
+    --text: #1a1a2e;
+    --text-dim: #5a5a70;
 }
 
 body {
