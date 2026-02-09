@@ -986,10 +986,14 @@ class DreamFortuneApp {
         zodiacData.forEach((zodiac, index) => {
             const item = document.createElement('div');
             item.className = 'zodiac-item';
-            item.innerHTML = `
-                <span class="zodiac-icon">${zodiac.icon}</span>
-                <span class="zodiac-name">${zodiac.name}</span>
-            `;
+            const icon = document.createElement('span');
+            icon.className = 'zodiac-icon';
+            icon.textContent = zodiac.icon;
+            const name = document.createElement('span');
+            name.className = 'zodiac-name';
+            name.textContent = zodiac.name;
+            item.appendChild(icon);
+            item.appendChild(name);
             item.addEventListener('click', () => {
                 document.querySelectorAll('.zodiac-item').forEach(i => i.classList.remove('selected'));
                 item.classList.add('selected');
