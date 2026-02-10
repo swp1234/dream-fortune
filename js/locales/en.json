@@ -7,5 +7,239 @@
   "tarot": { "title": "Draw today's message", "hint": "Tap a card to draw one", "retry": "Draw Again" },
   "premium": { "badge": "✨ AI Deep Analysis", "title": "AI Deep Interpretation", "deepAnalysis": "View AI Deep Reading", "share": "Share Results", "luckyNumber": "Lucky Numbers", "luckyColor": "Lucky Color", "luckyDirection": "Lucky Direction" },
   "ads": { "banner": "Advertisement", "interstitial": "Ad", "close": "Close" },
-  "rec": { "title": "Try these too" }
+  "rec": { "title": "Try these too" },
+  "dynamic": {
+    "aiTitle": "{keyword} AI Deep Interpretation",
+    "fallbackMessage": "This dream carries a personal message from your unconscious. The emotion you felt in the dream is key. Think about how that emotion connects to your current life.",
+    "colors": ["Gold", "Silver", "Sky Blue", "Light Green", "Coral", "Lavender", "Mint"],
+    "directions": ["East", "West", "South", "North", "Northeast", "Southeast"],
+    "psychoAnalyses": {
+      "뱀": "In Freudian psychology, snakes symbolize repressed desires and instincts. Your unconscious is trying to express desires or emotions you're currently suppressing. In Jungian psychology, it also represents transformation and healing.",
+      "용": "Dragons symbolize self-realization and the complete manifestation of potential. Great possibilities are awakening within you. Think carefully about how to use this energy.",
+      "물": "Water represents the flow of emotions. The state of water in your dream reflects your current emotional state. Don't suppress emotions; let them flow naturally.",
+      "비행": "Flying dreams show a strong desire to escape current constraints. You have a longing for freedom. Think about what's holding you back.",
+      "추락": "Falling is fear of loss of control. You may feel unstable in some area of your life. Focus on building a solid foundation.",
+      "죽음": "Death dreams mean a part of your self is changing. Old habits, relationships, or self-image are ending, and a new you is being born.",
+      "default": "This dream reflects your current psychological state and unconscious desires. The emotion you felt in the dream is key."
+    },
+    "recommendedActions": {
+      "high": [
+        "The work you start now will bring good results. Move forward with confidence.",
+        "Value communication with those around you. Important conversations can create great opportunities.",
+        "This is a good time for new attempts. Start what you've been putting off."
+      ],
+      "medium": [
+        "Balance caution with passion. No need to rush.",
+        "Trust your intuition, but move through small decisions slowly.",
+        "Observe your current situation objectively and prepare for the next step."
+      ],
+      "low": [
+        "Listen to your inner voice. This is a time for reflection.",
+        "Self-care is most important. Meditation or adequate sleep will help.",
+        "This period is for preparation. Build a strong foundation."
+      ]
+    },
+    "advices": {
+      "weekly": [
+        "Important meetings or opportunities may come. Stay open-minded.",
+        "Don't scatter your energy; focus on what matters most.",
+        "Good things may happen in your relationships with others.",
+        "This is a time to gain new information and insight. Stay open to learning."
+      ],
+      "monthly": [
+        "Steady effort toward long-term goals will bear fruit.",
+        "Change is coming. Prepare to respond flexibly.",
+        "Both relationships and finances are entering a stable period.",
+        "Investment in self-development will bring great rewards later."
+      ]
+    },
+    "shareTexts": {
+      "aiDream": "✨ {title}\n\n🌟 Luck Index: {luck}\n🔢 Lucky Numbers: {number}\n🎨 Lucky Color: {color}\n\n🧠 {meaning}...\n\nGet AI deep analysis in the Dream & Fortune app! 🔮",
+      "aiDreamTitle": "My Dream Interpretation Result ✨",
+      "aiDreamClipboard": "Result copied to clipboard! Share with your friends ✨",
+      "dreamShare": "🌙 My Dream Interpretation Result\n\n{keyword}\n{meaning}\n\nInterpret your dream too! 👇\n{url}",
+      "dreamShareTitle": "My Dream Interpretation Result 🔮",
+      "dreamShareClipboard": "Result copied to clipboard! Share with your friends 🌙",
+      "fortuneShare": "⭐ Today's {zodiac} Horoscope\n\n{message}\n\n🎨 Lucky Color: {color}\n🔢 Lucky Numbers: {number}\n\nCheck your horoscope too! 👇\n{url}",
+      "fortuneShareTitle": "Today's {zodiac} Horoscope ⭐",
+      "fortuneShareClipboard": "Result copied to clipboard! Share with your friends ⭐"
+    },
+    "resultLabels": {
+      "category": "📂 Category",
+      "meaning": "🔮 Core Meaning",
+      "todayMessage": "✨ Today's Message",
+      "detailedExplanation": "📖 Detailed Explanation",
+      "situationInterpretation": "🎭 Today's Situation Interpretation",
+      "fieldFortune": "📊 Today's Field Fortunes",
+      "love": "💕 Love",
+      "money": "💰 Money",
+      "health": "💪 Health",
+      "work": "💼 Work",
+      "timeBasedGuidance": "⏰ Time-Based Guidance",
+      "luckyItems": "🍀 Today's Luck",
+      "luckyColor": "🎨 Lucky Color",
+      "luckyNumber": "🔢 Lucky Numbers",
+      "luckyDirection": "🧭 Lucky Direction",
+      "luckyTime": "🌟 Lucky Time",
+      "relatedDreams": "🔗 Related Dream Keywords",
+      "luckIndex": "🍀 Today's Luck Index",
+      "combinedInterpretation": "Combined Dream Interpretation",
+      "discoveredSymbols": "🔮 Discovered Symbols",
+      "keywordCombination": "✨ Keyword Combination Interpretation",
+      "combinedFieldFortune": "📊 Today's Combined Fortunes",
+      "combinedLuckyItems": "🍀 Today's Combined Luck",
+      "combinedLuckIndex": "🍀 Today's Combined Luck Index",
+      "todayQuote": "💫 Today's Quote",
+      "diaryEmpty": "No dream interpretations yet.",
+      "diaryLuck": "Luck {luck}%",
+      "fortuneZodiacInfo": "{zodiac} Today ({dates})",
+      "tarotDirection": "{direction}",
+      "tarotKeyword": "🔑 Keyword",
+      "tarotMeaning": "📖 Meaning",
+      "tarotLove": "💕 Love Perspective",
+      "tarotCareer": "💼 Career/Finance Perspective",
+      "tarotAdvice": "💫 Today's Advice"
+    },
+    "todayMessages": [
+      "If you dreamed of {keyword} today, your unconscious is sending a special message.",
+      "The energy of {keyword} can influence your entire day.",
+      "{keyword} dream may be a hint for an important decision today.",
+      "Dreaming of {keyword} at this time is a sign of change.",
+      "{keyword} is awakening in your subconscious.",
+      "Today, the energy of {keyword} is with you.",
+      "{keyword} dream reflects a deep wish from within."
+    ],
+    "additionalInterpretations": [
+      "If you dreamed this today, something related may happen soon.",
+      "This dream is closely connected to your current emotional state. Examine your feelings.",
+      "Your unconscious often shows you what you consciously miss. Look around again.",
+      "If this symbol appears repeatedly, there may be deeper meaning.",
+      "The emotion in the dream is key. If positive, it's a good sign; if negative, caution is needed.",
+      "Throughout history, this dream has been interpreted as signaling an important turning point.",
+      "The answer to a problem you're currently facing may be hidden in this dream."
+    ],
+    "enhanceAdvices": {
+      "calm": "Maintain a peaceful flow today.",
+      "love": [
+        " Good energy especially around 3 PM.",
+        " Sincere conversation deepens relationships.",
+        " A small gift or message can have great effect.",
+        " Listening to others is most important."
+      ],
+      "money": [
+        " Good news may come today.",
+        " Avoid impulsive purchases.",
+        " Unexpected income may arrive.",
+        " Decide from a long-term perspective."
+      ],
+      "health": [
+        " Don't forget adequate water intake.",
+        " Light stretching helps.",
+        " Don't overdo things today.",
+        " A positive mindset affects health."
+      ],
+      "work": [
+        " Handle important tasks in the morning.",
+        " Collaboration boosts results.",
+        " Boldly propose new ideas.",
+        " Pay attention to details."
+      ]
+    },
+    "timeBasedAdvices": {
+      "morning": [
+        "Morning: A good time for important decisions or new starts.",
+        "Morning: Good for meditation or planning.",
+        "Morning: Energy is high; tackle challenging tasks."
+      ],
+      "afternoon": [
+        "Afternoon: Good things may happen in relationships.",
+        "Afternoon: Handle tasks requiring focus.",
+        "Afternoon: Rest and ideas will come."
+      ],
+      "evening": [
+        "Evening: Time with loved ones brings luck.",
+        "Evening: Reflect on the day and gratitude.",
+        "Evening: Writing a dream diary provides deeper insight."
+      ]
+    },
+    "luckyTimes": [
+      "9-11 AM", "10 AM-12 PM", "1-3 PM",
+      "2-4 PM", "3-5 PM", "6-8 PM",
+      "7-9 PM", "9-11 PM"
+    ],
+    "multiKeywordMessages": [
+      "Multiple symbols appearing together convey complex messages. Each meaning complements the others, providing deeper insight.",
+      "{count} symbols harmonize together. This shows that multiple areas of your life are connected.",
+      "An interesting combination! Your unconscious is sending messages on multiple levels.",
+      "The meeting of these symbols is no accident. Your inner self is telling an important story."
+    ],
+    "dynamicMeanings": [
+      "{meaning}... This energy is especially strong today.",
+      "{meaning}... Something related may happen soon.",
+      "{meaning}... Closely connected to your current situation.",
+      "{meaning}... Pay attention to this message."
+    ],
+    "categoryMeanings": {
+      "animalNature": "Instinct and environment are in harmony. Follow nature's flow.",
+      "animalAction": "It's time to act. Trust your instinct and move.",
+      "natureAction": "Natural action brings good results.",
+      "animalThing": "Material change is coming. Connected to wealth luck.",
+      "default": "The meeting of symbols related to {categories} shows that different areas of your life are connected."
+    },
+    "dayMessages": [
+      "This Sunday dream shows the direction of your week.",
+      "This Monday dream suggests a new beginning.",
+      "This Tuesday dream demands passion and action.",
+      "This Wednesday dream speaks of communication and connection.",
+      "This Thursday dream shows opportunities for expansion and growth.",
+      "This Friday dream is a message about relationships and harmony.",
+      "This Saturday dream recommends rest and reflection."
+    ],
+    "twoKeywordInterpretations": [
+      "The meeting of {k1} and {k2} is a {quality} combination. The energy of {k1} takes concrete form through {k2}.",
+      "The inner desire {k1} represents meets the external situation {k2} symbolizes. {balance}",
+      "Two symbols complement each other. The flow from {k1} continues through {k2}, {result}",
+      "The appearance of {k1} and {k2} together is a rare combination. {opportunity}"
+    ],
+    "multiKeywordInterpretations": [
+      "{count} symbols appear complexly. Multiple aspects of your life are changing simultaneously. {overall}",
+      "A rich display of symbols! {symbols} and others combine to predict {expectation}. Trust your intuition.",
+      "Your unconscious is sending rich messages. Understand each symbol individually, but don't miss the big picture. {key}"
+    ],
+    "fortuneDefaults": {
+      "love": "New meetings or relationship development are expected.",
+      "money": "Wealth luck is flowing steadily.",
+      "work": "Smooth progress is expected.",
+      "health": "Overall healthy flow."
+    },
+    "fieldBonuses": {
+      "love": [" Especially good in the evening.", " Sincere expression is effective.", ""],
+      "money": [" Good news may come this afternoon.", " Trust your intuition.", ""],
+      "work": [" Collaboration boosts results.", " Handle important tasks in the morning.", ""],
+      "health": [" A light walk helps.", " Get adequate rest.", ""]
+    },
+    "fieldCombinationBonuses": {
+      "love": "Deeper connection is possible.",
+      "money": "Better results than expected.",
+      "work": "Synergy is activated.",
+      "health": "Overall balance is restored.",
+      "default": "Positive change is expected."
+    },
+    "quotes": [
+      "Dreams are the royal road to the unconscious. - Freud",
+      "All dreams come true if you have the courage to pursue them.",
+      "Night dreams become daytime wisdom.",
+      "Your unconscious is always helping you.",
+      "For those who believe in dreams, the path opens.",
+      "Today's dream becomes tomorrow's reality.",
+      "The universe speaks to you through dreams.",
+      "Follow intuition; it is your true compass."
+    ],
+    "combinedInterpretations": {
+      "veryLucky": "The dream where {keywords} appear together is very auspicious! Multiple positive energies combine to herald great luck. Important decisions or new starts made now will yield good results. Seize opportunities actively!",
+      "lucky": "The combination of {keywords} suggests positive change. Each symbol complements the others, and your unconscious shows new possibilities. Open your mind to change and follow your intuition.",
+      "mixed": "The appearance of {keywords} together is a complex message about the current situation. Positive and cautious aspects coexist. View the situation with balanced perspective. Careful consideration is better than hasty judgment.",
+      "challenging": "The combination of {keywords} indicates inner conflict or tasks to resolve. But dreams help us recognize problems, so use this as an opportunity for growth. Take time to care for yourself."
+    }
+  }
 }
