@@ -240,11 +240,11 @@ class DreamFortuneApp {
             if (seconds <= 0) {
                 clearInterval(timer);
                 closeBtn.disabled = false;
-                closeBtn.textContent = '닫기';
-                
+                closeBtn.textContent = window.i18n?.t('ads.close') || 'Close';
+
                 closeBtn.onclick = () => {
                     adModal.classList.add('hidden');
-                    closeBtn.textContent = '닫기 (5)';
+                    closeBtn.textContent = (window.i18n?.t('ads.close') || 'Close') + ' (5)';
                     if (callback) callback();
                 };
             }
