@@ -1358,4 +1358,11 @@ class DreamFortuneApp {
 let dreamApp;
 document.addEventListener('DOMContentLoaded', () => {
     dreamApp = new DreamFortuneApp();
+
+    // Hide app loader
+    const loader = document.getElementById('app-loader');
+    if (loader) {
+        loader.classList.add('hidden');
+        setTimeout(() => loader.remove(), 300);
+    }
 });
