@@ -398,10 +398,7 @@
     </div>
 
     <!-- Deferred script loading for non-blocking page render -->
-    <script src="js/error-handler.js" defer></script>
     <script src="js/storage-manager.js" defer></script>
-    <script src="js/api-wrappers.js" defer></script>
-    <script src="js/i18n-safe-loader.js" defer></script>
     <script src="js/i18n.js" defer></script>
     <script src="js/data.js" defer></script>
     <script src="js/app.js" defer></script>
@@ -414,9 +411,6 @@
                     .then(registration => console.log('Service Worker registered'))
                     .catch(error => {
                         console.log('Service Worker registration failed:', error);
-                        if (window.errorHandler) {
-                            window.errorHandler.handleError(error, 'Service Worker Registration');
-                        }
                     });
             });
         }

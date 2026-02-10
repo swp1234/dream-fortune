@@ -1357,12 +1357,18 @@ class DreamFortuneApp {
 // 앱 시작
 let dreamApp;
 document.addEventListener('DOMContentLoaded', () => {
-    dreamApp = new DreamFortuneApp();
-
-    // Hide app loader
-    const loader = document.getElementById('app-loader');
-    if (loader) {
-        loader.classList.add('hidden');
-        setTimeout(() => loader.remove(), 300);
+    try {
+        dreamApp = new DreamFortuneApp();
+    } catch (e) {
+        console.error('DreamFortuneApp init error:', e);
+    } finally {
+        const loader = document.getElementById('app-loader');
+        if (loader) {
+            loader.classList.add('hidden');
+            setTimeout(() => loader.remove(), 300);
+        }
     }
 });
+
+// Failsafe: ensure loader is hidden even if everything above fails
+setTimeout(() => { const l = document.getElementById('app-loader'); if (l) { l.classList.add('hidden'); setTimeout(() => l.remove(), 300); } }, 3000);
