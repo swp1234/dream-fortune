@@ -1,18 +1,82 @@
 {
-  "app": { "title": "AI Dream·Horoscope·Tarot - Free Reading | DopaBrain", "description": "AI-powered dream interpretation, daily horoscope by zodiac, and one-card tarot reading." },
-  "header": { "title": "🌙 Dreams & Fortune", "tagline": "Interpreting your dreams and today's fortune" },
-  "tabs": { "dream": "🌌 Dreams", "fortune": "⭐ Horoscope", "tarot": "🃏 Tarot" },
-  "dream": { "question": "What did you dream about?", "hint": "Describe your dream freely (sentences OK!)", "placeholder": "e.g., I dreamed of a snake swimming in the ocean", "interpret": "Interpret Dream", "share": "Share", "aiDeep": "AI Deep Analysis", "luckIndex": "Luck Index" },
-  "fortune": { "question": "What's your zodiac sign?", "love": "💕 Love", "money": "💰 Money", "work": "💼 Career", "luck": "🍀 Luck", "luckyColor": "🎨", "luckyNumber": "🔢", "share": "Share" },
-  "tarot": { "title": "Draw today's message", "hint": "Tap a card to draw one", "retry": "Draw Again" },
-  "premium": { "badge": "✨ AI Deep Analysis", "title": "AI Deep Interpretation", "deepAnalysis": "View AI Deep Reading", "share": "Share Results", "luckyNumber": "Lucky Numbers", "luckyColor": "Lucky Color", "luckyDirection": "Lucky Direction" },
-  "ads": { "banner": "Advertisement", "interstitial": "Ad", "close": "Close" },
-  "rec": { "title": "Try these too" },
+  "app": {
+    "title": "AI Dream·Horoscope·Tarot - Free Reading | DopaBrain",
+    "description": "AI-powered dream interpretation, daily horoscope by zodiac, and one-card tarot reading."
+  },
+  "header": {
+    "title": "🌙 Dreams & Fortune",
+    "tagline": "Interpreting your dreams and today's fortune"
+  },
+  "tabs": {
+    "dream": "🌌 Dreams",
+    "fortune": "⭐ Horoscope",
+    "tarot": "🃏 Tarot"
+  },
+  "dream": {
+    "question": "What did you dream about?",
+    "hint": "Describe your dream freely (sentences OK!)",
+    "placeholder": "e.g., I dreamed of a snake swimming in the ocean",
+    "interpret": "Interpret Dream",
+    "share": "Share",
+    "aiDeep": "AI Deep Analysis",
+    "luckIndex": "Luck Index"
+  },
+  "fortune": {
+    "question": "What's your zodiac sign?",
+    "love": "💕 Love",
+    "money": "💰 Money",
+    "work": "💼 Career",
+    "luck": "🍀 Luck",
+    "luckyColor": "🎨",
+    "luckyNumber": "🔢",
+    "share": "Share"
+  },
+  "tarot": {
+    "title": "Draw today's message",
+    "hint": "Tap a card to draw one",
+    "retry": "Draw Again"
+  },
+  "premium": {
+    "badge": "✨ AI Deep Analysis",
+    "title": "AI Deep Interpretation",
+    "deepAnalysis": "View AI Deep Reading",
+    "share": "Share Results",
+    "luckyNumber": "Lucky Numbers",
+    "luckyColor": "Lucky Color",
+    "luckyDirection": "Lucky Direction",
+    "psychology": "🧠 Psychological Meaning",
+    "luckIndex": "🌟 Luck Index",
+    "actions": "🎯 Recommended Actions",
+    "luckyItems": "🍀 Lucky Items"
+  },
+  "ads": {
+    "banner": "Advertisement",
+    "interstitial": "Ad",
+    "close": "Close"
+  },
+  "rec": {
+    "title": "Try these too"
+  },
   "dynamic": {
     "aiTitle": "{keyword} AI Deep Interpretation",
     "fallbackMessage": "This dream carries a personal message from your unconscious. The emotion you felt in the dream is key. Think about how that emotion connects to your current life.",
-    "colors": ["Gold", "Silver", "Sky Blue", "Light Green", "Coral", "Lavender", "Mint"],
-    "directions": ["East", "West", "South", "North", "Northeast", "Southeast"],
+    "colors": [
+      "Gold",
+      "Silver",
+      "Sky Blue",
+      "Light Green",
+      "Coral",
+      "Lavender",
+      "Mint"
+    ],
+    "directions": [
+      "East",
+      "West",
+      "South",
+      "North",
+      "Northeast",
+      "Southeast"
+    ],
     "psychoAnalyses": {
       "뱀": "In Freudian psychology, snakes symbolize repressed desires and instincts. Your unconscious is trying to express desires or emotions you're currently suppressing. In Jungian psychology, it also represents transformation and healing.",
       "용": "Dragons symbolize self-realization and the complete manifestation of potential. Great possibilities are awakening within you. Think carefully about how to use this energy.",
@@ -163,9 +227,14 @@
       ]
     },
     "luckyTimes": [
-      "9-11 AM", "10 AM-12 PM", "1-3 PM",
-      "2-4 PM", "3-5 PM", "6-8 PM",
-      "7-9 PM", "9-11 PM"
+      "9-11 AM",
+      "10 AM-12 PM",
+      "1-3 PM",
+      "2-4 PM",
+      "3-5 PM",
+      "6-8 PM",
+      "7-9 PM",
+      "9-11 PM"
     ],
     "multiKeywordMessages": [
       "Multiple symbols appearing together convey complex messages. Each meaning complements the others, providing deeper insight.",
@@ -213,10 +282,26 @@
       "health": "Overall healthy flow."
     },
     "fieldBonuses": {
-      "love": [" Especially good in the evening.", " Sincere expression is effective.", ""],
-      "money": [" Good news may come this afternoon.", " Trust your intuition.", ""],
-      "work": [" Collaboration boosts results.", " Handle important tasks in the morning.", ""],
-      "health": [" A light walk helps.", " Get adequate rest.", ""]
+      "love": [
+        " Especially good in the evening.",
+        " Sincere expression is effective.",
+        ""
+      ],
+      "money": [
+        " Good news may come this afternoon.",
+        " Trust your intuition.",
+        ""
+      ],
+      "work": [
+        " Collaboration boosts results.",
+        " Handle important tasks in the morning.",
+        ""
+      ],
+      "health": [
+        " A light walk helps.",
+        " Get adequate rest.",
+        ""
+      ]
     },
     "fieldCombinationBonuses": {
       "love": "Deeper connection is possible.",
@@ -241,5 +326,14 @@
       "mixed": "The appearance of {keywords} together is a complex message about the current situation. Positive and cautious aspects coexist. View the situation with balanced perspective. Careful consideration is better than hasty judgment.",
       "challenging": "The combination of {keywords} indicates inner conflict or tasks to resolve. But dreams help us recognize problems, so use this as an opportunity for growth. Take time to care for yourself."
     }
+  },
+  "diary": {
+    "title": "📔 My Dream Diary",
+    "empty": "No interpreted dreams yet."
+  },
+  "share": {
+    "twitter": "Twitter",
+    "copyUrl": "📋 Copy URL",
+    "copied": "✅ Copied!"
   }
 }

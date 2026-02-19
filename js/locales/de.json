@@ -1,11 +1,69 @@
 {
-  "app": { "title": "KI Traum·Horoskop·Tarot - Kostenlos lesen | DopaBrain", "description": "KI-gestützte Trauminterpretation, tägliches Horoskop nach Sternzeichen und Ein-Karten-Tarot-Lesung." },
-  "header": { "title": "🌙 Träume & Schicksal", "tagline": "Interpretiere deine Träume und dein heutiges Schicksal" },
-  "tabs": { "dream": "🌌 Träume", "fortune": "⭐ Horoskop", "tarot": "🃏 Tarot" },
-  "dream": { "question": "Wovon hast du geträumt?", "hint": "Beschreibe deinen Traum frei (Sätze sind ok!)", "placeholder": "z.B. Ich träumte von einer Schlange, die im Meer schwamm", "interpret": "Traum interpretieren", "share": "Teilen", "aiDeep": "Tiefe KI-Analyse", "luckIndex": "Glücksindex" },
-  "fortune": { "question": "Was ist dein Sternzeichen?", "love": "💕 Liebe", "money": "💰 Geld", "work": "💼 Karriere", "luck": "🍀 Glück", "luckyColor": "🎨", "luckyNumber": "🔢", "share": "Teilen" },
-  "tarot": { "title": "Ziehe heutige Botschaft", "hint": "Tippe auf eine Karte zum Ziehen", "retry": "Nochmal ziehen" },
-  "premium": { "badge": "✨ Tiefe KI-Analyse", "title": "Tiefe KI-Interpretation", "deepAnalysis": "Tiefe Analyse ansehen", "share": "Ergebnisse teilen", "luckyNumber": "Glückszahlen", "luckyColor": "Glücksfarbe", "luckyDirection": "Glücksrichtung" },
-  "ads": { "banner": "Werbung", "interstitial": "Anzeige", "close": "Schließen" },
-  "rec": { "title": "Probiere auch diese" }
+  "app": {
+    "title": "KI Traum·Horoskop·Tarot - Kostenlos lesen | DopaBrain",
+    "description": "KI-gestützte Trauminterpretation, tägliches Horoskop nach Sternzeichen und Ein-Karten-Tarot-Lesung."
+  },
+  "header": {
+    "title": "🌙 Träume & Schicksal",
+    "tagline": "Interpretiere deine Träume und dein heutiges Schicksal"
+  },
+  "tabs": {
+    "dream": "🌌 Träume",
+    "fortune": "⭐ Horoskop",
+    "tarot": "🃏 Tarot"
+  },
+  "dream": {
+    "question": "Wovon hast du geträumt?",
+    "hint": "Beschreibe deinen Traum frei (Sätze sind ok!)",
+    "placeholder": "z.B. Ich träumte von einer Schlange, die im Meer schwamm",
+    "interpret": "Traum interpretieren",
+    "share": "Teilen",
+    "aiDeep": "Tiefe KI-Analyse",
+    "luckIndex": "Glücksindex"
+  },
+  "fortune": {
+    "question": "Was ist dein Sternzeichen?",
+    "love": "💕 Liebe",
+    "money": "💰 Geld",
+    "work": "💼 Karriere",
+    "luck": "🍀 Glück",
+    "luckyColor": "🎨",
+    "luckyNumber": "🔢",
+    "share": "Teilen"
+  },
+  "tarot": {
+    "title": "Ziehe heutige Botschaft",
+    "hint": "Tippe auf eine Karte zum Ziehen",
+    "retry": "Nochmal ziehen"
+  },
+  "premium": {
+    "badge": "✨ Tiefe KI-Analyse",
+    "title": "Tiefe KI-Interpretation",
+    "deepAnalysis": "Tiefe Analyse ansehen",
+    "share": "Ergebnisse teilen",
+    "luckyNumber": "Glückszahlen",
+    "luckyColor": "Glücksfarbe",
+    "luckyDirection": "Glücksrichtung",
+    "psychology": "🧠 Psychologische Bedeutung",
+    "luckIndex": "🌟 Glücksindex",
+    "actions": "🎯 Empfohlene Aktionen",
+    "luckyItems": "🍀 Glücksbringer"
+  },
+  "ads": {
+    "banner": "Werbung",
+    "interstitial": "Anzeige",
+    "close": "Schließen"
+  },
+  "rec": {
+    "title": "Probiere auch diese"
+  },
+  "diary": {
+    "title": "📔 Mein Traumtagebuch",
+    "empty": "Noch keine gedeuteten Träume."
+  },
+  "share": {
+    "twitter": "Twitter",
+    "copyUrl": "📋 URL kopieren",
+    "copied": "✅ Kopiert!"
+  }
 }

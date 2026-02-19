@@ -1,11 +1,69 @@
 {
-  "app": { "title": "Interpretasi Mimpi·Horoskop·Tarot AI - Pembacaan Gratis | DopaBrain", "description": "Interpretasi mimpi bertenaga AI, horoskop harian menurut zodiak, dan pembacaan tarot satu kartu." },
-  "header": { "title": "🌙 Mimpi & Keberuntungan", "tagline": "Menginterpretasi mimpi dan keberuntungan Anda hari ini" },
-  "tabs": { "dream": "🌌 Mimpi", "fortune": "⭐ Horoskop", "tarot": "🃏 Tarot" },
-  "dream": { "question": "Apa yang Anda bermimpi?", "hint": "Jelaskan mimpi Anda dengan bebas (kalimat boleh!)", "placeholder": "Contoh: Saya bermimpi ular berenang di laut", "interpret": "Interpretasi Mimpi", "share": "Bagikan", "aiDeep": "Analisis Mendalam AI", "luckIndex": "Indeks Keberuntungan" },
-  "fortune": { "question": "Apa zodiak Anda?", "love": "💕 Cinta", "money": "💰 Uang", "work": "💼 Karir", "luck": "🍀 Keberuntungan", "luckyColor": "🎨", "luckyNumber": "🔢", "share": "Bagikan" },
-  "tarot": { "title": "Tarik pesan hari ini", "hint": "Ketuk kartu untuk mengambil satu", "retry": "Tarik Lagi" },
-  "premium": { "badge": "✨ Analisis Mendalam AI", "title": "Interpretasi Mendalam AI", "deepAnalysis": "Lihat Analisis Mendalam", "share": "Bagikan Hasil", "luckyNumber": "Angka Keberuntungan", "luckyColor": "Warna Keberuntungan", "luckyDirection": "Arah Keberuntungan" },
-  "ads": { "banner": "Iklan", "interstitial": "Iklan", "close": "Tutup" },
-  "rec": { "title": "Coba juga" }
+  "app": {
+    "title": "Interpretasi Mimpi·Horoskop·Tarot AI - Pembacaan Gratis | DopaBrain",
+    "description": "Interpretasi mimpi bertenaga AI, horoskop harian menurut zodiak, dan pembacaan tarot satu kartu."
+  },
+  "header": {
+    "title": "🌙 Mimpi & Keberuntungan",
+    "tagline": "Menginterpretasi mimpi dan keberuntungan Anda hari ini"
+  },
+  "tabs": {
+    "dream": "🌌 Mimpi",
+    "fortune": "⭐ Horoskop",
+    "tarot": "🃏 Tarot"
+  },
+  "dream": {
+    "question": "Apa yang Anda bermimpi?",
+    "hint": "Jelaskan mimpi Anda dengan bebas (kalimat boleh!)",
+    "placeholder": "Contoh: Saya bermimpi ular berenang di laut",
+    "interpret": "Interpretasi Mimpi",
+    "share": "Bagikan",
+    "aiDeep": "Analisis Mendalam AI",
+    "luckIndex": "Indeks Keberuntungan"
+  },
+  "fortune": {
+    "question": "Apa zodiak Anda?",
+    "love": "💕 Cinta",
+    "money": "💰 Uang",
+    "work": "💼 Karir",
+    "luck": "🍀 Keberuntungan",
+    "luckyColor": "🎨",
+    "luckyNumber": "🔢",
+    "share": "Bagikan"
+  },
+  "tarot": {
+    "title": "Tarik pesan hari ini",
+    "hint": "Ketuk kartu untuk mengambil satu",
+    "retry": "Tarik Lagi"
+  },
+  "premium": {
+    "badge": "✨ Analisis Mendalam AI",
+    "title": "Interpretasi Mendalam AI",
+    "deepAnalysis": "Lihat Analisis Mendalam",
+    "share": "Bagikan Hasil",
+    "luckyNumber": "Angka Keberuntungan",
+    "luckyColor": "Warna Keberuntungan",
+    "luckyDirection": "Arah Keberuntungan",
+    "psychology": "🧠 Makna psikologis",
+    "luckIndex": "🌟 Indeks keberuntungan",
+    "actions": "🎯 Tindakan yang disarankan",
+    "luckyItems": "🍀 Item keberuntungan"
+  },
+  "ads": {
+    "banner": "Iklan",
+    "interstitial": "Iklan",
+    "close": "Tutup"
+  },
+  "rec": {
+    "title": "Coba juga"
+  },
+  "diary": {
+    "title": "📔 Buku harian mimpi",
+    "empty": "Belum ada mimpi yang ditafsirkan."
+  },
+  "share": {
+    "twitter": "Twitter",
+    "copyUrl": "📋 Salin URL",
+    "copied": "✅ Disalin!"
+  }
 }

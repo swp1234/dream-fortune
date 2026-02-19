@@ -43,7 +43,11 @@
     "share": "結果を共有する",
     "luckyNumber": "幸運な数字",
     "luckyColor": "幸運な色",
-    "luckyDirection": "幸運な方向"
+    "luckyDirection": "幸運な方向",
+    "psychology": "🧠 心理学的意味",
+    "luckIndex": "🌟 幸運指数",
+    "actions": "🎯 今日のおすすめ行動",
+    "luckyItems": "🍀 今日のラッキーアイテム"
   },
   "ads": {
     "banner": "広告",
@@ -52,5 +56,14 @@
   },
   "rec": {
     "title": "こちらも試してみてください"
+  },
+  "diary": {
+    "title": "📔 夢日記",
+    "empty": "まだ解釈した夢はありません。"
+  },
+  "share": {
+    "twitter": "Twitter",
+    "copyUrl": "📋 URLコピー",
+    "copied": "✅ コピー済み!"
   }
 }

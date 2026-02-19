@@ -201,13 +201,13 @@
 
                     <!-- 심리학적 의미 -->
                     <div class="premium-section">
-                        <h4 class="premium-section-title">🧠 심리학적 의미</h4>
+                        <h4 class="premium-section-title" data-i18n="premium.psychology">🧠 심리학적 의미</h4>
                         <p id="ai-psychology-meaning" class="premium-content"></p>
                     </div>
 
                     <!-- 행운 지수 -->
                     <div class="premium-section">
-                        <h4 class="premium-section-title">🌟 행운 지수</h4>
+                        <h4 class="premium-section-title" data-i18n="premium.luckIndex">🌟 행운 지수</h4>
                         <div class="luck-meter">
                             <div class="luck-bar">
                                 <div class="luck-fill" id="luck-fill"></div>
@@ -218,7 +218,7 @@
 
                     <!-- 추천 행동 -->
                     <div class="premium-section">
-                        <h4 class="premium-section-title">🎯 오늘의 추천 행동</h4>
+                        <h4 class="premium-section-title" data-i18n="premium.actions">🎯 오늘의 추천 행동</h4>
                         <div id="ai-actions" class="actions-list">
                             <div class="action-item">
                                 <span class="action-icon">1️⃣</span>
@@ -237,7 +237,7 @@
 
                     <!-- 행운 아이템 -->
                     <div class="premium-section">
-                        <h4 class="premium-section-title">🍀 오늘의 행운 아이템</h4>
+                        <h4 class="premium-section-title" data-i18n="premium.luckyItems">🍀 오늘의 행운 아이템</h4>
                         <div class="lucky-items-grid">
                             <div class="lucky-card">
                                 <div class="lucky-card-emoji">🔢</div>
@@ -264,9 +264,9 @@
 
                 <!-- 꿈 일기 -->
                 <div class="dream-diary-section">
-                    <h3 class="diary-title">📔 나의 꿈 일기</h3>
+                    <h3 class="diary-title" data-i18n="diary.title">📔 나의 꿈 일기</h3>
                     <div class="diary-list" id="dream-diary-list">
-                        <p class="diary-empty">아직 해석한 꿈이 없습니다.</p>
+                        <p class="diary-empty" data-i18n="diary.empty">아직 해석한 꿈이 없습니다.</p>
                     </div>
                 </div>
             </section>
@@ -342,10 +342,10 @@
         <!-- Social Share Buttons -->
         <div class="share-section" id="share-section">
             <button class="share-btn share-twitter" id="shareTwitterBtn" aria-label="Share on Twitter">
-                <span>𝕏</span> Twitter
+                <span>𝕏</span> <span data-i18n="share.twitter">Twitter</span>
             </button>
             <button class="share-btn share-url" id="shareUrlBtn" aria-label="Copy URL">
-                📋 Copy URL
+                <span data-i18n="share.copyUrl">📋 Copy URL</span>
             </button>
         </div>
 
@@ -396,7 +396,7 @@
     </style>
     <script>
         document.getElementById('shareTwitterBtn')?.addEventListener('click',function(){var t=document.title+' '+window.location.href;window.open('https://twitter.com/intent/tweet?text='+encodeURIComponent(t),'_blank');if(typeof gtag!=='undefined')gtag('event','share',{method:'twitter'})});
-        document.getElementById('shareUrlBtn')?.addEventListener('click',function(){var b=this;navigator.clipboard.writeText(window.location.href).then(function(){b.textContent='✅ Copied!';setTimeout(function(){b.innerHTML='📋 Copy URL'},2000)});if(typeof gtag!=='undefined')gtag('event','share',{method:'url_copy'})});
+        document.getElementById('shareUrlBtn')?.addEventListener('click',function(){var b=this;navigator.clipboard.writeText(window.location.href).then(function(){b.textContent=(window.i18n&&window.i18n.t?window.i18n.t('share.copied'):'✅ Copied!');setTimeout(function(){b.innerHTML=(window.i18n&&window.i18n.t?window.i18n.t('share.copyUrl'):'📋 Copy URL')},2000)});if(typeof gtag!=='undefined')gtag('event','share',{method:'url_copy'})});
     </script>
     <script src="/portal/js/cross-promo.js" defer></script>
 </body>
