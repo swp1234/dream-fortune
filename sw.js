@@ -1,5 +1,5 @@
 // 꿈해몽 & 운세 - Service Worker
-const CACHE_NAME = 'dream-fortune-v1';
+const CACHE_NAME = 'dream-fortune-v2';
 const urlsToCache = [
     './',
     './index.html',
@@ -33,25 +33,45 @@ self.addEventListener('install', (event) => {
     self.skipWaiting();
 });
 
-// 요청 시 캐시 우선
+// Network-first for HTML/JS, cache-first for other assets
 self.addEventListener('fetch', (event) => {
-    event.respondWith(
-        caches.match(event.request)
-            .then((response) => {
-                if (response) {
-                    // Cache hit - return cached version, but also fetch update
-                    fetch(event.request).then(fetchResponse => {
-                        if (fetchResponse && fetchResponse.status === 200) {
-                            caches.open(CACHE_NAME).then(cache => {
-                                cache.put(event.request, fetchResponse);
-                            });
-                        }
-                    }).catch(() => {});
+    const url = new URL(event.request.url);
+    const isHTMLorJS = event.request.destination === 'document'
+        || event.request.destination === 'script'
+        || url.pathname.endsWith('.html')
+        || url.pathname.endsWith('.js')
+        || url.pathname.endsWith('.json');
+
+    if (isHTMLorJS) {
+        // Network-first for HTML/JS/JSON
+        event.respondWith(
+            fetch(event.request)
+                .then((response) => {
+                    if (response && response.status === 200) {
+                        const clone = response.clone();
+                        caches.open(CACHE_NAME).then(cache => cache.put(event.request, clone));
+                    }
                     return response;
-                }
-                return fetch(event.request);
-            })
-    );
+                })
+                .catch(() => caches.match(event.request))
+        );
+    } else {
+        // Cache-first for other assets (CSS, images, fonts)
+        event.respondWith(
+            caches.match(event.request)
+                .then((response) => {
+                    if (response) {
+                        fetch(event.request).then(fetchResponse => {
+                            if (fetchResponse && fetchResponse.status === 200) {
+                                caches.open(CACHE_NAME).then(cache => cache.put(event.request, fetchResponse));
+                            }
+                        }).catch(() => {});
+                        return response;
+                    }
+                    return fetch(event.request);
+                })
+        );
+    }
 });
 
 // 활성화 시 오래된 캐시 삭제
