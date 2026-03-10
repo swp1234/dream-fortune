@@ -1,9 +1,10 @@
 // 꿈해몽 & 운세 - Service Worker
-const CACHE_NAME = 'dream-fortune-v2';
+const CACHE_NAME = 'dream-fortune-v3';
 const urlsToCache = [
     './',
     './index.html',
     './css/style.css',
+    './js/storage-manager.js',
     './js/app.js',
     './js/data.js',
     './js/i18n.js',
