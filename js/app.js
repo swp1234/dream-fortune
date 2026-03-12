@@ -278,13 +278,13 @@ class DreamFortuneApp {
         }
 
         // 제목
-        const aiTitle = window.i18n?.t('dynamic.aiTitle')?.replace('{keyword}', keyword) || `"${keyword}" AI 심층 해몽`;
+        const aiTitle = window.i18n?.t('dynamic.aiTitle')?.replace('{keyword}', keyword) || `"${keyword}" AI Deep Interpretation`;
         document.getElementById('ai-dream-title').textContent = aiTitle;
 
         // 심리학적 의미
         const psychoMeaning = foundKeywords.length > 0
             ? this.generatePsychoAnalysis(foundKeywords)
-            : (window.i18n?.t('dynamic.fallbackMessage') || '이 꿈은 당신의 개인적인 무의식의 메시지를 담고 있습니다. 꿈에서 느낀 감정이 핵심입니다. 그 감정이 현재 삶과 어떻게 연결되는지 생각해보세요.');
+            : (window.i18n?.t('dynamic.fallbackMessage') || 'This dream carries a personal message from your unconscious. The emotion you felt in the dream is key. Think about how that emotion connects to your current life.');
         document.getElementById('ai-psychology-meaning').textContent = psychoMeaning;
 
         // 행운 지수 계산
@@ -306,7 +306,7 @@ class DreamFortuneApp {
 
         // 행운 아이템
         const luckyNumbers = this.getTodayLuckyNumbers(foundKeywords.length > 0 ? dreamData[foundKeywords[0]]?.luckyNumber : 7, seed);
-        const luckyColor = this.getTodayLuckyColorName(foundKeywords.length > 0 ? dreamData[foundKeywords[0]]?.luckyColor : '금색', seed);
+        const luckyColor = this.getTodayLuckyColorName(foundKeywords.length > 0 ? dreamData[foundKeywords[0]]?.luckyColor : (window.i18n?.t('dynamic.colors.0') || 'Gold'), seed);
         const luckyDirection = this.getTodayLuckyDirection(seed);
 
         document.getElementById('lucky-numbers').textContent = luckyNumbers.join(', ');
@@ -329,19 +329,19 @@ class DreamFortuneApp {
 
         const templates = [
             window.i18n?.t('dynamic.recommendedActions.high') || [
-                "지금 시작한 일이 좋은 결과를 가져올 거예요. 자신감을 가지고 나아가세요.",
-                "주변 사람들과의 소통을 소중히 하세요. 중요한 대화가 좋은 기회를 만들 수 있습니다.",
-                "이 시기는 새로운 시도에 좋은 때입니다. 미루던 일을 시작해보세요."
+                "The work you start now will bring good results. Move forward with confidence.",
+                "Value communication with those around you. Important conversations can create great opportunities.",
+                "This is a good time for new attempts. Start what you've been putting off."
             ],
             window.i18n?.t('dynamic.recommendedActions.medium') || [
-                "신중함과 열정의 균형을 맞추세요. 서두르지 않아도 됩니다.",
-                "자신의 직관을 믿고 행동하되, 작은 결정부터 천천히 진행하세요.",
-                "현재 상황을 객관적으로 관찰하고 다음 스텝을 준비하세요."
+                "Balance caution with passion. No need to rush.",
+                "Trust your intuition, but move through small decisions slowly.",
+                "Observe your current situation objectively and prepare for the next step."
             ],
             window.i18n?.t('dynamic.recommendedActions.low') || [
-                "내면의 목소리에 귀 기울이세요. 지금은 성찰의 시간입니다.",
-                "자신을 돌보는 것이 가장 중요합니다. 명상이나 충분한 수면을 취하세요.",
-                "이 시기는 준비의 시간입니다. 기초를 튼튼히 하세요."
+                "Listen to your inner voice. This is a time for reflection.",
+                "Self-care is most important. Meditation or adequate sleep will help.",
+                "This period is for preparation. Build a strong foundation."
             ]
         ];
 
@@ -361,7 +361,7 @@ class DreamFortuneApp {
 
     // 행운의 색상 이름 반환
     getTodayLuckyColorName(baseColor, seed) {
-        const colors = window.i18n?.t('dynamic.colors') || ["금색", "은색", "하늘색", "연두색", "코랄", "라벤더", "민트"];
+        const colors = window.i18n?.t('dynamic.colors') || ["Gold", "Silver", "Sky Blue", "Light Green", "Coral", "Lavender", "Mint"];
         if (baseColor) {
             return baseColor + ' & ' + colors[Math.abs(seed) % colors.length];
         }
@@ -370,20 +370,20 @@ class DreamFortuneApp {
 
     // 행운의 방향 반환
     getTodayLuckyDirection(seed) {
-        const directions = window.i18n?.t('dynamic.directions') || ["동쪽", "서쪽", "남쪽", "북쪽", "동북쪽", "남동쪽"];
+        const directions = window.i18n?.t('dynamic.directions') || ["East", "West", "South", "North", "Northeast", "Southeast"];
         return directions[Math.abs(seed) % directions.length];
     }
     
     generatePsychoAnalysis(keywords) {
         const i18nAnalyses = window.i18n?.t('dynamic.psychoAnalyses') || {};
         const defaultAnalyses = {
-            "뱀": "뱀은 프로이트 심리학에서 억압된 욕망과 본능을 상징합니다. 당신의 무의식이 현재 억누르고 있는 욕구나 감정을 표현하려 하고 있습니다. 동시에 융 심리학에서는 변화와 치유의 상징이기도 합니다.",
-            "용": "용은 자아실현과 잠재력의 완전한 발현을 상징합니다. 당신 안에 큰 가능성이 깨어나려 하고 있습니다. 이 에너지를 어떻게 활용할지 진지하게 고민해보세요.",
-            "물": "물은 감정의 흐름을 나타냅니다. 꿈에서 물의 상태가 현재 감정 상태를 반영합니다. 감정을 억누르지 말고 자연스럽게 흐르게 하세요.",
-            "비행": "하늘을 나는 꿈은 현재 제약에서 벗어나고 싶은 강한 욕구를 보여줍니다. 자유를 향한 갈망이 있습니다. 어떤 것이 당신을 묶고 있는지 생각해보세요.",
-            "추락": "추락은 통제력 상실에 대한 두려움입니다. 현재 삶에서 불안정하게 느끼는 영역이 있을 수 있습니다. 안전한 기반을 다지는 데 집중하세요.",
-            "죽음": "죽음 꿈은 자아의 일부가 변화하고 있음을 의미합니다. 오래된 습관, 관계, 또는 자아상이 끝나고 새로운 당신이 태어나고 있습니다.",
-            "default": "이 꿈은 당신의 현재 심리 상태와 무의식적 욕구를 반영합니다. 꿈에서 느낀 감정이 핵심입니다."
+            "뱀": "In Freudian psychology, snakes symbolize repressed desires and instincts. Your unconscious is trying to express desires or emotions you're currently suppressing. In Jungian psychology, it also represents transformation and healing.",
+            "용": "Dragons symbolize self-realization and the complete manifestation of potential. Great possibilities are awakening within you. Think carefully about how to use this energy.",
+            "물": "Water represents the flow of emotions. The state of water in your dream reflects your current emotional state. Don't suppress emotions; let them flow naturally.",
+            "비행": "Flying dreams show a strong desire to escape current constraints. You have a longing for freedom. Think about what's holding you back.",
+            "추락": "Falling is fear of loss of control. You may feel unstable in some area of your life. Focus on building a solid foundation.",
+            "죽음": "Death dreams mean a part of your self is changing. Old habits, relationships, or self-image are ending, and a new you is being born.",
+            "default": "This dream reflects your current psychological state and unconscious desires. The emotion you felt in the dream is key."
         };
         const analyses = Object.keys(i18nAnalyses).length > 0 ? i18nAnalyses : defaultAnalyses;
 
@@ -399,32 +399,35 @@ class DreamFortuneApp {
     
     generateActionAdvice(keywords) {
         const avgLuck = keywords.reduce((sum, k) => sum + (dreamData[k]?.luck || 60), 0) / keywords.length;
-        
+
         if (avgLuck >= 80) {
-            return `• 지금은 행동의 시기입니다. 미루던 일을 시작하세요.\n• 새로운 기회에 적극적으로 응하세요.\n• 자신감을 가지고 목표를 향해 나아가세요.`;
+            const advice = window.i18n?.t('dynamic.actionAdvice.high') || "• Now is the time for action. Start what you've been putting off.\n• Actively embrace new opportunities.\n• Move toward your goals with confidence.";
+            return advice;
         } else if (avgLuck >= 60) {
-            return `• 균형 잡힌 접근이 필요합니다. 급하게 서두르지 마세요.\n• 주변의 조언을 구하되 최종 결정은 스스로 하세요.\n• 작은 성공들을 축적해 나가세요.`;
+            const advice = window.i18n?.t('dynamic.actionAdvice.medium') || "• A balanced approach is needed. Don't rush.\n• Seek advice from others, but make the final decision yourself.\n• Accumulate small successes.";
+            return advice;
         } else {
-            return `• 지금은 준비의 시기입니다. 기반을 다지세요.\n• 내면을 돌보는 시간을 가지세요. 명상이나 일기가 도움됩니다.\n• 조급해하지 말고 때를 기다리세요.`;
+            const advice = window.i18n?.t('dynamic.actionAdvice.low') || "• Now is the time for preparation. Build your foundation.\n• Take time to look inward. Meditation or journaling helps.\n• Don't be impatient; wait for the right moment.";
+            return advice;
         }
     }
     
     getWeeklyAdvice(keywords) {
-        const advices = [
-            "중요한 만남이나 기회가 찾아올 수 있습니다. 열린 마음을 유지하세요.",
-            "에너지를 분산시키지 말고 가장 중요한 것에 집중하세요.",
-            "주변 사람들과의 관계에서 좋은 일이 생길 수 있습니다.",
-            "새로운 정보나 통찰을 얻을 수 있는 시기입니다. 배움에 열린 자세를 가지세요."
+        const advices = window.i18n?.t('dynamic.advices.weekly') || [
+            "Important meetings or opportunities may come. Stay open-minded.",
+            "Don't scatter your energy; focus on what matters most.",
+            "Good things may happen in your relationships with others.",
+            "This is a time to gain new information and insight. Stay open to learning."
         ];
         return advices[Math.floor(Math.random() * advices.length)];
     }
     
     getMonthlyAdvice(keywords) {
-        const advices = [
-            "장기적인 목표를 위해 꾸준히 노력하면 결실을 볼 수 있습니다.",
-            "변화의 조짐이 있습니다. 유연하게 대응할 준비를 하세요.",
-            "관계와 재정 모두 안정되는 시기로 접어들고 있습니다.",
-            "자기 계발에 투자하면 나중에 큰 보상으로 돌아올 것입니다."
+        const advices = window.i18n?.t('dynamic.advices.monthly') || [
+            "Steady effort toward long-term goals will bear fruit.",
+            "Change is coming. Prepare to respond flexibly.",
+            "Both relationships and finances are entering a stable period.",
+            "Investment in self-development will bring great rewards later."
         ];
         return advices[Math.floor(Math.random() * advices.length)];
     }
@@ -436,7 +439,7 @@ class DreamFortuneApp {
         const luckyNumber = document.getElementById('lucky-numbers').textContent;
         const luckyColor = document.getElementById('lucky-color-name').textContent;
 
-        const shareTemplate = window.i18n?.t('dynamic.shareTexts.aiDream') || `✨ {title}\n\n🌟 행운 지수: {luck}\n🔢 행운의 숫자: {number}\n🎨 행운의 색상: {color}\n\n🧠 {meaning}...\n\n꿈해몽 & 운세 앱에서 AI 심층 분석을 받아보세요! 🔮`;
+        const shareTemplate = window.i18n?.t('dynamic.shareTexts.aiDream') || `✨ {title}\n\n🌟 Luck Index: {luck}\n🔢 Lucky Numbers: {number}\n🎨 Lucky Color: {color}\n\n🧠 {meaning}...\n\nGet AI deep analysis in the Dream & Fortune app! 🔮`;
         const text = shareTemplate
             .replace('{title}', title)
             .replace('{luck}', luckIndex)
@@ -447,13 +450,13 @@ class DreamFortuneApp {
 
         if (navigator.share) {
             navigator.share({
-                title: window.i18n?.t('dynamic.shareTexts.aiDreamTitle') || '내 꿈해몽 결과 ✨',
+                title: window.i18n?.t('dynamic.shareTexts.aiDreamTitle') || 'My Dream Interpretation Result ✨',
                 text: text,
                 url: url
             }).catch(() => {});
         } else {
             navigator.clipboard.writeText(text + '\n\n' + url).then(() => {
-                alert(window.i18n?.t('dynamic.shareTexts.aiDreamClipboard') || '결과가 클립보드에 복사되었습니다! 친구에게 공유해보세요 ✨');
+                alert(window.i18n?.t('dynamic.shareTexts.aiDreamClipboard') || 'Result copied to clipboard! Share with your friends ✨');
             }).catch(() => {});
         }
     }
@@ -508,7 +511,7 @@ class DreamFortuneApp {
     }
 
     showSingleResult(keyword, result, seed) {
-        const keywordLabel = `"${keyword}" ${window.i18n?.t('dream.interpret')?.replace(/하기.*/, '') || '꿈 해석'}`;
+        const keywordLabel = `"${keyword}" ${window.i18n?.t('dream.interpret')?.replace(/하기.*|Interpret\s*/i, '') || 'Dream Interpretation'}`;
         document.getElementById('dream-keyword').textContent = keywordLabel;
 
         // GA4: 테스트 완료
@@ -524,20 +527,20 @@ class DreamFortuneApp {
         let fullMeaning = '';
 
         if (result.category) {
-            const categoryLabel = window.i18n?.t('dynamic.resultLabels.category') || '📂 분류';
+            const categoryLabel = window.i18n?.t('dynamic.resultLabels.category') || '📂 Category';
             fullMeaning += `${categoryLabel}: ${result.category}\n\n`;
         }
 
         // 핵심 의미 + 오늘의 특별 메시지
         if (result.mainMeaning) {
-            const meaningLabel = window.i18n?.t('dynamic.resultLabels.meaning') || '🔮 핵심 의미';
-            const todayMessageLabel = window.i18n?.t('dynamic.resultLabels.todayMessage') || '✨ 오늘의 메시지';
+            const meaningLabel = window.i18n?.t('dynamic.resultLabels.meaning') || '🔮 Core Meaning';
+            const todayMessageLabel = window.i18n?.t('dynamic.resultLabels.todayMessage') || "✨ Today's Message";
             fullMeaning += `${meaningLabel}: ${result.mainMeaning}\n`;
             fullMeaning += `${todayMessageLabel}: ${this.getTodayMessage(keyword, seed)}\n\n`;
         }
 
         // 상세 해석 (변형 추가)
-        const detailedLabel = window.i18n?.t('dynamic.resultLabels.detailedExplanation') || '📖 상세 해석';
+        const detailedLabel = window.i18n?.t('dynamic.resultLabels.detailedExplanation') || '📖 Detailed Explanation';
         fullMeaning += `${detailedLabel}\n${result.detailed || result.meaning}\n`;
         fullMeaning += `${this.getAdditionalInterpretation(keyword, seed)}\n\n`;
 
@@ -547,7 +550,7 @@ class DreamFortuneApp {
             const selectedSituations = this.selectRandom(situations, seed, 2, 3);
 
             fullMeaning += `━━━━━━━━━━━━━━━━━━━━\n`;
-            const situationLabel = window.i18n?.t('dynamic.resultLabels.situationInterpretation') || '🎭 오늘 주목할 상황 해석';
+            const situationLabel = window.i18n?.t('dynamic.resultLabels.situationInterpretation') || "🎭 Today's Situation Interpretation";
             fullMeaning += `${situationLabel}\n`;
             selectedSituations.forEach(([situation, meaning]) => {
                 fullMeaning += `• ${situation}: ${meaning}\n`;
@@ -557,11 +560,11 @@ class DreamFortuneApp {
 
         // 오늘의 분야별 운세 (변형 추가)
         fullMeaning += `━━━━━━━━━━━━━━━━━━━━\n`;
-        const fieldFortuneLabel = window.i18n?.t('dynamic.resultLabels.fieldFortune') || '📊 오늘의 분야별 운세';
-        const loveLabel = window.i18n?.t('dynamic.resultLabels.love') || '💕 연애';
-        const moneyLabel = window.i18n?.t('dynamic.resultLabels.money') || '💰 재물';
-        const healthLabel = window.i18n?.t('dynamic.resultLabels.health') || '💪 건강';
-        const workLabel = window.i18n?.t('dynamic.resultLabels.work') || '💼 직장';
+        const fieldFortuneLabel = window.i18n?.t('dynamic.resultLabels.fieldFortune') || "📊 Today's Field Fortunes";
+        const loveLabel = window.i18n?.t('dynamic.resultLabels.love') || '💕 Love';
+        const moneyLabel = window.i18n?.t('dynamic.resultLabels.money') || '💰 Money';
+        const healthLabel = window.i18n?.t('dynamic.resultLabels.health') || '💪 Health';
+        const workLabel = window.i18n?.t('dynamic.resultLabels.work') || '💼 Work';
         fullMeaning += `${fieldFortuneLabel}\n`;
         fullMeaning += `${loveLabel}: ${this.enhanceAdvice(result.love, 'love', seed)}\n`;
         fullMeaning += `${moneyLabel}: ${this.enhanceAdvice(result.money, 'money', seed)}\n`;
@@ -571,17 +574,17 @@ class DreamFortuneApp {
 
         // 시간대별 조언
         fullMeaning += `━━━━━━━━━━━━━━━━━━━━\n`;
-        const timeBasedLabel = window.i18n?.t('dynamic.resultLabels.timeBasedGuidance') || '⏰ 시간대별 행동 지침';
+        const timeBasedLabel = window.i18n?.t('dynamic.resultLabels.timeBasedGuidance') || '⏰ Time-Based Guidance';
         fullMeaning += `${timeBasedLabel}\n`;
         fullMeaning += this.getTimeBasedAdvice(seed) + '\n\n';
 
-        // 행운 아이템 (동적)
+        // lucky items (dynamic)
         fullMeaning += `━━━━━━━━━━━━━━━━━━━━\n`;
-        const luckyItemsLabel = window.i18n?.t('dynamic.resultLabels.luckyItems') || '🍀 오늘의 행운';
-        const luckyColorLabel = window.i18n?.t('dynamic.resultLabels.luckyColor') || '🎨 행운 색상';
-        const luckyNumberLabel = window.i18n?.t('dynamic.resultLabels.luckyNumber') || '🔢 행운 숫자';
-        const luckyDirectionLabel = window.i18n?.t('dynamic.resultLabels.luckyDirection') || '🧭 행운 방향';
-        const luckyTimeLabel = window.i18n?.t('dynamic.resultLabels.luckyTime') || '🌟 행운의 시간';
+        const luckyItemsLabel = window.i18n?.t('dynamic.resultLabels.luckyItems') || "🍀 Today's Luck";
+        const luckyColorLabel = window.i18n?.t('dynamic.resultLabels.luckyColor') || '🎨 Lucky Color';
+        const luckyNumberLabel = window.i18n?.t('dynamic.resultLabels.luckyNumber') || '🔢 Lucky Numbers';
+        const luckyDirectionLabel = window.i18n?.t('dynamic.resultLabels.luckyDirection') || '🧭 Lucky Direction';
+        const luckyTimeLabel = window.i18n?.t('dynamic.resultLabels.luckyTime') || '🌟 Lucky Time';
         fullMeaning += `${luckyItemsLabel}\n`;
         const todayColor = this.getTodayLuckyColor(result.luckyColor, seed);
         fullMeaning += `${luckyColorLabel}: ${todayColor}\n`;
@@ -594,7 +597,7 @@ class DreamFortuneApp {
 
         // 연관 꿈
         if (result.relatedDreams && result.relatedDreams.length > 0) {
-            const relatedDreamsLabel = window.i18n?.t('dynamic.resultLabels.relatedDreams') || '🔗 함께 해석하면 좋은 키워드';
+            const relatedDreamsLabel = window.i18n?.t('dynamic.resultLabels.relatedDreams') || '🔗 Related Dream Keywords';
             fullMeaning += `\n${relatedDreamsLabel}: ${result.relatedDreams.join(', ')}`;
         }
 
@@ -603,7 +606,7 @@ class DreamFortuneApp {
         const todayLuck = Math.min(100, Math.max(0, result.luck + luckVariation));
 
         document.getElementById('dream-meaning').textContent = fullMeaning;
-        const luckIndexLabel = window.i18n?.t('dynamic.resultLabels.luckIndex') || '🍀 오늘의 행운지수';
+        const luckIndexLabel = window.i18n?.t('dynamic.resultLabels.luckIndex') || "🍀 Today's Luck Index";
         document.getElementById('dream-luck').textContent = `${luckIndexLabel} ${todayLuck}%`;
 
         const resultCard = document.getElementById('dream-result');
@@ -620,13 +623,13 @@ class DreamFortuneApp {
     // 오늘의 특별 메시지 생성
     getTodayMessage(keyword, seed) {
         const messages = window.i18n?.t('dynamic.todayMessages') || [
-            `오늘 ${keyword} 꿈을 꾸셨다면, 무의식이 특별한 메시지를 보내고 있습니다.`,
-            `${keyword}의 에너지가 오늘 하루를 좌우할 수 있습니다.`,
-            `${keyword} 꿈은 오늘 중요한 결정의 힌트가 될 수 있습니다.`,
-            `이 시기에 ${keyword} 꿈을 꾸는 것은 변화의 전조입니다.`,
-            `${keyword}이(가) 당신의 잠재의식에서 깨어나고 있습니다.`,
-            `오늘 ${keyword}의 기운이 당신과 함께합니다.`,
-            `${keyword} 꿈은 내면 깊은 곳의 소망을 반영합니다.`
+            `If you dreamed of ${keyword} today, your unconscious is sending a special message.`,
+            `The energy of ${keyword} can influence your entire day.`,
+            `${keyword} dream may be a hint for an important decision today.`,
+            `Dreaming of ${keyword} at this time is a sign of change.`,
+            `${keyword} is awakening in your subconscious.`,
+            `Today, the energy of ${keyword} is with you.`,
+            `${keyword} dream reflects a deep wish from within.`
         ];
         return messages[Math.abs(seed) % messages.length].replace(/{keyword}/g, keyword);
     }
@@ -634,46 +637,46 @@ class DreamFortuneApp {
     // 추가 해석 문구 생성
     getAdditionalInterpretation(keyword, seed) {
         const additions = window.i18n?.t('dynamic.additionalInterpretations') || [
-            "특히 오늘 이 꿈을 꾸셨다면, 가까운 시일 내에 관련된 일이 현실에서 일어날 수 있습니다.",
-            "이 꿈은 당신의 현재 감정 상태와 밀접하게 연결되어 있습니다. 마음을 살펴보세요.",
-            "무의식은 종종 우리가 의식적으로 놓치는 것들을 보여줍니다. 주변을 다시 살펴보세요.",
-            "이 상징이 반복해서 나타난다면, 더 깊은 의미가 있을 수 있습니다.",
-            "꿈에서 느낀 감정이 해석의 핵심입니다. 긍정적이었다면 좋은 징조, 부정적이었다면 주의가 필요합니다.",
-            "고대부터 이 꿈은 중요한 전환점을 알리는 것으로 해석되어 왔습니다.",
-            "현재 고민하고 있는 문제의 해답이 이 꿈에 숨어있을 수 있습니다."
+            "If you dreamed this today, something related may happen soon.",
+            "This dream is closely connected to your current emotional state. Examine your feelings.",
+            "Your unconscious often shows you what you consciously miss. Look around again.",
+            "If this symbol appears repeatedly, there may be deeper meaning.",
+            "The emotion in the dream is key. If positive, it's a good sign; if negative, caution is needed.",
+            "Throughout history, this dream has been interpreted as signaling an important turning point.",
+            "The answer to a problem you're currently facing may be hidden in this dream."
         ];
         return additions[Math.abs(seed + 7) % additions.length];
     }
 
     // 조언 강화
     enhanceAdvice(baseAdvice, category, seed) {
-        const calmText = window.i18n?.t('dynamic.enhanceAdvices.calm') || '오늘은 평온한 흐름을 유지하세요.';
+        const calmText = window.i18n?.t('dynamic.enhanceAdvices.calm') || 'Maintain a peaceful flow today.';
         if (!baseAdvice) return calmText;
 
         const enhancements = {
             love: window.i18n?.t('dynamic.enhanceAdvices.love') || [
-                " 특히 오후 3시경에 좋은 기운이 있습니다.",
-                " 진심 어린 대화가 관계를 깊게 합니다.",
-                " 작은 선물이나 메시지가 큰 효과를 발휘합니다.",
-                " 상대방의 말에 귀 기울이는 것이 중요합니다."
+                " Good energy especially around 3 PM.",
+                " Sincere conversation deepens relationships.",
+                " A small gift or message can have great effect.",
+                " Listening to others is most important."
             ],
             money: window.i18n?.t('dynamic.enhanceAdvices.money') || [
-                " 오늘 중 좋은 소식이 있을 수 있습니다.",
-                " 충동 구매는 피하세요.",
-                " 예상치 못한 수입이 생길 수 있습니다.",
-                " 장기적 관점에서 결정하세요."
+                " Good news may come today.",
+                " Avoid impulsive purchases.",
+                " Unexpected income may arrive.",
+                " Decide from a long-term perspective."
             ],
             health: window.i18n?.t('dynamic.enhanceAdvices.health') || [
-                " 충분한 수분 섭취를 잊지 마세요.",
-                " 가벼운 스트레칭이 도움이 됩니다.",
-                " 오늘은 무리하지 않는 것이 좋습니다.",
-                " 긍정적인 마인드가 건강에도 영향을 줍니다."
+                " Don't forget adequate water intake.",
+                " Light stretching helps.",
+                " Don't overdo things today.",
+                " A positive mindset affects health."
             ],
             work: window.i18n?.t('dynamic.enhanceAdvices.work') || [
-                " 오전에 중요한 업무를 처리하세요.",
-                " 동료와의 협력이 성과를 높입니다.",
-                " 새로운 아이디어를 적극적으로 제안해보세요.",
-                " 세부사항에 주의를 기울이세요."
+                " Handle important tasks in the morning.",
+                " Collaboration boosts results.",
+                " Boldly propose new ideas.",
+                " Pay attention to details."
             ]
         };
 
@@ -686,19 +689,19 @@ class DreamFortuneApp {
     // 시간대별 조언
     getTimeBasedAdvice(seed) {
         const morningAdvice = window.i18n?.t('dynamic.timeBasedAdvices.morning') || [
-            "오전: 중요한 결정이나 시작에 좋은 시간입니다.",
-            "오전: 명상이나 계획 수립에 적합합니다.",
-            "오전: 에너지가 높으니 도전적인 일을 시작하세요."
+            "Morning: A good time for important decisions or new starts.",
+            "Morning: Good for meditation or planning.",
+            "Morning: Energy is high; tackle challenging tasks."
         ];
         const afternoonAdvice = window.i18n?.t('dynamic.timeBasedAdvices.afternoon') || [
-            "오후: 대인관계에서 좋은 일이 생길 수 있습니다.",
-            "오후: 집중력이 필요한 업무를 처리하세요.",
-            "오후: 잠시 휴식을 취하면 아이디어가 떠오릅니다."
+            "Afternoon: Good things may happen in relationships.",
+            "Afternoon: Handle tasks requiring focus.",
+            "Afternoon: Rest and ideas will come."
         ];
         const eveningAdvice = window.i18n?.t('dynamic.timeBasedAdvices.evening') || [
-            "저녁: 사랑하는 사람과의 시간이 행운을 부릅니다.",
-            "저녁: 하루를 정리하며 감사한 것을 떠올리세요.",
-            "저녁: 꿈 일기를 쓰면 더 깊은 통찰을 얻습니다."
+            "Evening: Time with loved ones brings luck.",
+            "Evening: Reflect on the day and gratitude.",
+            "Evening: Writing a dream diary provides deeper insight."
         ];
 
         return `${morningAdvice[Math.abs(seed) % morningAdvice.length]}\n` +
@@ -708,7 +711,7 @@ class DreamFortuneApp {
 
     // 오늘의 행운 색상
     getTodayLuckyColor(baseColor, seed) {
-        const additionalColors = ["금색", "은색", "하늘색", "연두색", "코랄", "라벤더", "민트"];
+        const additionalColors = window.i18n?.t('dynamic.colors') || ["Gold", "Silver", "Sky Blue", "Light Green", "Coral", "Lavender", "Mint"];
         const extraColor = additionalColors[Math.abs(seed) % additionalColors.length];
         return baseColor ? `${baseColor}, ${extraColor}` : extraColor;
     }
@@ -723,9 +726,9 @@ class DreamFortuneApp {
     // 행운의 시간
     getLuckyTime(seed) {
         const times = window.i18n?.t('dynamic.luckyTimes') || [
-            "오전 9시 ~ 11시", "오전 10시 ~ 12시", "오후 1시 ~ 3시",
-            "오후 2시 ~ 4시", "오후 3시 ~ 5시", "저녁 6시 ~ 8시",
-            "저녁 7시 ~ 9시", "밤 9시 ~ 11시"
+            "9-11 AM", "10 AM-12 PM", "1-3 PM",
+            "2-4 PM", "3-5 PM", "6-8 PM",
+            "7-9 PM", "9-11 PM"
         ];
         return times[Math.abs(seed) % times.length];
     }
@@ -747,32 +750,32 @@ class DreamFortuneApp {
         const keywords = results.map(r => r.keyword);
 
         // 종합 해석 생성 (동적)
-        const discoveredSymbolsLabel = window.i18n?.t('dynamic.resultLabels.discoveredSymbols') || '🔮 발견된 상징';
+        const discoveredSymbolsLabel = window.i18n?.t('dynamic.resultLabels.discoveredSymbols') || '🔮 Discovered Symbols';
         let combinedMeaning = `${discoveredSymbolsLabel}: ${keywords.join(', ')}\n`;
         combinedMeaning += `✨ ${this.getMultiKeywordMessage(keywords, seed)}\n\n`;
 
         // 각 키워드 해석 (변형 추가)
-        const meaningLabel = window.i18n?.t('dynamic.resultLabels.meaning') || '핵심';
-        const todayMeaningLabel = window.i18n?.t('dynamic.resultLabels.todayMessage')?.replace('✨ ', '').replace(':', '') || '오늘의 의미';
+        const meaningLabel = window.i18n?.t('dynamic.resultLabels.meaning') || 'Core';
+        const todayMeaningLabel = window.i18n?.t('dynamic.resultLabels.todayMessage')?.replace('✨ ', '').replace(':', '') || "Today's Meaning";
         results.forEach((r, i) => {
             combinedMeaning += `【${r.keyword}】\n`;
-            combinedMeaning += `• ${meaningLabel}: ${r.mainMeaning || '무의식의 메시지'}\n`;
+            combinedMeaning += `• ${meaningLabel}: ${r.mainMeaning || 'Message from the unconscious'}\n`;
             combinedMeaning += `• ${todayMeaningLabel}: ${this.getDynamicMeaning(r, seed + i)}\n\n`;
         });
 
         // 키워드 조합 특별 해석
         combinedMeaning += `━━━━━━━━━━━━━━━━━━━━\n`;
-        const keywordCombinationLabel = window.i18n?.t('dynamic.resultLabels.keywordCombination') || '✨ 키워드 조합 해석';
+        const keywordCombinationLabel = window.i18n?.t('dynamic.resultLabels.keywordCombination') || '✨ Keyword Combination Interpretation';
         combinedMeaning += `${keywordCombinationLabel}\n`;
         combinedMeaning += this.generateDynamicCombinedInterpretation(results, seed, input) + '\n\n';
 
         // 종합 분야별 운세 (강화)
         combinedMeaning += `━━━━━━━━━━━━━━━━━━━━\n`;
-        const combinedFieldFortuneLabel = window.i18n?.t('dynamic.resultLabels.combinedFieldFortune') || '📊 오늘의 종합 운세';
-        const loveLabel = window.i18n?.t('dynamic.resultLabels.love') || '💕 연애';
-        const moneyLabel = window.i18n?.t('dynamic.resultLabels.money') || '💰 재물';
-        const workLabel = window.i18n?.t('dynamic.resultLabels.work') || '💼 직장';
-        const healthLabel = window.i18n?.t('dynamic.resultLabels.health') || '💪 건강';
+        const combinedFieldFortuneLabel = window.i18n?.t('dynamic.resultLabels.combinedFieldFortune') || "📊 Today's Combined Fortunes";
+        const loveLabel = window.i18n?.t('dynamic.resultLabels.love') || '💕 Love';
+        const moneyLabel = window.i18n?.t('dynamic.resultLabels.money') || '💰 Money';
+        const workLabel = window.i18n?.t('dynamic.resultLabels.work') || '💼 Work';
+        const healthLabel = window.i18n?.t('dynamic.resultLabels.health') || '💪 Health';
         combinedMeaning += `${combinedFieldFortuneLabel}\n`;
         combinedMeaning += `${loveLabel}: ${this.generateCombinedFieldFortune(results, 'love', seed)}\n`;
         combinedMeaning += `${moneyLabel}: ${this.generateCombinedFieldFortune(results, 'money', seed)}\n`;
@@ -781,7 +784,7 @@ class DreamFortuneApp {
 
         // 시간대별 조언
         combinedMeaning += `━━━━━━━━━━━━━━━━━━━━\n`;
-        const timeBasedLabel = window.i18n?.t('dynamic.resultLabels.timeBasedGuidance') || '⏰ 시간대별 행동 지침';
+        const timeBasedLabel = window.i18n?.t('dynamic.resultLabels.timeBasedGuidance') || '⏰ Time-Based Guidance';
         combinedMeaning += `${timeBasedLabel}\n`;
         combinedMeaning += this.getTimeBasedAdvice(seed) + '\n\n';
         
@@ -790,39 +793,38 @@ class DreamFortuneApp {
         const allNumbers = results.flatMap(r => r.luckyNumber || []);
 
         combinedMeaning += `━━━━━━━━━━━━━━━━━━━━\n`;
-        const combinedLuckyItemsLabel = window.i18n?.t('dynamic.resultLabels.combinedLuckyItems') || '🍀 오늘의 종합 행운';
-        const luckyColorLabel = window.i18n?.t('dynamic.resultLabels.luckyColor') || '🎨 행운 색상';
-        const luckyNumberLabel = window.i18n?.t('dynamic.resultLabels.luckyNumber') || '🔢 행운 숫자';
-        const luckyTimeLabel = window.i18n?.t('dynamic.resultLabels.luckyTime') || '🌟 행운의 시간';
-        const todayQuoteLabel = window.i18n?.t('dynamic.resultLabels.todayQuote') || '💫 오늘의 한마디';
+        const combinedLuckyItemsLabel = window.i18n?.t('dynamic.resultLabels.combinedLuckyItems') || "🍀 Today's Combined Luck";
+        const luckyColorLabel = window.i18n?.t('dynamic.resultLabels.luckyColor') || '🎨 Lucky Color';
+        const luckyNumberLabel = window.i18n?.t('dynamic.resultLabels.luckyNumber') || '🔢 Lucky Numbers';
+        const luckyTimeLabel = window.i18n?.t('dynamic.resultLabels.luckyTime') || '🌟 Lucky Time';
+        const todayQuoteLabel = window.i18n?.t('dynamic.resultLabels.todayQuote') || "💫 Today's Quote";
         combinedMeaning += `${combinedLuckyItemsLabel}\n`;
-        combinedMeaning += `${luckyColorLabel}: ${[...new Set(allColors)].join(', ') || '금색'}\n`;
+        combinedMeaning += `${luckyColorLabel}: ${[...new Set(allColors)].join(', ') || 'Gold'}\n`;
         combinedMeaning += `${luckyNumberLabel}: ${[...new Set([...allNumbers, (Math.abs(seed) % 45) + 1])].slice(0, 5).join(', ')}\n`;
         combinedMeaning += `${luckyTimeLabel}: ${this.getLuckyTime(seed)}\n`;
         combinedMeaning += `\n${todayQuoteLabel}: "${this.getTodayQuote(seed)}"`;
 
-        const combinedInterpretationLabel = window.i18n?.t('dynamic.resultLabels.combinedInterpretation') || '종합 꿈 해석';
-        document.getElementById('dream-keyword').textContent = `${combinedInterpretationLabel} (${results.length}${window.i18n?.t('dynamic.resultLabels.discoveredSymbols')?.match(/상징|Symbol|symbols/i) ? '상징' : 'symbols'})`;
+        const combinedInterpretationLabel = window.i18n?.t('dynamic.resultLabels.combinedInterpretation') || 'Combined Dream Interpretation';
+        document.getElementById('dream-keyword').textContent = `${combinedInterpretationLabel} (${results.length} ${window.i18n?.t('dynamic.resultLabels.discoveredSymbols')?.match(/상징|Symbol|symbols/i) ? window.i18n?.t('dynamic.resultLabels.discoveredSymbols')?.replace(/[🔮\s]/g, '').trim() : 'symbols'})`;
         document.getElementById('dream-meaning').textContent = combinedMeaning;
-        const combinedLuckIndexLabel = window.i18n?.t('dynamic.resultLabels.combinedLuckIndex') || '🍀 오늘의 종합 행운지수';
+        const combinedLuckIndexLabel = window.i18n?.t('dynamic.resultLabels.combinedLuckIndex') || "🍀 Today's Combined Luck Index";
         document.getElementById('dream-luck').textContent = `${combinedLuckIndexLabel} ${avgLuck}%`;
 
         const resultCard = document.getElementById('dream-result');
         resultCard.classList.remove('hidden');
         resultCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
 
-        // 꿈 일기에 자동 저장
-        const keywords = results.map(r => r.keyword);
+        // save to dream diary
         this.saveToDiary(keywords.join(', '), avgLuck);
     }
     
     // 복합 키워드 특별 메시지
     getMultiKeywordMessage(keywords, seed) {
         const messages = window.i18n?.t('dynamic.multiKeywordMessages') || [
-            `여러 상징이 함께 나타난 것은 복합적인 메시지입니다. 각각의 의미가 서로를 보완하며 더 깊은 통찰을 제공합니다.`,
-            `${keywords.length}개의 상징이 조화를 이루며 나타났습니다. 이는 삶의 여러 영역이 연결되어 있음을 보여줍니다.`,
-            `흥미로운 조합입니다! 무의식이 여러 층위의 메시지를 동시에 보내고 있습니다.`,
-            `이 상징들의 만남은 우연이 아닙니다. 당신의 내면이 중요한 이야기를 하고 있습니다.`
+            `Multiple symbols appearing together convey complex messages. Each meaning complements the others, providing deeper insight.`,
+            `${keywords.length} symbols harmonize together. This shows that multiple areas of your life are connected.`,
+            `An interesting combination! Your unconscious is sending messages on multiple levels.`,
+            `The meeting of these symbols is no accident. Your inner self is telling an important story.`
         ];
         return messages[Math.abs(seed) % messages.length].replace(/{count}/g, keywords.length);
     }
@@ -833,10 +835,10 @@ class DreamFortuneApp {
         const shortBase = base.substring(0, 60);
 
         const additions = window.i18n?.t('dynamic.dynamicMeanings') || [
-            `${shortBase}... 오늘 특히 이 에너지가 강하게 작용합니다.`,
-            `${shortBase}... 가까운 시일 내에 관련된 일이 일어날 수 있습니다.`,
-            `${shortBase}... 현재 상황과 밀접하게 연결되어 있습니다.`,
-            `${shortBase}... 이 메시지에 주의를 기울이세요.`
+            `${shortBase}... This energy is especially strong today.`,
+            `${shortBase}... Something related may happen soon.`,
+            `${shortBase}... Closely connected to your current situation.`,
+            `${shortBase}... Pay attention to this message.`
         ];
         return additions[Math.abs(seed) % additions.length].replace(/{meaning}/g, shortBase);
     }
@@ -853,11 +855,11 @@ class DreamFortuneApp {
         if (categories.length > 1) {
             const i18nCategoryMeanings = window.i18n?.t('dynamic.categoryMeanings') || {};
             const categoryMeanings = {
-                "동물-자연": i18nCategoryMeanings.animalNature || "본능과 환경이 조화를 이루고 있습니다. 자연의 흐름을 따르세요.",
-                "동물-행동": i18nCategoryMeanings.animalAction || "행동으로 옮길 때입니다. 본능을 믿고 움직이세요.",
-                "자연-행동": i18nCategoryMeanings.natureAction || "자연스러운 행동이 좋은 결과를 가져옵니다.",
-                "동물-물건": i18nCategoryMeanings.animalThing || "물질적 변화가 예고됩니다. 재물운과 연결됩니다.",
-                "default": (i18nCategoryMeanings.default || `${categories.join('과 ')} 관련 상징의 만남은 삶의 다양한 영역이 연결되어 있음을 보여줍니다.`).replace(/{categories}/g, categories.join('과 '))
+                "동물-자연": i18nCategoryMeanings.animalNature || "Instinct and environment are in harmony. Follow nature's flow.",
+                "동물-행동": i18nCategoryMeanings.animalAction || "It's time to act. Trust your instinct and move.",
+                "자연-행동": i18nCategoryMeanings.natureAction || "Natural action brings good results.",
+                "동물-물건": i18nCategoryMeanings.animalThing || "Material change is coming. Connected to wealth luck.",
+                "default": (i18nCategoryMeanings.default || `The meeting of symbols related to ${categories.join(' and ')} shows that different areas of your life are connected.`).replace(/{categories}/g, categories.join(' and '))
             };
             const catKey = categories.slice(0, 2).sort().join('-');
             interpretation += (categoryMeanings[catKey] || categoryMeanings['default']) + '\n\n';
@@ -874,13 +876,13 @@ class DreamFortuneApp {
         const today = new Date();
         const dayOfWeek = today.getDay();
         const dayMessages = window.i18n?.t('dynamic.dayMessages') || [
-            "일요일의 이 꿈은 한 주의 방향을 알려줍니다.",
-            "월요일의 이 꿈은 새로운 시작을 암시합니다.",
-            "화요일의 이 꿈은 열정과 행동을 요구합니다.",
-            "수요일의 이 꿈은 소통과 연결의 중요성을 말합니다.",
-            "목요일의 이 꿈은 확장과 성장의 기회를 보여줍니다.",
-            "금요일의 이 꿈은 관계와 조화에 대한 메시지입니다.",
-            "토요일의 이 꿈은 휴식과 성찰을 권합니다."
+            "This Sunday dream shows the direction of your week.",
+            "This Monday dream suggests a new beginning.",
+            "This Tuesday dream demands passion and action.",
+            "This Wednesday dream speaks of communication and connection.",
+            "This Thursday dream shows opportunities for expansion and growth.",
+            "This Friday dream is a message about relationships and harmony.",
+            "This Saturday dream recommends rest and reflection."
         ];
         interpretation += '\n\n🗓️ ' + dayMessages[dayOfWeek];
         
@@ -892,16 +894,16 @@ class DreamFortuneApp {
         const [k1, k2] = keywords;
 
         const templateTexts = window.i18n?.t('dynamic.twoKeywordInterpretations') || [
-            `${k1}과(와) ${k2}의 만남은 ${luck >= 70 ? '매우 길한' : luck >= 50 ? '의미 있는' : '주의가 필요한'} 조합입니다. ${k1}의 에너지가 ${k2}를 통해 구체화됩니다.`,
-            `${k1}이(가) 나타내는 내면의 욕구와 ${k2}이(가) 상징하는 외부 상황이 만나고 있습니다. ${luck >= 60 ? '조화로운 진행이 예상됩니다.' : '균형을 찾아야 합니다.'}`,
-            `두 상징이 서로를 보완합니다. ${k1}에서 시작된 흐름이 ${k2}로 이어지며, ${luck >= 70 ? '긍정적인 결과를 예고합니다.' : '신중한 접근이 필요합니다.'}`,
-            `${k1}과(와) ${k2}이(가) 함께 나타난 것은 드문 조합입니다. ${luck >= 65 ? '특별한 기회가 찾아올 수 있습니다.' : '변화에 대비하세요.'}`
+            `The meeting of ${k1} and ${k2} is a ${luck >= 70 ? 'very auspicious' : luck >= 50 ? 'meaningful' : 'cautionary'} combination. The energy of ${k1} takes concrete form through ${k2}.`,
+            `The inner desire ${k1} represents meets the external situation ${k2} symbolizes. ${luck >= 60 ? 'Harmonious progress is expected.' : 'Balance must be found.'}`,
+            `Two symbols complement each other. The flow from ${k1} continues through ${k2}, ${luck >= 70 ? 'heralding positive results.' : 'requiring careful approach.'}`,
+            `The appearance of ${k1} and ${k2} together is a rare combination. ${luck >= 65 ? 'A special opportunity may come.' : 'Prepare for change.'}`
         ];
 
-        const quality = luck >= 70 ? '매우 길한' : luck >= 50 ? '의미 있는' : '주의가 필요한';
-        const balance = luck >= 60 ? '조화로운 진행이 예상됩니다.' : '균형을 찾아야 합니다.';
-        const result = luck >= 70 ? '긍정적인 결과를 예고합니다.' : '신중한 접근이 필요합니다.';
-        const opportunity = luck >= 65 ? '특별한 기회가 찾아올 수 있습니다.' : '변화에 대비하세요.';
+        const quality = luck >= 70 ? 'very auspicious' : luck >= 50 ? 'meaningful' : 'cautionary';
+        const balance = luck >= 60 ? 'Harmonious progress is expected.' : 'Balance must be found.';
+        const result = luck >= 70 ? 'heralding positive results.' : 'requiring careful approach.';
+        const opportunity = luck >= 65 ? 'A special opportunity may come.' : 'Prepare for change.';
 
         return templateTexts[Math.abs(seed) % templateTexts.length]
             .replace(/{k1}/g, k1)
@@ -915,14 +917,14 @@ class DreamFortuneApp {
     // 다중 키워드 조합 해석
     getMultiKeywordInterpretation(keywords, luck, seed) {
         const templates = window.i18n?.t('dynamic.multiKeywordInterpretations') || [
-            `${keywords.length}개의 상징이 복합적으로 나타났습니다. 이는 삶의 여러 측면이 동시에 변화하고 있음을 의미합니다. ${luck >= 70 ? '전반적으로 긍정적인 흐름입니다.' : '하나씩 차분히 접근하세요.'}`,
-            `풍부한 상징의 향연입니다! ${keywords.slice(0, 2).join(', ')} 등이 어우러져 ${luck >= 65 ? '다양한 기회' : '복잡한 상황'}을 예고합니다. 직관을 따르세요.`,
-            `무의식이 풍부한 메시지를 보내고 있습니다. 각 상징을 개별적으로 이해하되, 전체 그림을 놓치지 마세요. ${luck >= 60 ? '통합적 시각이 열쇠입니다.' : '우선순위를 정하세요.'}`
+            `${keywords.length} symbols appear complexly. Multiple aspects of your life are changing simultaneously. ${luck >= 70 ? 'Overall positive flow.' : 'Approach one at a time calmly.'}`,
+            `A rich display of symbols! ${keywords.slice(0, 2).join(', ')} and others combine to predict ${luck >= 65 ? 'diverse opportunities' : 'complex situations'}. Trust your intuition.`,
+            `Your unconscious is sending rich messages. Understand each symbol individually, but don't miss the big picture. ${luck >= 60 ? 'An integrative perspective is key.' : 'Set your priorities.'}`
         ];
 
-        const overall = luck >= 70 ? '전반적으로 긍정적인 흐름입니다.' : '하나씩 차분히 접근하세요.';
-        const expectation = luck >= 65 ? '다양한 기회' : '복잡한 상황';
-        const key = luck >= 60 ? '통합적 시각이 열쇠입니다.' : '우선순위를 정하세요.';
+        const overall = luck >= 70 ? 'Overall positive flow.' : 'Approach one at a time calmly.';
+        const expectation = luck >= 65 ? 'diverse opportunities' : 'complex situations';
+        const key = luck >= 60 ? 'An integrative perspective is key.' : 'Set your priorities.';
 
         return templates[Math.abs(seed) % templates.length]
             .replace(/{count}/g, keywords.length)
@@ -938,10 +940,10 @@ class DreamFortuneApp {
         if (advices.length === 0) {
             const i18nDefaults = window.i18n?.t('dynamic.fortuneDefaults') || {};
             const defaults = {
-                love: i18nDefaults.love || "새로운 만남이나 관계의 발전이 기대됩니다.",
-                money: i18nDefaults.money || "재물운이 안정적으로 흐르고 있습니다.",
-                work: i18nDefaults.work || "업무에서 순조로운 진행이 예상됩니다.",
-                health: i18nDefaults.health || "전반적으로 건강한 흐름입니다."
+                love: i18nDefaults.love || "New meetings or relationship development are expected.",
+                money: i18nDefaults.money || "Wealth luck is flowing steadily.",
+                work: i18nDefaults.work || "Smooth progress is expected.",
+                health: i18nDefaults.health || "Overall healthy flow."
             };
             return defaults[field] + this.getFieldBonus(field, seed);
         }
@@ -949,7 +951,8 @@ class DreamFortuneApp {
         // 첫 번째 조언 + 조합 보너스
         const base = advices[0];
         if (advices.length > 1) {
-            return `${base} 여러 상징의 조합으로 ${this.getFieldCombinationBonus(field, seed)}`;
+            const combLabel = window.i18n?.t('dynamic.fortuneLabels.symbolCombination') || 'Combined symbols bring';
+            return `${base} ${combLabel} ${this.getFieldCombinationBonus(field, seed)}`;
         }
         return base + this.getFieldBonus(field, seed);
     }
@@ -957,10 +960,10 @@ class DreamFortuneApp {
     getFieldBonus(field, seed) {
         const i18nBonuses = window.i18n?.t('dynamic.fieldBonuses') || {};
         const bonuses = {
-            love: i18nBonuses.love || [" 특히 저녁 시간이 좋습니다.", " 진심 어린 표현이 효과적입니다.", ""],
-            money: i18nBonuses.money || [" 오후에 좋은 소식이 있을 수 있습니다.", " 직감을 믿으세요.", ""],
-            work: i18nBonuses.work || [" 협업이 성과를 높입니다.", " 오전에 중요한 업무를 처리하세요.", ""],
-            health: i18nBonuses.health || [" 가벼운 산책이 도움이 됩니다.", " 충분한 휴식을 취하세요.", ""]
+            love: i18nBonuses.love || [" Especially good in the evening.", " Sincere expression is effective.", ""],
+            money: i18nBonuses.money || [" Good news may come this afternoon.", " Trust your intuition.", ""],
+            work: i18nBonuses.work || [" Collaboration boosts results.", " Handle important tasks in the morning.", ""],
+            health: i18nBonuses.health || [" A light walk helps.", " Get adequate rest.", ""]
         };
         return (bonuses[field] || [""])[Math.abs(seed) % 3];
     }
@@ -968,34 +971,34 @@ class DreamFortuneApp {
     getFieldCombinationBonus(field, seed) {
         const i18nBonuses = window.i18n?.t('dynamic.fieldCombinationBonuses') || {};
         const bonuses = {
-            love: i18nBonuses.love || "더 깊은 연결이 가능해집니다.",
-            money: i18nBonuses.money || "예상보다 좋은 결과가 기대됩니다.",
-            work: i18nBonuses.work || "시너지 효과가 발휘됩니다.",
-            health: i18nBonuses.health || "총체적인 균형이 회복됩니다."
+            love: i18nBonuses.love || "Deeper connection is possible.",
+            money: i18nBonuses.money || "Better results than expected.",
+            work: i18nBonuses.work || "Synergy is activated.",
+            health: i18nBonuses.health || "Overall balance is restored."
         };
-        return bonuses[field] || i18nBonuses.default || "긍정적인 변화가 예상됩니다.";
+        return bonuses[field] || i18nBonuses.default || "Positive change is expected.";
     }
     
     // 오늘의 명언
     getTodayQuote(seed) {
         const quotes = window.i18n?.t('dynamic.quotes') || [
-            "꿈은 무의식의 왕도이다. - 프로이트",
-            "모든 꿈은 이루어진다, 그것을 쫓을 용기가 있다면.",
-            "밤의 꿈은 낮의 지혜가 된다.",
-            "당신의 무의식은 언제나 당신을 돕고 있다.",
-            "꿈을 믿는 자에게 길이 열린다.",
-            "오늘 꾼 꿈이 내일의 현실이 된다.",
-            "우주는 꿈을 통해 당신에게 말을 건넨다.",
-            "직관을 따르라, 그것이 당신의 진정한 나침반이다."
+            "Dreams are the royal road to the unconscious. - Freud",
+            "All dreams come true if you have the courage to pursue them.",
+            "Night dreams become daytime wisdom.",
+            "Your unconscious is always helping you.",
+            "For those who believe in dreams, the path opens.",
+            "Today's dream becomes tomorrow's reality.",
+            "The universe speaks to you through dreams.",
+            "Follow intuition; it is your true compass."
         ];
         return quotes[Math.abs(seed) % quotes.length];
     }
     
     combineCategoryAdvice(results, category) {
         const advices = results.map(r => r[category]).filter(Boolean);
-        if (advices.length === 0) return '여러 기운이 복합적으로 작용합니다.';
+        if (advices.length === 0) return 'Multiple energies are at work.';
         if (advices.length === 1) return advices[0];
-        return advices[0] + ' 또한, ' + advices.slice(1).join(' ').toLowerCase();
+        return advices[0] + ' Also, ' + advices.slice(1).join(' ').toLowerCase();
     }
 
     generateCombinedInterpretation(results) {
@@ -1005,20 +1008,21 @@ class DreamFortuneApp {
         
         let interpretation = '';
         
-        // 카테고리 기반 해석
+        // category-based interpretation
+        const i18nCombined = window.i18n?.t('dynamic.combinedInterpretations') || {};
         if (categories.length > 1) {
-            interpretation += `${categories.join('과 ')} 관련 상징이 함께 나타났습니다. `;
+            interpretation += `Symbols related to ${categories.join(' and ')} appeared together. `;
         }
-        
-        // 행운지수에 따른 종합 메시지
+
+        // luck-based combined message
         if (avgLuck >= 85) {
-            interpretation += `${keywords.join('과 ')}이(가) 함께 나타난 꿈은 매우 길한 꿈입니다! 여러 긍정적인 에너지가 결합되어 큰 행운이 찾아올 징조입니다. 이 시기에 중요한 결정을 내리거나 새로운 시작을 하면 좋은 결과를 얻을 수 있습니다. 적극적으로 기회를 잡으세요!`;
+            interpretation += i18nCombined.veryLucky?.replace(/{keywords}/g, keywords.join(' and ')) || `The dream where ${keywords.join(' and ')} appear together is very auspicious! Multiple positive energies combine to herald great luck. Important decisions or new starts made now will yield good results. Seize opportunities actively!`;
         } else if (avgLuck >= 70) {
-            interpretation += `${keywords.join('과 ')}의 조합은 긍정적인 변화를 암시합니다. 각각의 상징이 서로를 보완하며, 당신의 무의식이 새로운 가능성을 보여주고 있습니다. 변화에 열린 마음을 가지고 직관을 따라가 보세요.`;
+            interpretation += i18nCombined.lucky?.replace(/{keywords}/g, keywords.join(' and ')) || `The combination of ${keywords.join(' and ')} suggests positive change. Each symbol complements the others, and your unconscious shows new possibilities. Open your mind to change and follow your intuition.`;
         } else if (avgLuck >= 55) {
-            interpretation += `${keywords.join('과 ')}이(가) 함께 나타난 것은 현재 상황에 대한 복합적인 메시지입니다. 긍정적인 면과 주의할 점이 공존하니, 균형 잡힌 시각으로 상황을 바라보세요. 성급한 판단보다는 신중한 접근이 좋습니다.`;
+            interpretation += i18nCombined.mixed?.replace(/{keywords}/g, keywords.join(' and ')) || `The appearance of ${keywords.join(' and ')} together is a complex message about the current situation. Positive and cautious aspects coexist. View the situation with balanced perspective. Careful consideration is better than hasty judgment.`;
         } else {
-            interpretation += `${keywords.join('과 ')}의 조합은 내면의 갈등이나 해결해야 할 과제를 나타냅니다. 하지만 꿈은 문제를 인식하게 해주는 것이므로, 이를 통해 성장할 기회로 삼으세요. 자신을 돌보는 시간을 가지세요.`;
+            interpretation += i18nCombined.challenging?.replace(/{keywords}/g, keywords.join(' and ')) || `The combination of ${keywords.join(' and ')} indicates inner conflict or tasks to resolve. But dreams help us recognize problems, so use this as an opportunity for growth. Take time to care for yourself.`;
         }
         
         return interpretation;
@@ -1028,7 +1032,7 @@ class DreamFortuneApp {
         const keyword = document.getElementById('dream-keyword').textContent;
         const meaning = document.getElementById('dream-meaning').textContent;
         const url = 'https://dopabrain.com/dream-fortune/';
-        const shareTemplate = window.i18n?.t('dynamic.shareTexts.dreamShare') || `🌙 나의 꿈해몽 결과\n\n{keyword}\n{meaning}\n\n너도 어젯밤 꿈 해석해봐! 👇\n{url}`;
+        const shareTemplate = window.i18n?.t('dynamic.shareTexts.dreamShare') || `🌙 My Dream Interpretation Result\n\n{keyword}\n{meaning}\n\nInterpret your dream too! 👇\n{url}`;
         const text = shareTemplate
             .replace('{keyword}', keyword)
             .replace('{meaning}', meaning)
@@ -1044,10 +1048,10 @@ class DreamFortuneApp {
         }
 
         if (navigator.share) {
-            navigator.share({ title: window.i18n?.t('dynamic.shareTexts.dreamShareTitle') || '나의 꿈해몽 결과 🔮', text, url }).catch(() => {});
+            navigator.share({ title: window.i18n?.t('dynamic.shareTexts.dreamShareTitle') || 'My Dream Interpretation Result 🔮', text, url }).catch(() => {});
         } else {
             navigator.clipboard.writeText(text).then(() => {
-                alert(window.i18n?.t('dynamic.shareTexts.dreamShareClipboard') || '결과가 복사되었습니다! 친구에게 공유해보세요 🌙');
+                alert(window.i18n?.t('dynamic.shareTexts.dreamShareClipboard') || 'Result copied to clipboard! Share with your friends 🌙');
             }).catch(() => {});
         }
     }
@@ -1107,7 +1111,7 @@ class DreamFortuneApp {
         document.getElementById('luck-stars').textContent = '★'.repeat(luck) + '☆'.repeat(5 - luck);
 
         // 상세 운세 메시지 (별자리별)
-        const zodiacMessages = detailedFortuneMessages[zodiac.name] || detailedFortuneMessages["양자리"];
+        const zodiacMessages = detailedFortuneMessages[zodiac.name] || detailedFortuneMessages[Object.keys(detailedFortuneMessages)[0]];
         const msgIndex = Math.abs(seed) % zodiacMessages.length;
         const mainMessage = zodiacMessages[msgIndex];
         
@@ -1119,13 +1123,20 @@ class DreamFortuneApp {
         const timeMsg = timeAdvice[timeKey][Math.abs(seed + 10) % timeAdvice[timeKey].length];
 
         // 종합 메시지 생성
-        const fullMessage = `${mainMessage}\n\n⏰ 시간대 조언\n${timeMsg}\n\n📊 ${zodiac.name} 특징\n• 원소: ${zodiac.element} | 지배성: ${zodiac.ruling}\n• 성향: ${zodiac.traits}\n• 연애 스타일: ${zodiac.love}\n• 적합 분야: ${zodiac.career}`;
+        const lTimeAdvice = window.i18n?.t('dynamic.fortuneLabels.timeAdvice') || 'Time-Based Advice';
+        const lTraits = window.i18n?.t('dynamic.fortuneLabels.traits') || 'Traits';
+        const lElement = window.i18n?.t('dynamic.fortuneLabels.element') || 'Element';
+        const lRuling = window.i18n?.t('dynamic.fortuneLabels.ruling') || 'Ruling Planet';
+        const lPersonality = window.i18n?.t('dynamic.fortuneLabels.personality') || 'Personality';
+        const lLoveStyle = window.i18n?.t('dynamic.fortuneLabels.loveStyle') || 'Love Style';
+        const lCareerFit = window.i18n?.t('dynamic.fortuneLabels.careerFit') || 'Career Fit';
+        const fullMessage = `${mainMessage}\n\n⏰ ${lTimeAdvice}\n${timeMsg}\n\n📊 ${zodiac.name} ${lTraits}\n• ${lElement}: ${zodiac.element} | ${lRuling}: ${zodiac.ruling}\n• ${lPersonality}: ${zodiac.traits}\n• ${lLoveStyle}: ${zodiac.love}\n• ${lCareerFit}: ${zodiac.career}`;
 
         document.getElementById('fortune-message').textContent = fullMessage;
 
         // 별자리 정보
         document.getElementById('fortune-zodiac-icon').textContent = zodiac.icon;
-        const fortuneZodiacLabel = window.i18n?.t('dynamic.resultLabels.fortuneZodiacInfo')?.replace('{zodiac}', zodiac.name).replace('{dates}', zodiac.dates) || `${zodiac.name}의 오늘 (${zodiac.dates})`;
+        const fortuneZodiacLabel = window.i18n?.t('dynamic.resultLabels.fortuneZodiacInfo')?.replace('{zodiac}', zodiac.name).replace('{dates}', zodiac.dates) || `${zodiac.name} Today (${zodiac.dates})`;
         document.getElementById('fortune-zodiac-name').textContent = fortuneZodiacLabel;
 
         // 행운 아이템 (상세)
@@ -1148,7 +1159,7 @@ class DreamFortuneApp {
         const number = document.getElementById('lucky-number').textContent;
         const url = 'https://dopabrain.com/dream-fortune/';
 
-        const shareTemplate = window.i18n?.t('dynamic.shareTexts.fortuneShare') || `⭐ 오늘의 {zodiac} 운세\n\n{message}\n\n🎨 행운 색상: {color}\n🔢 행운 숫자: {number}\n\n너의 오늘 운세도 확인해봐! 👇\n{url}`;
+        const shareTemplate = window.i18n?.t('dynamic.shareTexts.fortuneShare') || `⭐ Today's {zodiac} Horoscope\n\n{message}\n\n🎨 Lucky Color: {color}\n🔢 Lucky Numbers: {number}\n\nCheck your horoscope too! 👇\n{url}`;
         const text = shareTemplate
             .replace('{zodiac}', zodiac)
             .replace('{message}', message)
@@ -1157,11 +1168,11 @@ class DreamFortuneApp {
             .replace('{url}', url);
 
         if (navigator.share) {
-            const shareTitle = window.i18n?.t('dynamic.shareTexts.fortuneShareTitle')?.replace('{zodiac}', zodiac) || `오늘의 ${zodiac} 운세 ⭐`;
+            const shareTitle = window.i18n?.t('dynamic.shareTexts.fortuneShareTitle')?.replace('{zodiac}', zodiac) || `Today's ${zodiac} Horoscope ⭐`;
             navigator.share({ title: shareTitle, text, url }).catch(() => {});
         } else {
             navigator.clipboard.writeText(text).then(() => {
-                alert(window.i18n?.t('dynamic.shareTexts.fortuneShareClipboard') || '결과가 복사되었습니다! 친구에게 공유해보세요 ⭐');
+                alert(window.i18n?.t('dynamic.shareTexts.fortuneShareClipboard') || 'Result copied to clipboard! Share with your friends ⭐');
             }).catch(() => {});
         }
     }
@@ -1202,17 +1213,19 @@ class DreamFortuneApp {
 
     showTarotResult(tarot, isReversed = false) {
         const reading = isReversed ? tarot.reversed : tarot.upright;
-        const directionLabel = isReversed ? window.i18n?.t('dynamic.resultLabels.tarotDirection')?.replace('{direction}', '역방향') || '(역방향)' : window.i18n?.t('dynamic.resultLabels.tarotDirection')?.replace('{direction}', '정방향') || '(정방향)';
-        const direction = directionLabel.includes('역') || directionLabel.includes('Reversed') ? window.i18n?.t('dynamic.resultLabels.tarotDirection')?.replace('{direction}', '역방향') || '(역방향)' : window.i18n?.t('dynamic.resultLabels.tarotDirection')?.replace('{direction}', '정방향') || '(정방향)';
+        const reversedLabel = window.i18n?.t('dynamic.tarotReversed') || 'Reversed';
+        const uprightLabel = window.i18n?.t('dynamic.tarotUpright') || 'Upright';
+        const directionText = isReversed ? reversedLabel : uprightLabel;
+        const directionLabel = window.i18n?.t('dynamic.resultLabels.tarotDirection')?.replace('{direction}', directionText) || `(${directionText})`;
 
         document.getElementById('tarot-icon').textContent = tarot.icon;
-        document.getElementById('tarot-name').textContent = `${tarot.name} ${isReversed ? window.i18n?.t('dynamic.resultLabels.tarotDirection')?.replace('{direction}', '역방향') || '(역방향)' : window.i18n?.t('dynamic.resultLabels.tarotDirection')?.replace('{direction}', '정방향') || '(정방향)'}`;
+        document.getElementById('tarot-name').textContent = `${tarot.name} ${directionLabel}`;
 
-        // 상세 해석 생성
-        const tarotKeywordLabel = window.i18n?.t('dynamic.resultLabels.tarotKeyword') || '🔑 키워드';
-        const tarotMeaningLabel = window.i18n?.t('dynamic.resultLabels.tarotMeaning') || '📖 의미';
-        const tarotLoveLabel = window.i18n?.t('dynamic.resultLabels.tarotLove') || '💕 연애 관점';
-        const tarotCareerLabel = window.i18n?.t('dynamic.resultLabels.tarotCareer') || '💼 직장/재정 관점';
+        // detailed reading
+        const tarotKeywordLabel = window.i18n?.t('dynamic.resultLabels.tarotKeyword') || '🔑 Keyword';
+        const tarotMeaningLabel = window.i18n?.t('dynamic.resultLabels.tarotMeaning') || '📖 Meaning';
+        const tarotLoveLabel = window.i18n?.t('dynamic.resultLabels.tarotLove') || '💕 Love Perspective';
+        const tarotCareerLabel = window.i18n?.t('dynamic.resultLabels.tarotCareer') || '💼 Career/Finance Perspective';
         const fullMeaning = `${tarotKeywordLabel}: ${reading.keyword}\n\n` +
             `${tarotMeaningLabel}\n${reading.meaning}\n\n` +
             `${tarotLoveLabel}\n${reading.love}\n\n` +
@@ -1220,7 +1233,7 @@ class DreamFortuneApp {
             `━━━━━━━━━━━━━━━━━━━━`;
 
         document.getElementById('tarot-meaning').textContent = fullMeaning;
-        const tarotAdviceLabel = window.i18n?.t('dynamic.resultLabels.tarotAdvice') || '💫 오늘의 조언';
+        const tarotAdviceLabel = window.i18n?.t('dynamic.resultLabels.tarotAdvice') || "💫 Today's Advice";
         document.getElementById('tarot-advice').textContent = `${tarotAdviceLabel}: ${reading.advice}`;
 
         const resultCard = document.getElementById('tarot-result');
@@ -1283,7 +1296,7 @@ class DreamFortuneApp {
         if (!container) return;
 
         if (this.dreamDiary.length === 0) {
-            const emptyMessage = window.i18n?.t('dynamic.resultLabels.diaryEmpty') || '아직 해석한 꿈이 없습니다.';
+            const emptyMessage = window.i18n?.t('dynamic.resultLabels.diaryEmpty') || 'No dream interpretations yet.';
             container.innerHTML = `<p class="diary-empty">${emptyMessage}</p>`;
             return;
         }
@@ -1291,7 +1304,7 @@ class DreamFortuneApp {
         container.innerHTML = this.dreamDiary.map(entry => {
             const d = new Date(entry.date);
             const dateStr = `${d.getMonth() + 1}/${d.getDate()}`;
-            const diaryLuckLabel = window.i18n?.t('dynamic.resultLabels.diaryLuck')?.replace('{luck}', entry.luck) || `행운 ${entry.luck}%`;
+            const diaryLuckLabel = window.i18n?.t('dynamic.resultLabels.diaryLuck')?.replace('{luck}', entry.luck) || `Luck ${entry.luck}%`;
             return `
                 <div class="diary-item">
                     <span class="diary-date">${dateStr}</span>

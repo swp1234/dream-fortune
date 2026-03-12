@@ -117,6 +117,23 @@
         "Investment in self-development will bring great rewards later."
       ]
     },
+    "actionAdvice": {
+      "high": "• Now is the time for action. Start what you've been putting off.\n• Actively embrace new opportunities.\n• Move toward your goals with confidence.",
+      "medium": "• A balanced approach is needed. Don't rush.\n• Seek advice from others, but make the final decision yourself.\n• Accumulate small successes.",
+      "low": "• Now is the time for preparation. Build your foundation.\n• Take time to look inward. Meditation or journaling helps.\n• Don't be impatient; wait for the right moment."
+    },
+    "tarotReversed": "Reversed",
+    "tarotUpright": "Upright",
+    "fortuneLabels": {
+      "timeAdvice": "Time-Based Advice",
+      "traits": "Traits",
+      "element": "Element",
+      "ruling": "Ruling Planet",
+      "personality": "Personality",
+      "loveStyle": "Love Style",
+      "careerFit": "Career Fit",
+      "symbolCombination": "Combined symbols bring"
+    },
     "shareTexts": {
       "aiDream": "✨ {title}\n\n🌟 Luck Index: {luck}\n🔢 Lucky Numbers: {number}\n🎨 Lucky Color: {color}\n\n🧠 {meaning}...\n\nGet AI deep analysis in the Dream & Fortune app! 🔮",
       "aiDreamTitle": "My Dream Interpretation Result ✨",

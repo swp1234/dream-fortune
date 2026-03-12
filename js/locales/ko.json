@@ -117,6 +117,23 @@
         "자기 계발에 투자하면 나중에 큰 보상으로 돌아올 것입니다."
       ]
     },
+    "actionAdvice": {
+      "high": "• 지금은 행동의 시기입니다. 미루던 일을 시작하세요.\n• 새로운 기회에 적극적으로 응하세요.\n• 자신감을 가지고 목표를 향해 나아가세요.",
+      "medium": "• 균형 잡힌 접근이 필요합니다. 급하게 서두르지 마세요.\n• 주변의 조언을 구하되 최종 결정은 스스로 하세요.\n• 작은 성공들을 축적해 나가세요.",
+      "low": "• 지금은 준비의 시기입니다. 기반을 다지세요.\n• 내면을 돌보는 시간을 가지세요. 명상이나 일기가 도움됩니다.\n• 조급해하지 말고 때를 기다리세요."
+    },
+    "tarotReversed": "역방향",
+    "tarotUpright": "정방향",
+    "fortuneLabels": {
+      "timeAdvice": "시간대 조언",
+      "traits": "특징",
+      "element": "원소",
+      "ruling": "지배성",
+      "personality": "성향",
+      "loveStyle": "연애 스타일",
+      "careerFit": "적합 분야",
+      "symbolCombination": "여러 상징의 조합으로"
+    },
     "shareTexts": {
       "aiDream": "✨ {title}\n\n🌟 행운 지수: {luck}\n🔢 행운의 숫자: {number}\n🎨 행운의 색상: {color}\n\n🧠 {meaning}...\n\n꿈해몽 & 운세 앱에서 AI 심층 분석을 받아보세요! 🔮",
       "aiDreamTitle": "내 꿈해몽 결과 ✨",
