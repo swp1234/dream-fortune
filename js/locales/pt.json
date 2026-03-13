@@ -73,5 +73,12 @@
     "audio": "Áudio indisponível. Você pode continuar.",
     "network": "Verifique sua conexão e tente novamente.",
     "general": "Algo deu errado. Atualize ou tente novamente."
+  },
+  "related": {
+    "title": "Explore mais",
+    "dailyTarot": "Tarô diário",
+    "fortuneCookie": "Biscoito da sorte",
+    "numerology": "Numerologia",
+    "luckMeter": "Medidor de sorte"
   }
 }

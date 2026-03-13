@@ -73,5 +73,12 @@
     "audio": "Audio no disponible. Puede continuar.",
     "network": "Verifique su conexión e inténtelo de nuevo.",
     "general": "Algo salió mal. Actualice o inténtelo de nuevo."
+  },
+  "related": {
+    "title": "Explora más",
+    "dailyTarot": "Tarot diario",
+    "fortuneCookie": "Galleta de la fortuna",
+    "numerology": "Numerología",
+    "luckMeter": "Medidor de suerte"
   }
 }

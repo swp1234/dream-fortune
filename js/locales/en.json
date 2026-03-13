@@ -360,5 +360,12 @@
     "audio": "Audio unavailable. You can still continue.",
     "network": "Please check your connection and try again.",
     "general": "Something went wrong. Please refresh or try again."
+  },
+  "related": {
+    "title": "More to Explore",
+    "dailyTarot": "Daily Tarot",
+    "fortuneCookie": "Fortune Cookie",
+    "numerology": "Numerology",
+    "luckMeter": "Luck Meter"
   }
 }

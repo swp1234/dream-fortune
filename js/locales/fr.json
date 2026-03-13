@@ -73,5 +73,12 @@
     "audio": "Audio indisponible. Vous pouvez continuer.",
     "network": "Vérifiez votre connexion et réessayez.",
     "general": "Un problème est survenu. Rafraîchissez ou réessayez."
+  },
+  "related": {
+    "title": "À découvrir",
+    "dailyTarot": "Tarot du jour",
+    "fortuneCookie": "Fortune Cookie",
+    "numerology": "Numérologie",
+    "luckMeter": "Chance-mètre"
   }
 }
