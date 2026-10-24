@@ -80,6 +80,9 @@
     "fortuneCookie": "Печенье с предсказанием",
     "numerology": "Нумерология",
     "luckMeter": "Измеритель удачи",
-    "futureSelf": "Будущее Я"
+    "futureSelf": "Будущее Я",
+    "stressCheck": "Тест на стресс",
+    "hspTest": "Тест на HSP",
+    "attachmentStyle": "Стиль привязанности"
   }
 }

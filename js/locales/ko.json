@@ -367,6 +367,9 @@
     "fortuneCookie": "포춘쿠키",
     "numerology": "수비학",
     "luckMeter": "행운 측정기",
-    "futureSelf": "10년 후의 나"
+    "futureSelf": "10년 후의 나",
+    "stressCheck": "스트레스 진단",
+    "hspTest": "HSP 민감성 테스트",
+    "attachmentStyle": "애착유형 테스트"
   }
 }

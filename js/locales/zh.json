@@ -80,6 +80,9 @@
     "fortuneCookie": "幸运饼干",
     "numerology": "数字命理",
     "luckMeter": "运气测量",
-    "futureSelf": "未来的自己"
+    "futureSelf": "未来的自己",
+    "stressCheck": "压力自测",
+    "hspTest": "高敏感测试",
+    "attachmentStyle": "依恋风格测试"
   }
 }

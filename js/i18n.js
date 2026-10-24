@@ -66,6 +66,14 @@
                 document.title = this.t('app.title');
                 const meta = document.querySelector('meta[name="description"]');
                 if (meta) meta.content = this.t('app.description');
+                const currentLang = this.currentLang || 'en';
+                document.querySelectorAll('#related-grid a, .related-grid a').forEach(el => {
+                    const raw = (el.getAttribute('data-base-href') || el.getAttribute('href') || '').split('?')[0];
+                    if (raw && !raw.startsWith('http')) {
+                        el.setAttribute('data-base-href', raw);
+                        el.setAttribute('href', raw + '?lang=' + encodeURIComponent(currentLang));
+                    }
+                });
             }
             getCurrentLanguage() { return this.currentLang; }
             getLanguageName(lang) {

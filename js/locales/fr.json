@@ -80,6 +80,9 @@
     "fortuneCookie": "Fortune Cookie",
     "numerology": "Numérologie",
     "luckMeter": "Chance-mètre",
-    "futureSelf": "Moi du Futur"
+    "futureSelf": "Moi du Futur",
+    "stressCheck": "Test de Stress",
+    "hspTest": "Test HSP",
+    "attachmentStyle": "Style d’attachement"
   }
 }

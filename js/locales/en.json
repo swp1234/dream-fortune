@@ -367,6 +367,9 @@
     "fortuneCookie": "Fortune Cookie",
     "numerology": "Numerology",
     "luckMeter": "Luck Meter",
-    "futureSelf": "Future Self"
+    "futureSelf": "Future Self",
+    "stressCheck": "Stress Check",
+    "hspTest": "HSP Test",
+    "attachmentStyle": "Attachment Style"
   }
 }

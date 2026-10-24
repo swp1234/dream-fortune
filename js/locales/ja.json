@@ -80,6 +80,9 @@
     "fortuneCookie": "フォーチュンクッキー",
     "numerology": "数秘術",
     "luckMeter": "運勢メーター",
-    "futureSelf": "10年後の自分"
+    "futureSelf": "10年後の自分",
+    "stressCheck": "ストレス診断",
+    "hspTest": "HSP診断",
+    "attachmentStyle": "愛着スタイル診断"
   }
 }
