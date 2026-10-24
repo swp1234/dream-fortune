@@ -214,41 +214,13 @@ class DreamFortuneApp {
         const keyword = document.getElementById('dream-input').value.trim();
         if (!keyword) return;
 
-        // 광고 표시 (AdSense 연동 전 시뮬레이션)
-        this.showInterstitialAd(() => {
-            // 광고 완료 후 AI 해석 표시
-            this.generatePremiumAnalysis(keyword);
-        });
+        // 바로 심층 해석 표시 (광고 강제 잠금 해제 금지)
+        this.generatePremiumAnalysis(keyword);
     }
     
-    // 전면 광고 표시
+    // 호환성 유지용 스텁
     showInterstitialAd(callback) {
-        const adModal = document.getElementById('interstitial-ad');
-        const closeBtn = document.getElementById('close-ad');
-        const countdown = document.getElementById('countdown');
-        
-        adModal.classList.remove('hidden');
-        closeBtn.disabled = true;
-        
-        let seconds = 5;
-        countdown.textContent = seconds;
-        
-        const timer = setInterval(() => {
-            seconds--;
-            countdown.textContent = seconds;
-            
-            if (seconds <= 0) {
-                clearInterval(timer);
-                closeBtn.disabled = false;
-                closeBtn.textContent = window.i18n?.t('ads.close') || 'Close';
-
-                closeBtn.onclick = () => {
-                    adModal.classList.add('hidden');
-                    closeBtn.textContent = (window.i18n?.t('ads.close') || 'Close') + ' (5)';
-                    if (callback) callback();
-                };
-            }
-        }, 1000);
+        if (callback) callback();
     }
     
     // 프리미엄 분석 생성 (강화된 UI)
