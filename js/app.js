@@ -44,9 +44,10 @@ class DreamFortuneApp {
                 const langMenu = document.getElementById('lang-menu');
                 const langOptions = document.querySelectorAll('.lang-option');
 
-                const currentLang = window.i18n?.getCurrentLanguage?.() || 'en';
+                const currentLang = window.i18n?.getCurrentLanguage?.() || 'ko';
                 const langOptionActive = document.querySelector(`[data-lang="${currentLang}"]`);
                 if (langOptionActive) langOptionActive.classList.add('active');
+                this.updateFooterLinks(currentLang);
 
                 if (langToggle && langMenu) {
                     langToggle.addEventListener('click', () => langMenu.classList.toggle('hidden'));
@@ -72,6 +73,7 @@ class DreamFortuneApp {
                             langOptions.forEach(o => o.classList.remove('active'));
                             opt.classList.add('active');
                             if (langMenu) langMenu.classList.add('hidden');
+                            this.updateFooterLinks(lang);
 
                             // GA4: 언어 변경 추적
                             if (typeof gtag === 'function') {
@@ -90,6 +92,16 @@ class DreamFortuneApp {
             // Initialize Theme Toggle
             this.initTheme();
         })();
+    }
+
+    updateFooterLinks(lang) {
+        const current = lang || window.i18n?.getCurrentLanguage?.() || 'ko';
+        const safeLang = /^(ko|en|zh|hi|ru|ja|es|pt|id|tr|de|fr)$/.test(current) ? current : 'ko';
+        document.querySelectorAll('#related-grid a').forEach(link => {
+            const base = link.getAttribute('data-base-href');
+            if (!base) return;
+            link.href = `${base}?lang=${encodeURIComponent(safeLang)}&start=1&source=dream_fortune_footer`;
+        });
     }
 
     // Theme Toggle Function
