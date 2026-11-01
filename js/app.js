@@ -48,6 +48,7 @@ class DreamFortuneApp {
                 const langOptionActive = document.querySelector(`[data-lang="${currentLang}"]`);
                 if (langOptionActive) langOptionActive.classList.add('active');
                 this.updateFooterLinks(currentLang);
+                this.initFooterLinks();
 
                 if (langToggle && langMenu) {
                     langToggle.addEventListener('click', () => langMenu.classList.toggle('hidden'));
@@ -101,6 +102,22 @@ class DreamFortuneApp {
             const base = link.getAttribute('data-base-href');
             if (!base) return;
             link.href = `${base}?lang=${encodeURIComponent(safeLang)}&start=1&source=dream_fortune_footer`;
+        });
+    }
+
+    initFooterLinks() {
+        document.querySelectorAll('#related-grid a').forEach(link => {
+            link.addEventListener('click', () => {
+                const targetSlug = (link.getAttribute('data-base-href') || '').replace(/^\/+|\/+$/g, '');
+                if (typeof gtag === 'function') {
+                    gtag('event', 'content_cta_click', {
+                        event_category: 'engagement',
+                        page_path: location.pathname,
+                        target_url: link.href,
+                        link_id: 'dream_footer_' + (targetSlug || 'link')
+                    });
+                }
+            });
         });
     }
 
