@@ -371,5 +371,29 @@
     "stressCheck": "Stress Check",
     "hspTest": "HSP Test",
     "attachmentStyle": "Attachment Style"
+  },
+  "about": {
+    "toggle": "About Dream Interpretation & Oneiric Psychology",
+    "heading1": "Analytical Psychology & Symbolic Dream Reflection",
+    "text1": "From Sigmund Freud's examination of latent unconscious wishes to Carl Jung's compensatory archetype models, dreams have long served as mirrors of the human psyche. During REM sleep, neural networks consolidate emotional memory and synthesize subconscious concerns through rich metaphorical imagery.",
+    "boundary": "Self-Reflection Boundary: This application provides cultural symbolism and psychological self-reflection prompts. It is not an empirical fortune-telling service, supernatural divination, or substitute for professional psychotherapy.",
+    "heading2": "Common Archetypal Motifs & Meanings",
+    "pWater": "Water & Ocean:",
+    "dWater": "Reflects emotional depth and unconscious currents; calm waters signify equilibrium, while turbulent seas mirror unresolved inner conflict.",
+    "pFlight": "Flight & Ascension:",
+    "dFlight": "Symbolizes liberation from waking constraints, expansive cognitive perspective, and desire for creative autonomy.",
+    "pFall": "Falling & Loss of Footing:",
+    "dFall": "Highlights vulnerability, perceived loss of agency, or abrupt transitions in waking personal or career circumstances.",
+    "pAnimals": "Animals & Serpents:",
+    "dAnimals": "Embody instinctual drives, somatic intuition, and psychological metamorphosis or renewal.",
+    "faqTitle": "Frequently Asked Questions",
+    "faq1Q": "What psychological frameworks are used in dream interpretation?",
+    "faq1A": "Dream interpretation incorporates Freudian wish-fulfillment concepts and Jungian analytical archetypes, viewing dream imagery such as water, flight, and symbols as reflections of unconscious emotional states and psychic compensation.",
+    "faq2Q": "Are the horoscopes and dream interpretations scientifically predictive?",
+    "faq2A": "No. Dream interpretations, zodiac fortunes, and tarot readings are cultural storytelling and intuitive reflection prompts. They provide symbolic self-discovery perspectives rather than empirical scientific predictions or psychological therapy.",
+    "faq3Q": "Are my dream descriptions or journal entries stored on external servers?",
+    "faq3A": "Never. All dream text entries, keyword analyses, and diary logs are processed and stored exclusively inside your local device browser (localStorage). No dream text is uploaded to remote servers.",
+    "reviewDate": "Editorial Review: November 2026",
+    "reviewTeam": "DopaBrain Analytical Oneiric Series"
   }
 }

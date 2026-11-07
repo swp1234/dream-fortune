@@ -84,5 +84,29 @@
     "stressCheck": "Test de Estrés",
     "hspTest": "Test PAS (HSP)",
     "attachmentStyle": "Estilo de Apego"
+  },
+  "about": {
+    "toggle": "Sobre la Interpretación de Sueños y Psicología Onírica",
+    "heading1": "Psicología Analítica y Reflexión Simbólica de los Sueños",
+    "text1": "Desde la interpretación de los deseos inconscientes de Sigmund Freud hasta los arquetipos compensatorios de Carl Jung, los sueños funcionan como espejos de la psique humana. Durante el sueño REM, el cerebro consolida recuerdos emocionales y proyecta preocupaciones a través de metáforas visuales.",
+    "boundary": "Aviso de Reflexión: Esta aplicación ofrece herramientas lúdicas y educativas de simbolismo cultural. No constituye adivinación profética ni terapia psicológica clínica.",
+    "heading2": "Motivos Arquetípicos Comunes",
+    "pWater": "Agua y Océano:",
+    "dWater": "Refleja profundidades emocionales; aguas calmas simbolizan equilibrio, mientras que olas turbulentas indican conflictos internos.",
+    "pFlight": "Vuelo y Elevación:",
+    "dFlight": "Simboliza liberación de ataduras diurnas, una perspectiva cognitiva amplia y deseo de autonomía.",
+    "pFall": "Caída y Pérdida de Apoyo:",
+    "dFall": "Muestra vulnerabilidad, miedo a perder el control o transiciones abruptas en el ámbito personal.",
+    "pAnimals": "Animales y Serpientes:",
+    "dAnimals": "Personifican impulsos instintivos, sabiduría somática y procesos de metamorfosis psicológica.",
+    "faqTitle": "Preguntas Frecuentes (FAQ)",
+    "faq1Q": "¿En qué teorías psicológicas se basa la interpretación de sueños?",
+    "faq1A": "Incorpora conceptos freudianos de deseos latentes y arquetipos analíticos de Jung, utilizando los símbolos como claves de autorreflexión.",
+    "faq2Q": "¿Tienen los horóscopos o sueños predicción científica?",
+    "faq2A": "No. Son herramientas recreativas y culturales destinadas al autoconocimiento intuitivo, sin base empírica predictiva.",
+    "faq3Q": "¿Se transmiten mis sueños o diarios a servidores externos?",
+    "faq3A": "Nunca. Todos los textos y diarios se procesan y almacenan al 100% de forma local en tu navegador.",
+    "reviewDate": "Revisión Editorial: Noviembre 2026",
+    "reviewTeam": "DopaBrain Serie Onírica Analítica"
   }
 }

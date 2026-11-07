@@ -84,5 +84,29 @@
     "stressCheck": "Tes Stres",
     "hspTest": "Tes HSP",
     "attachmentStyle": "Gaya Kelekatan"
+  },
+  "about": {
+    "toggle": "Tentang Tafsir Mimpi & Psikologi Onirisme",
+    "heading1": "Psikologi Analitis & Refleksi Simbolis Mimpi",
+    "text1": "Dari teori pemenuhan hasrat bawah sadar Sigmund Freud hingga model arketipe kompensasi Carl Jung, mimpi menjadi cermin kedalaman jiwa manusia. Saat tidur REM, otak memproses memori emosional melalui citra metaforis yang kaya.",
+    "boundary": "Batasan Refleksi Diri: Aplikasi ini menyajikan refleksi simbolis dan budaya untuk perenungan diri, bukan ramalan supranatural atau pengganti terapi medis.",
+    "heading2": "Arketipe Mimpi yang Sering Muncul",
+    "pWater": "Air dan Lautan:",
+    "dWater": "Mencerminkan kedalaman emosi; air yang tenang menandakan keseimbangan, sedangkan ombak besar mencerminkan konflik batin.",
+    "pFlight": "Terbang dan Melayang:",
+    "dFlight": "Melambangkan kebebasan dari beban hidup, wawasan yang meluas, dan kerinduan akan otonomi diri.",
+    "pFall": "Jatuh dan Terpeleset:",
+    "dFall": "Mengindikasikan rasa takut kehilangan kendali, kerentanan, atau adaptasi terhadap perubahan hidup yang cepat.",
+    "pAnimals": "Hewan dan Ular:",
+    "dAnimals": "Mewakili dorongan naluriah, intuisi tubuh, dan siklus pembaruan serta transformasi psikologis.",
+    "faqTitle": "Pertanyaan yang Sering Diajukan (FAQ)",
+    "faq1Q": "Kerangka psikologi apa yang digunakan dalam tafsir mimpi?",
+    "faq1A": "Mengintegrasikan konsep mimpi laten Freud dan arketipe analitis Jung sebagai metafora eksplorasi emosi.",
+    "faq2Q": "Apakah ramalan zodiak dan tafsir mimpi memiliki kepastian ilmiah?",
+    "faq2A": "Tidak. Keduanya adalah sarana refleksi budaya dan narasi intuitif, bukan prediksi ilmiah pasti.",
+    "faq3Q": "Apakah catatan mimpi saya diunggah ke server luar?",
+    "faq3A": "Tidak pernah. Semua pencarian dan catatan harian disimpan 100% secara lokal di peramban perangkat Anda.",
+    "reviewDate": "Tinjauan Editorial: November 2026",
+    "reviewTeam": "Seri Psikologi Onirisme DopaBrain"
   }
 }

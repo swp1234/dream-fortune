@@ -84,5 +84,29 @@
     "stressCheck": "Teste de Estresse",
     "hspTest": "Teste PAS (HSP)",
     "attachmentStyle": "Estilo de Apego"
+  },
+  "about": {
+    "toggle": "Sobre a Interpretação de Sonhos e Psicologia Onírica",
+    "heading1": "Psicologia Analítica e Reflexão Simbólica dos Sonhos",
+    "text1": "Da análise dos desejos inconscientes de Sigmund Freud aos arquétipos compensatórios de Carl Jung, os sonhos atuam como espelhos da psique. Durante o sono REM, a mente integra memórias afetivas por meio de metáforas ricas e instigantes.",
+    "boundary": "Aviso de Reflexão: Esta aplicação propõe uma exploração simbólica e cultural para o autoconhecimento. Não se trata de adivinhação do futuro nem de psicoterapia clínica.",
+    "heading2": "Motivos Arquetípicos Frequentes",
+    "pWater": "Água e Oceano:",
+    "dWater": "Traduz o estado emocional profundo; águas serenas expressam harmonia, mares revoltos refletem turbulências internas.",
+    "pFlight": "Voo e Elevação:",
+    "dFlight": "Simboliza libertação das pressões diárias, visão panorâmica e busca por autonomia criativa.",
+    "pFall": "Queda e Desequilíbrio:",
+    "dFall": "Indica receio de perder o controle, vulnerabilidade momentânea ou transições abruptas na rotina.",
+    "pAnimals": "Animais e Serpentes:",
+    "dAnimals": "Representam impulsos instintivos, sabedoria intuitiva e ciclos de transformação interior.",
+    "faqTitle": "Perguntas Frequentes (FAQ)",
+    "faq1Q": "Quais abordagens psicológicas fundamentam esta análise?",
+    "faq1A": "Combina noções freudianas de desejos latentes com a teoria junguiana dos arquétipos para decifrar símbolos oníricos.",
+    "faq2Q": "Os horóscopos e interpretações têm base científica preditiva?",
+    "faq2A": "Não. São estímulos culturais e intuitivos de autodescoberta, sem pretensão divinatória científica.",
+    "faq3Q": "Meus relatos de sonhos ficam salvos em servidores externos?",
+    "faq3A": "De forma alguma. Todos os dados permanecem estritamente no armazenamento local (localStorage) do seu navegador.",
+    "reviewDate": "Revisão Editorial: Novembro de 2026",
+    "reviewTeam": "DopaBrain Série Onírica Analítica"
   }
 }

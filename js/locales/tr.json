@@ -84,5 +84,29 @@
     "stressCheck": "Stres Testi",
     "hspTest": "HSP Hassasiyet Testi",
     "attachmentStyle": "Bağlanma Stili"
+  },
+  "about": {
+    "toggle": "Rüya Tabirleri ve Onirizm Psikolojisi Hakkında",
+    "heading1": "Analitik Psikoloji ve Sembolik Rüya Yansımaları",
+    "text1": "Sigmund Freud'un bastırılmış arzu teorisinden Carl Jung'un telafi edici arketip modellerine kadar rüyalar, insan bilinçdışının en derin aynasıdır. REM uykusu sırasında zihin, duygusal deneyimleri metaforik sembollerle yeniden düzenler.",
+    "boundary": "Öz Farkındalık Sınırı: Bu uygulama kültürel sembolizm ve kişisel içgörü sağlamak içindir; kehanet ya da klinik psikoterapi yerine geçmez.",
+    "heading2": "Yaygın Arketipik Rüya Motifleri",
+    "pWater": "Su ve Deniz:",
+    "dWater": "Duyguların derinliğini yansıtır; sakin sular içsel dengeyi, fırtınalı denizler ise çözülmemiş çatışmaları simgeler.",
+    "pFlight": "Uçmak ve Yükselmek:",
+    "dFlight": "Kısıtlamalardan özgürleşmeyi, genişleyen bakış açısını ve yaratıcı özerklik arzusunu ifade eder.",
+    "pFall": "Düşmek ve Boşluğa Yuvarlanmak:",
+    "dFall": "Kontrolü kaybetme kaygısını, kırılganlığı ve ani hayat değişimlerini simgeler.",
+    "pAnimals": "Hayvanlar ve Yılanlar:",
+    "dAnimals": "İçgüdüsel dürtüleri, bedensel sezgiyi ve psikolojik dönüşüm ile yenilenmeyi temsil eder.",
+    "faqTitle": "Sıkça Sorulan Sorular (SSS)",
+    "faq1Q": "Rüya yorumlarında hangi psikolojik yaklaşımlar kullanılır?",
+    "faq1A": "Freud'un gizil içerik kavramı ve Jung'un arketip teorisi temel alınarak imgeler duygusal semboller olarak değerlendirilir.",
+    "faq2Q": "Burç yorumları ve rüya tabirleri bilimsel olarak geleceği öngörür mü?",
+    "faq2A": "Hayır. Kültürel anlatılara dayalı eğlenceli ve sezgisel öz yansıtma araçlarıdır, bilimsel kehanet değildir.",
+    "faq3Q": "Rüya metinlerim veya günlük kayıtlarım sunucularda saklanıyor mu?",
+    "faq3A": "Asla. Tüm analizler ve günlük notları yalnızca tarayıcınızın yerel hafızasında saklanır.",
+    "reviewDate": "Editöryal İnceleme: Kasım 2026",
+    "reviewTeam": "DopaBrain Analitik Rüya Psikolojisi Serisi"
   }
 }

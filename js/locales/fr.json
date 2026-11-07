@@ -84,5 +84,29 @@
     "stressCheck": "Test de Stress",
     "hspTest": "Test HSP",
     "attachmentStyle": "Style d’attachement"
+  },
+  "about": {
+    "toggle": "À propos de l'Interprétation des Rêves & Psychologie Onirique",
+    "heading1": "Psychologie Analytique et Réflexion Symbolique Onirique",
+    "text1": "De l'analyse des désirs inconscients de Sigmund Freud aux archétypes de Carl Jung, les rêves sont des révélateurs privilégiés de notre vie intérieure. Durant le sommeil paradoxal (REM), le cerveau structure les mémoires émotionnelles sous forme de récits métaphoriques.",
+    "boundary": "Limite de réflexion : Cette application propose une exploration culturelle et symbolique. Elle ne constitue ni une voyance prédictive ni une consultation psychiatrique.",
+    "heading2": "Motifs Archétypaux Majeurs",
+    "pWater": "L'Eau et l'Océan :",
+    "dWater": "Reflète le flux des émotions ; une eau calme symbolise la sérénité, une mer agitée traduit des tensions intérieures.",
+    "pFlight": "Le Vol et l'Ascension :",
+    "dFlight": "Évoque le dépassement des contraintes, la prise de recul et l'aspiration à l'indépendance créative.",
+    "pFall": "La Chute et le Vertige :",
+    "dFall": "Révèle la crainte de perdre pied, la vulnérabilité ou des transitions de vie déstabilisantes.",
+    "pAnimals": "Les Animaux et les Serpents :",
+    "dAnimals": "Incarnent les instincts primaires, l'intuition corporelle et le renouvellement psychique.",
+    "faqTitle": "Foire Aux Questions (FAQ)",
+    "faq1Q": "Quels principes psychologiques guident l'interprétation des rêves ?",
+    "faq1A": "L'analyse s'inspire des travaux de Freud et de Jung sur le langage symbolique de l'inconscient et la compensation psychique.",
+    "faq2Q": "L'horoscope et les rêves ont-ils une valeur prédictive scientifique ?",
+    "faq2A": "Non. Ce sont des miroirs narratifs destinés à stimuler l'introspection, sans portée divinatoire empirique.",
+    "faq3Q": "Mes rêves et journaux sont-ils enregistrés sur des serveurs distants ?",
+    "faq3A": "Jamais. Vos textes et historiques sont conservés exclusivement dans le localStorage de votre navigateur.",
+    "reviewDate": "Revue Éditoriale : Novembre 2026",
+    "reviewTeam": "DopaBrain Psychologie Onirique"
   }
 }

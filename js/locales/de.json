@@ -84,5 +84,29 @@
     "stressCheck": "Stresstest",
     "hspTest": "HSP-Test",
     "attachmentStyle": "Bindungsstil-Test"
+  },
+  "about": {
+    "toggle": "Über Traumdeutung & Analytische Traumpsychologie",
+    "heading1": "Analytische Psychologie & Symbolische Traumreflexion",
+    "text1": "Von Sigmund Freuds Konzept verdrängter Wünsche bis zu Carl Gustav Jungs Archetypen dienen Träume als Spiegel des Unbewussten. In REM-Schlafphasen verarbeitet das Gehirn emotionale Erfahrungen und übersetzt sie in vielschichtige symbolische Bilder.",
+    "boundary": "Reflexionshinweis: Diese Anwendung bietet kulturhistorische Symboldeutungen zur Selbstreflexion und ist keine Wahrsagerei oder psychotherapeutische Intervention.",
+    "heading2": "Typische Archetypische Traummotive",
+    "pWater": "Wasser und Ozean:",
+    "dWater": "Spiegelt die Gefühlswelt wider; ruhiges Wasser zeigt Harmonie, stürmische Wellen verweisen auf ungelöste Konflikte.",
+    "pFlight": "Fliegen und Schweben:",
+    "dFlight": "Steht für Befreiung von Zwängen, Weitblick und das Streben nach schöpferischer Selbstbestimmung.",
+    "pFall": "Fallen und Straucheln:",
+    "dFall": "Deutet auf Kontrollverlustängste, Unsicherheiten oder plötzliche Lebensumstellungen hin.",
+    "pAnimals": "Tiere und Schlangen:",
+    "dAnimals": "Verkörpern instinktive Impulse, somatische Intuition und Prozesse innerer Wandlung (Metamorphose).",
+    "faqTitle": "Häufig gestellte Fragen (FAQ)",
+    "faq1Q": "Auf welchen Theorien basiert die Traumdeutung?",
+    "faq1A": "Sie stützt sich auf Freuds Traumdeutung und Jungs Archetypenlehre, um Träume als Metaphern des emotionalen Zustands zu erschließen.",
+    "faq2Q": "Haben Horoskope oder Traumdeutungen wissenschaftliche Vorhersagekraft?",
+    "faq2A": "Nein. Sie sind narrative und intuitive Werkzeuge zur Selbstreflexion, keine empirischen Zukunftsprognosen.",
+    "faq3Q": "Werden meine Traumeingaben auf externen Servern gespeichert?",
+    "faq3A": "Nein. Sämtliche Einträge und Tagebücher verbleiben ausschließlich im lokalen Speicher (localStorage) deines Browsers.",
+    "reviewDate": "Redaktionelle Prüfung: November 2026",
+    "reviewTeam": "DopaBrain Analytische Traumpsychologie"
   }
 }
