@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,9 +13,9 @@
 
     <title>Dream Interpretation - Free AI Fortune Telling | DopaBrain</title>
     <meta name="description" content="Free AI dream interpretation, daily horoscope, and tarot reading. 100+ dream meanings, 12 zodiac fortunes, 3-card tarot spread with AI deep analysis. Try free!">
-    <meta name="dateModified" content="2026-11-07">
+    <meta name="dateModified" content="2026-11-14">
     <meta name="theme-color" content="#9b59b6">
-    <meta name="keywords" content="꿈해몽, 오늘의 운세, 타로 카드, 별자리 운세, AI 운세, 무료 꿈해몽, AI 꿈 해석, 운세 카드, 신비로운 해석, 점술">
+    <meta name="keywords" content="dream interpretation, daily horoscope, tarot card reading, dream dictionary, zodiac fortune, free dream meaning, symbol analysis">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3600813755953882" crossorigin="anonymous"></script>
 
     <!-- Open Graph -->
@@ -27,8 +27,8 @@
     <meta property="og:image:width" content="512">
     <meta property="og:image:height" content="512">
     <meta property="og:image:type" content="image/svg+xml">
-    <meta property="og:locale" content="ko_KR">
-    <meta property="og:locale:alternate" content="en_US">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:locale:alternate" content="ko_KR">
     <meta property="og:locale:alternate" content="ja_JP">
     <meta property="og:locale:alternate" content="zh_CN">
     <meta property="og:locale:alternate" content="hi_IN">
@@ -40,8 +40,8 @@
     <meta name="twitter:site" content="@dopabrain">
     <link rel="canonical" href="https://dopabrain.com/dream-fortune/">
     <!-- hreflang for multilingual SEO -->
-    <link rel="alternate" hreflang="ko" href="https://dopabrain.com/dream-fortune/">
-    <link rel="alternate" hreflang="en" href="https://dopabrain.com/dream-fortune/?lang=en">
+    <link rel="alternate" hreflang="en" href="https://dopabrain.com/dream-fortune/">
+    <link rel="alternate" hreflang="ko" href="https://dopabrain.com/dream-fortune/?lang=ko">
     <link rel="alternate" hreflang="zh" href="https://dopabrain.com/dream-fortune/?lang=zh">
     <link rel="alternate" hreflang="hi" href="https://dopabrain.com/dream-fortune/?lang=hi">
     <link rel="alternate" hreflang="ru" href="https://dopabrain.com/dream-fortune/?lang=ru">
@@ -53,6 +53,19 @@
     <link rel="alternate" hreflang="de" href="https://dopabrain.com/dream-fortune/?lang=de">
     <link rel="alternate" hreflang="fr" href="https://dopabrain.com/dream-fortune/?lang=fr">
     <link rel="alternate" hreflang="x-default" href="https://dopabrain.com/dream-fortune/">
+    <script>
+    (function () {
+      var lang = new URLSearchParams(window.location.search).get('lang');
+      if (!lang) return;
+      var target = document.querySelector('link[rel="alternate"][hreflang="' + lang + '"]');
+      if (!target) return;
+      var canonical = document.querySelector('link[rel="canonical"]');
+      if (canonical) canonical.href = target.href;
+      var ogUrl = document.querySelector('meta[property="og:url"]');
+      if (ogUrl) ogUrl.content = target.href;
+      document.documentElement.lang = lang;
+    })();
+    </script>
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -152,7 +165,7 @@
         <div class="loader-content">
             <div class="loader-emoji">🌙</div>
             <div class="loader-spinner"></div>
-            <div class="loader-text" data-i18n="app.loading">로딩 중...</div>
+            <div class="loader-text" data-i18n="app.loading">Loading...</div>
         </div>
     </div>
 
@@ -185,61 +198,61 @@
 
         <!-- 헤더 -->
         <header class="app-header">
-            <h1 data-i18n="header.title">🌙 꿈해몽 & 운세</h1>
-            <p class="tagline" data-i18n="header.tagline">당신의 꿈과 오늘을 해석해드립니다</p>
+            <h1 data-i18n="header.title">🌙 Dreams &amp; Fortune</h1>
+            <p class="tagline" data-i18n="header.tagline">Interpreting your dreams and today's fortune</p>
         </header>
 
         <!-- 탭 메뉴 -->
         <nav class="tab-menu">
-            <button class="tab-btn active" data-tab="dream" data-i18n="tabs.dream">🌌 꿈해몽</button>
-            <button class="tab-btn" data-tab="fortune" data-i18n="tabs.fortune">⭐ 오늘의 운세</button>
-            <button class="tab-btn" data-tab="tarot" data-i18n="tabs.tarot">🃏 타로 한 장</button>
+            <button class="tab-btn active" data-tab="dream" data-i18n="tabs.dream">🌌 Dreams</button>
+            <button class="tab-btn" data-tab="fortune" data-i18n="tabs.fortune">⭐ Horoscope</button>
+            <button class="tab-btn" data-tab="tarot" data-i18n="tabs.tarot">🃏 Tarot</button>
         </nav>
 
         <!-- 메인 콘텐츠 -->
-        <main class="main-content">
+        <main class="main-content" id="main-content">
             <!-- 꿈해몽 탭 -->
             <section id="dream-tab" class="tab-content active">
                 <div class="input-card">
-                    <h2 data-i18n="dream.question">어떤 꿈을 꾸셨나요?</h2>
-                    <p class="hint" data-i18n="dream.hint">꿈 내용을 자유롭게 입력하세요 (문장도 OK!)</p>
-                    <input type="text" id="dream-input" data-i18n-placeholder="dream.placeholder" placeholder="예: 바다에서 뱀이 헤엄치는 꿈을 꿨어" maxlength="100">
+                    <h2 data-i18n="dream.question">What did you dream about?</h2>
+                    <p class="hint" data-i18n="dream.hint">Describe your dream freely (sentences OK!)</p>
+                    <input type="text" id="dream-input" data-i18n-placeholder="dream.placeholder" placeholder="e.g., I dreamed of a snake swimming in the ocean" maxlength="100">
                     <button class="primary-btn" id="interpret-btn">
                         <span class="btn-icon">✨</span>
-                        <span data-i18n="dream.interpret">꿈 해석하기</span>
+                        <span data-i18n="dream.interpret">Interpret Dream</span>
                     </button>
                 </div>
                 
                 <div id="dream-result" class="result-card hidden">
                     <div class="result-icon">🔮</div>
-                    <h3 id="dream-keyword">키워드</h3>
+                    <h3 id="dream-keyword">Keyword</h3>
                     <p id="dream-meaning" class="result-text"></p>
                     <div class="result-meta">
-                        <span class="luck-badge" id="dream-luck">행운지수</span>
+                        <span class="luck-badge" id="dream-luck">Luck Index</span>
                     </div>
                     <div class="action-buttons">
-                        <button class="secondary-btn" id="share-dream" data-i18n="dream.share">공유하기</button>
+                        <button class="secondary-btn" id="share-dream" data-i18n="dream.share">Share</button>
                         <button class="premium-btn pulse-glow" id="ai-deep-dream">
                             <span class="premium-icon">✨</span>
-                            <span data-i18n="premium.deepAnalysis">AI 심층 해몽 보기</span>
+                            <span data-i18n="premium.deepAnalysis">View AI Deep Reading</span>
                         </button>
                     </div>
                 </div>
                 
                 <!-- AI 심층 해석 결과 -->
                 <div id="ai-dream-result" class="result-card premium-result hidden">
-                    <div class="premium-badge" data-i18n="premium.badge">✨ AI 심층 분석</div>
-                    <h3 id="ai-dream-title" data-i18n="premium.title">AI 심층 해석</h3>
+                    <div class="premium-badge" data-i18n="premium.badge">✨ AI Deep Analysis</div>
+                    <h3 id="ai-dream-title" data-i18n="premium.title">AI Deep Interpretation</h3>
 
                     <!-- 심리학적 의미 -->
                     <div class="premium-section">
-                        <h4 class="premium-section-title" data-i18n="premium.psychology">🧠 심리학적 의미</h4>
+                        <h4 class="premium-section-title" data-i18n="premium.psychology">🧠 Psychological Meaning</h4>
                         <p id="ai-psychology-meaning" class="premium-content"></p>
                     </div>
 
                     <!-- 행운 지수 -->
                     <div class="premium-section">
-                        <h4 class="premium-section-title" data-i18n="premium.luckIndex">🌟 행운 지수</h4>
+                        <h4 class="premium-section-title" data-i18n="premium.luckIndex">🌟 Luck Index</h4>
                         <div class="luck-meter">
                             <div class="luck-bar">
                                 <div class="luck-fill" id="luck-fill"></div>
@@ -250,7 +263,7 @@
 
                     <!-- 추천 행동 -->
                     <div class="premium-section">
-                        <h4 class="premium-section-title" data-i18n="premium.actions">🎯 오늘의 추천 행동</h4>
+                        <h4 class="premium-section-title" data-i18n="premium.actions">🎯 Recommended Actions</h4>
                         <div id="ai-actions" class="actions-list">
                             <div class="action-item">
                                 <span class="action-icon">1️⃣</span>
@@ -269,36 +282,36 @@
 
                     <!-- 행운 아이템 -->
                     <div class="premium-section">
-                        <h4 class="premium-section-title" data-i18n="premium.luckyItems">🍀 오늘의 행운 아이템</h4>
+                        <h4 class="premium-section-title" data-i18n="premium.luckyItems">🍀 Lucky Items</h4>
                         <div class="lucky-items-grid">
                             <div class="lucky-card">
                                 <div class="lucky-card-emoji">🔢</div>
-                                <div class="lucky-card-label" data-i18n="premium.luckyNumber">행운의 숫자</div>
+                                <div class="lucky-card-label" data-i18n="premium.luckyNumber">Lucky Numbers</div>
                                 <div id="lucky-numbers" class="lucky-card-value">7, 13</div>
                             </div>
                             <div class="lucky-card">
                                 <div class="lucky-card-emoji">🎨</div>
-                                <div class="lucky-card-label" data-i18n="premium.luckyColor">행운의 색상</div>
-                                <div id="lucky-color-name" class="lucky-card-value">금색</div>
+                                <div class="lucky-card-label" data-i18n="premium.luckyColor">Lucky Color</div>
+                                <div id="lucky-color-name" class="lucky-card-value">Gold</div>
                             </div>
                             <div class="lucky-card">
                                 <div class="lucky-card-emoji">🧭</div>
-                                <div class="lucky-card-label" data-i18n="premium.luckyDirection">행운의 방향</div>
-                                <div id="lucky-direction" class="lucky-card-value">동쪽</div>
+                                <div class="lucky-card-label" data-i18n="premium.luckyDirection">Lucky Direction</div>
+                                <div id="lucky-direction" class="lucky-card-value">East</div>
                             </div>
                         </div>
                     </div>
 
                     <div class="action-buttons">
-                        <button class="secondary-btn" id="share-ai-dream" data-i18n="premium.share">결과 공유하기</button>
+                        <button class="secondary-btn" id="share-ai-dream" data-i18n="premium.share">Share Results</button>
                     </div>
                 </div>
 
                 <!-- 꿈 일기 -->
                 <div class="dream-diary-section">
-                    <h3 class="diary-title" data-i18n="diary.title">📔 나의 꿈 일기</h3>
+                    <h3 class="diary-title" data-i18n="diary.title">📔 My Dream Diary</h3>
                     <div class="diary-list" id="dream-diary-list">
-                        <p class="diary-empty" data-i18n="diary.empty">아직 해석한 꿈이 없습니다.</p>
+                        <p class="diary-empty" data-i18n="diary.empty">No interpreted dreams yet.</p>
                     </div>
                 </div>
             </section>
@@ -306,7 +319,7 @@
             <!-- 오늘의 운세 탭 -->
             <section id="fortune-tab" class="tab-content">
                 <div class="zodiac-selector">
-                    <h2 data-i18n="fortune.question">당신의 별자리는?</h2>
+                    <h2 data-i18n="fortune.question">What's your zodiac sign?</h2>
                     <div class="zodiac-grid" id="zodiac-grid">
                         <!-- JS로 생성 -->
                     </div>
@@ -314,39 +327,39 @@
                 
                 <div id="fortune-result" class="result-card hidden">
                     <div class="result-icon" id="fortune-zodiac-icon">♈</div>
-                    <h3 id="fortune-zodiac-name">양자리</h3>
+                    <h3 id="fortune-zodiac-name">Aries</h3>
                     <div class="fortune-categories">
                         <div class="fortune-item">
-                            <span class="fortune-label" data-i18n="fortune.love">💕 연애운</span>
+                            <span class="fortune-label" data-i18n="fortune.love">💕 Love</span>
                             <div class="fortune-stars" id="love-stars"></div>
                         </div>
                         <div class="fortune-item">
-                            <span class="fortune-label" data-i18n="fortune.money">💰 금전운</span>
+                            <span class="fortune-label" data-i18n="fortune.money">💰 Money</span>
                             <div class="fortune-stars" id="money-stars"></div>
                         </div>
                         <div class="fortune-item">
-                            <span class="fortune-label" data-i18n="fortune.work">💼 직장운</span>
+                            <span class="fortune-label" data-i18n="fortune.work">💼 Career</span>
                             <div class="fortune-stars" id="work-stars"></div>
                         </div>
                         <div class="fortune-item">
-                            <span class="fortune-label" data-i18n="fortune.luck">🍀 행운</span>
+                            <span class="fortune-label" data-i18n="fortune.luck">🍀 Luck</span>
                             <div class="fortune-stars" id="luck-stars"></div>
                         </div>
                     </div>
                     <p id="fortune-message" class="result-text"></p>
                     <div class="lucky-info">
-                        <span class="lucky-item"><span data-i18n="fortune.luckyColor">🎨</span> <span id="lucky-color">빨강</span></span>
+                        <span class="lucky-item"><span data-i18n="fortune.luckyColor">🎨</span> <span id="lucky-color">Red</span></span>
                         <span class="lucky-item"><span data-i18n="fortune.luckyNumber">🔢</span> <span id="lucky-number">7</span></span>
                     </div>
-                    <button class="secondary-btn" id="share-fortune" data-i18n="fortune.share">공유하기</button>
+                    <button class="secondary-btn" id="share-fortune" data-i18n="fortune.share">Share</button>
                 </div>
             </section>
 
             <!-- 타로 탭 -->
             <section id="tarot-tab" class="tab-content">
                 <div class="tarot-deck">
-                    <h2 data-i18n="tarot.title">오늘의 메시지를 뽑아보세요</h2>
-                    <p class="hint" data-i18n="tarot.hint">카드를 터치하면 한 장이 뽑힙니다</p>
+                    <h2 data-i18n="tarot.title">Draw today's message</h2>
+                    <p class="hint" data-i18n="tarot.hint">Tap a card to draw one</p>
                     <div class="tarot-cards" id="tarot-cards">
                         <div class="tarot-card" data-index="0">🂠</div>
                         <div class="tarot-card" data-index="1">🂠</div>
@@ -356,10 +369,10 @@
                 
                 <div id="tarot-result" class="result-card hidden">
                     <div class="result-icon" id="tarot-icon">🌟</div>
-                    <h3 id="tarot-name">카드 이름</h3>
+                    <h3 id="tarot-name">Card Name</h3>
                     <p id="tarot-meaning" class="result-text"></p>
                     <p id="tarot-advice" class="advice-text"></p>
-                    <button class="secondary-btn" id="retry-tarot" data-i18n="tarot.retry">다시 뽑기</button>
+                    <button class="secondary-btn" id="retry-tarot" data-i18n="tarot.retry">Draw Again</button>
                 </div>
             </section>
 
@@ -418,9 +431,9 @@
 
         <!-- 푸터 -->
         <footer class="game-footer">
-            <a href="https://dopabrain.com/portal/" class="back-link" data-i18n="game.back">
+            <a href="https://dopabrain.com/portal/" class="back-link">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="m15 18-6-6 6-6"></path></svg>
-                DopaBrain 홈
+                DopaBrain Home
             </a>
         </footer>
     </div>
@@ -460,10 +473,10 @@
   <div style="max-width:420px;margin:20px auto;padding-top:20px;border-top:1px solid rgba(255,255,255,0.1);">
     <h3 data-i18n="related.title" style="font-size:16px;color:#a0a0b8;margin-bottom:12px;text-align:center;">More to Explore</h3>
     <div class="related-grid" id="related-grid" style="display:grid;grid-template-columns:repeat(2, minmax(0, 1fr));gap:10px;">
-      <a href="/stress-check/?lang=ko&amp;start=1&amp;source=dream_fortune_footer" data-base-href="/stress-check/" style="display:flex;flex-direction:column;align-items:center;gap:6px;padding:14px 8px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:12px;text-decoration:none;color:#fff;min-height:44px;min-width:44px;box-sizing:border-box;"><span style="font-size:28px;">⚡</span><span data-i18n="related.stressCheck" style="font-size:12px;font-weight:600;color:#a0a0b8;text-align:center;">Stress Check</span></a>
-      <a href="/hsp-test/?lang=ko&amp;start=1&amp;source=dream_fortune_footer" data-base-href="/hsp-test/" style="display:flex;flex-direction:column;align-items:center;gap:6px;padding:14px 8px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:12px;text-decoration:none;color:#fff;min-height:44px;min-width:44px;box-sizing:border-box;"><span style="font-size:28px;">🌿</span><span data-i18n="related.hspTest" style="font-size:12px;font-weight:600;color:#a0a0b8;text-align:center;">HSP Test</span></a>
-      <a href="/future-self/?lang=ko&amp;start=1&amp;source=dream_fortune_footer" data-base-href="/future-self/" style="display:flex;flex-direction:column;align-items:center;gap:6px;padding:14px 8px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:12px;text-decoration:none;color:#fff;min-height:44px;min-width:44px;box-sizing:border-box;"><span style="font-size:28px;">⏳</span><span data-i18n="related.futureSelf" style="font-size:12px;font-weight:600;color:#a0a0b8;text-align:center;">Future Self</span></a>
-      <a href="/attachment-style/?lang=ko&amp;start=1&amp;source=dream_fortune_footer" data-base-href="/attachment-style/" style="display:flex;flex-direction:column;align-items:center;gap:6px;padding:14px 8px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:12px;text-decoration:none;color:#fff;min-height:44px;min-width:44px;box-sizing:border-box;"><span style="font-size:28px;">💞</span><span data-i18n="related.attachmentStyle" style="font-size:12px;font-weight:600;color:#a0a0b8;text-align:center;">Attachment Style</span></a>
+      <a href="/stress-check/?lang=en&amp;start=1&amp;source=dream_fortune_footer" data-base-href="/stress-check/" style="display:flex;flex-direction:column;align-items:center;gap:6px;padding:14px 8px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:12px;text-decoration:none;color:#fff;min-height:44px;min-width:44px;box-sizing:border-box;"><span style="font-size:28px;">⚡</span><span data-i18n="related.stressCheck" style="font-size:12px;font-weight:600;color:#a0a0b8;text-align:center;">Stress Check</span></a>
+      <a href="/hsp-test/?lang=en&amp;start=1&amp;source=dream_fortune_footer" data-base-href="/hsp-test/" style="display:flex;flex-direction:column;align-items:center;gap:6px;padding:14px 8px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:12px;text-decoration:none;color:#fff;min-height:44px;min-width:44px;box-sizing:border-box;"><span style="font-size:28px;">🌿</span><span data-i18n="related.hspTest" style="font-size:12px;font-weight:600;color:#a0a0b8;text-align:center;">HSP Test</span></a>
+      <a href="/future-self/?lang=en&amp;start=1&amp;source=dream_fortune_footer" data-base-href="/future-self/" style="display:flex;flex-direction:column;align-items:center;gap:6px;padding:14px 8px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:12px;text-decoration:none;color:#fff;min-height:44px;min-width:44px;box-sizing:border-box;"><span style="font-size:28px;">⏳</span><span data-i18n="related.futureSelf" style="font-size:12px;font-weight:600;color:#a0a0b8;text-align:center;">Future Self</span></a>
+      <a href="/attachment-style/?lang=en&amp;start=1&amp;source=dream_fortune_footer" data-base-href="/attachment-style/" style="display:flex;flex-direction:column;align-items:center;gap:6px;padding:14px 8px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:12px;text-decoration:none;color:#fff;min-height:44px;min-width:44px;box-sizing:border-box;"><span style="font-size:28px;">💞</span><span data-i18n="related.attachmentStyle" style="font-size:12px;font-weight:600;color:#a0a0b8;text-align:center;">Attachment Style</span></a>
     </div>
   </div>
 

@@ -44,10 +44,11 @@ class DreamFortuneApp {
                 const langMenu = document.getElementById('lang-menu');
                 const langOptions = document.querySelectorAll('.lang-option');
 
-                const currentLang = window.i18n?.getCurrentLanguage?.() || 'ko';
+                const currentLang = window.i18n?.getCurrentLanguage?.() || 'en';
                 const langOptionActive = document.querySelector(`[data-lang="${currentLang}"]`);
                 if (langOptionActive) langOptionActive.classList.add('active');
                 this.updateFooterLinks(currentLang);
+                this.updateZodiacGridLabels(currentLang);
                 this.initFooterLinks();
 
                 if (langToggle && langMenu) {
@@ -75,6 +76,7 @@ class DreamFortuneApp {
                             opt.classList.add('active');
                             if (langMenu) langMenu.classList.add('hidden');
                             this.updateFooterLinks(lang);
+                            this.updateZodiacGridLabels(lang);
 
                             // GA4: 언어 변경 추적
                             if (typeof gtag === 'function') {
@@ -96,8 +98,8 @@ class DreamFortuneApp {
     }
 
     updateFooterLinks(lang) {
-        const current = lang || window.i18n?.getCurrentLanguage?.() || 'ko';
-        const safeLang = /^(ko|en|zh|hi|ru|ja|es|pt|id|tr|de|fr)$/.test(current) ? current : 'ko';
+        const current = lang || window.i18n?.getCurrentLanguage?.() || 'en';
+        const safeLang = /^(ko|en|zh|hi|ru|ja|es|pt|id|tr|de|fr)$/.test(current) ? current : 'en';
         document.querySelectorAll('#related-grid a').forEach(link => {
             const base = link.getAttribute('data-base-href');
             if (!base) return;
@@ -1057,6 +1059,24 @@ class DreamFortuneApp {
         }
     }
 
+    getZodiacDisplayName(koName, lang = window.i18n?.getCurrentLanguage?.() || 'en') {
+        if (lang === 'ko') return koName;
+        const map = {
+            '양자리': 'Aries', '황소자리': 'Taurus', '쌍둥이자리': 'Gemini', '게자리': 'Cancer',
+            '사자자리': 'Leo', '처녀자리': 'Virgo', '천칭자리': 'Libra', '전갈자리': 'Scorpio',
+            '사수자리': 'Sagittarius', '염소자리': 'Capricorn', '물병자리': 'Aquarius', '물고기자리': 'Pisces'
+        };
+        return map[koName] || koName;
+    }
+
+    updateZodiacGridLabels(lang) {
+        document.querySelectorAll('#zodiac-grid .zodiac-item').forEach(item => {
+            const koName = item.dataset.zodiac;
+            const nameEl = item.querySelector('.zodiac-name');
+            if (koName && nameEl) nameEl.textContent = this.getZodiacDisplayName(koName, lang);
+        });
+    }
+
     // 오늘의 운세 탭
     setupFortuneTab() {
         const grid = document.getElementById('zodiac-grid');
@@ -1065,12 +1085,13 @@ class DreamFortuneApp {
         zodiacData.forEach((zodiac, index) => {
             const item = document.createElement('div');
             item.className = 'zodiac-item';
+            item.dataset.zodiac = zodiac.name;
             const icon = document.createElement('span');
             icon.className = 'zodiac-icon';
             icon.textContent = zodiac.icon;
             const name = document.createElement('span');
             name.className = 'zodiac-name';
-            name.textContent = zodiac.name;
+            name.textContent = this.getZodiacDisplayName(zodiac.name);
             item.appendChild(icon);
             item.appendChild(name);
             item.addEventListener('click', () => {

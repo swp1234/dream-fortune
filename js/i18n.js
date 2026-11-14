@@ -52,20 +52,49 @@
                 if (!this.translations[lang]) await this.loadTranslations(lang);
                 this.currentLang = lang;
                 try { localStorage.setItem('app_language', lang); } catch (e) {}
-                document.documentElement.lang = lang;
+                this.syncSeoState(lang);
                 this.updateUI();
                 return true;
             }
+            getSeoHref(lang = this.currentLang) {
+                const baseUrl = 'https://dopabrain.com/dream-fortune/';
+                const safeLang = this.supportedLanguages.includes(lang) ? lang : 'en';
+                const alt = document.querySelector(`link[rel="alternate"][hreflang="${safeLang}"]`);
+                if (alt && alt.href) return alt.href;
+                return safeLang === 'en' ? baseUrl : `${baseUrl}?lang=${encodeURIComponent(safeLang)}`;
+            }
+            syncSeoState(lang = this.currentLang) {
+                const safeLang = this.supportedLanguages.includes(lang) ? lang : 'en';
+                document.documentElement.lang = safeLang;
+                const seoHref = this.getSeoHref(safeLang);
+                const canonical = document.querySelector('link[rel="canonical"]');
+                if (canonical) canonical.href = seoHref;
+                const ogUrl = document.querySelector('meta[property="og:url"]');
+                if (ogUrl) ogUrl.content = seoHref;
+                const ogLocaleMap = {
+                    ko: 'ko_KR', en: 'en_US', ja: 'ja_JP', zh: 'zh_CN', es: 'es_ES', pt: 'pt_BR',
+                    hi: 'hi_IN', ru: 'ru_RU', id: 'id_ID', tr: 'tr_TR', de: 'de_DE', fr: 'fr_FR'
+                };
+                const ogLocale = document.querySelector('meta[property="og:locale"]');
+                if (ogLocale && ogLocaleMap[safeLang]) ogLocale.content = ogLocaleMap[safeLang];
+            }
             updateUI() {
+                this.syncSeoState(this.currentLang);
                 document.querySelectorAll('[data-i18n]').forEach(el => {
-                    el.textContent = this.t(el.getAttribute('data-i18n'));
+                    const key = el.getAttribute('data-i18n');
+                    const val = this.t(key);
+                    if (val && val !== key) el.textContent = val;
                 });
                 document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
-                    el.placeholder = this.t(el.getAttribute('data-i18n-placeholder'));
+                    const key = el.getAttribute('data-i18n-placeholder');
+                    const val = this.t(key);
+                    if (val && val !== key) el.placeholder = val;
                 });
-                document.title = this.t('app.title');
+                const title = this.t('app.title');
+                if (title && title !== 'app.title') document.title = title;
                 const meta = document.querySelector('meta[name="description"]');
-                if (meta) meta.content = this.t('app.description');
+                const desc = this.t('app.description');
+                if (meta && desc && desc !== 'app.description') meta.content = desc;
                 const currentLang = this.currentLang || 'en';
                 document.querySelectorAll('#related-grid a, .related-grid a').forEach(el => {
                     const raw = (el.getAttribute('data-base-href') || el.getAttribute('href') || '').split('?')[0];
