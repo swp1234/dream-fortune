@@ -1,4 +1,58 @@
 // 꿈해몽 & 운세 앱
+const DREAM_ALIASES = {
+    '뱀': ['snake', 'serpent', 'serpiente', 'cobra', 'schlange', 'viper', 'へび', '蛇', 'python', 'ular', 'yılan', 'змея', 'सांप'],
+    '호랑이': ['tiger', 'tigre', 'とら', '虎', 'тигр', 'बाघ', 'kaplan', 'harimau'],
+    '용': ['dragon', 'dragón', 'dragão', 'drache', 'りゅう', '龙', '龍', 'дракон', 'naga', 'ejderha'],
+    '돼지': ['pig', 'boar', 'cerdo', 'porco', 'cochon', 'schwein', 'ぶた', '猪', 'свинья', 'domuz', 'babi'],
+    '개': ['dog', 'puppy', 'perro', 'cachorro', 'chien', 'hund', 'いぬ', '狗', 'собака', 'köpek', 'anjing'],
+    '고양이': ['cat', 'kitten', 'gato', 'chat', 'katze', 'ねこ', '猫', 'кошка', 'kedi', 'kucing'],
+    '물고기': ['fish', 'pez', 'peixe', 'poisson', 'fisch', 'さかな', '鱼', 'рыба', 'balık', 'ikan'],
+    '물': ['water', 'agua', 'água', 'eau', 'wasser', 'みず', '水', 'вода', 'su', 'air', 'पानी'],
+    '바다': ['ocean', 'sea', 'wave', 'waves', 'mar', 'océano', 'mer', 'meer', 'うみ', '海', 'море', 'deniz', 'laut'],
+    '불': ['fire', 'flame', 'fuego', 'fogo', 'feu', 'feuer', 'ひ', '火', 'огонь', 'ateş', 'api', 'आग'],
+    '산': ['mountain', 'hill', 'montaña', 'montanha', 'montagne', 'berg', 'やま', '山', 'гора', 'dağ', 'gunung'],
+    '꽃': ['flower', 'rose', 'flor', 'fleur', 'blume', 'はな', '花', 'цветок', 'çiçek', 'bunga'],
+    '비': ['rain', 'storm', 'lluvia', 'chuva', 'pluie', 'regen', 'あめ', '雨', 'дождь', 'yağmur', 'hujan'],
+    '달': ['moon', 'lunar', 'luna', 'lua', 'lune', 'mond', 'つき', '月', 'луна', 'ay', 'bulan'],
+    '별': ['star', 'stars', 'estrella', 'estrela', 'étoile', 'stern', 'ほし', '星', 'звезда', 'yıldız', 'bintang'],
+    '무지개': ['rainbow', 'arcoíris', 'arco-íris', 'arc-en-ciel', 'regenbogen', 'にじ', '彩虹', 'радуга', 'gökkuşağı', 'pelangi'],
+    '비행': ['fly', 'flying', 'flight', 'soar', 'volar', 'voar', 'voler', 'fliegen', '飛ぶ', '飞', 'летать', 'uçmak', 'terbang'],
+    '추락': ['fall', 'falling', 'drop', 'teeth', 'tooth', 'caer', 'cair', 'tomber', 'fallen', '落ちる', '坠落', 'падать', 'düşmek', 'jatuh'],
+    '죽음': ['death', 'die', 'dying', 'muerte', 'morte', 'mort', 'tod', '死', 'смерть', 'ölüm', 'kematian'],
+    '결혼': ['marriage', 'wedding', 'marry', 'boda', 'casamento', 'mariage', 'hochzeit', '結婚', '结婚', 'свадьба', 'evlilik'],
+    '시험': ['exam', 'test', 'school', 'examen', 'prova', 'prüfung', '試験', '考试', 'экзамен', 'sınav', 'ujian'],
+    '돈': ['money', 'cash', 'wealth', 'bills', 'dinero', 'dinheiro', 'argent', 'geld', 'お金', '钱', 'деньги', 'para', 'uang'],
+    '금': ['gold', 'treasure', 'coin', 'oro', 'ouro', 'or', 'きん', '金', 'золото', 'altın', 'emas'],
+    '아기': ['baby', 'child', 'bebé', 'bebê', 'bébé', 'あかちゃん', '宝宝', 'ребенок', 'bebek', 'bayi']
+};
+
+const DREAM_EN_PROFILES = {
+    '뱀': { label: 'Snake', category: 'Animals', mainMeaning: 'Transformation, wisdom, and subtle intuitive growth', detailed: 'Across Jungian psychology and world symbolism, serpents represent renewal (shedding skin), vital instinct, and quiet strategic wisdom rising into awareness.', love: 'A magnetic turn or deeper honesty brings clarity to an emotional bond.', money: 'Quiet patience pays off; review financial plans calmly before committing.', health: 'Strong regenerative energy signals a good moment to reset daily sleep or habits.', work: 'Sharp perception helps you spot hidden opportunities ahead of peers.', luckyColor: 'Gold', luckyDirection: 'East' },
+    '호랑이': { label: 'Tiger', category: 'Animals', mainMeaning: 'Courage, agency, and confident leadership', detailed: 'Tiger imagery embodies fierce vitality, personal boundaries, and readiness to confront intimidating goals with composed strength.', love: 'Direct, warm expression creates momentum in close relationships.', money: 'Decisive action in negotiated work or creative projects is favored.', health: 'Channel restless drive into structured movement or outdoor focus.', work: 'Step up visibly; leadership opportunities respond to calm conviction.', luckyColor: 'Amber', luckyDirection: 'North' },
+    '용': { label: 'Dragon', category: 'Mythic', mainMeaning: 'Ambition, creative breakthroughs, and elevating potential', detailed: 'Dragons symbolize awakened ambition, awe, and the integration of fierce inner energy into purposeful long-term achievement.', love: 'Shared vision and mutual respect deepen meaningful connections.', money: 'Long-horizon ventures and bold skill investments carry strong promise.', health: 'Peak vitality calls for mindful pacing so momentum stays sustainable.', work: 'Think boldly—this is an auspicious moment to pitch ambitious ideas.', luckyColor: 'Royal Gold', luckyDirection: 'East' },
+    '돼지': { label: 'Pig', category: 'Prosperity', mainMeaning: 'Abundance, contentment, and tangible rewards', detailed: 'In East Asian dream lore, pigs embody grounded prosperity, generosity, and reaping the rewards of patient preparation.', love: 'Comfort, warmth, and small acts of care strengthen affection.', money: 'Favorable timing for steady income, savings goals, and practical gains.', health: 'Enjoy nourishing rest without overindulgence.', work: 'Consistent behind-the-scenes effort yields appreciated results.', luckyColor: 'Rose', luckyDirection: 'Southeast' },
+    '개': { label: 'Dog', category: 'Companionship', mainMeaning: 'Loyalty, trust, and protective intuition', detailed: 'Dogs reflect steadfast friendship, protective boundaries, and tuning into who feels genuinely safe and supportive in waking life.', love: 'Reliable communication and steady presence deepen mutual trust.', money: 'Trusted collaborators or advisors help safeguard practical decisions.', health: 'Consistent daily routines and fresh air boost mental clarity.', work: 'Teamwork and loyal allies unlock smoother execution.', luckyColor: 'Sky Blue', luckyDirection: 'West' },
+    '고양이': { label: 'Cat', category: 'Intuition', mainMeaning: 'Independence, intuition, and unspoken nuance', detailed: 'Cats symbolize subtle intuition, personal autonomy, and sensitivity to emotional undercurrents beneath surface appearances.', love: 'Honor personal space while staying attentive to unspoken cues.', money: 'Notice fine print; observant timing prevents impulse spending.', health: 'Quiet solitude restores emotional equilibrium.', work: 'Independent creative work flows best with minimal micromanagement.', luckyColor: 'Lavender', luckyDirection: 'South' },
+    '물고기': { label: 'Fish', category: 'Water & Unconscious', mainMeaning: 'Subconscious insight, flow, and quiet prosperity', detailed: 'Swimming fish point to insights emerging smoothly from the unconscious mind alongside fertile creative and financial potential.', love: 'Emotional empathy flows naturally when you listen without rushing.', money: 'Subtle new streams of value or creative side projects show promise.', health: 'Hydration and calm breathing help maintain inner balance.', work: 'Adaptive problem-solving uncovers smoother paths forward.', luckyColor: 'Aqua', luckyDirection: 'North' },
+    '물': { label: 'Water', category: 'Elements', mainMeaning: 'Emotional flow, cleansing, and subconscious clarity', detailed: 'Water directly mirrors your emotional state—clear streams suggest calm integration, while surging waves call for grounding restless feelings.', love: 'Open, gentle emotional honesty dissolves lingering tension.', money: 'Keep cashflow flexible; clarity comes from steady budgeting.', health: 'Prioritize hydration, warm rest, and stress decompression.', work: 'Adapt gracefully around shifting plans rather than forcing outcomes.', luckyColor: 'Ocean Blue', luckyDirection: 'North' },
+    '바다': { label: 'Ocean', category: 'Elements', mainMeaning: 'Vast potential, deep reflection, and emotional horizons', detailed: 'The ocean represents the collective unconscious—boundless possibility alongside the courage required to navigate uncertain emotional depths.', love: 'Deep empathy invites meaningful conversations about shared direction.', money: 'Wide perspective helps you spot sustainable long-term growth.', health: 'Slow, rhythmic relaxation settles mental overwhelm.', work: 'Big-picture thinking beats getting bogged down in minor friction.', luckyColor: 'Deep Teal', luckyDirection: 'West' },
+    '불': { label: 'Fire', category: 'Elements', mainMeaning: 'Passion, purification, and rapid transformation', detailed: 'Fire symbolizes intense willpower, creative spark, and clearing out stagnation—asking whether energy is focused warmly or burning too hot.', love: 'Passionate warmth thrives when balanced with patient listening.', money: 'Strong drive speeds progress; avoid impulsive heat-of-the-moment choices.', health: 'Cool down tension with mindful breaks to prevent burnout.', work: 'Channel fiery focus into finishing one high-impact priority.', luckyColor: 'Crimson', luckyDirection: 'South' },
+    '산': { label: 'Mountain', category: 'Nature', mainMeaning: 'Resilience, perspective, and steady ascent', detailed: 'Mountains signify endurance, long-range goals, and the quiet clarity gained once you rise above everyday noise.', love: 'Steady reliability speaks louder than grand promises.', money: 'Patient, incremental wealth building outperforms shortcuts.', health: 'Grounded posture and steady endurance exercise support resilience.', work: 'Keep climbing step by step—your persistence is building lasting authority.', luckyColor: 'Emerald', luckyDirection: 'Northeast' },
+    '꽃': { label: 'Flower', category: 'Nature', mainMeaning: 'Renewal, appreciation, and gentle blossoming', detailed: 'Flowers mark phases of personal blooming, gratitude, and creative ideas ready to unfold after quiet preparation.', love: 'Warm appreciation and thoughtful gestures brighten closeness.', money: 'Pleasant recognition or creative rewards arrive naturally.', health: 'Bright sunlight and gentle sensory joy uplift mood.', work: 'Polishing presentation and detail makes your work stand out.', luckyColor: 'Coral', luckyDirection: 'Southeast' },
+    '비': { label: 'Rain', category: 'Weather', mainMeaning: 'Emotional release, renewal, and fresh starts', detailed: 'Rain washes away stale fatigue and marks an emotional reset—turning heavy clouds into nourishment for upcoming growth.', love: 'Letting go of old misunderstandings clears the air.', money: 'Steady replenishment follows patient discipline.', health: 'Restful sleep and emotional release restore vitality.', work: 'Clearing accumulated backlog opens room for fresh momentum.', luckyColor: 'Silver', luckyDirection: 'West' },
+    '달': { label: 'Moon', category: 'Celestial', mainMeaning: 'Intuition, reflection, and quiet inner rhythm', detailed: 'The moon illuminates nocturnal intuition, cyclical pacing, and subtle truths best sensed in stillness rather than haste.', love: 'Tenderness and quiet presence deepen emotional safety.', money: 'Reflect calmly before big commitments; timing improves with patience.', health: 'Honor natural evening wind-down rhythms for deeper rest.', work: 'Subtle creative planning behind the scenes brings sharp results.', luckyColor: 'Pearl', luckyDirection: 'West' },
+    '별': { label: 'Stars', category: 'Celestial', mainMeaning: 'Guidance, hope, and long-range aspiration', detailed: 'Starlight symbolizes orientation during uncertainty—reminding you of overarching values that guide steady choices.', love: 'Shared hopes and playful wonder rekindle connection.', money: 'Keep eyes on long-term goals rather than short-term distractions.', health: 'Optimistic outlook lowers baseline nervous tension.', work: 'Visionary clarity helps align daily effort with meaningful direction.', luckyColor: 'Indigo', luckyDirection: 'North' },
+    '무지개': { label: 'Rainbow', category: 'Celestial', mainMeaning: 'Reconciliation, optimism, and bridging chapters', detailed: 'A rainbow signals calm after emotional storms—reconciling contrasting sides of life into a hopeful bridge forward.', love: 'Warm reconciliation and renewed lightness enter relationships.', money: 'Encouraging turning points open fresh collaborative possibilities.', health: 'Rising optimism restores light, buoyant energy.', work: 'Bridge diverse perspectives to unlock creative harmony.', luckyColor: 'Prism Gold', luckyDirection: 'East' },
+    '비행': { label: 'Flying', category: 'Movement', mainMeaning: 'Autonomy, freedom, and elevated perspective', detailed: 'Flying dreams reveal a strong wish to transcend current constraints, gain mental altitude, and claim creative autonomy.', love: 'Mutual encouragement lets both people grow without feeling caged.', money: 'High-altitude thinking uncovers smarter leverage and cleaner priorities.', health: 'Mental lightness increases when you drop unnecessary obligations.', work: 'Step back from tactical clutter and steer from strategic perspective.', luckyColor: 'Sky Blue', luckyDirection: 'South' },
+    '추락': { label: 'Falling', category: 'Movement', mainMeaning: 'Transition, releasing control, and grounding needs', detailed: 'Falling (or loose-footing) dreams surface during rapid change or pressure—inviting you to check foundations and release unrealistic perfectionism.', love: 'Name insecurities gently instead of holding anxiety alone.', money: 'Double-check safety buffers and pause rushed commitments.', health: 'Prioritize grounding sleep and calming breathing cues.', work: 'Simplify overcommitted schedules into clear, manageable milestones.', luckyColor: 'Warm Ochre', luckyDirection: 'Center' },
+    '죽음': { label: 'Rebirth & Ending', category: 'Transformation', mainMeaning: 'Closure, deep renewal, and closing an old chapter', detailed: 'In dream psychology, death imagery almost never predicts literal loss—it symbolizes outgrowing an old role, habit, or mindset so new growth can begin.', love: 'Old communication patterns end cleanly so healthier honesty can thrive.', money: 'Wrap up stagnant expenses or outdated commitments decisively.', health: 'Releasing chronic mental strain creates profound relief.', work: 'Closing an old chapter frees energy for a sharper next phase.', luckyColor: 'Obsidian', luckyDirection: 'East' },
+    '결혼': { label: 'Marriage & Union', category: 'Milestones', mainMeaning: 'Integration, commitment, and harmonizing inner values', detailed: 'Wedding dreams reflect deeper commitment to a partnership, project, or the union of complementary strengths within yourself.', love: 'Clarifying shared values strengthens mutual devotion.', money: 'Structured partnerships or joint plans benefit from explicit agreements.', health: 'Whole-person balance aligns mind and daily habits.', work: 'Committed alignment with a key goal or partner accelerates delivery.', luckyColor: 'Ivory', luckyDirection: 'South' },
+    '시험': { label: 'Exam & Challenge', category: 'Milestones', mainMeaning: 'Self-evaluation, readiness, and imposter-stress release', detailed: 'Exam dreams arise when holding high personal standards—often signaling self-doubt despite having far more capability than anxiety suggests.', love: 'Stop feeling graded; authentic presence matters more than perfection.', money: 'Preparation pays off when decisions rest on real numbers, not worry.', health: 'Ease perfectionist pressure to recover restful focus.', work: 'Trust your preparation; simplify prep notes into key actions.', luckyColor: 'Cobalt', luckyDirection: 'North' },
+    '돈': { label: 'Money', category: 'Prosperity', mainMeaning: 'Self-worth, resourcefulness, and value exchange', detailed: 'Money in dreams mirrors how you value your time, energy, and security—highlighting readiness to claim fair exchange or organize resources.', love: 'Mutual generosity balances giving and receiving.', money: 'Review cashflow priorities clearly; practical stewardship compounds.', health: 'Investing time in rest yields the highest daily return.', work: 'Recognize the tangible value you bring during negotiations.', luckyColor: 'Emerald', luckyDirection: 'West' },
+    '금': { label: 'Gold', category: 'Prosperity', mainMeaning: 'Core wisdom, lasting value, and self-actualization', detailed: 'Gold represents enduring psychological treasure—insight, integrity, and strengths refined through lived experience.', love: 'Treasure genuine depth over fleeting spectacle.', money: 'Focus on durable assets, core skills, and lasting quality.', health: 'Honor quiet restorative habits that preserve vitality.', work: 'High-craft execution leaves a lasting impression.', luckyColor: 'Gold', luckyDirection: 'East' },
+    '아기': { label: 'Baby', category: 'Milestones', mainMeaning: 'New beginnings, vulnerability, and nurturing creative seeds', detailed: 'A baby symbolizes an emerging idea, tender hope, or fresh phase requiring patient care, protection, and gentle curiosity.', love: 'Tenderness and attentive care nurture emotional closeness.', money: 'Early-stage seeds grow steadily with patient nurturing.', health: 'Gentle self-compassion accelerates recovery.', work: 'Protect fragile early ideas until they gain real traction.', luckyColor: 'Soft Peach', luckyDirection: 'East' },
+    'default': { label: 'Personal Symbol', category: 'Reflection', mainMeaning: 'Personal archetypal reflection from your unconscious', detailed: 'Every dream synthesizes recent emotions, memories, and unspoken questions. Notice the strongest feeling inside the dream—that emotional tone points directly to what seeks attention today.', love: 'Listen calmly to unspoken feelings—sincerity clarifies connection.', money: 'Move steadily and let calm observation guide practical choices.', health: 'Notice mind-body signals and prioritize unhurried rest.', work: 'Follow steady curiosity; clarity grows when you examine one priority at a time.', luckyColor: 'Violet', luckyDirection: 'Center' }
+};
 
 class DreamFortuneApp {
     constructor() {
@@ -49,6 +103,7 @@ class DreamFortuneApp {
                 if (langOptionActive) langOptionActive.classList.add('active');
                 this.updateFooterLinks(currentLang);
                 this.updateZodiacGridLabels(currentLang);
+                this.updateCuratedResources(currentLang);
                 this.initFooterLinks();
 
                 if (langToggle && langMenu) {
@@ -77,6 +132,7 @@ class DreamFortuneApp {
                             if (langMenu) langMenu.classList.add('hidden');
                             this.updateFooterLinks(lang);
                             this.updateZodiacGridLabels(lang);
+                            this.updateCuratedResources(lang);
 
                             // GA4: 언어 변경 추적
                             if (typeof gtag === 'function') {
@@ -227,6 +283,26 @@ class DreamFortuneApp {
             if (e.key === 'Enter') btn.click();
         });
 
+        // Quick 1-tap dream symbol chips (mobile conversion uplift)
+        document.querySelectorAll('#dream-chips .dream-chip').forEach((chip) => {
+            chip.addEventListener('click', () => {
+                const sym = chip.getAttribute('data-symbol') || chip.textContent.trim();
+                input.value = sym;
+                if (typeof gtag === 'function') {
+                    gtag('event', 'dream_chip_select', {
+                        app_name: 'dream-fortune',
+                        symbol_key: sym
+                    });
+                }
+                btn.click();
+            });
+        });
+
+        const downloadCardBtn = document.getElementById('download-dream-card');
+        if (downloadCardBtn) {
+            downloadCardBtn.addEventListener('click', () => this.downloadDreamStoryCard());
+        }
+
         document.getElementById('share-dream').addEventListener('click', () => {
             this.shareDream();
         });
@@ -258,30 +334,10 @@ class DreamFortuneApp {
     generatePremiumAnalysis(keyword) {
         const today = new Date();
         const seed = this.hashCode(today.toDateString() + keyword);
-
-        // 키워드 찾기
-        const foundKeywords = [];
-        for (const key in dreamData) {
-            if (key === 'default') continue;
-            if (keyword.includes(key)) {
-                foundKeywords.push(key);
-            }
-        }
-
-        if (foundKeywords.length === 0) {
-            const words = keyword.split(/[\s,.:;!?]+/).filter(w => w.length > 1);
-            for (const word of words) {
-                for (const key in dreamData) {
-                    if (key === 'default') continue;
-                    if (key.includes(word) || word.includes(key)) {
-                        if (!foundKeywords.includes(key)) foundKeywords.push(key);
-                    }
-                }
-            }
-        }
+        const foundKeywords = this.extractDreamKeywords(keyword);
 
         // 제목
-        const aiTitle = window.i18n?.t('dynamic.aiTitle')?.replace('{keyword}', keyword) || `"${keyword}" AI Deep Interpretation`;
+        const aiTitle = window.i18n?.t('dynamic.aiTitle')?.replace('{keyword}', keyword) || `"${keyword}" Symbolic Deep Interpretation`;
         document.getElementById('ai-dream-title').textContent = aiTitle;
 
         // 심리학적 의미
@@ -308,8 +364,10 @@ class DreamFortuneApp {
         document.getElementById('action-3').textContent = actions[2];
 
         // 행운 아이템
-        const luckyNumbers = this.getTodayLuckyNumbers(foundKeywords.length > 0 ? dreamData[foundKeywords[0]]?.luckyNumber : 7, seed);
-        const luckyColor = this.getTodayLuckyColorName(foundKeywords.length > 0 ? dreamData[foundKeywords[0]]?.luckyColor : (window.i18n?.t('dynamic.colors.0') || 'Gold'), seed);
+        const primaryKey = foundKeywords[0];
+        const primaryData = primaryKey ? this.getLocalizedDreamData(primaryKey, dreamData[primaryKey]) : null;
+        const luckyNumbers = this.getTodayLuckyNumbers(primaryData?.luckyNumber || 7, seed);
+        const luckyColor = this.getTodayLuckyColorName(primaryData?.luckyColor || (window.i18n?.t('dynamic.colors.0') || 'Gold'), seed);
         const luckyDirection = this.getTodayLuckyDirection(seed);
 
         document.getElementById('lucky-numbers').textContent = luckyNumbers.join(', ');
@@ -464,65 +522,85 @@ class DreamFortuneApp {
         }
     }
 
+    extractDreamKeywords(input) {
+        const raw = (input || '').trim();
+        const lower = raw.toLowerCase();
+        const foundKeywords = [];
+        const addKey = (k) => { if (k && k !== 'default' && dreamData[k] && !foundKeywords.includes(k)) foundKeywords.push(k); };
+
+        for (const key in dreamData) {
+            if (key !== 'default' && raw.includes(key)) addKey(key);
+        }
+        for (const [key, aliases] of Object.entries(DREAM_ALIASES)) {
+            if (aliases.some((alias) => lower.includes(alias.toLowerCase()))) addKey(key);
+        }
+        if (foundKeywords.length === 0) {
+            const words = raw.split(/[\s,.:;!?]+/).filter(w => w.length > 1);
+            for (const word of words) {
+                for (const key in dreamData) {
+                    if (key !== 'default' && (key.includes(word) || word.includes(key))) addKey(key);
+                }
+            }
+        }
+        return foundKeywords;
+    }
+
+    getLocalizedDreamData(key, rawEntry) {
+        const lang = window.i18n?.getCurrentLanguage?.() || 'en';
+        const base = rawEntry || dreamData['default'];
+        if (lang === 'ko') return { ...base, displayKeyword: key, showKoreanSituations: true };
+        const profile = DREAM_EN_PROFILES[key] || DREAM_EN_PROFILES['default'];
+        return {
+            ...base,
+            displayKeyword: key === 'default' ? profile.label : profile.label,
+            category: profile.category,
+            mainMeaning: profile.mainMeaning,
+            detailed: profile.detailed,
+            love: profile.love,
+            money: profile.money,
+            health: profile.health,
+            work: profile.work,
+            luckyColor: profile.luckyColor,
+            luckyDirection: profile.luckyDirection,
+            relatedDreams: (base.relatedDreams || []).map((rk) => (DREAM_EN_PROFILES[rk]?.label || rk)),
+            showKoreanSituations: false
+        };
+    }
+
     interpretDream(input) {
         // 오늘 날짜 기반 시드 생성 (매일 다른 해석)
         const today = new Date();
         const daySeed = this.hashCode(today.toDateString() + input);
-        
-        // 문장에서 여러 키워드 추출
-        const foundKeywords = [];
-        const results = [];
+        const foundKeywords = this.extractDreamKeywords(input);
 
-        // 모든 키워드와 매칭 시도
-        for (const key in dreamData) {
-            if (key === 'default') continue;
-            if (input.includes(key)) {
-                foundKeywords.push(key);
-                results.push({ keyword: key, ...dreamData[key] });
-            }
-        }
-
-        // 키워드를 찾지 못한 경우
         if (foundKeywords.length === 0) {
-            // 단어 단위로 분리해서 부분 매칭 시도
-            const words = input.split(/[\s,.:;!?]+/).filter(w => w.length > 1);
-            for (const word of words) {
-                for (const key in dreamData) {
-                    if (key === 'default') continue;
-                    if (key.includes(word) || word.includes(key)) {
-                        if (!foundKeywords.includes(key)) {
-                            foundKeywords.push(key);
-                            results.push({ keyword: key, ...dreamData[key] });
-                        }
-                    }
-                }
-            }
-        }
-
-        // 여전히 없으면 기본 해석
-        if (foundKeywords.length === 0) {
-            this.showSingleResult(input, dreamData['default'], daySeed);
+            const localized = this.getLocalizedDreamData('default', dreamData['default']);
+            this.showSingleResult(input, localized, daySeed, 'personal_symbol');
             return;
         }
 
-        // 여러 키워드면 종합 해석
+        const results = foundKeywords.map((key) => ({
+            keyword: key,
+            ...this.getLocalizedDreamData(key, dreamData[key])
+        }));
+
         if (results.length > 1) {
             this.showMultipleResults(results, daySeed, input);
         } else {
-            this.showSingleResult(foundKeywords[0], results[0], daySeed);
+            const k = foundKeywords[0];
+            this.showSingleResult(results[0].displayKeyword || k, results[0], daySeed, DREAM_EN_PROFILES[k]?.label || k);
         }
     }
 
-    showSingleResult(keyword, result, seed) {
+    showSingleResult(keyword, result, seed, analyticsSlug = keyword) {
         const keywordLabel = `"${keyword}" ${window.i18n?.t('dream.interpret')?.replace(/하기.*|Interpret\s*/i, '') || 'Dream Interpretation'}`;
         document.getElementById('dream-keyword').textContent = keywordLabel;
 
-        // GA4: 테스트 완료
+        // GA4: clean test_complete (category slug only, no raw score leakage)
         if (typeof gtag === 'function') {
             gtag('event', 'test_complete', {
                 app_name: 'dream-fortune',
-                result_type: keyword,
-                luck_index: result.luck || 50
+                result_type: String(analyticsSlug || 'symbol').toLowerCase().replace(/[^a-z0-9_가-힣-]+/gi, '_')
             });
         }
 
@@ -547,8 +625,8 @@ class DreamFortuneApp {
         fullMeaning += `${detailedLabel}\n${result.detailed || result.meaning}\n`;
         fullMeaning += `${this.getAdditionalInterpretation(keyword, seed)}\n\n`;
 
-        // 상황별 해석 (랜덤하게 2-3개 선택)
-        if (result.situations) {
+        // 상황별 해석 (한국어 진입시에만 한국어 상황 사전 노출)
+        if (result.situations && result.showKoreanSituations !== false) {
             const situations = Object.entries(result.situations);
             const selectedSituations = this.selectRandom(situations, seed, 2, 3);
 
@@ -750,7 +828,14 @@ class DreamFortuneApp {
         const avgLuck = Math.min(100, Math.max(0, baseAvgLuck + luckBonus));
 
         // 키워드 목록
-        const keywords = results.map(r => r.keyword);
+        const keywords = results.map(r => r.displayKeyword || r.keyword);
+
+        if (typeof gtag === 'function') {
+            gtag('event', 'test_complete', {
+                app_name: 'dream-fortune',
+                result_type: 'combined_' + results.map((r) => (DREAM_EN_PROFILES[r.keyword]?.label || r.keyword).toLowerCase()).join('_')
+            });
+        }
 
         // 종합 해석 생성 (동적)
         const discoveredSymbolsLabel = window.i18n?.t('dynamic.resultLabels.discoveredSymbols') || '🔮 Discovered Symbols';
@@ -761,7 +846,7 @@ class DreamFortuneApp {
         const meaningLabel = window.i18n?.t('dynamic.resultLabels.meaning') || 'Core';
         const todayMeaningLabel = window.i18n?.t('dynamic.resultLabels.todayMessage')?.replace('✨ ', '').replace(':', '') || "Today's Meaning";
         results.forEach((r, i) => {
-            combinedMeaning += `【${r.keyword}】\n`;
+            combinedMeaning += `【${r.displayKeyword || r.keyword}】\n`;
             combinedMeaning += `• ${meaningLabel}: ${r.mainMeaning || 'Message from the unconscious'}\n`;
             combinedMeaning += `• ${todayMeaningLabel}: ${this.getDynamicMeaning(r, seed + i)}\n\n`;
         });
@@ -1031,10 +1116,18 @@ class DreamFortuneApp {
         return interpretation;
     }
 
+    getShareUrl() {
+        const lang = window.i18n?.getCurrentLanguage?.() || 'en';
+        const url = new URL('https://dopabrain.com/dream-fortune/');
+        url.searchParams.set('lang', lang);
+        url.searchParams.set('utm_source', 'share');
+        return url.toString();
+    }
+
     shareDream() {
         const keyword = document.getElementById('dream-keyword').textContent;
         const meaning = document.getElementById('dream-meaning').textContent;
-        const url = 'https://dopabrain.com/dream-fortune/';
+        const url = this.getShareUrl();
         const shareTemplate = window.i18n?.t('dynamic.shareTexts.dreamShare') || `🌙 My Dream Interpretation Result\n\n{keyword}\n{meaning}\n\nInterpret your dream too! 👇\n{url}`;
         const text = shareTemplate
             .replace('{keyword}', keyword)
@@ -1057,6 +1150,118 @@ class DreamFortuneApp {
                 alert(window.i18n?.t('dynamic.shareTexts.dreamShareClipboard') || 'Result copied to clipboard! Share with your friends 🌙');
             }).catch(() => {});
         }
+    }
+
+    downloadDreamStoryCard() {
+        const title = document.getElementById('dream-keyword')?.textContent?.trim() || 'Dream Reading';
+        const meaningRaw = (document.getElementById('dream-meaning')?.textContent || '').split('\n').filter(Boolean);
+        const summary = meaningRaw.slice(0, 3).join(' · ').slice(0, 220);
+        const luckText = document.getElementById('dream-luck')?.textContent?.trim() || '';
+
+        const canvas = document.createElement('canvas');
+        canvas.width = 1080;
+        canvas.height = 1920;
+        const ctx = canvas.getContext('2d');
+        const grad = ctx.createLinearGradient(0, 0, 1080, 1920);
+        grad.addColorStop(0, '#120824');
+        grad.addColorStop(0.55, '#1e1b4b');
+        grad.addColorStop(1, '#09090b');
+        ctx.fillStyle = grad;
+        ctx.fillRect(0, 0, 1080, 1920);
+
+        ctx.fillStyle = 'rgba(168, 85, 247, 0.16)';
+        ctx.beginPath();
+        ctx.arc(540, 520, 320, 0, Math.PI * 2);
+        ctx.fill();
+
+        ctx.fillStyle = '#d8b4fe';
+        ctx.font = 'bold 34px sans-serif';
+        ctx.textAlign = 'center';
+        ctx.fillText('DOPABRAIN · SYMBOLIC DREAM CARD', 540, 210);
+
+        ctx.font = '150px sans-serif';
+        ctx.fillText('🔮', 540, 560);
+
+        ctx.fillStyle = '#ffffff';
+        ctx.font = 'bold 52px sans-serif';
+        ctx.fillText(title.slice(0, 42), 540, 750);
+
+        ctx.fillStyle = '#cbd5e1';
+        ctx.font = '32px sans-serif';
+        const words = summary.split(' ');
+        let line = '';
+        let y = 860;
+        words.forEach((word) => {
+            const test = line ? `${line} ${word}` : word;
+            if (ctx.measureText(test).width > 860) {
+                ctx.fillText(line, 540, y);
+                line = word;
+                y += 48;
+            } else {
+                line = test;
+            }
+        });
+        if (line) ctx.fillText(line, 540, y);
+
+        if (luckText) {
+            ctx.fillStyle = '#fbbf24';
+            ctx.font = 'bold 38px sans-serif';
+            ctx.fillText(luckText.slice(0, 48), 540, 1340);
+        }
+
+        ctx.fillStyle = '#94a3b8';
+        ctx.font = 'bold 30px sans-serif';
+        ctx.fillText('dopabrain.com/dream-fortune/', 540, 1760);
+
+        try {
+            const link = document.createElement('a');
+            link.download = 'dream-fortune-story-card.png';
+            link.href = canvas.toDataURL('image/png');
+            link.click();
+        } catch (e) {}
+
+        if (typeof gtag === 'function') {
+            gtag('event', 'save_image', {
+                app_name: 'dream-fortune',
+                result_type: 'dream_reading',
+                save_surface: 'result_story_1080x1920'
+            });
+        }
+    }
+
+    updateCuratedResources(lang) {
+        const container = document.getElementById('curated-resources-card');
+        if (!container) return;
+        const stores = { de: 'www.amazon.de', fr: 'www.amazon.fr', es: 'www.amazon.es', ja: 'www.amazon.co.jp', ko: 'www.amazon.com' };
+        const host = stores[lang] || 'www.amazon.com';
+        const urls = {
+            manAndHisSymbols: `https://${host}/dp/0440351839?tag=dopabrain-20`,
+            innerWork: `https://${host}/dp/0062504312?tag=dopabrain-20`
+        };
+        container.querySelectorAll('.curated-item').forEach((link) => {
+            const key = link.getAttribute('data-curated-key');
+            if (urls[key]) link.setAttribute('href', urls[key]);
+            if (!link.dataset.trackedCurated) {
+                link.dataset.trackedCurated = 'true';
+                link.addEventListener('click', () => {
+                    const currentLang = window.i18n?.getCurrentLanguage?.() || lang || 'en';
+                    const dest = link.getAttribute('href');
+                    if (typeof gtag === 'function') {
+                        gtag('event', 'curated_resource_click', {
+                            app_name: 'dream-fortune',
+                            resource_key: key,
+                            content_locale: currentLang,
+                            cta_surface: 'curated_resources'
+                        });
+                        gtag('event', 'content_cta_click', {
+                            cta_type: 'curated_book',
+                            destination: dest,
+                            source: 'dream_fortune'
+                        });
+                    }
+                });
+            }
+        });
     }
 
     getZodiacDisplayName(koName, lang = window.i18n?.getCurrentLanguage?.() || 'en') {
@@ -1172,6 +1377,13 @@ class DreamFortuneApp {
         const resultCard = document.getElementById('fortune-result');
         resultCard.classList.remove('hidden');
         resultCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+        if (typeof gtag === 'function') {
+            gtag('event', 'test_complete', {
+                app_name: 'dream-fortune',
+                result_type: 'horoscope_' + (this.getZodiacDisplayName(zodiac.name, 'en') || 'zodiac').toLowerCase()
+            });
+        }
     }
 
     shareFortune() {
@@ -1179,7 +1391,7 @@ class DreamFortuneApp {
         const message = document.getElementById('fortune-message').textContent;
         const color = document.getElementById('lucky-color').textContent;
         const number = document.getElementById('lucky-number').textContent;
-        const url = 'https://dopabrain.com/dream-fortune/';
+        const url = this.getShareUrl();
 
         const shareTemplate = window.i18n?.t('dynamic.shareTexts.fortuneShare') || `⭐ Today's {zodiac} Horoscope\n\n{message}\n\n🎨 Lucky Color: {color}\n🔢 Lucky Numbers: {number}\n\nCheck your horoscope too! 👇\n{url}`;
         const text = shareTemplate
@@ -1261,6 +1473,13 @@ class DreamFortuneApp {
         const resultCard = document.getElementById('tarot-result');
         resultCard.classList.remove('hidden');
         resultCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+        if (typeof gtag === 'function') {
+            gtag('event', 'test_complete', {
+                app_name: 'dream-fortune',
+                result_type: 'tarot_' + (isReversed ? 'reversed' : 'upright')
+            });
+        }
     }
 
     resetTarot() {
@@ -1382,9 +1601,7 @@ class DreamFortuneApp {
     // 서비스 워커 등록
     registerServiceWorker() {
         if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('sw.js')
-                .then(() => console.log('Service Worker registered'))
-                .catch(err => console.log('SW registration failed:', err));
+            navigator.serviceWorker.register('sw.js').catch(() => {});
         }
     }
 }

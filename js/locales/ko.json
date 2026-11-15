@@ -1,7 +1,7 @@
 {
   "app": {
-    "title": "AI 꿈해몽·운세·타로 - 무료 해석 | DopaBrain",
-    "description": "AI가 해석하는 꿈해몽, 별자리별 오늘의 운세, 타로 카드 3장 뽑기."
+    "title": "무료 꿈해몽 · 오늘의 운세 · 타로 | DopaBrain",
+    "description": "무의식 상징 기반 무료 꿈해몽 사전, 12별자리 오늘의 운세, 타로 리딩을 한곳에서 만나보세요."
   },
   "header": {
     "title": "🌙 꿈해몽 & 운세",
@@ -14,11 +14,11 @@
   },
   "dream": {
     "question": "어떤 꿈을 꾸셨나요?",
-    "hint": "꿈 내용을 자유롭게 입력하세요 (문장도 OK!)",
+    "hint": "꿈 내용을 입력하거나 아래 상징을 탭해 바로 해몽해보세요",
     "placeholder": "예: 바다에서 뱀이 헤엄치는 꿈을 꿨어",
     "interpret": "꿈 해석하기",
     "share": "공유하기",
-    "aiDeep": "AI 심층 해석",
+    "aiDeep": "심층 상징 해몽",
     "luckIndex": "행운지수"
   },
   "fortune": {
@@ -37,9 +37,9 @@
     "retry": "다시 뽑기"
   },
   "premium": {
-    "badge": "✨ AI 심층 분석",
-    "title": "AI 심층 해석",
-    "deepAnalysis": "AI 심층 해몽 보기",
+    "badge": "✨ 심층 상징 해몽",
+    "title": "심층 꿈 상징 해석",
+    "deepAnalysis": "심층 해몽 보기",
     "share": "결과 공유하기",
     "luckyNumber": "행운의 숫자",
     "luckyColor": "행운의 색상",
@@ -58,7 +58,7 @@
     "title": "이것도 해보세요"
   },
   "dynamic": {
-    "aiTitle": "{keyword} AI 심층 해몽",
+    "aiTitle": "{keyword} 심층 상징 해석",
     "fallbackMessage": "이 꿈은 당신의 개인적인 무의식의 메시지를 담고 있습니다. 꿈에서 느낀 감정이 핵심입니다. 그 감정이 현재 삶과 어떻게 연결되는지 생각해보세요.",
     "colors": [
       "금색",
@@ -351,7 +351,8 @@
   "share": {
     "twitter": "Twitter",
     "copyUrl": "📋 URL 복사",
-    "copied": "✅ 복사됨!"
+    "copied": "✅ 복사됨!",
+    "downloadCard": "스토리 카드 저장"
   },
   "error": {
     "storage": "개인 정보 보호 모드에서는 일부 기능이 제한될 수 있습니다.",
@@ -395,5 +396,24 @@
     "faq3A": "전혀 전송되지 않습니다. 모든 꿈 검색, 키워드 분석, 일기 저장 데이터는 사용자의 브라우저 localStorage에만 100% 안전하게 보관됩니다.",
     "reviewDate": "학술 및 편집 검토: 2026년 11월",
     "reviewTeam": "DopaBrain 분석 몽학 시리즈"
+  },
+  "chips": {
+    "water": "🌊 물",
+    "snake": "🐍 뱀",
+    "flying": "🕊️ 비행",
+    "falling": "⛰️ 추락",
+    "money": "💰 돈",
+    "dragon": "🐉 용",
+    "fire": "🔥 불",
+    "moon": "🌙 달"
+  },
+  "curated": {
+    "badge": "꿈 심리학 추천 도서",
+    "title": "꿈의 상징과 무의식 더 깊이 탐구하기",
+    "book1Title": "인간과 상징 (Man and His Symbols)",
+    "book1Desc": "칼 구스타프 융 • 꿈의 원형과 무의식 언어를 이해하는 분석심리학 입문서.",
+    "book2Title": "내면 작업 (Inner Work)",
+    "book2Desc": "로버트 A. 존슨 • 꿈 기록과 적극적 상상을 일상 성찰에 적용하는 실용서.",
+    "readPill": "도서 보기 ↗"
   }
 }

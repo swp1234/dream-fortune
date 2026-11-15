@@ -1,7 +1,7 @@
 {
   "app": {
-    "title": "KI Traum·Horoskop·Tarot - Kostenlos lesen | DopaBrain",
-    "description": "KI-gestützte Trauminterpretation, tägliches Horoskop nach Sternzeichen und Ein-Karten-Tarot-Lesung."
+    "title": "Traumdeutung & Tageshoroskop | DopaBrain",
+    "description": "Kostenlose symbolische Traumdeutung, Tageshoroskop und Tarot-Reflexion."
   },
   "header": {
     "title": "🌙 Träume & Schicksal",
@@ -14,11 +14,11 @@
   },
   "dream": {
     "question": "Wovon hast du geträumt?",
-    "hint": "Beschreibe deinen Traum frei (Sätze sind ok!)",
+    "hint": "Beschreibe deinen Traum oder tippe unten auf ein Symbol",
     "placeholder": "z.B. Ich träumte von einer Schlange, die im Meer schwamm",
     "interpret": "Traum interpretieren",
     "share": "Teilen",
-    "aiDeep": "Tiefe KI-Analyse",
+    "aiDeep": "Symbolische Tiefenanalyse",
     "luckIndex": "Glücksindex"
   },
   "fortune": {
@@ -37,9 +37,9 @@
     "retry": "Nochmal ziehen"
   },
   "premium": {
-    "badge": "✨ Tiefe KI-Analyse",
-    "title": "Tiefe KI-Interpretation",
-    "deepAnalysis": "Tiefe Analyse ansehen",
+    "badge": "✨ Symbolische Tiefenanalyse",
+    "title": "Archetypische Traumdeutung",
+    "deepAnalysis": "Tiefendeutung ansehen",
     "share": "Ergebnisse teilen",
     "luckyNumber": "Glückszahlen",
     "luckyColor": "Glücksfarbe",
@@ -64,7 +64,8 @@
   "share": {
     "twitter": "Twitter",
     "copyUrl": "📋 URL kopieren",
-    "copied": "✅ Kopiert!"
+    "copied": "✅ Kopiert!",
+    "downloadCard": "Karte speichern"
   },
   "error": {
     "storage": "Einige Funktionen sind im privaten Modus eingeschränkt.",
@@ -108,5 +109,27 @@
     "faq3A": "Nein. Sämtliche Einträge und Tagebücher verbleiben ausschließlich im lokalen Speicher (localStorage) deines Browsers.",
     "reviewDate": "Redaktionelle Prüfung: November 2026",
     "reviewTeam": "DopaBrain Analytische Traumpsychologie"
+  },
+  "dynamic": {
+    "aiTitle": "{keyword} Symbolische Tiefendeutung"
+  },
+  "chips": {
+    "water": "🌊 Wasser",
+    "snake": "🐍 Schlange",
+    "flying": "🕊️ Fliegen",
+    "falling": "⛰️ Fallen",
+    "money": "💰 Geld",
+    "dragon": "🐉 Drache",
+    "fire": "🔥 Feuer",
+    "moon": "🌙 Mond"
+  },
+  "curated": {
+    "badge": "TRAUMPSYCHOLOGIE-EMPFEHLUNGEN",
+    "title": "Traumsymbole tiefer verstehen",
+    "book1Title": "Der Mensch und seine Symbole",
+    "book1Desc": "Carl G. Jung • Klassische Einführung in Traum-Archetypen und das Unbewusste.",
+    "book2Title": "Inner Work",
+    "book2Desc": "Robert A. Johnson • Praxisbuch für Traumarbeit und aktive Imagination.",
+    "readPill": "Buch ansehen ↗"
   }
 }

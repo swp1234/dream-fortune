@@ -1,7 +1,7 @@
 {
   "app": {
-    "title": "AI解梦·运势·塔罗 - 免费解读 | DopaBrain",
-    "description": "AI解梦、星座运势、塔罗牌占卜，100种梦境解读，12星座运势免费提供。"
+    "title": "周公解梦 · 每日运势 · 塔罗牌 | DopaBrain",
+    "description": "基于原型象征的免费解梦、十二星座每日运势与塔罗占卜体验。"
   },
   "header": {
     "title": "🌙 解梦与运势",
@@ -14,11 +14,11 @@
   },
   "dream": {
     "question": "您做了什么梦？",
-    "hint": "请自由描述您的梦境内容",
+    "hint": "输入梦境内容，或点击下方常见梦象一键解读",
     "placeholder": "例：我梦见蛇在海里游泳",
     "interpret": "解读梦境",
     "share": "分享",
-    "aiDeep": "AI深度解析",
+    "aiDeep": "象征深度解读",
     "luckIndex": "幸运指数"
   },
   "fortune": {
@@ -37,9 +37,9 @@
     "retry": "重新抽取"
   },
   "premium": {
-    "badge": "✨ AI深度分析",
-    "title": "AI深度解读",
-    "deepAnalysis": "查看AI深度解读",
+    "badge": "✨ 象征深度解读",
+    "title": "梦境原型深度解析",
+    "deepAnalysis": "查看深度解读",
     "share": "分享结果",
     "luckyNumber": "幸运数字",
     "luckyColor": "幸运色",
@@ -64,7 +64,8 @@
   "share": {
     "twitter": "Twitter",
     "copyUrl": "📋 复制链接",
-    "copied": "✅ 已复制!"
+    "copied": "✅ 已复制!",
+    "downloadCard": "保存分享图卡"
   },
   "error": {
     "storage": "隐私模式下部分功能可能受限。",
@@ -108,5 +109,27 @@
     "faq3A": "绝不。所有梦境关键词解析与日记记录完全保存在本地浏览器中，绝不收集或上传个人数据。",
     "reviewDate": "学术与编辑审阅：2026年11月",
     "reviewTeam": "DopaBrain 释梦心理学系列"
+  },
+  "dynamic": {
+    "aiTitle": "{keyword} 象征深度解析"
+  },
+  "chips": {
+    "water": "🌊 水",
+    "snake": "🐍 蛇",
+    "flying": "🕊️ 飞翔",
+    "falling": "⛰️ 坠落",
+    "money": "💰 金钱",
+    "dragon": "🐉 龙",
+    "fire": "🔥 火",
+    "moon": "🌙 月亮"
+  },
+  "curated": {
+    "badge": "梦境心理学延伸阅读",
+    "title": "深入探索梦境象征与潜意识",
+    "book1Title": "人类及其象征 (Man and His Symbols)",
+    "book1Desc": "卡尔·荣格 • 理解梦境原型与潜意识语言的分析心理学经典。",
+    "book2Title": "内在工作 (Inner Work)",
+    "book2Desc": "罗伯特·A·约翰逊 • 将梦境日记与积极想象融入自我觉察。",
+    "readPill": "查看图书 ↗"
   }
 }

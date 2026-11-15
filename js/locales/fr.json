@@ -1,7 +1,7 @@
 {
   "app": {
-    "title": "Interprétation de Rêve·Horoscope·Tarot IA - Lecture Gratuite | DopaBrain",
-    "description": "Interprétation de rêve alimentée par l'IA, horoscope quotidien par zodiaque et lecture de tarot à une carte."
+    "title": "Interprétation des Rêves & Horoscope | DopaBrain",
+    "description": "Interprétation symbolique des rêves, horoscope du jour et tirage tarot gratuit."
   },
   "header": {
     "title": "🌙 Rêves & Fortune",
@@ -14,11 +14,11 @@
   },
   "dream": {
     "question": "Qu'as-tu rêvé?",
-    "hint": "Décris ton rêve librement (les phrases vont!)",
+    "hint": "Décrivez votre rêve ou touchez un symbole ci-dessous",
     "placeholder": "Par exemple, J'ai rêvé d'un serpent nageant dans l'océan",
     "interpret": "Interpréter le Rêve",
     "share": "Partager",
-    "aiDeep": "Analyse Profonde IA",
+    "aiDeep": "Analyse Symbolique Approfondie",
     "luckIndex": "Indice de Chance"
   },
   "fortune": {
@@ -37,9 +37,9 @@
     "retry": "Tirer à Nouveau"
   },
   "premium": {
-    "badge": "✨ Analyse Profonde IA",
-    "title": "Interprétation Profonde IA",
-    "deepAnalysis": "Voir l'Analyse Profonde",
+    "badge": "✨ Analyse Symbolique",
+    "title": "Lecture Archétypale du Rêve",
+    "deepAnalysis": "Voir la Lecture Profonde",
     "share": "Partager les Résultats",
     "luckyNumber": "Nombres de Chance",
     "luckyColor": "Couleur de Chance",
@@ -64,7 +64,8 @@
   "share": {
     "twitter": "Twitter",
     "copyUrl": "📋 Copier URL",
-    "copied": "✅ Copié !"
+    "copied": "✅ Copié !",
+    "downloadCard": "Enregistrer la Carte"
   },
   "error": {
     "storage": "Certaines fonctions peuvent être limitées en mode privé.",
@@ -108,5 +109,27 @@
     "faq3A": "Jamais. Vos textes et historiques sont conservés exclusivement dans le localStorage de votre navigateur.",
     "reviewDate": "Revue Éditoriale : Novembre 2026",
     "reviewTeam": "DopaBrain Psychologie Onirique"
+  },
+  "dynamic": {
+    "aiTitle": "Analyse Symbolique : {keyword}"
+  },
+  "chips": {
+    "water": "🌊 Eau",
+    "snake": "🐍 Serpent",
+    "flying": "🕊️ Voler",
+    "falling": "⛰️ Chute",
+    "money": "💰 Argent",
+    "dragon": "🐉 Dragon",
+    "fire": "🔥 Feu",
+    "moon": "🌙 Lune"
+  },
+  "curated": {
+    "badge": "LECTURES ONIRIQUES",
+    "title": "Explorer la Symbolique des Rêves",
+    "book1Title": "L’Homme et ses symboles",
+    "book1Desc": "Carl G. Jung • Introduction de référence aux archétypes et à l’inconscient.",
+    "book2Title": "Inner Work",
+    "book2Desc": "Robert A. Johnson • Méthode pratique pour analyser ses rêves au quotidien.",
+    "readPill": "Voir le Livre ↗"
   }
 }

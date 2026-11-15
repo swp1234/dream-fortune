@@ -1,7 +1,7 @@
 {
   "app": {
-    "title": "AI 夢解き・占い・タロット - 無料リーディング | DopaBrain",
-    "description": "AI搭載の夢の解釈、日々の星座占い、ワンカードタロット。"
+    "title": "夢占い・今日の運勢・タロット | DopaBrain",
+    "description": "象徴辞書に基づく無料夢占い、12星座占い、タロットリーディング。"
   },
   "header": {
     "title": "🌙 夢と運勢",
@@ -14,11 +14,11 @@
   },
   "dream": {
     "question": "どんな夢を見ましたか？",
-    "hint": "夢を自由に説明してください（文章OK！）",
+    "hint": "夢の内容を入力するか、下の象徴をタップしてください",
     "placeholder": "例：海を泳ってるヘビの夢を見ました",
     "interpret": "夢を解釈",
     "share": "共有する",
-    "aiDeep": "AI深い分析",
+    "aiDeep": "象徴深層リーディング",
     "luckIndex": "幸運指数"
   },
   "fortune": {
@@ -37,9 +37,9 @@
     "retry": "もう一度引く"
   },
   "premium": {
-    "badge": "✨ AI深い分析",
-    "title": "AI深い解釈",
-    "deepAnalysis": "AI深い解釈を見る",
+    "badge": "✨ 象徴深層リーディング",
+    "title": "象徴の深層解釈",
+    "deepAnalysis": "深層リーディングを見る",
     "share": "結果を共有する",
     "luckyNumber": "幸運な数字",
     "luckyColor": "幸運な色",
@@ -64,7 +64,8 @@
   "share": {
     "twitter": "Twitter",
     "copyUrl": "📋 URLコピー",
-    "copied": "✅ コピー済み!"
+    "copied": "✅ コピー済み!",
+    "downloadCard": "カードを保存"
   },
   "error": {
     "storage": "プライベートモードでは一部機能が制限されます。",
@@ -108,5 +109,27 @@
     "faq3A": "一切送信されません。すべての検索や日記データはお使いの端末のlocalStorage内に100%安全に保持されます。",
     "reviewDate": "監修・編集：2026年11月",
     "reviewTeam": "DopaBrain 夢分析心理学シリーズ"
+  },
+  "dynamic": {
+    "aiTitle": "{keyword} の象徴深層解釈"
+  },
+  "chips": {
+    "water": "🌊 水",
+    "snake": "🐍 蛇",
+    "flying": "🕊️ 飛ぶ",
+    "falling": "⛰️ 落ちる",
+    "money": "💰 お金",
+    "dragon": "🐉 龍",
+    "fire": "🔥 火",
+    "moon": "🌙 月"
+  },
+  "curated": {
+    "badge": "夢心理学のおすすめ書籍",
+    "title": "夢の象徴をさらに深く学ぶ",
+    "book1Title": "人間と象徴",
+    "book1Desc": "カール・グスタフ・ユング • 夢の元型と無意識を読み解く名著。",
+    "book2Title": "Inner Work（インナー・ワーク）",
+    "book2Desc": "ロバート・A・ジョンソン • 夢とイメージを日常の自己理解に活かす実践ガイド。",
+    "readPill": "書籍を見る ↗"
   }
 }

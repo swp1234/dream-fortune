@@ -1,7 +1,7 @@
 {
   "app": {
-    "title": "Interpretasi Mimpi·Horoskop·Tarot AI - Pembacaan Gratis | DopaBrain",
-    "description": "Interpretasi mimpi bertenaga AI, horoskop harian menurut zodiak, dan pembacaan tarot satu kartu."
+    "title": "Tafsir Mimpi Simbolik & Horoskop | DopaBrain",
+    "description": "Tafsir mimpi simbolik gratis, ramalan zodiak harian, dan kartu tarot."
   },
   "header": {
     "title": "🌙 Mimpi & Keberuntungan",
@@ -14,11 +14,11 @@
   },
   "dream": {
     "question": "Apa yang Anda bermimpi?",
-    "hint": "Jelaskan mimpi Anda dengan bebas (kalimat boleh!)",
+    "hint": "Tulis mimpimu atau ketuk simbol populer di bawah ini",
     "placeholder": "Contoh: Saya bermimpi ular berenang di laut",
     "interpret": "Interpretasi Mimpi",
     "share": "Bagikan",
-    "aiDeep": "Analisis Mendalam AI",
+    "aiDeep": "Analisis Simbolik Mendalam",
     "luckIndex": "Indeks Keberuntungan"
   },
   "fortune": {
@@ -37,9 +37,9 @@
     "retry": "Tarik Lagi"
   },
   "premium": {
-    "badge": "✨ Analisis Mendalam AI",
-    "title": "Interpretasi Mendalam AI",
-    "deepAnalysis": "Lihat Analisis Mendalam",
+    "badge": "✨ Analisis Simbolik Mendalam",
+    "title": "Tafsir Arketipe Mimpi",
+    "deepAnalysis": "Lihat Bacaan Mendalam",
     "share": "Bagikan Hasil",
     "luckyNumber": "Angka Keberuntungan",
     "luckyColor": "Warna Keberuntungan",
@@ -64,7 +64,8 @@
   "share": {
     "twitter": "Twitter",
     "copyUrl": "📋 Salin URL",
-    "copied": "✅ Disalin!"
+    "copied": "✅ Disalin!",
+    "downloadCard": "Simpan Kartu Cerita"
   },
   "error": {
     "storage": "Beberapa fitur mungkin terbatas dalam mode privat.",
@@ -108,5 +109,27 @@
     "faq3A": "Tidak pernah. Semua pencarian dan catatan harian disimpan 100% secara lokal di peramban perangkat Anda.",
     "reviewDate": "Tinjauan Editorial: November 2026",
     "reviewTeam": "Seri Psikologi Onirisme DopaBrain"
+  },
+  "dynamic": {
+    "aiTitle": "Tafsir Simbolik {keyword}"
+  },
+  "chips": {
+    "water": "🌊 Air",
+    "snake": "🐍 Ular",
+    "flying": "🕊️ Terbang",
+    "falling": "⛰️ Jatuh",
+    "money": "💰 Uang",
+    "dragon": "🐉 Naga",
+    "fire": "🔥 Api",
+    "moon": "🌙 Bulan"
+  },
+  "curated": {
+    "badge": "BACAAN PSIKOLOGI MIMPI",
+    "title": "Pahami Simbol Mimpi Lebih Dalam",
+    "book1Title": "Man and His Symbols",
+    "book1Desc": "Carl G. Jung • Pengantar klasik mengenai arketipe mimpi dan alam bawah sadar.",
+    "book2Title": "Inner Work",
+    "book2Desc": "Robert A. Johnson • Metode praktis memahami mimpi untuk refleksi diri.",
+    "readPill": "Lihat Buku ↗"
   }
 }

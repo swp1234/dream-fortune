@@ -1,7 +1,7 @@
 {
   "app": {
-    "title": "YZ Rüya·Horoscop·Tarot - Ücretsiz Okuma | DopaBrain",
-    "description": "YZ destekli rüya yorumlama, burç horoskopu ve tek kart tarot okuması."
+    "title": "Rüya Tabirleri, Burç ve Tarot | DopaBrain",
+    "description": "Sembolik rüya yorumu, günlük burç yorumu ve tarot okuması."
   },
   "header": {
     "title": "🌙 Rüyalar & Talih",
@@ -14,11 +14,11 @@
   },
   "dream": {
     "question": "Neyi hayal ettin?",
-    "hint": "Rüyanı özgürce tanımla (cümle tamam!)",
+    "hint": "Rüyanızı yazın veya aşağıdaki popüler bir sembole dokunun",
     "placeholder": "Örn: Yılanın okyanusta yüzdüğünü hayal ettim",
     "interpret": "Rüyayı Yorumla",
     "share": "Paylaş",
-    "aiDeep": "YZ Derinlemesine Analizi",
+    "aiDeep": "Derin Sembolik Yorum",
     "luckIndex": "Talih İndeksi"
   },
   "fortune": {
@@ -37,9 +37,9 @@
     "retry": "Tekrar Çek"
   },
   "premium": {
-    "badge": "✨ YZ Derinlemesine Analizi",
-    "title": "YZ Derinlemesine Yorumlama",
-    "deepAnalysis": "Derinlemesine Analizi Gör",
+    "badge": "✨ Derin Sembolik Yorum",
+    "title": "Arketipsel Rüya Analizi",
+    "deepAnalysis": "Derin Yorumu Gör",
     "share": "Sonuçları Paylaş",
     "luckyNumber": "Şanslı Sayılar",
     "luckyColor": "Şanslı Renk",
@@ -64,7 +64,8 @@
   "share": {
     "twitter": "Twitter",
     "copyUrl": "📋 URL Kopyala",
-    "copied": "✅ Kopyalandı!"
+    "copied": "✅ Kopyalandı!",
+    "downloadCard": "Hikaye Kartını Kaydet"
   },
   "error": {
     "storage": "Gizli modda bazı özellikler sınırlı olabilir.",
@@ -108,5 +109,27 @@
     "faq3A": "Asla. Tüm analizler ve günlük notları yalnızca tarayıcınızın yerel hafızasında saklanır.",
     "reviewDate": "Editöryal İnceleme: Kasım 2026",
     "reviewTeam": "DopaBrain Analitik Rüya Psikolojisi Serisi"
+  },
+  "dynamic": {
+    "aiTitle": "{keyword} Sembolik Analizi"
+  },
+  "chips": {
+    "water": "🌊 Su",
+    "snake": "🐍 Yılan",
+    "flying": "🕊️ Uçmak",
+    "falling": "⛰️ Düşmek",
+    "money": "💰 Para",
+    "dragon": "🐉 Ejderha",
+    "fire": "🔥 Ateş",
+    "moon": "🌙 Ay"
+  },
+  "curated": {
+    "badge": "RÜYA PSİKOLOJİSİ OKUMALARI",
+    "title": "Rüya Sembolizmini Derinlemesine Keşfedin",
+    "book1Title": "İnsan ve Sembolleri",
+    "book1Desc": "Carl G. Jung • Rüya arketipleri ve bilinçdışı üzerine temel başvuru kitabı.",
+    "book2Title": "Inner Work",
+    "book2Desc": "Robert A. Johnson • Rüyalar ve aktif imgelemle içsel çalışma rehberi.",
+    "readPill": "Kitabı Gör ↗"
   }
 }

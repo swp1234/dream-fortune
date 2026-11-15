@@ -1,7 +1,7 @@
 {
   "app": {
-    "title": "Interpretação de Sonhos com IA, Horóscopo e Tarô - Leitura Gratuita | DopaBrain",
-    "description": "Interpretação de sonhos alimentada por IA, horóscopo diário por signo do zodíaco e leitura de tarô com uma carta."
+    "title": "Interpretação de Sonhos e Horóscopo | DopaBrain",
+    "description": "Interpretação simbólica de sonhos, horóscopo diário e tarot grátis."
   },
   "header": {
     "title": "🌙 Sonhos e Destino",
@@ -14,11 +14,11 @@
   },
   "dream": {
     "question": "Com o que você sonhou?",
-    "hint": "Descreva seu sonho livremente (frases OK!)",
+    "hint": "Descreva seu sonho ou toque em um símbolo abaixo",
     "placeholder": "Ex: Sonhei com uma cobra nadando no oceano",
     "interpret": "Interpretar Sonho",
     "share": "Compartilhar",
-    "aiDeep": "Análise Profunda com IA",
+    "aiDeep": "Leitura Simbólica Profunda",
     "luckIndex": "Índice de Sorte"
   },
   "fortune": {
@@ -37,9 +37,9 @@
     "retry": "Puxar Novamente"
   },
   "premium": {
-    "badge": "✨ Análise Profunda com IA",
-    "title": "Interpretação Profunda com IA",
-    "deepAnalysis": "Ver Análise Profunda",
+    "badge": "✨ Leitura Simbólica Profunda",
+    "title": "Interpretação Arquetípica",
+    "deepAnalysis": "Ver Leitura Profunda",
     "share": "Compartilhar Resultados",
     "luckyNumber": "Números Sorte",
     "luckyColor": "Cor de Sorte",
@@ -64,7 +64,8 @@
   "share": {
     "twitter": "Twitter",
     "copyUrl": "📋 Copiar URL",
-    "copied": "✅ Copiado!"
+    "copied": "✅ Copiado!",
+    "downloadCard": "Salvar Card"
   },
   "error": {
     "storage": "Algumas funções podem ser limitadas no modo privado.",
@@ -108,5 +109,27 @@
     "faq3A": "De forma alguma. Todos os dados permanecem estritamente no armazenamento local (localStorage) do seu navegador.",
     "reviewDate": "Revisão Editorial: Novembro de 2026",
     "reviewTeam": "DopaBrain Série Onírica Analítica"
+  },
+  "dynamic": {
+    "aiTitle": "Interpretação Simbólica de {keyword}"
+  },
+  "chips": {
+    "water": "🌊 Água",
+    "snake": "🐍 Cobra",
+    "flying": "🕊️ Voar",
+    "falling": "⛰️ Cair",
+    "money": "💰 Dinheiro",
+    "dragon": "🐉 Dragão",
+    "fire": "🔥 Fogo",
+    "moon": "🌙 Lua"
+  },
+  "curated": {
+    "badge": "LEITURAS DE PSICOLOGIA DOS SONHOS",
+    "title": "Aprofunde o Simbolismo Onírico",
+    "book1Title": "O Homem e Seus Símbolos",
+    "book1Desc": "Carl G. Jung • Guia essencial sobre arquétipos dos sonhos e inconsciente.",
+    "book2Title": "Inner Work",
+    "book2Desc": "Robert A. Johnson • Método prático para trabalhar sonhos e imaginação ativa.",
+    "readPill": "Ver Livro ↗"
   }
 }

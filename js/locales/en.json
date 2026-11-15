@@ -1,7 +1,7 @@
 {
   "app": {
-    "title": "AI Dream·Horoscope·Tarot - Free Reading | DopaBrain",
-    "description": "AI-powered dream interpretation, daily horoscope by zodiac, and one-card tarot reading."
+    "title": "Dream Interpretation - Symbolic Meaning & Fortune | DopaBrain",
+    "description": "Free symbolic dream interpretation, daily horoscope by zodiac, and tarot reading."
   },
   "header": {
     "title": "🌙 Dreams & Fortune",
@@ -14,11 +14,11 @@
   },
   "dream": {
     "question": "What did you dream about?",
-    "hint": "Describe your dream freely (sentences OK!)",
+    "hint": "Describe your dream freely or tap a symbol below",
     "placeholder": "e.g., I dreamed of a snake swimming in the ocean",
     "interpret": "Interpret Dream",
     "share": "Share",
-    "aiDeep": "AI Deep Analysis",
+    "aiDeep": "Symbolic Deep Analysis",
     "luckIndex": "Luck Index"
   },
   "fortune": {
@@ -37,9 +37,9 @@
     "retry": "Draw Again"
   },
   "premium": {
-    "badge": "✨ AI Deep Analysis",
-    "title": "AI Deep Interpretation",
-    "deepAnalysis": "View AI Deep Reading",
+    "badge": "✨ Symbolic Deep Analysis",
+    "title": "Symbolic Deep Interpretation",
+    "deepAnalysis": "View Deep Reading",
     "share": "Share Results",
     "luckyNumber": "Lucky Numbers",
     "luckyColor": "Lucky Color",
@@ -58,7 +58,7 @@
     "title": "Try these too"
   },
   "dynamic": {
-    "aiTitle": "{keyword} AI Deep Interpretation",
+    "aiTitle": "{keyword} Symbolic Deep Interpretation",
     "fallbackMessage": "This dream carries a personal message from your unconscious. The emotion you felt in the dream is key. Think about how that emotion connects to your current life.",
     "colors": [
       "Gold",
@@ -351,7 +351,8 @@
   "share": {
     "twitter": "Twitter",
     "copyUrl": "📋 Copy URL",
-    "copied": "✅ Copied!"
+    "copied": "✅ Copied!",
+    "downloadCard": "Save Story Card"
   },
   "error": {
     "storage": "Some features may be limited in private mode. You can continue.",
@@ -395,5 +396,24 @@
     "faq3A": "Never. All dream text entries, keyword analyses, and diary logs are processed and stored exclusively inside your local device browser (localStorage). No dream text is uploaded to remote servers.",
     "reviewDate": "Editorial Review: November 2026",
     "reviewTeam": "DopaBrain Analytical Oneiric Series"
+  },
+  "chips": {
+    "water": "🌊 Water",
+    "snake": "🐍 Snake",
+    "flying": "🕊️ Flying",
+    "falling": "⛰️ Falling",
+    "money": "💰 Money",
+    "dragon": "🐉 Dragon",
+    "fire": "🔥 Fire",
+    "moon": "🌙 Moon"
+  },
+  "curated": {
+    "badge": "ONEIRIC PSYCHOLOGY READING",
+    "title": "Explore Dream Symbolism Deeper",
+    "book1Title": "Man and His Symbols",
+    "book1Desc": "Carl G. Jung • Essential introduction to dream archetypes and the unconscious.",
+    "book2Title": "Inner Work",
+    "book2Desc": "Robert A. Johnson • Practical method for working with dreams and active imagination.",
+    "readPill": "View Book ↗"
   }
 }

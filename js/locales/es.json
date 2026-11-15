@@ -1,7 +1,7 @@
 {
   "app": {
-    "title": "IA Sueños·Horóscopo·Tarot - Lectura Gratis | DopaBrain",
-    "description": "Interpretación de sueños impulsada por IA, horóscopo diario por zodíaco y lectura de tarot de una carta."
+    "title": "Interpretación de Sueños y Horóscopo | DopaBrain",
+    "description": "Interpretación simbólica de sueños, horóscopo diario y tarot gratis."
   },
   "header": {
     "title": "🌙 Sueños y Fortuna",
@@ -14,11 +14,11 @@
   },
   "dream": {
     "question": "¿Qué soñaste?",
-    "hint": "Describe tu sueño libremente (¡puedes escribir oraciones!)",
+    "hint": "Describe tu sueño o toca un símbolo popular abajo",
     "placeholder": "p. ej., Soñé con una serpiente nadando en el océano",
     "interpret": "Interpretar Sueño",
     "share": "Compartir",
-    "aiDeep": "Análisis Profundo de IA",
+    "aiDeep": "Lectura Simbólica Profunda",
     "luckIndex": "Índice de Suerte"
   },
   "fortune": {
@@ -37,9 +37,9 @@
     "retry": "Sacar de Nuevo"
   },
   "premium": {
-    "badge": "✨ Análisis Profundo de IA",
-    "title": "Interpretación Profunda de IA",
-    "deepAnalysis": "Ver Análisis Profundo",
+    "badge": "✨ Lectura Simbólica Profunda",
+    "title": "Interpretación Arquetípica",
+    "deepAnalysis": "Ver Lectura Profunda",
     "share": "Compartir Resultados",
     "luckyNumber": "Números de Suerte",
     "luckyColor": "Color de Suerte",
@@ -64,7 +64,8 @@
   "share": {
     "twitter": "Twitter",
     "copyUrl": "📋 Copiar URL",
-    "copied": "✅ Copiado!"
+    "copied": "✅ Copiado!",
+    "downloadCard": "Guardar Tarjeta"
   },
   "error": {
     "storage": "Algunas funciones pueden estar limitadas en modo privado.",
@@ -108,5 +109,27 @@
     "faq3A": "Nunca. Todos los textos y diarios se procesan y almacenan al 100% de forma local en tu navegador.",
     "reviewDate": "Revisión Editorial: Noviembre 2026",
     "reviewTeam": "DopaBrain Serie Onírica Analítica"
+  },
+  "dynamic": {
+    "aiTitle": "Interpretación Simbólica de {keyword}"
+  },
+  "chips": {
+    "water": "🌊 Agua",
+    "snake": "🐍 Serpiente",
+    "flying": "🕊️ Volar",
+    "falling": "⛰️ Caer",
+    "money": "💰 Dinero",
+    "dragon": "🐉 Dragón",
+    "fire": "🔥 Fuego",
+    "moon": "🌙 Luna"
+  },
+  "curated": {
+    "badge": "LECTURAS DE PSICOLOGÍA ONÍRICA",
+    "title": "Explora el Simbolismo de los Sueños",
+    "book1Title": "El hombre y sus símbolos",
+    "book1Desc": "Carl G. Jung • Introducción clásica a los arquetipos oníricos y el inconsciente.",
+    "book2Title": "Inner Work (Trabajo Interior)",
+    "book2Desc": "Robert A. Johnson • Método práctico para dialogar con los sueños.",
+    "readPill": "Ver Libro ↗"
   }
 }

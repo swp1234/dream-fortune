@@ -11,16 +11,16 @@
     <link rel="dns-prefetch" href="https://www.googletagmanager.com">
     <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
 
-    <title>Dream Interpretation - Free AI Fortune Telling | DopaBrain</title>
-    <meta name="description" content="Free AI dream interpretation, daily horoscope, and tarot reading. 100+ dream meanings, 12 zodiac fortunes, 3-card tarot spread with AI deep analysis. Try free!">
-    <meta name="dateModified" content="2026-11-14">
+    <title>Dream Interpretation - Symbolic Meaning &amp; Fortune | DopaBrain</title>
+    <meta name="description" content="Free symbolic dream interpretation, daily horoscope, and tarot reading. Explore dream archetypes, 12 zodiac fortunes, and 3-card tarot reflection!">
+    <meta name="dateModified" content="2026-11-15">
     <meta name="theme-color" content="#9b59b6">
     <meta name="keywords" content="dream interpretation, daily horoscope, tarot card reading, dream dictionary, zodiac fortune, free dream meaning, symbol analysis">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3600813755953882" crossorigin="anonymous"></script>
 
     <!-- Open Graph -->
-    <meta property="og:title" content="Dream Interpretation - Free AI Fortune Telling | DopaBrain">
-    <meta property="og:description" content="AI dream interpretation, 12 zodiac horoscopes, and tarot card reading. 100+ dream meanings!">
+    <meta property="og:title" content="Dream Interpretation - Symbolic Meaning &amp; Fortune | DopaBrain">
+    <meta property="og:description" content="Symbolic dream interpretation, 12 zodiac horoscopes, and tarot card reading. Explore dream meanings!">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://dopabrain.com/dream-fortune/">
     <meta property="og:image" content="https://dopabrain.com/portal/img/og/dream-fortune.png">
@@ -34,8 +34,8 @@
     <meta property="og:locale:alternate" content="hi_IN">
     <meta property="og:locale:alternate" content="ru_RU">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Dream Interpretation - Free AI Fortune Telling">
-    <meta name="twitter:description" content="AI dream interpretation, horoscope, and tarot reading. Try free!">
+    <meta name="twitter:title" content="Dream Interpretation - Symbolic Meaning &amp; Fortune">
+    <meta name="twitter:description" content="Symbolic dream interpretation, horoscope, and tarot reading. Try free!">
     <meta name="twitter:image" content="https://dopabrain.com/portal/img/og/dream-fortune.png">
     <meta name="twitter:site" content="@dopabrain">
     <link rel="canonical" href="https://dopabrain.com/dream-fortune/">
@@ -70,9 +70,9 @@
     {
       "@context": "https://schema.org",
       "@type": "SoftwareApplication",
-      "name": "AI Dream Interpretation & Fortune",
+      "name": "Symbolic Dream Interpretation & Fortune",
       "applicationCategory": "EntertainmentApplication",
-      "description": "Free AI dream interpretation, daily horoscope by zodiac sign, and 3-card tarot reading. 100+ dream meanings and 12 zodiac fortunes.",
+      "description": "Free symbolic dream interpretation, daily horoscope by zodiac sign, and tarot reading with archetypal reflection.",
       "url": "https://dopabrain.com/dream-fortune/",
       "image": "https://dopabrain.com/dream-fortune/icon-512.svg",
       "operatingSystem": "All",
@@ -215,8 +215,18 @@
             <section id="dream-tab" class="tab-content active">
                 <div class="input-card">
                     <h2 data-i18n="dream.question">What did you dream about?</h2>
-                    <p class="hint" data-i18n="dream.hint">Describe your dream freely (sentences OK!)</p>
+                    <p class="hint" data-i18n="dream.hint">Describe your dream freely or tap a symbol below</p>
                     <input type="text" id="dream-input" data-i18n-placeholder="dream.placeholder" placeholder="e.g., I dreamed of a snake swimming in the ocean" maxlength="100">
+                    <div class="dream-chips" id="dream-chips" role="group" aria-label="Popular dream symbols">
+                        <button type="button" class="dream-chip" data-symbol="water" data-i18n="chips.water">🌊 Water</button>
+                        <button type="button" class="dream-chip" data-symbol="snake" data-i18n="chips.snake">🐍 Snake</button>
+                        <button type="button" class="dream-chip" data-symbol="flying" data-i18n="chips.flying">🕊️ Flying</button>
+                        <button type="button" class="dream-chip" data-symbol="falling" data-i18n="chips.falling">⛰️ Falling</button>
+                        <button type="button" class="dream-chip" data-symbol="money" data-i18n="chips.money">💰 Money</button>
+                        <button type="button" class="dream-chip" data-symbol="dragon" data-i18n="chips.dragon">🐉 Dragon</button>
+                        <button type="button" class="dream-chip" data-symbol="fire" data-i18n="chips.fire">🔥 Fire</button>
+                        <button type="button" class="dream-chip" data-symbol="moon" data-i18n="chips.moon">🌙 Moon</button>
+                    </div>
                     <button class="primary-btn" id="interpret-btn">
                         <span class="btn-icon">✨</span>
                         <span data-i18n="dream.interpret">Interpret Dream</span>
@@ -231,18 +241,19 @@
                         <span class="luck-badge" id="dream-luck">Luck Index</span>
                     </div>
                     <div class="action-buttons">
+                        <button class="secondary-btn" id="download-dream-card" data-i18n="share.downloadCard">Save Story Card</button>
                         <button class="secondary-btn" id="share-dream" data-i18n="dream.share">Share</button>
                         <button class="premium-btn pulse-glow" id="ai-deep-dream">
                             <span class="premium-icon">✨</span>
-                            <span data-i18n="premium.deepAnalysis">View AI Deep Reading</span>
+                            <span data-i18n="premium.deepAnalysis">View Deep Reading</span>
                         </button>
                     </div>
                 </div>
                 
-                <!-- AI 심층 해석 결과 -->
+                <!-- 심층 상징 해석 결과 -->
                 <div id="ai-dream-result" class="result-card premium-result hidden">
-                    <div class="premium-badge" data-i18n="premium.badge">✨ AI Deep Analysis</div>
-                    <h3 id="ai-dream-title" data-i18n="premium.title">AI Deep Interpretation</h3>
+                    <div class="premium-badge" data-i18n="premium.badge">✨ Symbolic Deep Analysis</div>
+                    <h3 id="ai-dream-title" data-i18n="premium.title">Symbolic Deep Interpretation</h3>
 
                     <!-- 심리학적 의미 -->
                     <div class="premium-section">
@@ -379,9 +390,35 @@
 
             </main>
 
+        <!-- Curated Dream & Jungian Reading -->
+        <section class="curated-resources-card" id="curated-resources-card">
+            <div class="curated-header">
+                <span class="curated-badge" data-i18n="curated.badge">ONEIRIC PSYCHOLOGY READING</span>
+                <h3 class="curated-title" data-i18n="curated.title">Explore Dream Symbolism Deeper</h3>
+            </div>
+            <div class="curated-grid">
+                <a href="https://www.amazon.com/dp/0440351839?tag=dopabrain-20" target="_blank" rel="noopener noreferrer nofollow" class="curated-item" data-curated-key="manAndHisSymbols">
+                    <span class="curated-icon" aria-hidden="true">📘</span>
+                    <div class="curated-info">
+                        <strong data-i18n="curated.book1Title">Man and His Symbols</strong>
+                        <span data-i18n="curated.book1Desc">Carl G. Jung • Essential introduction to dream archetypes and the unconscious.</span>
+                    </div>
+                    <span class="curated-ext-pill" data-i18n="curated.readPill">View Book ↗</span>
+                </a>
+                <a href="https://www.amazon.com/dp/0062504312?tag=dopabrain-20" target="_blank" rel="noopener noreferrer nofollow" class="curated-item" data-curated-key="innerWork">
+                    <span class="curated-icon" aria-hidden="true">🕯️</span>
+                    <div class="curated-info">
+                        <strong data-i18n="curated.book2Title">Inner Work</strong>
+                        <span data-i18n="curated.book2Desc">Robert A. Johnson • Practical method for working with dreams and active imagination.</span>
+                    </div>
+                    <span class="curated-ext-pill" data-i18n="curated.readPill">View Book ↗</span>
+                </a>
+            </div>
+        </section>
+
         <!-- Science & E-E-A-T Oneiric Psychology Guide Section -->
         <section class="about-section collapsible-section" id="about-section" style="max-width:680px;margin:28px auto;padding:0 16px;">
-            <details style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:14px;overflow:hidden;">
+            <details open style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:14px;overflow:hidden;">
                 <summary data-i18n="about.toggle" style="min-height:48px;padding:14px 18px;color:#a855f7;cursor:pointer;font-size:15px;font-weight:700;list-style:none;display:flex;align-items:center;justify-content:space-between;box-sizing:border-box;touch-action:manipulation;">About Dream Interpretation & Oneiric Psychology</summary>
                 <div class="about-content" style="padding:0 18px 20px;box-sizing:border-box;">
                     <h2 data-i18n="about.heading1" style="font-size:15px;color:#fff;margin:14px 0 8px;font-weight:700;border-left:3px solid #9b59b6;padding-left:8px;">Analytical Psychology & Symbolic Dream Reflection</h2>
