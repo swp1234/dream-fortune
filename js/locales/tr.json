@@ -1,7 +1,9 @@
 {
   "app": {
     "title": "Rüya Tabirleri, Burç ve Tarot | DopaBrain",
-    "description": "Sembolik rüya yorumu, günlük burç yorumu ve tarot okuması."
+    "description": "Sembolik rüya yorumu, günlük burç yorumu ve tarot okuması.",
+    "skipLink": "Ana içeriğe geç",
+    "loading": "Yükleniyor..."
   },
   "header": {
     "title": "🌙 Rüyalar & Talih",

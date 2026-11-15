@@ -1,7 +1,9 @@
 {
   "app": {
     "title": "Traumdeutung & Tageshoroskop | DopaBrain",
-    "description": "Kostenlose symbolische Traumdeutung, Tageshoroskop und Tarot-Reflexion."
+    "description": "Kostenlose symbolische Traumdeutung, Tageshoroskop und Tarot-Reflexion.",
+    "skipLink": "Zum Hauptinhalt springen",
+    "loading": "Wird geladen..."
   },
   "header": {
     "title": "🌙 Träume & Schicksal",

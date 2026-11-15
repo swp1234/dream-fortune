@@ -1,7 +1,9 @@
 {
   "app": {
     "title": "周公解梦 · 每日运势 · 塔罗牌 | DopaBrain",
-    "description": "基于原型象征的免费解梦、十二星座每日运势与塔罗占卜体验。"
+    "description": "基于原型象征的免费解梦、十二星座每日运势与塔罗占卜体验。",
+    "skipLink": "跳至正文",
+    "loading": "加载中..."
   },
   "header": {
     "title": "🌙 解梦与运势",

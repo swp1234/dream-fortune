@@ -1,7 +1,9 @@
 {
   "app": {
     "title": "Interprétation des Rêves & Horoscope | DopaBrain",
-    "description": "Interprétation symbolique des rêves, horoscope du jour et tirage tarot gratuit."
+    "description": "Interprétation symbolique des rêves, horoscope du jour et tirage tarot gratuit.",
+    "skipLink": "Aller au contenu principal",
+    "loading": "Chargement..."
   },
   "header": {
     "title": "🌙 Rêves & Fortune",

@@ -1,7 +1,9 @@
 {
   "app": {
     "title": "Interpretación de Sueños y Horóscopo | DopaBrain",
-    "description": "Interpretación simbólica de sueños, horóscopo diario y tarot gratis."
+    "description": "Interpretación simbólica de sueños, horóscopo diario y tarot gratis.",
+    "skipLink": "Ir al contenido principal",
+    "loading": "Cargando..."
   },
   "header": {
     "title": "🌙 Sueños y Fortuna",

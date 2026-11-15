@@ -1,7 +1,9 @@
 {
   "app": {
     "title": "Dream Interpretation - Symbolic Meaning & Fortune | DopaBrain",
-    "description": "Free symbolic dream interpretation, daily horoscope by zodiac, and tarot reading."
+    "description": "Free symbolic dream interpretation, daily horoscope by zodiac, and tarot reading.",
+    "skipLink": "Skip to main content",
+    "loading": "Loading..."
   },
   "header": {
     "title": "🌙 Dreams & Fortune",

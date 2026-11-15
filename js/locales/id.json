@@ -1,7 +1,9 @@
 {
   "app": {
     "title": "Tafsir Mimpi Simbolik & Horoskop | DopaBrain",
-    "description": "Tafsir mimpi simbolik gratis, ramalan zodiak harian, dan kartu tarot."
+    "description": "Tafsir mimpi simbolik gratis, ramalan zodiak harian, dan kartu tarot.",
+    "skipLink": "Lewati ke konten utama",
+    "loading": "Memuat..."
   },
   "header": {
     "title": "🌙 Mimpi & Keberuntungan",
