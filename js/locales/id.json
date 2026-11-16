@@ -113,7 +113,291 @@
     "reviewTeam": "Seri Psikologi Onirisme DopaBrain"
   },
   "dynamic": {
-    "aiTitle": "Tafsir Simbolik {keyword}"
+    "aiTitle": "{keyword} — Tafsir Simbolik Mendalam",
+    "fallbackMessage": "Mimpi ini membawa pesan pribadi dari alam bawah sadar Anda. Emosi yang terasa dalam mimpi adalah kunci utama; renungkan kaitannya dengan hidup Anda saat ini.",
+    "colors": [
+      "Emas",
+      "Perak",
+      "Biru Langit",
+      "Hijau Muda",
+      "Koral",
+      "Lavender",
+      "Mint"
+    ],
+    "directions": [
+      "Timur",
+      "Barat",
+      "Selatan",
+      "Utara",
+      "Timur Laut",
+      "Tenggara"
+    ],
+    "psychoAnalyses": {
+      "뱀": "Dalam psikologi Freud, ular melambangkan hasrat terpendam dan naluri; dalam psikologi Jung, ia melambangkan transformasi dan pemulihan.",
+      "용": "Naga melambangkan aktualisasi diri dan bangkitnya potensi besar dalam diri Anda.",
+      "물": "Air melambangkan aliran emosi. Kondisi air dalam mimpi mencerminkan perasaan Anda saat ini.",
+      "비행": "Mimpi terbang menunjukkan keinginan kuat untuk bebas dari batasan saat ini.",
+      "추락": "Jatuh mencerminkan rasa takut kehilangan kendali. Fokuslah memperkuat fondasi hidup Anda.",
+      "죽음": "Mimpi kematian berarti bagian diri sedang bertransformasi—kebiasaan lama berakhir agar awal baru lahir.",
+      "default": "Mimpi ini mencerminkan kondisi psikologis dan harapan bawah sadar Anda. Perasaan dalam mimpi adalah petunjuk utama."
+    },
+    "recommendedActions": {
+      "high": [
+        "Hal yang Anda mulai sekarang akan membawa hasil baik. Melangkahlah dengan percaya diri.",
+        "Hargai komunikasi dengan orang sekitar; obrolan penting bisa membuka peluang.",
+        "Waktu yang tepat untuk mencoba hal baru yang sempat tertunda."
+      ],
+      "medium": [
+        "Seimbangkan kehati-hatian dan semangat; tidak perlu terburu-buru.",
+        "Percayai intuisi Anda, lalu ambil keputusan kecil secara bertahap.",
+        "Amati situasi secara objektif dan siapkan langkah berikutnya."
+      ],
+      "low": [
+        "Dengarkan suara hati Anda; ini saatnya refleksi.",
+        "Perawatan diri sangat penting: meditasi atau tidur cukup akan membantu.",
+        "Ini masa persiapan; bangun fondasi yang kuat terlebih dahulu."
+      ]
+    },
+    "advices": {
+      "weekly": [
+        "Pertemuan atau peluang penting mungkin datang. Tetap terbuka.",
+        "Jangan pecah fokus Anda; utamakan hal terpenting.",
+        "Hal baik berpotensi hadir dalam hubungan Anda.",
+        "Waktu yang tepat untuk belajar dan mendapat wawasan baru."
+      ],
+      "monthly": [
+        "Usaha konsisten menuju tujuan jangka panjang akan membuahkan hasil.",
+        "Perubahan sedang mendekat; bersiaplah merespons dengan fleksibel.",
+        "Hubungan dan keuangan memasuki fase lebih stabil.",
+        "Investasi pada pengembangan diri akan memberi hasil besar kelak."
+      ]
+    },
+    "actionAdvice": {
+      "high": "• Sekarang waktunya bertindak dan memulai hal yang tertunda.\n• Sambut peluang baru dengan aktif.\n• Melangkahlah menuju target dengan percaya diri.",
+      "medium": "• Diperlukan pendekatan seimbang tanpa tergesa-gesa.\n• Dengarkan saran, namun putuskan sendiri.\n• Kumpulkan keberhasilan kecil.",
+      "low": "• Ini saatnya persiapan dan memperkuat dasar.\n• Luangkan waktu melihat ke dalam diri.\n• Bersabarlah dan tunggu momen yang tepat."
+    },
+    "tarotReversed": "Terbalik",
+    "tarotUpright": "Tegak",
+    "fortuneLabels": {
+      "timeAdvice": "Saran Berdasarkan Waktu",
+      "traits": "Sifat",
+      "element": "Elemen",
+      "ruling": "Planet Penguasa",
+      "personality": "Kepribadian",
+      "loveStyle": "Gaya Cinta",
+      "careerFit": "Kecocokan Karier",
+      "symbolCombination": "Kombinasi simbol membawa"
+    },
+    "shareTexts": {
+      "aiDream": "✨ {title}\n\n🌟 Indeks Keberuntungan: {luck}\n🔢 Angka Hoki: {number}\n🎨 Warna Hoki: {color}\n\n🧠 {meaning}...\n\nCoba tafsir mendalam di aplikasi Dream & Fortune! 🔮",
+      "aiDreamTitle": "Hasil Tafsir Mimpi Saya ✨",
+      "aiDreamClipboard": "Hasil disalin ke papan klip! Bagikan ke teman ✨",
+      "dreamShare": "🌙 Hasil Tafsir Mimpi Saya\n\n{keyword}\n{meaning}\n\nTafsirkan mimpimu juga! 👇\n{url}",
+      "dreamShareTitle": "Hasil Tafsir Mimpi Saya 🔮",
+      "dreamShareClipboard": "Hasil disalin! Bagikan ke teman-teman 🌙",
+      "fortuneShare": "⭐ Ramalan {zodiac} Hari Ini\n\n{message}\n\n🎨 Warna Hoki: {color}\n🔢 Angka Hoki: {number}\n\nCek ramalanmu juga! 👇\n{url}",
+      "fortuneShareTitle": "Ramalan {zodiac} Hari Ini ⭐",
+      "fortuneShareClipboard": "Hasil disalin! Bagikan ke teman-teman ⭐"
+    },
+    "resultLabels": {
+      "category": "📂 Kategori",
+      "meaning": "🔮 Makna Inti",
+      "todayMessage": "✨ Pesan Hari Ini",
+      "detailedExplanation": "📖 Penjelasan Lengkap",
+      "situationInterpretation": "🎭 Tafsir Situasi Hari Ini",
+      "fieldFortune": "📊 Peruntungan per Bidang",
+      "love": "💕 Cinta",
+      "money": "💰 Keuangan",
+      "health": "💪 Kesehatan",
+      "work": "💼 Karier",
+      "timeBasedGuidance": "⏰ Panduan Waktu",
+      "luckyItems": "🍀 Keberuntungan Hari Ini",
+      "luckyColor": "🎨 Warna Hoki",
+      "luckyNumber": "🔢 Angka Hoki",
+      "luckyDirection": "🧭 Arah Hoki",
+      "luckyTime": "🌟 Jam Hoki",
+      "relatedDreams": "🔗 Kata Kunci Terkait",
+      "luckIndex": "🍀 Indeks Hoki Hari Ini",
+      "combinedInterpretation": "Tafsir Mimpi Gabungan",
+      "discoveredSymbols": "🔮 Simbol Ditemukan",
+      "keywordCombination": "✨ Kombinasi Simbol",
+      "combinedFieldFortune": "📊 Ramalan Gabungan",
+      "combinedLuckyItems": "🍀 Keberuntungan Gabungan",
+      "combinedLuckIndex": "🍀 Indeks Hoki Gabungan",
+      "todayQuote": "💫 Kutipan Hari Ini",
+      "diaryEmpty": "Belum ada catatan tafsir mimpi.",
+      "diaryLuck": "Hoki {luck}%",
+      "fortuneZodiacInfo": "{zodiac} Hari Ini ({dates})",
+      "tarotDirection": "{direction}",
+      "tarotKeyword": "🔑 Kata Kunci",
+      "tarotMeaning": "📖 Makna",
+      "tarotLove": "💕 Perspektif Cinta",
+      "tarotCareer": "💼 Perspektif Karier/Keuangan",
+      "tarotAdvice": "💫 Saran Hari Ini"
+    },
+    "todayMessages": [
+      "Jika hari ini Anda bermimpi tentang {keyword}, bawah sadar sedang mengirim pesan khusus.",
+      "Energi {keyword} dapat memengaruhi keseluruhan hari Anda.",
+      "Mimpi {keyword} bisa menjadi petunjuk untuk keputusan penting hari ini.",
+      "Bermimpi tentang {keyword} saat ini merupakan tanda perubahan.",
+      "Simbol {keyword} sedang bangkit di alam bawah sadar Anda.",
+      "Hari ini, energi positif {keyword} menyertai Anda.",
+      "Mimpi {keyword} mencerminkan harapan terdalam dari batin Anda."
+    ],
+    "additionalInterpretations": [
+      "Memimpikan hal ini hari ini bisa berarti peristiwa terkait akan segera terjadi.",
+      "Mimpi ini berkaitan erat dengan kondisi emosional Anda saat ini.",
+      "Alam bawah sadar sering menunjukkan hal yang terlewat saat terjaga.",
+      "Jika simbol ini muncul berulang, ada makna lebih dalam di baliknya.",
+      "Emosi dalam mimpi adalah kunci: positif menandakan hal baik, negatif mengingatkan untuk berhati-hati.",
+      "Secara tradisional mimpi ini menandai titik balik penting.",
+      "Jawaban atas masalah saat ini mungkin tersimpan dalam mimpi ini."
+    ],
+    "enhanceAdvices": {
+      "calm": "Pertahankan alur yang tenang hari ini.",
+      "love": [
+        " Energi baik terutama sekitar pukul 15.00.",
+        " Obrolan tulus memperdalam hubungan.",
+        " Hadiah atau pesan kecil berdampak besar.",
+        " Mendengarkan pasangan adalah yang terpenting."
+      ],
+      "money": [
+        " Kabar baik mungkin datang hari ini.",
+        " Hindari pembelian impulsif.",
+        " Pemasukan tak terduga bisa datang.",
+        " Ambil keputusan jangka panjang."
+      ],
+      "health": [
+        " Jangan lupa cukup minum air.",
+        " Peregangan ringan akan membantu.",
+        " Jangan terlalu memaksakan diri hari ini.",
+        " Pikiran positif mendukung kesehatan."
+      ],
+      "work": [
+        " Selesaikan tugas penting di pagi hari.",
+        " Kolaborasi memperbesar hasil.",
+        " Ajukan ide baru dengan percaya diri.",
+        " Perhatikan detail pekerjaan."
+      ]
+    },
+    "timeBasedAdvices": {
+      "morning": [
+        "Pagi: waktu tepat untuk keputusan penting atau awal baru.",
+        "Pagi: cocok untuk meditasi atau menyusun rencana.",
+        "Pagi: energi tinggi untuk tugas menantang."
+      ],
+      "afternoon": [
+        "Siang/Sore: hal menyenangkan berpotensi muncul dalam relasi.",
+        "Siang/Sore: tangani pekerjaan yang butuh fokus.",
+        "Siang/Sore: istirahat sejenak memunculkan ide baru."
+      ],
+      "evening": [
+        "Malam: waktu bersama orang terkasih membawa keberuntungan.",
+        "Malam: refleksikan hari ini dengan rasa syukur.",
+        "Malam: menulis buku harian mimpi memberi wawasan mendalam."
+      ]
+    },
+    "luckyTimes": [
+      "09.00–11.00",
+      "10.00–12.00",
+      "13.00–15.00",
+      "14.00–16.00",
+      "15.00–17.00",
+      "18.00–20.00",
+      "19.00–21.00",
+      "21.00–23.00"
+    ],
+    "multiKeywordMessages": [
+      "Beberapa simbol yang muncul bersamaan membawa pesan mendalam yang saling melengkapi.",
+      "{count} simbol selaras bersama, menunjukkan keterkaitan berbagai aspek hidup Anda.",
+      "Kombinasi menarik! Bawah sadar mengirim sinyal pada berbagai tingkatan.",
+      "Pertemuan simbol ini bukan kebetulan; batin Anda menyampaikan cerita penting."
+    ],
+    "dynamicMeanings": [
+      "{meaning}... Energi ini terasa sangat kuat hari ini.",
+      "{meaning}... Hal terkait mungkin segera terjadi.",
+      "{meaning}... Berkaitan erat dengan situasi Anda sekarang.",
+      "{meaning}... Perhatikan pesan ini dengan saksama."
+    ],
+    "categoryMeanings": {
+      "animalNature": "Naluri dan lingkungan selaras. Ikuti aliran alami.",
+      "animalAction": "Saatnya bertindak. Percayai naluri Anda.",
+      "natureAction": "Langkah yang alami membawa hasil baik.",
+      "animalThing": "Perubahan materi sedang mendekat dan terkait rezeki.",
+      "default": "Pertemuan simbol terkait {categories} menunjukkan berbagai sisi hidup Anda saling terhubung."
+    },
+    "dayMessages": [
+      "Mimpi hari Minggu ini menunjukkan arah minggu Anda.",
+      "Mimpi hari Senin ini menandakan awal yang baru.",
+      "Mimpi hari Selasa ini menuntut semangat dan tindakan.",
+      "Mimpi hari Rabu ini berbicara tentang komunikasi dan koneksi.",
+      "Mimpi hari Kamis ini menunjukkan peluang berkembang.",
+      "Mimpi hari Jumat ini membawa pesan hubungan dan harmoni.",
+      "Mimpi hari Sabtu ini menyarankan istirahat dan refleksi."
+    ],
+    "twoKeywordInterpretations": [
+      "Pertemuan {k1} dan {k2} adalah kombinasi {quality}. Energi {k1} terwujud nyata lewat {k2}.",
+      "Hasrat batin {k1} bertemu situasi luar yang dilambangkan {k2}. {balance}",
+      "Dua simbol saling melengkapi: aliran {k1} berlanjut melalui {k2}, {result}",
+      "Munculnya {k1} dan {k2} bersamaan adalah kombinasi langka. {opportunity}"
+    ],
+    "multiKeywordInterpretations": [
+      "{count} simbol hadir bersamaan; beberapa aspek hidup Anda berubah serentak. {overall}",
+      "Susunan simbol yang kaya! {symbols} berpadu menandakan {expectation}. Percayai intuisi Anda.",
+      "Bawah sadar mengirim pesan kaya makna; pahami tiap simbol tanpa melewatkan gambaran besar. {key}"
+    ],
+    "fortuneDefaults": {
+      "love": "Pertemuan baru atau perkembangan hubungan berpotensi terjadi.",
+      "money": "Aliran keuangan berjalan stabil.",
+      "work": "Kemajuan pekerjaan berjalan lancar.",
+      "health": "Kondisi kesehatan secara umum baik."
+    },
+    "fieldBonuses": {
+      "love": [
+        " Terutama baik di sore/malam hari.",
+        " Ungkapan tulus sangat efektif.",
+        ""
+      ],
+      "money": [
+        " Kabar baik bisa datang siang ini.",
+        " Percayai intuisi Anda.",
+        ""
+      ],
+      "work": [
+        " Kerja sama meningkatkan hasil.",
+        " Selesaikan hal penting di pagi hari.",
+        ""
+      ],
+      "health": [
+        " Jalan santai sangat membantu.",
+        " Pastikan istirahat cukup.",
+        ""
+      ]
+    },
+    "fieldCombinationBonuses": {
+      "love": "Koneksi emosional lebih dalam dimungkinkan.",
+      "money": "Hasil melebihi ekspektasi.",
+      "work": "Sinergi kerja semakin aktif.",
+      "health": "Keseimbangan tubuh dan batin pulih.",
+      "default": "Perubahan positif diharapkan."
+    },
+    "quotes": [
+      "Mimpi adalah jalan utama menuju alam bawah sadar. — Freud",
+      "Semua mimpi bisa terwujud jika Anda berani mengejarnya.",
+      "Mimpi malam hari menjadi kebijaksanaan di siang hari.",
+      "Alam bawah sadar Anda selalu membantu Anda.",
+      "Bagi yang percaya pada mimpi, jalan akan terbuka.",
+      "Mimpi hari ini menjadi kenyataan esok hari.",
+      "Semesta berbicara kepada Anda lewat mimpi.",
+      "Ikuti intuisi; itulah kompas sejati Anda."
+    ],
+    "combinedInterpretations": {
+      "veryLucky": "Mimpi di mana {keywords} muncul bersama sangatlah bertuah! Banyak energi positif berpadu membawa keberuntungan besar. Ambil peluang dengan yakin!",
+      "lucky": "Kombinasi {keywords} menunjukkan perubahan baik. Tiap simbol saling melengkapi dan membuka kemungkinan baru.",
+      "mixed": "Munculnya {keywords} bersamaan adalah pesan campuran antara sisi positif dan hal yang perlu diwaspadai. Pertimbangkan secara seimbang.",
+      "challenging": "Kombinasi {keywords} menunjukkan konflik batin atau hal yang perlu diselesaikan. Jadikan ini peluang bertumbuh dan jaga diri Anda."
+    }
   },
   "chips": {
     "water": "🌊 Air",

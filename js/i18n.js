@@ -67,8 +67,6 @@
                 const safeLang = this.supportedLanguages.includes(lang) ? lang : 'en';
                 document.documentElement.lang = safeLang;
                 const seoHref = this.getSeoHref(safeLang);
-                const canonical = document.querySelector('link[rel="canonical"]');
-                if (canonical) canonical.href = seoHref;
                 const ogUrl = document.querySelector('meta[property="og:url"]');
                 if (ogUrl) ogUrl.content = seoHref;
                 const ogLocaleMap = {

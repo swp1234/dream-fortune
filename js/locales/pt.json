@@ -113,7 +113,291 @@
     "reviewTeam": "DopaBrain Série Onírica Analítica"
   },
   "dynamic": {
-    "aiTitle": "Interpretação Simbólica de {keyword}"
+    "aiTitle": "{keyword} — Interpretação simbólica profunda",
+    "fallbackMessage": "Este sonho traz uma mensagem pessoal do seu inconsciente. A emoção sentida durante o sonho é a chave principal; reflita sobre como ela se conecta à sua vida atual.",
+    "colors": [
+      "Dourado",
+      "Prateado",
+      "Azul-celeste",
+      "Verde-claro",
+      "Coral",
+      "Lavanda",
+      "Menta"
+    ],
+    "directions": [
+      "Leste",
+      "Oeste",
+      "Sul",
+      "Norte",
+      "Nordeste",
+      "Sudeste"
+    ],
+    "psychoAnalyses": {
+      "뱀": "Na psicologia freudiana, serpentes simbolizam desejos e instintos reprimidos; na junguiana, representam transformação e cura.",
+      "용": "Dragões simbolizam autorrealização e o despertar de um grande potencial interior.",
+      "물": "A água representa o fluxo das emoções. O estado da água no sonho reflete seu momento emocional.",
+      "비행": "Sonhos de voo revelam forte desejo de liberdade e de superar limites atuais.",
+      "추락": "Cair simboliza medo de perder o controle. Foque em fortalecer sua base no dia a dia.",
+      "죽음": "Sonhos com morte indicam transformação: velhos hábitos ou fases chegam ao fim para dar lugar ao novo.",
+      "default": "Este sonho reflete seu estado psicológico atual e desejos inconscientes. A emoção vivida é o ponto-chave."
+    },
+    "recommendedActions": {
+      "high": [
+        "O que você iniciar agora trará bons resultados. Avance com confiança.",
+        "Valorize a comunicação com quem está por perto; boas conversas criam oportunidades.",
+        "Ótimo momento para tentar algo novo e iniciar o que vinha adiando."
+      ],
+      "medium": [
+        "Equilibre cautela e entusiasmo; não há motivo para pressa.",
+        "Confie na intuição, mas dê passos pequenos e bem pensados.",
+        "Observe a situação com objetividade e prepare o próximo passo."
+      ],
+      "low": [
+        "Ouça sua voz interior; é tempo de reflexão.",
+        "Cuidar de si é prioridade: meditação ou bom descanso ajudarão.",
+        "Esta é uma fase de preparação; construa uma base sólida."
+      ]
+    },
+    "advices": {
+      "weekly": [
+        "Encontros ou oportunidades importantes podem surgir. Mantenha a mente aberta.",
+        "Não disperse sua energia; foque no essencial.",
+        "Acontecimentos positivos podem fortalecer suas relações.",
+        "Bom período para aprender e ganhar clareza."
+      ],
+      "monthly": [
+        "O esforço contínuo em metas de longo prazo trará frutos.",
+        "Mudanças estão a caminho; prepare-se para agir com flexibilidade.",
+        "Relacionamentos e finanças entram em uma fase mais estável.",
+        "Investir em autodesenvolvimento trará ótimos retornos."
+      ]
+    },
+    "actionAdvice": {
+      "high": "• Agora é hora de agir e começar o que você adiou.\n• Abrace ativamente novas oportunidades.\n• Avance rumo aos seus objetivos com confiança.",
+      "medium": "• Mantenha equilíbrio, sem pressa.\n• Ouça conselhos, mas tome a decisão final por conta própria.\n• Acumule pequenas vitórias.",
+      "low": "• É momento de preparação e de firmar suas bases.\n• Tire um tempo para olhar para dentro.\n• Tenha paciência e aguarde o momento certo."
+    },
+    "tarotReversed": "Invertida",
+    "tarotUpright": "Normal",
+    "fortuneLabels": {
+      "timeAdvice": "Conselho por horário",
+      "traits": "Traços",
+      "element": "Elemento",
+      "ruling": "Planeta regente",
+      "personality": "Personalidade",
+      "loveStyle": "Estilo no amor",
+      "careerFit": "Vocação",
+      "symbolCombination": "Os símbolos combinados indicam"
+    },
+    "shareTexts": {
+      "aiDream": "✨ {title}\n\n🌟 Índice de sorte: {luck}\n🔢 Números da sorte: {number}\n🎨 Cor da sorte: {color}\n\n🧠 {meaning}...\n\nVeja a análise profunda no app Dream & Fortune! 🔮",
+      "aiDreamTitle": "Minha interpretação do sonho ✨",
+      "aiDreamClipboard": "Resultado copiado! Compartilhe com seus amigos ✨",
+      "dreamShare": "🌙 Minha interpretação do sonho\n\n{keyword}\n{meaning}\n\nInterprete o seu sonho também! 👇\n{url}",
+      "dreamShareTitle": "Minha interpretação do sonho 🔮",
+      "dreamShareClipboard": "Resultado copiado! Compartilhe com seus amigos 🌙",
+      "fortuneShare": "⭐ Horóscopo de hoje — {zodiac}\n\n{message}\n\n🎨 Cor da sorte: {color}\n🔢 Números da sorte: {number}\n\nConfira o seu também! 👇\n{url}",
+      "fortuneShareTitle": "Horóscopo de hoje — {zodiac} ⭐",
+      "fortuneShareClipboard": "Resultado copiado! Compartilhe com seus amigos ⭐"
+    },
+    "resultLabels": {
+      "category": "📂 Categoria",
+      "meaning": "🔮 Significado central",
+      "todayMessage": "✨ Mensagem de hoje",
+      "detailedExplanation": "📖 Explicação detalhada",
+      "situationInterpretation": "🎭 Interpretação de hoje",
+      "fieldFortune": "📊 Previsão por áreas",
+      "love": "💕 Amor",
+      "money": "💰 Finanças",
+      "health": "💪 Saúde",
+      "work": "💼 Trabalho",
+      "timeBasedGuidance": "⏰ Guia por horários",
+      "luckyItems": "🍀 Sorte de hoje",
+      "luckyColor": "🎨 Cor da sorte",
+      "luckyNumber": "🔢 Números da sorte",
+      "luckyDirection": "🧭 Direção da sorte",
+      "luckyTime": "🌟 Horário da sorte",
+      "relatedDreams": "🔗 Palavras-chave relacionadas",
+      "luckIndex": "🍀 Índice de sorte",
+      "combinedInterpretation": "Interpretação combinada",
+      "discoveredSymbols": "🔮 Símbolos encontrados",
+      "keywordCombination": "✨ Combinação de símbolos",
+      "combinedFieldFortune": "📊 Previsão combinada",
+      "combinedLuckyItems": "🍀 Sorte combinada",
+      "combinedLuckIndex": "🍀 Índice de sorte combinado",
+      "todayQuote": "💫 Frase de hoje",
+      "diaryEmpty": "Nenhuma interpretação registrada ainda.",
+      "diaryLuck": "Sorte {luck}%",
+      "fortuneZodiacInfo": "{zodiac} hoje ({dates})",
+      "tarotDirection": "{direction}",
+      "tarotKeyword": "🔑 Palavra-chave",
+      "tarotMeaning": "📖 Significado",
+      "tarotLove": "💕 Perspectiva no amor",
+      "tarotCareer": "💼 Trabalho e finanças",
+      "tarotAdvice": "💫 Conselho de hoje"
+    },
+    "todayMessages": [
+      "Se você sonhou com {keyword} hoje, seu inconsciente está enviando uma mensagem especial.",
+      "A energia de {keyword} pode influenciar todo o seu dia.",
+      "O sonho com {keyword} pode ser uma pista para uma decisão importante hoje.",
+      "Sonhar com {keyword} neste momento sinaliza mudança.",
+      "O símbolo de {keyword} está despertando no seu subconsciente.",
+      "Hoje, a energia positiva de {keyword} acompanha você.",
+      "O sonho com {keyword} reflete um desejo profundo do seu interior."
+    ],
+    "additionalInterpretations": [
+      "Sonhar com isso hoje sugere que algo ligado ao tema pode acontecer em breve.",
+      "Este sonho está fortemente ligado ao seu estado emocional atual.",
+      "Seu inconsciente costuma revelar o que você deixa passar acordado.",
+      "Se este símbolo se repete, há um significado ainda mais profundo.",
+      "A emoção do sonho é decisiva: se positiva, é bom sinal; se tensa, pede cautela.",
+      "Tradicionalmente, este sonho marca um ponto de virada importante.",
+      "A resposta para um desafio atual pode estar escondida neste sonho."
+    ],
+    "enhanceAdvices": {
+      "calm": "Mantenha um ritmo tranquilo e equilibrado hoje.",
+      "love": [
+        " Boa energia especialmente por volta das 15h.",
+        " Conversas sinceras aprofundam vínculos.",
+        " Um pequeno gesto ou mensagem terá grande efeito.",
+        " Ouvir o outro com atenção é essencial."
+      ],
+      "money": [
+        " Boas notícias podem chegar hoje.",
+        " Evite compras por impulso.",
+        " Uma entrada inesperada pode acontecer.",
+        " Decida pensando no longo prazo."
+      ],
+      "health": [
+        " Não esqueça de beber bastante água.",
+        " Alongamentos leves ajudam bastante.",
+        " Evite exageros hoje.",
+        " Uma mente positiva fortalece a saúde."
+      ],
+      "work": [
+        " Resolva tarefas importantes pela manhã.",
+        " Colaborar potencializa os resultados.",
+        " Proponha novas ideias com segurança.",
+        " Dê atenção aos detalhes."
+      ]
+    },
+    "timeBasedAdvices": {
+      "morning": [
+        "Manhã: bom momento para decisões importantes ou novos começos.",
+        "Manhã: ótima hora para meditar ou planejar.",
+        "Manhã: energia alta para encarar desafios."
+      ],
+      "afternoon": [
+        "Tarde: bons momentos podem surgir nas relações.",
+        "Tarde: cuide de tarefas que exigem foco.",
+        "Tarde: uma pausa trará novas ideias."
+      ],
+      "evening": [
+        "Noite: estar com quem você ama atrai sorte.",
+        "Noite: reflita sobre o dia com gratidão.",
+        "Noite: escrever seu diário de sonhos traz mais clareza."
+      ]
+    },
+    "luckyTimes": [
+      "9h–11h",
+      "10h–12h",
+      "13h–15h",
+      "14h–16h",
+      "15h–17h",
+      "18h–20h",
+      "19h–21h",
+      "21h–23h"
+    ],
+    "multiKeywordMessages": [
+      "Vários símbolos juntos transmitem uma mensagem rica e complementar.",
+      "{count} símbolos estão em harmonia, mostrando conexão entre áreas da sua vida.",
+      "Combinação interessante! Seu inconsciente envia sinais em múltiplos níveis.",
+      "O encontro desses símbolos não é acaso; seu eu interior conta uma história importante."
+    ],
+    "dynamicMeanings": [
+      "{meaning}... Esta energia está especialmente forte hoje.",
+      "{meaning}... Algo relacionado pode acontecer em breve.",
+      "{meaning}... Muito ligado à sua situação atual.",
+      "{meaning}... Preste atenção a esta mensagem."
+    ],
+    "categoryMeanings": {
+      "animalNature": "Instinto e ambiente estão em harmonia. Siga o fluxo natural.",
+      "animalAction": "É hora de agir. Confie no seu instinto.",
+      "natureAction": "Agir com naturalidade traz ótimos resultados.",
+      "animalThing": "Mudanças materiais estão a caminho, ligadas à prosperidade.",
+      "default": "O encontro de símbolos ligados a {categories} mostra áreas da sua vida se conectando."
+    },
+    "dayMessages": [
+      "Este sonho de domingo mostra o rumo da sua semana.",
+      "Este sonho de segunda sugere um novo começo.",
+      "Este sonho de terça pede paixão e atitude.",
+      "Este sonho de quarta fala de comunicação e vínculos.",
+      "Este sonho de quinta mostra oportunidades de expansão e crescimento.",
+      "Este sonho de sexta traz uma mensagem de harmonia nas relações.",
+      "Este sonho de sábado recomenda descanso e reflexão."
+    ],
+    "twoKeywordInterpretations": [
+      "O encontro de {k1} e {k2} forma uma combinação {quality}. A energia de {k1} ganha forma por meio de {k2}.",
+      "O desejo interno de {k1} encontra a situação externa de {k2}. {balance}",
+      "Dois símbolos se completam: o fluxo de {k1} segue por {k2}, {result}",
+      "A aparição conjunta de {k1} e {k2} é rara e especial. {opportunity}"
+    ],
+    "multiKeywordInterpretations": [
+      "{count} símbolos surgem juntos; várias áreas da sua vida mudam ao mesmo tempo. {overall}",
+      "Rica combinação simbólica! {symbols} se unem indicando {expectation}. Confie na intuição.",
+      "Seu inconsciente envia sinais intensos; observe cada símbolo sem perder a visão geral. {key}"
+    ],
+    "fortuneDefaults": {
+      "love": "Novos encontros ou avanços no relacionamento são esperados.",
+      "money": "As finanças seguem em fluxo estável.",
+      "work": "O trabalho tende a avançar com fluidez.",
+      "health": "Energia geral saudável."
+    },
+    "fieldBonuses": {
+      "love": [
+        " Especialmente favorável à noite.",
+        " Expressar-se com sinceridade faz diferença.",
+        ""
+      ],
+      "money": [
+        " Boas notícias podem surgir à tarde.",
+        " Confie na sua intuição.",
+        ""
+      ],
+      "work": [
+        " Colaborar melhora os resultados.",
+        " Resolva o principal pela manhã.",
+        ""
+      ],
+      "health": [
+        " Uma caminhada leve ajuda.",
+        " Garanta descanso adequado.",
+        ""
+      ]
+    },
+    "fieldCombinationBonuses": {
+      "love": "Conexão mais profunda é possível.",
+      "money": "Resultados acima do esperado.",
+      "work": "Sinergia ativada no trabalho.",
+      "health": "Equilíbrio geral restaurado.",
+      "default": "Mudança positiva esperada."
+    },
+    "quotes": [
+      "Os sonhos são a estrada real para o inconsciente. — Freud",
+      "Todos os sonhos se realizam se houver coragem para segui-los.",
+      "Sonhos da noite viram sabedoria durante o dia.",
+      "Seu inconsciente está sempre ajudando você.",
+      "Para quem acredita nos sonhos, o caminho se abre.",
+      "O sonho de hoje torna-se a realidade de amanhã.",
+      "O universo fala com você por meio dos sonhos.",
+      "Siga a intuição; ela é sua verdadeira bússola."
+    ],
+    "combinedInterpretations": {
+      "veryLucky": "Sonhar com {keywords} juntos é muito auspicioso! Energias positivas se somam anunciando grande sorte. Aproveite as oportunidades!",
+      "lucky": "A combinação de {keywords} aponta mudanças positivas. Os símbolos se fortalecem e mostram novas possibilidades.",
+      "mixed": "A presença conjunta de {keywords} traz uma mensagem mista: há pontos positivos e motivos para cautela. Avalie com equilíbrio.",
+      "challenging": "A combinação de {keywords} indica conflitos internos ou tarefas a resolver. Use este sinal para crescer e cuidar melhor de si."
+    }
   },
   "chips": {
     "water": "🌊 Água",

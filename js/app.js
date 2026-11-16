@@ -70,7 +70,6 @@ class DreamFortuneApp {
             this.setupDreamTab();
             this.setupFortuneTab();
             this.setupTarotTab();
-            this.renderDreamDiary();
             this.registerServiceWorker();
         } catch (e) {
             window.errorHandler?.handleError(e, 'App Initialization');
@@ -104,6 +103,7 @@ class DreamFortuneApp {
                 this.updateFooterLinks(currentLang);
                 this.updateZodiacGridLabels(currentLang);
                 this.updateCuratedResources(currentLang);
+                this.renderDreamDiary();
                 this.initFooterLinks();
 
                 if (langToggle && langMenu) {
@@ -133,6 +133,7 @@ class DreamFortuneApp {
                             this.updateFooterLinks(lang);
                             this.updateZodiacGridLabels(lang);
                             this.updateCuratedResources(lang);
+                            this.renderDreamDiary();
 
                             // GA4: 언어 변경 추적
                             if (typeof gtag === 'function') {
@@ -516,9 +517,7 @@ class DreamFortuneApp {
                 url: url
             }).catch(() => {});
         } else {
-            navigator.clipboard.writeText(text + '\n\n' + url).then(() => {
-                alert(window.i18n?.t('dynamic.shareTexts.aiDreamClipboard') || 'Result copied to clipboard! Share with your friends ✨');
-            }).catch(() => {});
+            this.copyWithToast(text + '\n\n' + url, window.i18n?.t('dynamic.shareTexts.aiDreamClipboard') || 'Result copied to clipboard! Share with your friends ✨');
         }
     }
 
@@ -1146,9 +1145,7 @@ class DreamFortuneApp {
         if (navigator.share) {
             navigator.share({ title: window.i18n?.t('dynamic.shareTexts.dreamShareTitle') || 'My Dream Interpretation Result 🔮', text, url }).catch(() => {});
         } else {
-            navigator.clipboard.writeText(text).then(() => {
-                alert(window.i18n?.t('dynamic.shareTexts.dreamShareClipboard') || 'Result copied to clipboard! Share with your friends 🌙');
-            }).catch(() => {});
+            this.copyWithToast(text, window.i18n?.t('dynamic.shareTexts.dreamShareClipboard') || 'Result copied to clipboard! Share with your friends 🌙');
         }
     }
 
@@ -1405,9 +1402,7 @@ class DreamFortuneApp {
             const shareTitle = window.i18n?.t('dynamic.shareTexts.fortuneShareTitle')?.replace('{zodiac}', zodiac) || `Today's ${zodiac} Horoscope ⭐`;
             navigator.share({ title: shareTitle, text, url }).catch(() => {});
         } else {
-            navigator.clipboard.writeText(text).then(() => {
-                alert(window.i18n?.t('dynamic.shareTexts.fortuneShareClipboard') || 'Result copied to clipboard! Share with your friends ⭐');
-            }).catch(() => {});
+            this.copyWithToast(text, window.i18n?.t('dynamic.shareTexts.fortuneShareClipboard') || 'Result copied to clipboard! Share with your friends ⭐');
         }
     }
 
@@ -1595,6 +1590,44 @@ class DreamFortuneApp {
 
                 setTimeout(() => particle.remove(), 1500);
             }, i * 100);
+        }
+    }
+
+    showToast(msg) {
+        let toast = document.getElementById('df-toast');
+        if (!toast) {
+            toast = document.createElement('div');
+            toast.id = 'df-toast';
+            toast.setAttribute('role', 'status');
+            toast.setAttribute('aria-live', 'polite');
+            toast.style.cssText = 'position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:#1c1633;color:#fff;padding:10px 18px;border-radius:999px;border:1px solid rgba(255,255,255,0.2);box-shadow:0 8px 24px rgba(0,0,0,0.4);z-index:9999;font-size:14px;opacity:0;transition:opacity 0.2s;pointer-events:none;max-width:90vw;text-align:center;';
+            document.body.appendChild(toast);
+        }
+        toast.textContent = msg;
+        toast.style.opacity = '1';
+        clearTimeout(toast._timer);
+        toast._timer = setTimeout(() => { toast.style.opacity = '0'; }, 2400);
+    }
+
+    copyWithToast(text, successMsg) {
+        const execCopy = () => {
+            try {
+                const ta = document.createElement('textarea');
+                ta.value = text;
+                ta.setAttribute('readonly', '');
+                ta.style.position = 'fixed';
+                ta.style.opacity = '0';
+                document.body.appendChild(ta);
+                ta.select();
+                const ok = document.execCommand('copy');
+                document.body.removeChild(ta);
+                if (ok) this.showToast(successMsg);
+            } catch (e) {}
+        };
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(text).then(() => this.showToast(successMsg)).catch(execCopy);
+        } else {
+            execCopy();
         }
     }
 

@@ -113,7 +113,291 @@
     "reviewTeam": "DopaBrain Analitik Rüya Psikolojisi Serisi"
   },
   "dynamic": {
-    "aiTitle": "{keyword} Sembolik Analizi"
+    "aiTitle": "{keyword} — Derin Sembolik Yorum",
+    "fallbackMessage": "Bu rüya bilinçaltından kişisel bir mesaj taşır. Rüyada hissettiğin duygu anahtardır; bu duygunun şu anki yaşamınla nasıl bağlandığını düşün.",
+    "colors": [
+      "Altın",
+      "Gümüş",
+      "Gök Mavisi",
+      "Açık Yeşil",
+      "Mercan",
+      "Lavanta",
+      "Nane Yeşili"
+    ],
+    "directions": [
+      "Doğu",
+      "Batı",
+      "Güney",
+      "Kuzey",
+      "Kuzeydoğu",
+      "Güneydoğu"
+    ],
+    "psychoAnalyses": {
+      "뱀": "Freudyen psikolojide yılan bastırılmış arzuları ve içgüdüleri; Jung’a göre ise dönüşümü, bilgeliği ve iyileşmeyi simgeler.",
+      "용": "Ejderha, kendini gerçekleştirmeyi ve içindeki büyük potansiyelin uyanışını simgeler.",
+      "물": "Su duyguların akışını temsil eder. Rüyadaki suyun hali şu anki ruh halini yansıtır.",
+      "비행": "Uçma rüyaları mevcut kısıtlamalardan kurtulma ve özgürlük arzusunu gösterir.",
+      "추락": "Düşmek kontrolü kaybetme korkusudur. Hayatında sağlam bir temel kurmaya odaklan.",
+      "죽음": "Ölüm rüyası benliğinin bir yönünün değiştiğini gösterir; eski alışkanlıklar biterken yeni bir dönem başlar.",
+      "default": "Bu rüya mevcut psikolojik durumunu ve bilinçaltı arzularını yansıtır. Rüyadaki duygu en önemli ipucudur."
+    },
+    "recommendedActions": {
+      "high": [
+        "Şimdi başlayacağın işler güzel sonuçlar getirecek. Güvenle ilerle.",
+        "Çevrenle iletişime önem ver; önemli konuşmalar fırsat yaratabilir.",
+        "Yeni denemeler için harika bir zaman; ertelediklerine başla."
+      ],
+      "medium": [
+        "Temkin ile tutkuyu dengele; aceleye gerek yok.",
+        "Sezgine güven ama küçük kararları sakin adımlarla al.",
+        "Mevcut durumu nesnel değerlendir ve sonraki adıma hazırlan."
+      ],
+      "low": [
+        "İç sesini dinle; şimdi içe dönüş ve düşünme zamanı.",
+        "Öz bakım en önemlisi: meditasyon veya yeterli uyku iyi gelecektir.",
+        "Bu dönem hazırlık içindir; temelini sağlamlaştır."
+      ]
+    },
+    "advices": {
+      "weekly": [
+        "Önemli görüşmeler veya fırsatlar gelebilir. Açık fikirli kal.",
+        "Enerjini dağıtma; en önemli şeye odaklan.",
+        "İlişkilerde güzel gelişmeler yaşanabilir.",
+        "Yeni bilgi ve içgörü kazanmak için uygun bir dönem."
+      ],
+      "monthly": [
+        "Uzun vadeli hedeflere yönelik istikrarlı çaba meyvesini verecek.",
+        "Değişim yaklaşıyor; esnek yanıt vermeye hazırlan.",
+        "Hem ilişkiler hem finans daha dengeli bir döneme giriyor.",
+        "Kişisel gelişime yapılan yatırım ileride büyük ödül getirecek."
+      ]
+    },
+    "actionAdvice": {
+      "high": "• Şimdi harekete geçme zamanı; ertelediklerini başlat.\n• Yeni fırsatları aktif biçimde kucakla.\n• Hedeflerine güvenle ilerle.",
+      "medium": "• Dengeli bir yaklaşım gerekli, acele etme.\n• Başkalarından fikir al ama son kararı kendin ver.\n• Küçük başarıları biriktir.",
+      "low": "• Şimdi hazırlık ve temel kurma zamanı.\n• İçe dönmek için zaman ayır; günlük tutmak yardımcı olur.\n• Sabırsızlanma, doğru anı bekle."
+    },
+    "tarotReversed": "Ters",
+    "tarotUpright": "Düz",
+    "fortuneLabels": {
+      "timeAdvice": "Saate Göre Tavsiye",
+      "traits": "Özellikler",
+      "element": "Element",
+      "ruling": "Yönetici Gezegen",
+      "personality": "Kişilik",
+      "loveStyle": "Aşk Tarzı",
+      "careerFit": "Kariyer Uyumu",
+      "symbolCombination": "Birleşen semboller şunu getirir"
+    },
+    "shareTexts": {
+      "aiDream": "✨ {title}\n\n🌟 Şans Endeksi: {luck}\n🔢 Şanslı Sayılar: {number}\n🎨 Şanslı Renk: {color}\n\n🧠 {meaning}...\n\nDream & Fortune uygulamasında derin analizi gör! 🔮",
+      "aiDreamTitle": "Rüya Yorumu Sonucum ✨",
+      "aiDreamClipboard": "Sonuç panoya kopyalandı! Arkadaşlarınla paylaş ✨",
+      "dreamShare": "🌙 Rüya Yorumu Sonucum\n\n{keyword}\n{meaning}\n\nSen de rüyanı yorumla! 👇\n{url}",
+      "dreamShareTitle": "Rüya Yorumu Sonucum 🔮",
+      "dreamShareClipboard": "Sonuç kopyalandı! Arkadaşlarınla paylaş 🌙",
+      "fortuneShare": "⭐ Bugünün {zodiac} Burç Yorumu\n\n{message}\n\n🎨 Şanslı Renk: {color}\n🔢 Şanslı Sayılar: {number}\n\nSen de burcuna bak! 👇\n{url}",
+      "fortuneShareTitle": "Bugünün {zodiac} Burç Yorumu ⭐",
+      "fortuneShareClipboard": "Sonuç kopyalandı! Arkadaşlarınla paylaş ⭐"
+    },
+    "resultLabels": {
+      "category": "📂 Kategori",
+      "meaning": "🔮 Temel Anlam",
+      "todayMessage": "✨ Günün Mesajı",
+      "detailedExplanation": "📖 Detaylı Açıklama",
+      "situationInterpretation": "🎭 Günün Durum Yorumu",
+      "fieldFortune": "📊 Alanlara Göre Şans",
+      "love": "💕 Aşk",
+      "money": "💰 Para",
+      "health": "💪 Sağlık",
+      "work": "💼 İş",
+      "timeBasedGuidance": "⏰ Saatlik Rehber",
+      "luckyItems": "🍀 Günün Şansı",
+      "luckyColor": "🎨 Şanslı Renk",
+      "luckyNumber": "🔢 Şanslı Sayılar",
+      "luckyDirection": "🧭 Şanslı Yön",
+      "luckyTime": "🌟 Şanslı Saat",
+      "relatedDreams": "🔗 İlgili Rüyalar",
+      "luckIndex": "🍀 Günün Şans Endeksi",
+      "combinedInterpretation": "Birleşik Rüya Yorumu",
+      "discoveredSymbols": "🔮 Bulunan Semboller",
+      "keywordCombination": "✨ Sembol Kombinasyonu",
+      "combinedFieldFortune": "📊 Birleşik Yorum",
+      "combinedLuckyItems": "🍀 Birleşik Şanslar",
+      "combinedLuckIndex": "🍀 Birleşik Şans Endeksi",
+      "todayQuote": "💫 Günün Sözü",
+      "diaryEmpty": "Henüz rüya yorumu kaydı yok.",
+      "diaryLuck": "Şans %{luck}",
+      "fortuneZodiacInfo": "{zodiac} Bugün ({dates})",
+      "tarotDirection": "{direction}",
+      "tarotKeyword": "🔑 Anahtar Kelime",
+      "tarotMeaning": "📖 Anlam",
+      "tarotLove": "💕 Aşk Açısı",
+      "tarotCareer": "💼 İş/Finans Açısı",
+      "tarotAdvice": "💫 Günün Tavsiyesi"
+    },
+    "todayMessages": [
+      "Bugün rüyanda {keyword} gördüysen, bilinçaltın özel bir mesaj gönderiyor.",
+      "{keyword} enerjisi tüm gününü etkileyebilir.",
+      "{keyword} rüyası bugünkü önemli bir karar için ipucu olabilir.",
+      "Bu dönemde {keyword} görmek değişimin işaretidir.",
+      "Bilinçaltında {keyword} sembolü uyanıyor.",
+      "Bugün {keyword}’in pozitif enerjisi seninle.",
+      "{keyword} rüyası içindeki derin bir arzuyu yansıtır."
+    ],
+    "additionalInterpretations": [
+      "Bunu bugün görmek yakında ilgili bir gelişme olabileceğine işaret eder.",
+      "Bu rüya şu anki duygusal durumunla yakından bağlantılı.",
+      "Bilinçaltın uyanıkken gözden kaçırdıklarını sıkça gösterir.",
+      "Bu sembol tekrarlanıyorsa daha derin bir anlam taşıyor olabilir.",
+      "Rüyadaki duygu belirleyicidir: olumluysa iyiye, gerginse tedbire işarettir.",
+      "Geleneksel yorumda bu rüya önemli bir dönüm noktasını simgeler.",
+      "Karşılaştığın bir sorunun yanıtı bu rüyada gizli olabilir."
+    ],
+    "enhanceAdvices": {
+      "calm": "Bugün sakin ve dengeli akışı koru.",
+      "love": [
+        " Özellikle 15:00 civarında güzel bir enerji var.",
+        " Samimi sohbet ilişkileri derinleştirir.",
+        " Küçük bir jest veya mesaj büyük etki yaratır.",
+        " Karşındakini dinlemek en önemlisidir."
+      ],
+      "money": [
+        " Bugün güzel bir haber gelebilir.",
+        " Dürtüsel harcamalardan kaçın.",
+        " Beklenmedik bir gelir kapısı açılabilir.",
+        " Uzun vadeli bakış açısıyla karar ver."
+      ],
+      "health": [
+        " Yeterli su içmeyi unutma.",
+        " Hafif esneme iyi gelecektir.",
+        " Bugün kendini aşırı yorma.",
+        " Pozitif zihin yapisi sağlığı destekler."
+      ],
+      "work": [
+        " Önemli işleri sabah hallet.",
+        " İş birliği sonuçları güçlendirir.",
+        " Yeni fikirleri cesurca sun.",
+        " Detaylara dikkat et."
+      ]
+    },
+    "timeBasedAdvices": {
+      "morning": [
+        "Sabah: önemli kararlar veya yeni başlangıçlar için uygun.",
+        "Sabah: meditasyon ve planlama için ideal.",
+        "Sabah: enerji yüksek; zorlu işlere odaklan."
+      ],
+      "afternoon": [
+        "Öğleden sonra: ilişkilerde güzel gelişmeler olabilir.",
+        "Öğleden sonra: odak gerektiren işleri tamamla.",
+        "Öğleden sonra: kısa bir mola yeni fikirler getirir."
+      ],
+      "evening": [
+        "Akşam: sevdiklerinle vakit geçirmek şans getirir.",
+        "Akşam: günü şükranla değerlendir.",
+        "Akşam: rüya günlüğü yazmak derin içgörü sağlar."
+      ]
+    },
+    "luckyTimes": [
+      "09:00–11:00",
+      "10:00–12:00",
+      "13:00–15:00",
+      "14:00–16:00",
+      "15:00–17:00",
+      "18:00–20:00",
+      "19:00–21:00",
+      "21:00–23:00"
+    ],
+    "multiKeywordMessages": [
+      "Birlikte görünen semboller birbirini tamamlayan çok katmanlı mesajlar taşır.",
+      "{count} sembol uyum içinde; hayatının farklı alanlarının bağlantılı olduğunu gösterir.",
+      "İlginç bir birleşim! Bilinçaltın birden fazla düzeyde sinyal gönderiyor.",
+      "Bu sembollerin buluşması tesadüf değil; iç dünyan önemli bir hikâye anlatıyor."
+    ],
+    "dynamicMeanings": [
+      "{meaning}... Bu enerji bugün özellikle güçlü.",
+      "{meaning}... İlgili bir gelişme yakında yaşanabilir.",
+      "{meaning}... Mevcut durumunla yakından bağlantılı.",
+      "{meaning}... Bu mesaja dikkat et."
+    ],
+    "categoryMeanings": {
+      "animalNature": "İçgüdü ve çevre uyum içinde. Doğal akışı takip et.",
+      "animalAction": "Harekete geçme zamanı. İçgüdüne güven.",
+      "natureAction": "Doğal adımlar iyi sonuçlar getirir.",
+      "animalThing": "Maddi değişim yaklaşıyor; bolluk şansıyla bağlantılı.",
+      "default": "{categories} ile ilişkili sembollerin buluşması hayatındaki alanların bağlandığını gösterir."
+    },
+    "dayMessages": [
+      "Bu Pazar rüyası haftanın yönünü gösterir.",
+      "Bu Pazartesi rüyası yeni bir başlangıcı işaret eder.",
+      "Bu Salı rüyası tutku ve hareket ister.",
+      "Bu Çarşamba rüyası iletişim ve bağı anlatır.",
+      "Bu Perşembe rüyası büyüme ve gelişim fırsatları gösterir.",
+      "Bu Cuma rüyası ilişkiler ve uyum hakkında bir mesajdır.",
+      "Bu Cumartesi rüyası dinlenme ve içe dönüş önerir."
+    ],
+    "twoKeywordInterpretations": [
+      "{k1} ve {k2} buluşması {quality} bir birleşimdir. {k1} enerjisi {k2} aracılığıyla somutlaşır.",
+      "{k1} sembolünün içsel arzusu, {k2} ile simgelenen dış durumla buluşuyor. {balance}",
+      "İki sembol birbirini tamamlar: {k1} akışı {k2} üzerinden devam eder, {result}",
+      "{k1} ve {k2} sembollerinin birlikte görülmesi nadir bir uyumdur. {opportunity}"
+    ],
+    "multiKeywordInterpretations": [
+      "{count} sembol bir arada görünüyor; hayatının birden çok alanı eşzamanlı değişiyor. {overall}",
+      "Zengin bir sembol tablosu! {symbols} birleşerek {expectation} müjdeliyor. Sezgine güven.",
+      "Bilinçaltın yoğun mesajlar gönderiyor; tek tek sembolleri anlarken büyük resmi kaçırma. {key}"
+    ],
+    "fortuneDefaults": {
+      "love": "Yeni tanışmalar veya ilişkide ilerleme bekleniyor.",
+      "money": "Maddi akış dengeli ilerliyor.",
+      "work": "İşlerde akıcı bir ilerleme öngörülüyor.",
+      "health": "Genel olarak sağlıklı bir seyir."
+    },
+    "fieldBonuses": {
+      "love": [
+        " Özellikle akşam saatleri uygun.",
+        " Samimi ifade etkili olur.",
+        ""
+      ],
+      "money": [
+        " Öğleden sonra iyi haber gelebilir.",
+        " Sezgine güven.",
+        ""
+      ],
+      "work": [
+        " İş birliği sonuçları artırır.",
+        " Önemli işleri sabaha al.",
+        ""
+      ],
+      "health": [
+        " Hafif yürüyüş iyi gelir.",
+        " Yeterli dinlenmeye özen göster.",
+        ""
+      ]
+    },
+    "fieldCombinationBonuses": {
+      "love": "Daha derin bir bağ mümkün.",
+      "money": "Beklenenden iyi sonuçlar olabilir.",
+      "work": "İşlerde sinerji harekete geçiyor.",
+      "health": "Genel denge yeniden kuruluyor.",
+      "default": "Olumlu değişim bekleniyor."
+    },
+    "quotes": [
+      "Rüyalar bilinçaltına giden kral yoludur. — Freud",
+      "Peşinden gidecek cesaretin varsa tüm rüyalar gerçekleşir.",
+      "Gece rüyaları gündüz bilgeliğine dönüşür.",
+      "Bilinçaltın sana her zaman yardım ediyor.",
+      "Rüyalara inananlar için yol açılır.",
+      "Bugünün rüyası yarının gerçeği olur.",
+      "Evren seninle rüyalar aracılığıyla konuşur.",
+      "Sezgini izle; o senin gerçek pusulandır."
+    ],
+    "combinedInterpretations": {
+      "veryLucky": "Rüyada {keywords} birlikte görünmesi çok hayırlıdır! Birden çok olumlu enerji birleşerek büyük şans müjdeliyor. Fırsatları değerlendir!",
+      "lucky": "{keywords} birleşimi olumlu değişime işaret eder. Semboller birbirini destekler ve yeni olanaklar gösterir.",
+      "mixed": "{keywords} birlikte görünmesi mevcut duruma dair karma bir mesajdır; olumlu yönlerle dikkat gerektiren noktalar bir arada. Dengeli değerlendir.",
+      "challenging": "{keywords} birleşimi içsel çatışmaya veya çözülmesi gereken konulara işaret eder. Bunu gelişim fırsatı olarak gör ve kendine iyi bak."
+    }
   },
   "chips": {
     "water": "🌊 Su",

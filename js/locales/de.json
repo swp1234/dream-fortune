@@ -113,7 +113,291 @@
     "reviewTeam": "DopaBrain Analytische Traumpsychologie"
   },
   "dynamic": {
-    "aiTitle": "{keyword} Symbolische Tiefendeutung"
+    "aiTitle": "{keyword} — Tiefenpsychologische Traumdeutung",
+    "fallbackMessage": "Dieser Traum überbringt eine persönliche Botschaft deines Unbewussten. Das Gefühl im Traum ist der Schlüssel – überlege, wie es mit deinem aktuellen Leben zusammenhängt.",
+    "colors": [
+      "Gold",
+      "Silber",
+      "Himmelblau",
+      "Hellgrün",
+      "Koralle",
+      "Lavendel",
+      "Minze"
+    ],
+    "directions": [
+      "Osten",
+      "Westen",
+      "Süden",
+      "Norden",
+      "Nordosten",
+      "Südosten"
+    ],
+    "psychoAnalyses": {
+      "뱀": "In der Psychoanalyse stehen Schlangen für verdrängte Wünsche und Instinkte; nach Jung symbolisieren sie zudem Wandlung, Weisheit und Heilung.",
+      "용": "Der Drache verkörpert Selbstverwirklichung und das Erwachen großer innerer Kraft.",
+      "물": "Wasser steht für den Fluss der Emotionen. Sein Zustand im Traum spiegelt dein inneres Befinden.",
+      "비행": "Flugträume zeigen den starken Wunsch nach Freiheit und dem Überwinden von Grenzen.",
+      "추락": "Fallen spiegelt Angst vor Kontrollverlust. Stärke jetzt dein Fundament im Alltag.",
+      "죽음": "Todesträume bedeuten Wandel: Alte Gewohnheiten oder Phasen enden, damit etwas Neues entstehen kann.",
+      "default": "Dieser Traum spiegelt deine aktuelle psychische Verfassung und unbewusste Wünsche wider. Das Traumgefühl ist entscheidend."
+    },
+    "recommendedActions": {
+      "high": [
+        "Was du jetzt beginnst, bringt gute Ergebnisse. Geh zuversichtlich voran.",
+        "Pflege den Austausch mit anderen; wichtige Gespräche öffnen Türen.",
+        "Guter Zeitpunkt für Neues – starte, was du aufgeschoben hast."
+      ],
+      "medium": [
+        "Halte die Balance zwischen Vorsicht und Begeisterung; nichts überstürzen.",
+        "Vertraue deiner Intuition, aber triff kleine Entscheidungen in Ruhe.",
+        "Betrachte die Lage objektiv und bereite den nächsten Schritt vor."
+      ],
+      "low": [
+        "Höre auf deine innere Stimme; jetzt ist Zeit für Besinnung.",
+        "Selbstfürsorge hat Vorrang: Meditation oder erholsamer Schlaf helfen.",
+        "Dies ist eine Vorbereitungsphase; schaffe eine stabile Basis."
+      ]
+    },
+    "advices": {
+      "weekly": [
+        "Wichtige Begegnungen oder Chancen können entstehen. Bleib offen.",
+        "Verzettele dich nicht; konzentriere dich auf das Wesentliche.",
+        "In Beziehungen bahnt sich Erfreuliches an.",
+        "Gute Zeit, um Neues zu lernen und Einsichten zu gewinnen."
+      ],
+      "monthly": [
+        "Stetiger Einsatz für langfristige Ziele zahlt sich aus.",
+        "Veränderungen kommen; reagiere flexibel.",
+        "Sowohl Beziehungen als auch Finanzen stabilisieren sich.",
+        "Investitionen in dich selbst zahlen sich später stark aus."
+      ]
+    },
+    "actionAdvice": {
+      "high": "• Jetzt ist Zeit zu handeln und Aufgeschobenes anzupacken.\n• Greife neue Chancen aktiv auf.\n• Verfolge deine Ziele selbstbewusst.",
+      "medium": "• Ein ausgewogener Ansatz ohne Hektik ist gefragt.\n• Hole Rat ein, aber entscheide selbst.\n• Sammle kleine Erfolge.",
+      "low": "• Jetzt ist Vorbereitungszeit für ein starkes Fundament.\n• Schau nach innen – Ruhe oder Tagebuchschreiben hilft.\n• Bleib geduldig und warte den rechten Moment ab."
+    },
+    "tarotReversed": "Umgekehrt",
+    "tarotUpright": "Aufrecht",
+    "fortuneLabels": {
+      "timeAdvice": "Tageszeit-Rat",
+      "traits": "Merkmale",
+      "element": "Element",
+      "ruling": "Herrscherplanet",
+      "personality": "Persönlichkeit",
+      "loveStyle": "Liebesstil",
+      "careerFit": "Berufliche Passung",
+      "symbolCombination": "Kombinierte Symbole bringen"
+    },
+    "shareTexts": {
+      "aiDream": "✨ {title}\n\n🌟 Glücksindex: {luck}\n🔢 Glückszahlen: {number}\n🎨 Glücksfarbe: {color}\n\n🧠 {meaning}...\n\nEntdecke die Tiefendeutung in Dream & Fortune! 🔮",
+      "aiDreamTitle": "Mein Traumdeutungs-Ergebnis ✨",
+      "aiDreamClipboard": "Ergebnis kopiert! Teile es mit Freunden ✨",
+      "dreamShare": "🌙 Mein Traumdeutungs-Ergebnis\n\n{keyword}\n{meaning}\n\nDeute auch deinen Traum! 👇\n{url}",
+      "dreamShareTitle": "Mein Traumdeutungs-Ergebnis 🔮",
+      "dreamShareClipboard": "Ergebnis kopiert! Teile es mit Freunden 🌙",
+      "fortuneShare": "⭐ Heutiges {zodiac}-Horoskop\n\n{message}\n\n🎨 Glücksfarbe: {color}\n🔢 Glückszahlen: {number}\n\nPrüfe auch dein Horoskop! 👇\n{url}",
+      "fortuneShareTitle": "Heutiges {zodiac}-Horoskop ⭐",
+      "fortuneShareClipboard": "Ergebnis kopiert! Teile es mit Freunden ⭐"
+    },
+    "resultLabels": {
+      "category": "📂 Kategorie",
+      "meaning": "🔮 Kernbedeutung",
+      "todayMessage": "✨ Botschaft heute",
+      "detailedExplanation": "📖 Ausführliche Deutung",
+      "situationInterpretation": "🎭 Tages-Einordnung",
+      "fieldFortune": "📊 Bereiche heute",
+      "love": "💕 Liebe",
+      "money": "💰 Finanzen",
+      "health": "💪 Gesundheit",
+      "work": "💼 Beruf",
+      "timeBasedGuidance": "⏰ Tageszeit-Orientierung",
+      "luckyItems": "🍀 Glück heute",
+      "luckyColor": "🎨 Glücksfarbe",
+      "luckyNumber": "🔢 Glückszahlen",
+      "luckyDirection": "🧭 Glücksrichtung",
+      "luckyTime": "🌟 Glückszeit",
+      "relatedDreams": "🔗 Verwandte Traumsymbole",
+      "luckIndex": "🍀 Glücksindex heute",
+      "combinedInterpretation": "Kombinierte Traumdeutung",
+      "discoveredSymbols": "🔮 Gefundene Symbole",
+      "keywordCombination": "✨ Symbol-Kombination",
+      "combinedFieldFortune": "📊 Gesamtprognose",
+      "combinedLuckyItems": "🍀 Kombiniertes Glück",
+      "combinedLuckIndex": "🍀 Gesamt-Glücksindex",
+      "todayQuote": "💫 Zitat des Tages",
+      "diaryEmpty": "Noch keine Traumdeutungen gespeichert.",
+      "diaryLuck": "Glück {luck}%",
+      "fortuneZodiacInfo": "{zodiac} heute ({dates})",
+      "tarotDirection": "{direction}",
+      "tarotKeyword": "🔑 Schlüsselwort",
+      "tarotMeaning": "📖 Bedeutung",
+      "tarotLove": "💕 Perspektive Liebe",
+      "tarotCareer": "💼 Beruf & Finanzen",
+      "tarotAdvice": "💫 Rat für heute"
+    },
+    "todayMessages": [
+      "Wenn du heute von {keyword} geträumt hast, sendet dein Unbewusstes eine besondere Botschaft.",
+      "Die Energie von {keyword} kann deinen gesamten Tag prägen.",
+      "Ein Traum von {keyword} kann heute ein Hinweis für eine wichtige Entscheidung sein.",
+      "Gerade jetzt von {keyword} zu träumen kündigt Veränderung an.",
+      "Das Symbol {keyword} erwacht in deinem Unterbewusstsein.",
+      "Heute begleitet dich die positive Energie von {keyword}.",
+      "Der Traum von {keyword} spiegelt einen tiefen inneren Wunsch wider."
+    ],
+    "additionalInterpretations": [
+      "Dieser Traum heute deutet darauf hin, dass bald etwas Passendes geschehen kann.",
+      "Dieser Traum ist eng mit deinem aktuellen Gefühlszustand verknüpft.",
+      "Dein Unbewusstes zeigt oft, was du im Wachzustand übersiehst.",
+      "Erscheint dieses Symbol wiederholt, steckt darin eine tiefere Botschaft.",
+      "Das Gefühl im Traum ist entscheidend: positiv ist ein gutes Zeichen, unruhig mahnt zur Vorsicht.",
+      "Traditionell gilt dieses Motiv als Zeichen für einen wichtigen Wendepunkt.",
+      "Die Lösung einer aktuellen Frage kann in diesem Traum verborgen liegen."
+    ],
+    "enhanceAdvices": {
+      "calm": "Bewahre heute einen ruhigen, ausgeglichenen Rhythmus.",
+      "love": [
+        " Besonders gute Energie gegen 15 Uhr.",
+        " Ehrliche Gespräche vertiefen die Nähe.",
+        " Eine kleine Aufmerksamkeit wirkt Wunder.",
+        " Aufmerksames Zuhören zählt am meisten."
+      ],
+      "money": [
+        " Heute können gute Nachrichten eintreffen.",
+        " Vermeide Impulskäufe.",
+        " Unerwartete Einnahmen sind möglich.",
+        " Entscheide langfristig."
+      ],
+      "health": [
+        " Vergiss nicht, ausreichend Wasser zu trinken.",
+        " Sanftes Dehnen hilft.",
+        " Übernimm dich heute nicht.",
+        " Eine positive Haltung stärkt die Gesundheit."
+      ],
+      "work": [
+        " Erledige Wichtiges am Vormittag.",
+        " Zusammenarbeit steigert den Erfolg.",
+        " Bringe mutig neue Ideen ein.",
+        " Achte auf Details."
+      ]
+    },
+    "timeBasedAdvices": {
+      "morning": [
+        "Morgen: gute Zeit für wichtige Entscheidungen oder Neuanfänge.",
+        "Morgen: ideal für Ruhe oder Tagesplanung.",
+        "Morgen: hohe Energie für anspruchsvolle Aufgaben."
+      ],
+      "afternoon": [
+        "Nachmittag: positive Impulse in Beziehungen möglich.",
+        "Nachmittag: konzentrierte Aufgaben anpacken.",
+        "Nachmittag: kurze Pausen bringen frische Ideen."
+      ],
+      "evening": [
+        "Abend: Zeit mit lieben Menschen bringt Glück.",
+        "Abend: den Tag dankbar reflektieren.",
+        "Abend: ein Traumtagebuch schenkt tiefere Einsichten."
+      ]
+    },
+    "luckyTimes": [
+      "9–11 Uhr",
+      "10–12 Uhr",
+      "13–15 Uhr",
+      "14–16 Uhr",
+      "15–17 Uhr",
+      "18–20 Uhr",
+      "19–21 Uhr",
+      "21–23 Uhr"
+    ],
+    "multiKeywordMessages": [
+      "Mehrere Symbole zusammen ergeben eine vielschichtige Botschaft, die sich gegenseitig ergänzt.",
+      "{count} Symbole harmonieren miteinander und verbinden verschiedene Lebensbereiche.",
+      "Spannende Kombination! Dein Unbewusstes sendet Signale auf mehreren Ebenen.",
+      "Das Zusammentreffen dieser Symbole ist kein Zufall – dein Inneres erzählt eine wichtige Geschichte."
+    ],
+    "dynamicMeanings": [
+      "{meaning}... Diese Energie ist heute besonders stark.",
+      "{meaning}... Etwas Ähnliches könnte bald geschehen.",
+      "{meaning}... Eng mit deiner aktuellen Lage verbunden.",
+      "{meaning}... Achte besonders auf diese Botschaft."
+    ],
+    "categoryMeanings": {
+      "animalNature": "Instinkt und Umfeld sind im Einklang. Folge dem natürlichen Fluss.",
+      "animalAction": "Zeit zu handeln. Vertraue deinem Instinkt.",
+      "natureAction": "Natürliches Handeln bringt gute Ergebnisse.",
+      "animalThing": "Materielle Veränderung naht – verbunden mit finanziellem Glück.",
+      "default": "Das Zusammenspiel der Symbole zu {categories} zeigt, wie deine Lebensbereiche verknüpft sind."
+    },
+    "dayMessages": [
+      "Dieser Sonntagstraum zeigt die Richtung deiner Woche.",
+      "Dieser Montagstraum weist auf einen Neuanfang hin.",
+      "Dieser Dienstagstraum verlangt Tatkraft und Leidenschaft.",
+      "Dieser Mittwochstraum spricht von Austausch und Verbindung.",
+      "Dieser Donnerstagstraum zeigt Chancen für Wachstum.",
+      "Dieser Freitagstraum ist eine Botschaft für Harmonie und Nähe.",
+      "Dieser Samstagstraum empfiehlt Ruhe und Einkehr."
+    ],
+    "twoKeywordInterpretations": [
+      "Die Begegnung von {k1} und {k2} ist eine {quality} Kombination. Die Kraft von {k1} formt sich durch {k2}.",
+      "Der innere Wunsch von {k1} trifft auf die äußere Situation von {k2}. {balance}",
+      "Beide Symbole ergänzen einander: Der Fluss von {k1} führt über {k2}, {result}",
+      "Dass {k1} und {k2} gemeinsam erscheinen, ist selten. {opportunity}"
+    ],
+    "multiKeywordInterpretations": [
+      "{count} Symbole erscheinen komplex; mehrere Lebensbereiche wandeln sich zugleich. {overall}",
+      "Reiche Symbolik! {symbols} verbinden sich und deuten auf {expectation}. Vertraue deiner Intuition.",
+      "Dein Unbewusstes sendet vielfältige Signale – verstehe jedes Detail und behalte das Ganze im Blick. {key}"
+    ],
+    "fortuneDefaults": {
+      "love": "Neue Begegnungen oder Vertiefung in Beziehungen sind zu erwarten.",
+      "money": "Die Finanzen fließen stabil.",
+      "work": "Beruflich geht es zügig voran.",
+      "health": "Insgesamt gesunder Energiefluss."
+    },
+    "fieldBonuses": {
+      "love": [
+        " Besonders günstig am Abend.",
+        " Aufrichtigkeit wirkt verbindend.",
+        ""
+      ],
+      "money": [
+        " Am Nachmittag sind gute Nachrichten möglich.",
+        " Vertraue deinem Bauchgefühl.",
+        ""
+      ],
+      "work": [
+        " Teamarbeit verbessert das Ergebnis.",
+        " Wichtige Aufgaben morgens klären.",
+        ""
+      ],
+      "health": [
+        " Ein leichter Spaziergang hilft.",
+        " Achte auf genug Erholung.",
+        ""
+      ]
+    },
+    "fieldCombinationBonuses": {
+      "love": "Eine tiefere Verbindung ist möglich.",
+      "money": "Bessere Ergebnisse als erwartet.",
+      "work": "Synergien werden aktiviert.",
+      "health": "Das innere Gleichgewicht kehrt zurück.",
+      "default": "Positive Veränderung erwartet."
+    },
+    "quotes": [
+      "Der Traum ist der Königsweg zum Unbewussten. – Freud",
+      "Alle Träume können wahr werden, wenn wir den Mut haben, ihnen zu folgen.",
+      "Nächtliche Träume werden zur Weisheit des Tages.",
+      "Dein Unbewusstes unterstützt dich immer.",
+      "Wer an seine Träume glaubt, dem öffnet sich der Weg.",
+      "Der Traum von heute wird zur Wirklichkeit von morgen.",
+      "Das Leben spricht durch Träume zu dir.",
+      "Folge deiner Intuition – sie ist dein wahrer Kompass."
+    ],
+    "combinedInterpretations": {
+      "veryLucky": "Dass {keywords} gemeinsam im Traum erscheinen, ist äußerst verheißungsvoll! Positive Energien bündeln sich zu großem Glück. Nutze Chancen mutig!",
+      "lucky": "Die Kombination von {keywords} kündigt positive Veränderungen an. Jedes Symbol ergänzt das andere und zeigt neue Wege.",
+      "mixed": "Das gemeinsame Auftreten von {keywords} ist eine gemischte Botschaft zwischen Chancen und Vorsicht. Entscheide ausgewogen statt vorschnell.",
+      "challenging": "Die Kombination von {keywords} deutet auf innere Spannungen oder offene Aufgaben hin. Nutze die Erkenntnis zum Wachsen und schone dich."
+    }
   },
   "chips": {
     "water": "🌊 Wasser",

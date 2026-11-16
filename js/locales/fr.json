@@ -113,7 +113,291 @@
     "reviewTeam": "DopaBrain Psychologie Onirique"
   },
   "dynamic": {
-    "aiTitle": "Analyse Symbolique : {keyword}"
+    "aiTitle": "{keyword} — Interprétation symbolique approfondie",
+    "fallbackMessage": "Ce rêve porte un message personnel de votre inconscient. L’émotion ressentie en rêve est la clé ; réfléchissez à son lien avec votre vie actuelle.",
+    "colors": [
+      "Or",
+      "Argent",
+      "Bleu ciel",
+      "Vert clair",
+      "Corail",
+      "Lavande",
+      "Menthe"
+    ],
+    "directions": [
+      "Est",
+      "Ouest",
+      "Sud",
+      "Nord",
+      "Nord-Est",
+      "Sud-Est"
+    ],
+    "psychoAnalyses": {
+      "뱀": "En psychologie freudienne, le serpent symbolise les désirs et instincts refoulés ; chez Jung, il représente aussi la transformation et la guérison.",
+      "용": "Le dragon symbolise l’accomplissement de soi et l’éveil d’un grand potentiel intérieur.",
+      "물": "L’eau représente le flux des émotions. Son état dans le rêve reflète votre climat intérieur actuel.",
+      "비행": "Les rêves de vol expriment un fort désir de liberté et d’affranchissement.",
+      "추락": "Tomber traduit une peur de perdre le contrôle. Concentrez-vous sur la solidité de vos repères.",
+      "죽음": "Rêver de mort symbolise une mue : d’anciennes habitudes s’achèvent pour laisser place au renouveau.",
+      "default": "Ce rêve reflète votre état psychologique actuel et vos désirs inconscients. L’émotion vécue en est l’indice clé."
+    },
+    "recommendedActions": {
+      "high": [
+        "Ce que vous entreprenez maintenant portera ses fruits. Avancez avec confiance.",
+        "Cultivez le dialogue autour de vous ; des échanges clés ouvriront des opportunités.",
+        "Excellent moment pour tenter du neuf et lancer ce que vous remettiez à plus tard."
+      ],
+      "medium": [
+        "Équilibrez prudence et élan ; inutile de vous précipiter.",
+        "Faites confiance à votre intuition tout en avançant par petites étapes.",
+        "Observez la situation avec recul et préparez la suite."
+      ],
+      "low": [
+        "Écoutez votre voix intérieure ; l’heure est à la réflexion.",
+        "Prendre soin de vous prime : méditation ou bon sommeil vous aideront.",
+        "C’est une phase de préparation ; consolidez vos bases."
+      ]
+    },
+    "advices": {
+      "weekly": [
+        "Des rencontres ou opportunités importantes peuvent surgir. Restez ouvert.",
+        "Ne dispersez pas votre énergie ; concentrez-vous sur l’essentiel.",
+        "De belles évolutions relationnelles sont possibles.",
+        "Bon moment pour apprendre et gagner en clarté."
+      ],
+      "monthly": [
+        "Les efforts réguliers vers vos objectifs porteront leurs fruits.",
+        "Des changements approchent ; préparez-vous à vous adapter avec souplesse.",
+        "Relations et finances entrent dans une période plus stable.",
+        "Investir dans votre développement personnel vous récompensera largement."
+      ]
+    },
+    "actionAdvice": {
+      "high": "• Il est temps d’agir et de lancer ce que vous différiez.\n• Saisissez activement les nouvelles opportunités.\n• Avancez vers vos objectifs avec assurance.",
+      "medium": "• Adoptez une approche mesurée, sans précipitation.\n• Écoutez les conseils, mais décidez par vous-même.\n• Accumulez de petites réussites.",
+      "low": "• C’est le moment de préparer et de consolider vos bases.\n• Prenez du temps pour vous recentrer.\n• Restez patient et attendez le bon moment."
+    },
+    "tarotReversed": "Renversée",
+    "tarotUpright": "À l’endroit",
+    "fortuneLabels": {
+      "timeAdvice": "Conseil horaire",
+      "traits": "Traits",
+      "element": "Élément",
+      "ruling": "Planète maîtresse",
+      "personality": "Personnalité",
+      "loveStyle": "Style amoureux",
+      "careerFit": "Voie professionnelle",
+      "symbolCombination": "Les symboles réunis annoncent"
+    },
+    "shareTexts": {
+      "aiDream": "✨ {title}\n\n🌟 Indice de chance : {luck}\n🔢 Chiffres porte-bonheur : {number}\n🎨 Couleur porte-bonheur : {color}\n\n🧠 {meaning}...\n\nDécouvrez l’analyse approfondie dans Dream & Fortune ! 🔮",
+      "aiDreamTitle": "Mon interprétation de rêve ✨",
+      "aiDreamClipboard": "Résultat copié ! Partagez-le avec vos amis ✨",
+      "dreamShare": "🌙 Mon interprétation de rêve\n\n{keyword}\n{meaning}\n\nInterprétez votre rêve aussi ! 👇\n{url}",
+      "dreamShareTitle": "Mon interprétation de rêve 🔮",
+      "dreamShareClipboard": "Résultat copié ! Partagez-le avec vos amis 🌙",
+      "fortuneShare": "⭐ Horoscope du jour — {zodiac}\n\n{message}\n\n🎨 Couleur : {color}\n🔢 Chiffres : {number}\n\nConsultez le vôtre aussi ! 👇\n{url}",
+      "fortuneShareTitle": "Horoscope du jour — {zodiac} ⭐",
+      "fortuneShareClipboard": "Résultat copié ! Partagez-le avec vos amis ⭐"
+    },
+    "resultLabels": {
+      "category": "📂 Catégorie",
+      "meaning": "🔮 Sens principal",
+      "todayMessage": "✨ Message du jour",
+      "detailedExplanation": "📖 Explication détaillée",
+      "situationInterpretation": "🎭 Lecture de la situation",
+      "fieldFortune": "📊 Tendances par domaine",
+      "love": "💕 Amour",
+      "money": "💰 Finances",
+      "health": "💪 Santé",
+      "work": "💼 Travail",
+      "timeBasedGuidance": "⏰ Repères horaires",
+      "luckyItems": "🍀 Chance du jour",
+      "luckyColor": "🎨 Couleur porte-bonheur",
+      "luckyNumber": "🔢 Chiffres porte-bonheur",
+      "luckyDirection": "🧭 Direction favorable",
+      "luckyTime": "🌟 Heure favorable",
+      "relatedDreams": "🔗 Mots-clés associés",
+      "luckIndex": "🍀 Indice de chance",
+      "combinedInterpretation": "Interprétation combinée",
+      "discoveredSymbols": "🔮 Symboles détectés",
+      "keywordCombination": "✨ Combinaison de symboles",
+      "combinedFieldFortune": "📊 Tendances combinées",
+      "combinedLuckyItems": "🍀 Chance combinée",
+      "combinedLuckIndex": "🍀 Indice combiné",
+      "todayQuote": "💫 Citation du jour",
+      "diaryEmpty": "Aucune interprétation enregistrée pour le moment.",
+      "diaryLuck": "Chance {luck}%",
+      "fortuneZodiacInfo": "{zodiac} aujourd’hui ({dates})",
+      "tarotDirection": "{direction}",
+      "tarotKeyword": "🔑 Mot-clé",
+      "tarotMeaning": "📖 Signification",
+      "tarotLove": "💕 Côté cœur",
+      "tarotCareer": "💼 Travail & finances",
+      "tarotAdvice": "💫 Conseil du jour"
+    },
+    "todayMessages": [
+      "Si vous avez rêvé de {keyword} aujourd’hui, votre inconscient vous adresse un message particulier.",
+      "L’énergie de {keyword} peut influencer toute votre journée.",
+      "Ce rêve de {keyword} peut guider une décision importante aujourd’hui.",
+      "Rêver de {keyword} en ce moment annonce une transition.",
+      "Le symbole de {keyword} s’éveille dans votre subconscient.",
+      "Aujourd’hui, l’énergie positive de {keyword} vous accompagne.",
+      "Le rêve de {keyword} reflète un désir profond venu de votre intériorité."
+    ],
+    "additionalInterpretations": [
+      "Faire ce rêve aujourd’hui suggère qu’un événement lié pourrait bientôt survenir.",
+      "Ce rêve est étroitement lié à votre état émotionnel actuel.",
+      "Votre inconscient révèle souvent ce que vous manquez à l’état d’éveil.",
+      "Si ce symbole revient souvent, il porte un sens encore plus profond.",
+      "L’émotion du rêve est essentielle : positive, elle augure du bien ; tendue, elle invite à la prudence.",
+      "Traditionnellement, ce motif signale un tournant important.",
+      "La réponse à un défi actuel se cache peut-être dans ce rêve."
+    ],
+    "enhanceAdvices": {
+      "calm": "Gardez un rythme serein et paisible aujourd’hui.",
+      "love": [
+        " Belle énergie surtout vers 15 h.",
+        " Une discussion sincère approfondit le lien.",
+        " Un petit geste aura un grand effet.",
+        " Écouter l’autre reste primordial."
+      ],
+      "money": [
+        " De bonnes nouvelles peuvent arriver aujourd’hui.",
+        " Évitez les achats impulsifs.",
+        " Une rentrée imprévue est possible.",
+        " Décidez sur le long terme."
+      ],
+      "health": [
+        " Pensez à bien vous hydrater.",
+        " De doux étirements feront du bien.",
+        " Ne forcez pas trop aujourd’hui.",
+        " Un état d’esprit positif soutient la santé."
+      ],
+      "work": [
+        " Traitez les tâches clés le matin.",
+        " La collaboration amplifie les résultats.",
+        " Proposez de nouvelles idées avec assurance.",
+        " Soignez les détails."
+      ]
+    },
+    "timeBasedAdvices": {
+      "morning": [
+        "Matin : moment propice aux décisions importantes et aux nouveaux départs.",
+        "Matin : idéal pour méditer ou planifier.",
+        "Matin : belle énergie pour relever des défis."
+      ],
+      "afternoon": [
+        "Après-midi : des moments agréables peuvent égayer vos relations.",
+        "Après-midi : avancez sur les tâches demandant de la concentration.",
+        "Après-midi : souffler un peu stimulera vos idées."
+      ],
+      "evening": [
+        "Soir : partager du temps avec vos proches attire la chance.",
+        "Soir : faites le bilan de la journée avec gratitude.",
+        "Soir : tenir un journal de rêves apporte de précieux éclairages."
+      ]
+    },
+    "luckyTimes": [
+      "9h–11h",
+      "10h–12h",
+      "13h–15h",
+      "14h–16h",
+      "15h–17h",
+      "18h–20h",
+      "19h–21h",
+      "21h–23h"
+    ],
+    "multiKeywordMessages": [
+      "Plusieurs symboles réunis délivrent un message nuancé où chaque sens complète l’autre.",
+      "{count} symboles s’accordent ensemble, montrant que plusieurs sphères de votre vie sont reliées.",
+      "Association fascinante ! Votre inconscient émet des signaux à plusieurs niveaux.",
+      "La rencontre de ces symboles n’est pas fortuite ; votre monde intérieur raconte une histoire clé."
+    ],
+    "dynamicMeanings": [
+      "{meaning}... Cette énergie est particulièrement vive aujourd’hui.",
+      "{meaning}... Un fait lié pourrait bientôt se produire.",
+      "{meaning}... Étroitement relié à votre situation présente.",
+      "{meaning}... Accordez une attention particulière à ce message."
+    ],
+    "categoryMeanings": {
+      "animalNature": "Instinct et environnement sont en harmonie. Suivez le courant naturel.",
+      "animalAction": "Il est temps d’agir. Faites confiance à votre instinct.",
+      "natureAction": "Agir naturellement apporte de bons résultats.",
+      "animalThing": "Un changement matériel approche, lié à la prospérité.",
+      "default": "La réunion de symboles liés à {categories} montre que plusieurs domaines de votre vie interagissent."
+    },
+    "dayMessages": [
+      "Ce rêve du dimanche dessine la direction de votre semaine.",
+      "Ce rêve du lundi annonce un nouveau départ.",
+      "Ce rêve du mardi appelle élan et passage à l’action.",
+      "Ce rêve du mercredi parle de communication et de liens.",
+      "Ce rêve du jeudi montre des occasions d’expansion et de croissance.",
+      "Ce rêve du vendredi est un message de relations et d’harmonie.",
+      "Ce rêve du samedi recommande repos et introspection."
+    ],
+    "twoKeywordInterpretations": [
+      "La rencontre de {k1} et {k2} forme une alliance {quality}. L’énergie de {k1} prend forme grâce à {k2}.",
+      "Le désir intérieur porté par {k1} croise la situation extérieure figurée par {k2}. {balance}",
+      "Les deux symboles se complètent : l’élan de {k1} se prolonge via {k2}, {result}",
+      "L’apparition simultanée de {k1} et {k2} est rare. {opportunity}"
+    ],
+    "multiKeywordInterpretations": [
+      "{count} symboles se conjuguent ; plusieurs aspects de votre vie évoluent ensemble. {overall}",
+      "Riche tableau symbolique ! {symbols} s’unissent pour annoncer {expectation}. Suivez votre intuition.",
+      "Votre inconscient envoie de nombreux repères : comprenez chaque symbole sans perdre la vue d’ensemble. {key}"
+    ],
+    "fortuneDefaults": {
+      "love": "De nouvelles rencontres ou avancées sentimentales sont probables.",
+      "money": "Les finances suivent un cours régulier.",
+      "work": "Une progression fluide est attendue.",
+      "health": "Tendance globale équilibrée."
+    },
+    "fieldBonuses": {
+      "love": [
+        " Particulièrement favorable en soirée.",
+        " La sincérité touche juste.",
+        ""
+      ],
+      "money": [
+        " De bonnes nouvelles possibles cet après-midi.",
+        " Fiez-vous à votre intuition.",
+        ""
+      ],
+      "work": [
+        " La collaboration booste les résultats.",
+        " Traitez l’essentiel le matin.",
+        ""
+      ],
+      "health": [
+        " Une courte marche aide.",
+        " Accordez-vous un vrai repos.",
+        ""
+      ]
+    },
+    "fieldCombinationBonuses": {
+      "love": "Un lien plus profond est possible.",
+      "money": "Des résultats meilleurs que prévu.",
+      "work": "Une belle synergie se met en place.",
+      "health": "L’équilibre global se restaure.",
+      "default": "Un changement positif est attendu."
+    },
+    "quotes": [
+      "Le rêve est la voie royale vers l’inconscient. — Freud",
+      "Tous les rêves se réalisent si l’on a le courage de les poursuivre.",
+      "Les rêves de la nuit deviennent la sagesse du jour.",
+      "Votre inconscient vous aide toujours.",
+      "À qui croit en ses rêves, le chemin s’ouvre.",
+      "Le rêve d’aujourd’hui devient la réalité de demain.",
+      "La vie vous parle à travers vos rêves.",
+      "Suivez votre intuition ; c’est votre vraie boussole."
+    ],
+    "combinedInterpretations": {
+      "veryLucky": "Voir {keywords} réunis en rêve est de très bon augure ! Plusieurs énergies positives s’unissent pour annoncer une belle chance. Saisissez les occasions !",
+      "lucky": "La combinaison de {keywords} suggère une évolution favorable. Les symboles se renforcent et ouvrent de nouvelles perspectives.",
+      "mixed": "La présence conjointe de {keywords} transmet un message nuancé mêlant atouts et vigilance. Prenez du recul avant de trancher.",
+      "challenging": "L’association de {keywords} signale un conflit intérieur ou une étape à clarifier. Faites-en un levier de croissance et prenez soin de vous."
+    }
   },
   "chips": {
     "water": "🌊 Eau",
