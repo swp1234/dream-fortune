@@ -417,5 +417,11 @@
     "book2Title": "Inner Work",
     "book2Desc": "Robert A. Johnson • Método prático para trabalhar sonhos e imaginação ativa.",
     "readPill": "Ver Livro ↗"
+  },
+  "nextStep": {
+    "label": "Próximo passo recomendado",
+    "title": "Arquétipo do Eu Futuro",
+    "desc": "Transforme sua reflexão de hoje em um mapa de prioridades para 10 anos em 8 perguntas.",
+    "cta": "Explorar Eu Futuro →"
   }
 }

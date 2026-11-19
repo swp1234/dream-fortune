@@ -391,7 +391,19 @@
             </main>
 
         <!-- Curated Dream & Jungian Reading -->
-        <section class="curated-resources-card" id="curated-resources-card">
+                <section class="next-step-card" id="nextStepCard" aria-label="10-Year Future Self Archetype">
+            <p class="next-step-label" data-i18n="nextStep.label">Recommended Next Step</p>
+            <div class="next-step-main">
+                <span class="next-step-emoji" aria-hidden="true">🔮</span>
+                <div class="next-step-content">
+                    <h4 class="next-step-title" data-i18n="nextStep.title">10-Year Future Self Archetype</h4>
+                    <p class="next-step-desc" data-i18n="nextStep.desc">Turn today’s reflection into a 10-year roadmap of priorities and energy direction in 8 questions.</p>
+                </div>
+            </div>
+            <a href="/future-self/?lang=en&amp;start=1&amp;source=dream_fortune_result" class="next-step-cta" id="nextStepCta" data-i18n="nextStep.cta">Explore Future Self →</a>
+        </section>
+
+<section class="curated-resources-card" id="curated-resources-card">
             <div class="curated-header">
                 <span class="curated-badge" data-i18n="curated.badge">ONEIRIC PSYCHOLOGY READING</span>
                 <h3 class="curated-title" data-i18n="curated.title">Explore Dream Symbolism Deeper</h3>
@@ -518,5 +530,35 @@
   </div>
 
     <script src="/portal/js/cross-promo.js" defer></script>
+
+    <script>
+      (function () {
+        var cta = document.getElementById('nextStepCta');
+        if (!cta) return;
+        function syncHref() {
+          var lang = (window.i18n && (window.i18n.currentLang || (typeof window.i18n.getCurrentLanguage === 'function' && window.i18n.getCurrentLanguage())))
+            || new URLSearchParams(window.location.search).get('lang')
+            || document.documentElement.lang
+            || 'en';
+          try {
+            var u = new URL(cta.getAttribute('href'), window.location.origin);
+            u.searchParams.set('lang', lang);
+            u.searchParams.set('source', 'dream_fortune_result');
+            cta.setAttribute('href', u.pathname + u.search);
+          } catch (e) {}
+        }
+        syncHref();
+        cta.addEventListener('click', function () {
+          syncHref();
+          if (typeof gtag === 'function') {
+            gtag('event', 'content_cta_click', {
+              cta_surface: 'next_step_hero',
+              destination: cta.getAttribute('href'),
+              source: 'dream_fortune_result'
+            });
+          }
+        });
+      })();
+    </script>
 </body>
 </html>

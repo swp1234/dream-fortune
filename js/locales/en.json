@@ -417,5 +417,11 @@
     "book2Title": "Inner Work",
     "book2Desc": "Robert A. Johnson • Practical method for working with dreams and active imagination.",
     "readPill": "View Book ↗"
+  },
+  "nextStep": {
+    "label": "Recommended Next Step",
+    "title": "10-Year Future Self Archetype",
+    "desc": "Turn today’s reflection into a 10-year roadmap of priorities and energy direction in 8 questions.",
+    "cta": "Explore Future Self →"
   }
 }

@@ -417,5 +417,11 @@
     "book2Title": "Inner Work",
     "book2Desc": "Robert A. Johnson • Metode praktis memahami mimpi untuk refleksi diri.",
     "readPill": "Lihat Buku ↗"
+  },
+  "nextStep": {
+    "label": "Langkah Berikutnya",
+    "title": "Arketipe Diri Masa Depan",
+    "desc": "Ubah refleksi hari ini menjadi peta prioritas 10 tahun dalam 8 pertanyaan.",
+    "cta": "Jelajahi Diri Masa Depan →"
   }
 }
